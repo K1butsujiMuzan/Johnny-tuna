@@ -1,0 +1,18 @@
+:root{
+  --color-accent: #35ADE1;
+  --color-red-accent: #FF7255;
+  --color-text-dark: #242424;
+  --color-text-light: #999999;
+  --color-text-white: #FFFFFF;
+  --color-text-f5: #F5F5F5;
+
+  --font-main: 'Inter', sans-serif;
+
+  --main-transition: 0.2s;
+
+  --container-width: 92.5rem;
+
+  --padding-x: 1rem;
+}
+
+/* @import "../../styles/variables.css"; */
