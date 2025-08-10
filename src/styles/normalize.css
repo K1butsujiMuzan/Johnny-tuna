@@ -1,0 +1,126 @@
+/* Обнуление box-model и отступов */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Удаление отступов у списков */
+:where(ul, ol):where([class]) {
+  padding-left: 0;
+}
+
+/* Обнуление внешних отступов */
+body,
+:where(blockquote, figure, fieldset):where([class]) {
+  margin: 0;
+}
+
+/* Обнуление вертикальных отступов */
+:where(h1, h2, h3, h4, h5, h6, p, ul, ol, dl):where([class]) {
+  margin-block: 0;
+}
+
+/* Сброс отступов и границ */
+:where(dd, fieldset):where([class]) {
+  margin-left: 0;
+  padding: 0;
+  border: none;
+}
+
+/* Удаление маркеров списка */
+:where(ul, ol):where([class]) {
+  list-style: none;
+}
+
+/* Нормализация шрифта */
+:where(address, cite):where([class]) {
+  font-style: normal;
+}
+
+/* Стили для параграфов */
+p {
+  --paragraph-margin: 1.5em;
+  margin-block: 0;
+}
+
+/* Отступы между параграфами */
+p:where(:not([class]):not(:last-child)) {
+  margin-bottom: var(--paragraph-margin);
+}
+
+/* Базовые стили медиа-элементов */
+img,
+picture,
+video,
+svg,
+canvas {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Наследование шрифтов */
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
+/* Основные html-стили */
+html {
+  height: 100%;
+  scrollbar-gutter: stable;
+}
+
+/* Плавная прокрутка */
+@media (prefers-reduced-motion: no-preference) {
+  html,
+  :has(:target) {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Основные body-стили */
+body {
+  min-height: 100%;
+  line-height: 1.5;
+  text-rendering: optimizeSpeed;
+}
+
+/* Интерактивные элементы */
+a:where([class]) {
+  display: inline-block;
+}
+
+button,
+label,
+select,
+summary,
+[role="button"] {
+  cursor: pointer;
+  touch-action: manipulation;
+}
+
+/* SVG и иконки */
+[fill] { fill: currentColor }
+[stroke] { stroke: currentColor }
+
+svg * {
+  transition-property: fill, stroke;
+}
+
+/* Отключение анимаций */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
