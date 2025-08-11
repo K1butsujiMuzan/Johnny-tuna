@@ -1,32 +1,23 @@
 import styles from "./Header.module.css"
-import {Link} from "react-router";
-import Logo from "@components/UI/Logo/Logo";
-import CitySelect from "@components/UI/CitySelect/CitySelect";
-import NavLinks from "@components/UI/NavLink/NavLinks";
-import Phone from "@components/UI/Phone/Phone";
+import HeaderTop from "@components/Header/parts/HeaderTop/HeaderTop";
+import HeaderBottom from "@components/Header/parts/HeaderBottom/HeaderBottom";
+import {useEffect, useState} from "react";
 
 function Header() {
+
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1280)
+
+  useEffect(() => {
+    const checkScreen = () => setIsMobile(window.innerWidth <= 1280)
+    checkScreen()
+    window.addEventListener("resize", checkScreen)
+    return () => window.removeEventListener("resize", checkScreen)
+  }, []);
+
   return(
     <header className={styles.header}>
-      <div className={`${styles.headerTop} container`}>
-        <div className={styles.headerTopLinks}>
-          <Logo place={"headerLogo"}/>
-          <span className={styles.headerArrow}></span>
-          <CitySelect/>
-          <nav className={styles.headerTopNav}>
-            <ul className={styles.headerTopList}>
-              <NavLinks to={"/stocks"}>Акции</NavLinks>
-              <NavLinks to={"/about"}>О нас</NavLinks>
-              <NavLinks to={"/delivery"}>Доставка</NavLinks>
-              <NavLinks to={"/contacts"}>Контакты</NavLinks>
-            </ul>
-          </nav>
-        </div>
-        <Phone/>
-      </div>
-      <div className={`${styles.headerBottom} container`}>
-
-      </div>
+      {!isMobile && <HeaderTop />}
+      <HeaderBottom/>
     </header>
   )
 }

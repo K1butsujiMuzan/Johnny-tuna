@@ -6,38 +6,3 @@
   gap: 0.75rem;
   align-items: center;
 }
-
-.headerTop{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.headerTopLinks{
-  display: flex;
-  align-items: center;
-}
-
-.headerTopList{
-  display: flex;
-  align-items: flex-start;
-  column-gap: 1.875rem;
-}
-
-.headerTopList:first-child{
-  margin-left: 1.875rem;
-}
-
-.headerArrow{
-  margin-inline: 1rem 1.25rem;
-  height: 2.1875rem;
-  width: 2px;
-  background-color: rgba(0, 0, 0, 0.15);
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.headerTopNav{}
-
-.headerBottom{
-
-}
