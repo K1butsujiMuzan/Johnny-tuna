@@ -1,0 +1,18 @@
+.phoneContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.phoneContainerLink{
+  font-size: clamp(1.125rem, 1.25vw ,1.5rem);
+}
+
+.phoneContainerLink:hover{
+  color: var(--color-accent);
+}
+
+.phoneContainerText{
+  font-size: clamp(0.75rem, 0.83vw ,1rem);
+}

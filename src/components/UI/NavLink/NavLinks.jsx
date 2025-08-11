@@ -1,10 +1,10 @@
-import './NavLinks.css'
+import styles from './NavLinks.module.css'
 import {Link} from "react-router";
 
 function NavLinks({to, children}) {
   return(
-    <li className={"header__top-item"}>
-      <Link className={"header__top-link"} to={to}>{children}</Link>
+    <li className={styles.headerTopItem}>
+      <Link className={styles.headerTopLink} to={to}>{children}</Link>
     </li>
   )
 }

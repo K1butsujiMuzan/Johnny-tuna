@@ -24,7 +24,7 @@ function Header() {
         </div>
         <Phone/>
       </div>
-      <div className={"header__bottom container"}>
+      <div className={`${styles.headerBottom} container`}>
 
       </div>
     </header>
