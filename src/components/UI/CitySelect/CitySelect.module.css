@@ -1,0 +1,48 @@
+.wrapper{
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.locationIcon{
+  margin-right: 0.75rem;
+  user-select: none;
+}
+
+.selectTrigger{
+  cursor: pointer;
+  display: flex;
+  width: 9.5rem;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-text-light);
+}
+
+.selectArrow{
+  transition-duration: var(--main-transition);
+  user-select: none;
+}
+
+.selectArrowRotate{
+  rotate: 180deg;
+}
+
+.selectTrigger:hover{
+  color: var(--color-text-dark);
+}
+
+.selectValue{
+
+}
+.selectList{
+  position: absolute;
+  top: 100%;
+  left: 2.3125rem;
+  color: var(--color-text-light);
+}
+.selectOption{
+  cursor: pointer;
+}
+.selectOption:hover{
+  color: var(--color-text-dark);
+}

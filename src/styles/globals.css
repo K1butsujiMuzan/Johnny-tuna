@@ -52,3 +52,9 @@ h4{
     color: var(--color-red-accent);
   }
 }
+
+.container{
+  width: 100%;
+  max-width: calc(var(--container-width));
+  padding-inline: var(--padding-x);
+}

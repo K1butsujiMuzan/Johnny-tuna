@@ -1,0 +1,6 @@
+.header__top-link{
+  color: var(--color-text-light);
+}
+.header__top-link:hover{
+  color: var(--color-text-dark);
+}
