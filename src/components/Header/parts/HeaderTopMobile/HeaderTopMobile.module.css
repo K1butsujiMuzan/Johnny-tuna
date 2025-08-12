@@ -1,0 +1,46 @@
+.headerTopMobile{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.burgerButton{
+  height: clamp(1.5rem, 4.67578125vw, 2.244375rem);
+  aspect-ratio: 1;
+  background-color: #FF7255;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.burgerSpan{
+  display: block;
+  width: 25%;
+  height: 2px;
+  background-color: var(--color-black);
+  position: relative;
+  border-radius: 1rem;
+}
+
+.burgerSpan::after,
+.burgerSpan::before{
+  width: 200%;
+  height: 2px;
+  content: "";
+  display: block;
+  background-color: var(--color-black);
+  position: absolute;
+}
+
+.burgerSpan::before{
+  right: 0;
+  bottom: clamp(0.3125rem, 1.3020vw ,0.625rem);
+}
+
+.burgerSpan::after{
+  right: 0;
+  top: clamp(0.3125rem, 1.3020vw ,0.625rem);
+}
+

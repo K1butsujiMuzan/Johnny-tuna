@@ -2,6 +2,7 @@
 body{
   font-family: var(--font-main);
   font-weight: 600;
+  background-color: #FF7255;
 }
 
 a,
@@ -49,7 +50,7 @@ h4{
 
 @media (hover: hover) {
   a:hover{
-    color: var(--color-red-accent);
+    color: var(--color-text-dark);
   }
 }
 

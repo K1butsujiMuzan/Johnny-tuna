@@ -73,7 +73,6 @@ button {
 /* Основные html-стили */
 html {
   height: 100%;
-  scrollbar-gutter: stable;
 }
 
 /* Плавная прокрутка */

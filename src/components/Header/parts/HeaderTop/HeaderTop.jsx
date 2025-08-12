@@ -8,8 +8,8 @@ function HeaderTop() {
   return(
     <div className={`${styles.headerTop} container`}>
       <div className={styles.headerTopLinks}>
-        <Logo place={"headerLogo"}/>
-        <span className={styles.headerArrow}></span>
+        <Logo className={"headerLogo"}/>
+        <span className={styles.headerBorder}></span>
         <CitySelect/>
         <nav className={styles.headerTopNav}>
           <ul className={styles.headerTopList}>

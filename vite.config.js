@@ -13,4 +13,9 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),       // Ассеты (изображения, шрифты)
     },
   },
+  server: {
+    allowedHosts: [
+      'sab73yu5yb9n.share.zrok.io',
+    ]
+  },
 })

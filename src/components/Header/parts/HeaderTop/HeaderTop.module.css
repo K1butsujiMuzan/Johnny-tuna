@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 0.75rem;
 }
 
 .headerTopLinks{
@@ -12,14 +13,22 @@
 .headerTopList{
   display: flex;
   align-items: flex-start;
+  justify-content: flex-start;
   column-gap: 1.875rem;
 }
 
-.headerTopList:first-child{
-  margin-left: 1.875rem;
+@media (max-width: 80rem) {
+  .headerTopList{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
-.headerArrow{
+.headerTopList{
+  margin-inline: 1.875rem;
+}
+
+.headerBorder{
   margin-inline: 1rem 1.25rem;
   height: 2.1875rem;
   width: 2px;

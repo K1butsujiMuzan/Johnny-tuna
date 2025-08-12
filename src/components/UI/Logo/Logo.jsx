@@ -2,13 +2,14 @@ import "./Logo.css"
 import logo from "@assets/icons/Logo.svg";
 import {Link} from "react-router";
 
-function Logo({place}) {
+function Logo({className}) {
   return(
     <Link
       to={"/"}
+      aria-label={"На главную"}
     >
       <img
-        className={place}
+        className={className}
         src={logo}
         alt={"Logo"}
         height={35.96}

@@ -35,6 +35,7 @@ function CitySelect() {
       <div
         className={styles.selectTrigger}
         onClick={() => setIsOpen(!isOpen)}
+        aria-label={"Открыть список городов"}
       >
         <span className={styles.selectValue}>{selectedCity}</span>
         <img

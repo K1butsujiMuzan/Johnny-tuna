@@ -1,7 +1,4 @@
 .headerTopLink{
   color: var(--color-text-light);
 }
-.headerTopLink:hover{
-  color: var(--color-text-dark);
-}
 .headerTopItem{}
