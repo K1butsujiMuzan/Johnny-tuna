@@ -27,11 +27,6 @@ function CitySelect() {
 
   return(
     <div className={styles.wrapper}>
-      <img
-        src={location}
-        alt={"location"}
-        className={styles.locationIcon}
-      />
       <div
         className={styles.selectTrigger}
         onClick={() => setIsOpen(!isOpen)}

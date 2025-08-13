@@ -3,6 +3,7 @@ import Logo from "@components/UI/Logo/Logo";
 import CitySelect from "@components/Header/parts/CitySelect/CitySelect";
 import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
+import location from "@assets/icons/Header/Location.svg";
 
 function HeaderTop() {
   return(
@@ -10,6 +11,11 @@ function HeaderTop() {
       <div className={styles.headerTopLinks}>
         <Logo className={"headerLogo"}/>
         <span className={styles.headerBorder}></span>
+        <img
+          src={location}
+          alt={"location"}
+          className={styles.locationIcon}
+        />
         <CitySelect/>
         <nav className={styles.headerTopNav}>
           <ul className={styles.headerTopList}>
