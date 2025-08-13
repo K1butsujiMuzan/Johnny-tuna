@@ -1,16 +1,23 @@
 import styles from "./HeaderTopMobile.module.css"
 import Logo from "@components/UI/Logo/Logo";
+import {useState} from "react";
 
 function HeaderTopMobile() {
+  const [isOpen, setIsOpen] = useState(false)
+
   return(
     <div className={`${styles.headerTopMobile} container`}>
       <Logo className={"headerLogo"}/>
       <button
         type={"button"}
         className={styles.burgerButton}
-        aria-label={"Открыть меню"}
+        aria-label={isOpen ? "Закрыть меню" : "Открыть меню"}
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen(!isOpen)}
       >
-        <span className={styles.burgerSpan}></span>
+        {[...Array(3)].map((_, index) => (
+          <span key={index} className={isOpen ? `${styles.burgerSpan} ${styles.burgerSpanOpen}` : styles.burgerSpan}></span>
+        ))}
       </button>
     </div>
   )
