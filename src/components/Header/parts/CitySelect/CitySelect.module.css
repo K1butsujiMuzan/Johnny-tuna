@@ -7,10 +7,11 @@
 .selectTrigger{
   cursor: pointer;
   display: flex;
-  width: 10rem;
+  width: 11rem;
   justify-content: space-between;
   align-items: center;
   color: var(--color-text-light);
+  text-align: left;
 }
 
 .selectArrow{
@@ -27,21 +28,49 @@
 }
 
 .selectValue{
+  font-size: 1.125rem;
+}
+
+.selectValue{
   padding-left: 0.5rem;
 }
+
 .selectList{
   white-space: nowrap;
   position: absolute;
   top: 100%;
-  width: 10rem;
+  width: 11rem;
   color: var(--color-text-light);
   background-color: rgba(255, 255, 255, 0.69);
   padding: 0 0.5rem 0.5rem 0.5rem;
   border-radius: 0 0 10px 10px;
 }
+
 .selectOption{
   cursor: pointer;
 }
+
 .selectOption:hover{
   color: var(--color-text-dark);
 }
+
+/* Mobile */
+.selectTriggerMobile{
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 0.25rem;
+}
+
+.selectChangeText{
+  font-size: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+.selectTriggerMobile span{
+  color: var(--color-black);
+}
+
+.selectListMobile{
+
+}
+

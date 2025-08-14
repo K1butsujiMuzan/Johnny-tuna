@@ -12,7 +12,10 @@
 }
 
 .modalUpLocation{
-
+  display: flex;
+  align-items: flex-start;
+  height: 3.5rem;
+  border-block: var(--gray-border);
 }
 
 .modalUpLinks{
@@ -25,4 +28,13 @@
 
 .modalDownSoc1als{
 
+}
+
+.locationIcon{
+  fill: transparent;
+  padding-top: 0.421875rem;
+}
+
+.locationIcon path{
+  stroke: var(--color-accent);
 }

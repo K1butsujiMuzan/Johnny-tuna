@@ -3,7 +3,7 @@ import arrow from "@assets/icons/Header/Arrow.svg"
 import styles from "./CitySelect.module.css"
 import { useState } from "react";
 
-function CitySelect() {
+function CitySelect({isMobile}) {
   const cityFromStorage = localStorage.getItem("City")
 
   function setCityInStorage() {
@@ -28,19 +28,25 @@ function CitySelect() {
   return(
     <div className={styles.wrapper}>
       <div
-        className={styles.selectTrigger}
+        className={`${styles.selectTrigger} ${isMobile ? styles.selectTriggerMobile : ""}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={"Открыть список городов"}
       >
         <span className={styles.selectValue}>{selectedCity}</span>
-        <img
-          className={`${styles.selectArrow} ${isOpen ? styles.selectArrowRotate : ""}`}
-          src={arrow}
-          alt={"location"}
-        />
+        {!isMobile && (
+          <img
+            className={`${styles.selectArrow} ${isOpen ? styles.selectArrowRotate : ""}`}
+            src={arrow}
+            alt={"location"}
+          />
+        )}
+        {isMobile && !isOpen && (
+          <p className={styles.selectChangeText}>Изменить</p>
+        )}
+
       </div>
       {isOpen && (
-        <div className={styles.selectList}>
+        <div className={`${styles.selectList} ${isMobile ? styles.selectListMobile : ""}`}>
           {cities.map((city) => (
             <div
               key={city.value}

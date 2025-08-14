@@ -8,4 +8,5 @@ function NavLinks({to, children}) {
     </li>
   )
 }
+
 export default NavLinks
