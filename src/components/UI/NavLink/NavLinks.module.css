@@ -1,4 +1,6 @@
 .headerTopLink{
   color: var(--color-text-light);
 }
-.headerTopItem{}
+.headerTopItem{
+  list-style: none;
+}

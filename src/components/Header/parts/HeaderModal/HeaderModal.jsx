@@ -1,5 +1,6 @@
 import styles from "./HeaderModal.module.css"
 import CitySelect from "@components/Header/parts/CitySelect/CitySelect";
+import NavLinks from "@components/UI/NavLink/NavLinks";
 
 function HeaderModal() {
   return (
@@ -13,7 +14,11 @@ function HeaderModal() {
           <CitySelect isMobile/>
         </div>
         <div className={styles.modalUpLinks}>
-
+          <NavLinks to={"/login"}>Войти (Профиль)</NavLinks>
+          <NavLinks to={"/stocks"}>Акции</NavLinks>
+          <NavLinks to={"/about"}>О нас</NavLinks>
+          <NavLinks to={"/delivery"}>Доставка</NavLinks>
+          <NavLinks to={"/contacts"}>Контакты</NavLinks>
         </div>
       </div>
       <div className={styles.modalDown}>
