@@ -52,3 +52,7 @@
 .burgerSpanOpen:last-child{
   rotate: 45deg;
 }
+
+.noScroll{
+  overflow-y: hidden !important;
+}

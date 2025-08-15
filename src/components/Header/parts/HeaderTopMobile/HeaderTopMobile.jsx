@@ -1,10 +1,18 @@
 import styles from "./HeaderTopMobile.module.css"
 import Logo from "@components/UI/Logo/Logo";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import HeaderModal from "@components/Header/parts/HeaderModal/HeaderModal";
 
 function HeaderTopMobile() {
   const [isOpen, setIsOpen] = useState(false)
+
+  useEffect(() => {
+    document.body.classList.toggle(styles.noScroll, isOpen)
+
+    return () => {
+      document.body.classList.remove(styles.noScroll)
+    }
+  }, [isOpen]);
 
   return(
     <>
@@ -18,7 +26,12 @@ function HeaderTopMobile() {
           onClick={() => setIsOpen(!isOpen)}
         >
           {[...Array(3)].map((_, index) => (
-            <span key={index} className={isOpen ? `${styles.burgerSpan} ${styles.burgerSpanOpen}` : styles.burgerSpan}></span>
+            <span
+              key={index}
+              className={isOpen
+                ? `${styles.burgerSpan} ${styles.burgerSpanOpen}`
+                : styles.burgerSpan}>
+            </span>
           ))}
         </button>
       </div>

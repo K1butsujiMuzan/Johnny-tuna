@@ -5,10 +5,12 @@
   justify-content: center;
   text-align: right;
   white-space: nowrap;
+  row-gap: 0.25rem;
 }
 
 .phoneContainerLink{
   font-size: clamp(1.125rem, 1.25vw ,1.5rem);
+  line-height: 1;
 }
 
 .phoneContainerLink:hover{
@@ -18,5 +20,5 @@
 .phoneContainerText{
   font-size: clamp(0.75rem, 0.83vw ,1rem);
   font-weight: 500;
-  line-height: 1rem;
+  line-height: 1;
 }
