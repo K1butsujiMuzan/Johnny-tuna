@@ -1,6 +1,18 @@
 .headerTopLink{
   color: var(--color-text-light);
+  font-weight: 500;
+
 }
+
 .headerTopItem{
   list-style: none;
+}
+
+.headerTopLinkMobile{
+  font-size: 1.125rem;
+  color: var(--color-black);
+}
+
+.headerTopItemMobile{
+  line-height: 1rem;
 }

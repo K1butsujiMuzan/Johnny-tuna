@@ -18,10 +18,14 @@
   align-items: flex-start;
   height: 3.5rem;
   border-block: var(--gray-border);
+  padding-left: 1rem;
 }
 
 .modalUpLinks{
-
+  padding-left: 2.875rem;
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
 }
 
 .modalDownPhone{

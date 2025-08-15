@@ -13,13 +13,15 @@ function HeaderModal() {
           </svg>
           <CitySelect isMobile/>
         </div>
-        <div className={styles.modalUpLinks}>
-          <NavLinks to={"/login"}>Войти (Профиль)</NavLinks>
-          <NavLinks to={"/stocks"}>Акции</NavLinks>
-          <NavLinks to={"/about"}>О нас</NavLinks>
-          <NavLinks to={"/delivery"}>Доставка</NavLinks>
-          <NavLinks to={"/contacts"}>Контакты</NavLinks>
-        </div>
+        <nav>
+          <ul className={styles.modalUpLinks}>
+            <NavLinks isMobile to={"/login"}>Войти (Профиль)</NavLinks>
+            <NavLinks isMobile to={"/stocks"}>Акции</NavLinks>
+            <NavLinks isMobile to={"/about"}>О нас</NavLinks>
+            <NavLinks isMobile to={"/delivery"}>Доставка</NavLinks>
+            <NavLinks isMobile to={"/contacts"}>Контакты</NavLinks>
+          </ul>
+        </nav>
       </div>
       <div className={styles.modalDown}>
         <div className={styles.modalDownPhone}>

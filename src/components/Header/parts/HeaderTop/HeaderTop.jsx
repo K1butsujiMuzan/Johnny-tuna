@@ -18,7 +18,7 @@ function HeaderTop() {
 
           <CitySelect/>
         </div>
-        <nav className={styles.headerTopNav}>
+        <nav>
           <ul className={styles.headerTopList}>
             <NavLinks to={"/stocks"}>Акции</NavLinks>
             <NavLinks to={"/about"}>О нас</NavLinks>

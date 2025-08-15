@@ -2,6 +2,7 @@
   display: flex;
   position: relative;
   align-items: center;
+  font-weight: 500;
 }
 
 .selectTrigger{
@@ -38,6 +39,9 @@
 .selectList{
   white-space: nowrap;
   position: absolute;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
   top: 100%;
   width: 11rem;
   color: var(--color-text-light);
