@@ -5,10 +5,6 @@ import Phone from "@components/UI/Phone/Phone";
 import Soc1als from "@components/UI/Soc1als/Soc1als";
 
 function HeaderModal() {
-  const header = document.querySelector("header")
-  const headerHeight = header.offsetHeight
-
-
   return (
     <div className={styles.headerModalInner}>
       <div className={styles.modalUp}>

@@ -7,7 +7,7 @@ import HeaderTopMobile
 
 function Header() {
 
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 1125)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth <= 1125)
@@ -19,6 +19,7 @@ function Header() {
   return(
     <header className={styles.header}>
       {!isMobile && <HeaderTop />}
+      {!isMobile && <HeaderBottom/>}
       {isMobile && <HeaderTopMobile/>}
     </header>
   )

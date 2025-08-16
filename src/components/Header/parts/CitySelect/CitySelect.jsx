@@ -1,22 +1,17 @@
 import location from "@assets/icons/Header/Location.svg"
 import arrow from "@assets/icons/Header/Arrow.svg"
 import styles from "./CitySelect.module.css"
-import { useState } from "react";
+import {useEffect, useState} from "react";
 
 function CitySelect({isMobile}) {
-  const cityFromStorage = localStorage.getItem("City")
-
-  function setCityInStorage() {
-    if(cityFromStorage) {
-      return
+  useEffect(() => {
+    if(!localStorage.getItem("City")) {
+      localStorage.setItem("City", "Калининград")
     }
-    localStorage.setItem("City", "Калининград")
-  }
-
-  setCityInStorage()
+  }, []);
 
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState(cityFromStorage)
+  const [selectedCity, setSelectedCity] = useState("Калининград")
 
   const cities = [
     { value: "kaliningrad", label: "Калининград" },
@@ -28,6 +23,7 @@ function CitySelect({isMobile}) {
   return(
     <div className={styles.wrapper}>
       <div
+        tabIndex={0}
         className={`${styles.selectTrigger} ${isMobile ? styles.selectTriggerMobile : ""}`}
         onClick={() => setIsOpen(!isOpen)}
         aria-label={"Открыть список городов"}

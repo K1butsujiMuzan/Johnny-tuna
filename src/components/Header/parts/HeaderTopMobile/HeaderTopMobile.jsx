@@ -15,8 +15,13 @@ function HeaderTopMobile() {
   }, [isOpen]);
 
   return(
-    <>
-      <div className={`${styles.headerTopMobile} container`}>
+    <div className={`${isOpen ? styles.headerInnerOpen : styles.headerInner}`}>
+      <div className={`
+        ${styles.headerTopMobile}
+        container
+        ${isOpen ? styles.headerTopMobileOpen : ""}
+      `}
+      >
         <Logo className={"headerLogo"}/>
         <button
           type={"button"}
@@ -36,7 +41,7 @@ function HeaderTopMobile() {
         </button>
       </div>
       {isOpen && <HeaderModal/>}
-    </>
+    </div>
   )
 }
 
