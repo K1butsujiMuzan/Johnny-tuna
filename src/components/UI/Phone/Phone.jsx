@@ -1,8 +1,12 @@
 import styles from "./Phone.module.css"
 
-function Phone() {
+function Phone(isMobile) {
   return(
-    <div className={styles.phoneContainer}>
+    <div className={`
+      ${styles.phoneContainer} 
+      ${isMobile ? styles.phoneContainerMobile : ""}
+    `}
+    >
       <a
         href={"tel:89990009999"}
         className={styles.phoneContainerLink}

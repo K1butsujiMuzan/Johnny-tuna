@@ -5,6 +5,11 @@ body{
   background-color: #FF7255;
 }
 
+*{
+  -webkit-tap-highlight-color: transparent;
+  -moz-tap-highlight-color: transparent;
+}
+
 a,
 button,
 input,

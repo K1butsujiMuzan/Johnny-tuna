@@ -8,6 +8,11 @@
   row-gap: 0.25rem;
 }
 
+.phoneContainerMobile{
+  text-align: left;
+  align-items: flex-start;
+}
+
 .phoneContainerLink{
   font-size: clamp(1.125rem, 1.25vw ,1.5rem);
   line-height: 1;
