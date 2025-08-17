@@ -1,0 +1,33 @@
+.Button{
+  font-size: 0.875rem;
+  border-radius: 6.25rem;
+  background-color: var(--color-accent);
+  border: none;
+  color: var(--color-text-white);
+  padding-block: clamp(0.375rem , 0.8vw, 0.5625rem);
+  padding-inline: clamp(1rem, 3.02vw, 2.125rem);
+}
+
+.colorAccent{
+  background-color: var(--color-red-accent);
+}
+
+.Button:active{
+  scale: 0.98;
+}
+
+@media (hover: hover) {
+  .Button:hover{
+    background-color: var(--color-red-accent);
+  }
+  .colorAccent:hover{
+    background-color: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .Button:active{
+    background-color: var(--color-red-accent);
+  }
+}
+

@@ -12,6 +12,13 @@
   color: var(--color-black);
 }
 
+@media (hover: none) {
+  .headerTopLinkMobile:active{
+    color: var(--color-text-light);
+    transform: scale(0.98);
+  }
+}
+
 .headerTopItemMobile{
   line-height: 1rem;
 }

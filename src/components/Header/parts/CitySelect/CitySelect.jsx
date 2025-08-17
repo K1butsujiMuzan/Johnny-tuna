@@ -48,6 +48,7 @@ function CitySelect({isMobile}) {
             className={`${styles.selectArrow} ${isOpen ? styles.selectArrowRotate : ""}`}
             src={arrow}
             alt={"location"}
+            aria-hidden={true}
           />
         )}
         {isMobile && !isOpen && (

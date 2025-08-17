@@ -6,6 +6,7 @@
 }
 
 .selectTrigger{
+  transition: var(--main-transition);
   cursor: pointer;
   display: flex;
   width: 11rem;
@@ -24,16 +25,10 @@
   rotate: 180deg;
 }
 
-.selectTrigger:hover{
-  color: var(--color-text-dark);
-}
-
 .selectValue{
   font-size: 1.125rem;
-}
-
-.selectValue{
   padding-left: 0.5rem;
+  transition: var(--main-transition);
 }
 
 .selectList{
@@ -52,10 +47,6 @@
 
 .selectOption{
   cursor: pointer;
-}
-
-.selectOption:hover{
-  color: var(--color-text-dark);
 }
 
 /* Mobile */
@@ -78,3 +69,21 @@
 
 }
 
+@media (hover: hover) {
+  .selectOption:hover{
+    color: var(--color-text-dark);
+  }
+  .selectTrigger:hover{
+    color: var(--color-text-dark);
+  }
+}
+
+@media (hover: none) {
+  .selectOption:active{
+    color: var(--color-text-dark);
+    scale: 0.98;
+  }
+  .selectValue:active{
+    color: var(--color-text-light);
+  }
+}

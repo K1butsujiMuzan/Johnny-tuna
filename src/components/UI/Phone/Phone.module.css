@@ -18,8 +18,17 @@
   line-height: 1;
 }
 
-.phoneContainerLink:hover{
-  color: var(--color-accent);
+@media (hover: hover) {
+  .phoneContainerLink:hover{
+    color: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .phoneContainerLink:active{
+    color: var(--color-accent);
+    transform: scale(0.98);
+  }
 }
 
 .phoneContainerText{

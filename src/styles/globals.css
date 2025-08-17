@@ -59,9 +59,11 @@ h4{
   }
 }
 
+
+
 .container{
   width: 100%;
-  max-width: calc(var(--container-width));
+  max-width: calc(var(--container-width) + var(--padding-x) + var(--padding-x));
   padding-inline: var(--padding-x);
 }
 

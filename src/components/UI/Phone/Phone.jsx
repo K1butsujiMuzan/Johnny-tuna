@@ -1,6 +1,6 @@
 import styles from "./Phone.module.css"
 
-function Phone(isMobile) {
+function Phone({isMobile}) {
   return(
     <div className={`
       ${styles.phoneContainer} 
