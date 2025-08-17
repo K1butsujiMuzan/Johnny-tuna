@@ -26,7 +26,6 @@
   height: clamp(1.5rem, 4.67578125vw, 2.244375rem);
   aspect-ratio: 1;
   background-color: transparent;
-  outline: none;
   border: none;
   display: flex;
   align-items: center;

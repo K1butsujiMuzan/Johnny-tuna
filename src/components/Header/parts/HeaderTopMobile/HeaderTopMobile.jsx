@@ -14,6 +14,24 @@ function HeaderTopMobile() {
     }
   }, [isOpen]);
 
+  useEffect(() => {
+    if(!isOpen) {
+      return
+    }
+
+    const closeModal = (event)=> {
+      if(isOpen && event.key === "Escape") {
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener("keydown", closeModal)
+
+    return () => {
+      window.removeEventListener("keydown", closeModal)
+    }
+  }, [isOpen]);
+
   return(
     <div className={`${isOpen ? styles.headerInnerOpen : styles.headerInner}`}>
       <div className={`
