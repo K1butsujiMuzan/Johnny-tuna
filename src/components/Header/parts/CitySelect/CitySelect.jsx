@@ -11,7 +11,7 @@ function CitySelect({isMobile}) {
   }, []);
 
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState("Калининград")
+  const [selectedCity, setSelectedCity] = useState(localStorage.getItem("City") || "Калининград")
 
   const cities = [
     { value: "kaliningrad", label: "Калининград" },
