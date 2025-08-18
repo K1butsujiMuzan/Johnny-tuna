@@ -1,0 +1,56 @@
+.profileButton{
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+  border: none;
+  height: 4.375rem;
+  width: 5rem;
+  background-color: transparent;
+}
+
+.points{
+  display: flex;
+  align-items: center;
+}
+
+.profileIcon{
+  stroke: var(--color-text-dark);
+  fill: transparent;
+}
+
+.pointsText{
+  font-size: 0.875rem;
+  line-height: 1;
+  color: var(--color-text-dark);
+}
+
+.pointsIcon{
+  fill: var(--color-red-accent);
+}
+
+@media (hover: hover) {
+  .profileButton:hover .profileIcon{
+    stroke: var(--color-accent);
+  }
+  .profileButton:hover .pointsText{
+    color: var(--color-accent);
+  }
+  .profileButton:hover .pointsIcon{
+    fill: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .profileButton:active .profileIcon{
+    stroke: var(--color-accent);
+  }
+  .profileButton:active .pointsText{
+    color: var(--color-accent);
+  }
+  .profileButton:active .pointsIcon{
+    fill: var(--color-accent);
+  }
+}

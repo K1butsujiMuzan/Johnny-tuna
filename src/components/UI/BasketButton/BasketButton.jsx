@@ -5,6 +5,7 @@ function BasketButton() {
     <button
       className={styles.basketButton}
       aria-label={"Корзина"}
+      type={"button"}
     >
       <div className={styles.basket}>
         <svg
@@ -23,12 +24,12 @@ function BasketButton() {
           5
         </span>
       </div>
-      <p
+      <span
         className={styles.basketBalance}
-        aria-label={"Баланс"}
+        aria-label={"Стоимость"}
       >
         1 089₽
-      </p>
+      </span>
     </button>
   )
 }

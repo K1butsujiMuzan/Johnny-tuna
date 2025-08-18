@@ -11,6 +11,8 @@
 
 .searchButtons{
   display: flex;
+  column-gap: clamp(0.5rem, 1.24vw, 0.875rem);
+  align-items: center;
 }
 
 .searchInput{
@@ -22,9 +24,11 @@
   caret-color: var(--color-accent);
 }
 
+.searchInput:focus-visible{
+  outline: none;
+}
 
 .clearButton{
-  padding-inline: clamp(0.5rem, 1.24vw, 0.875rem);
   border: none;
   background-color: transparent;
 }

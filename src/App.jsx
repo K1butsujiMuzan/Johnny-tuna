@@ -11,7 +11,6 @@ function App() {
     <>
       <Header></Header>
       <main></main>
-
       <Routes>
         <Route path={"/"} element={<Main/>}></Route>
         <Route path={"/stocks"} element={<Stocks/>}></Route>

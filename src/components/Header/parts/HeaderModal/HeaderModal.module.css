@@ -3,6 +3,8 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  z-index: 1000;
+  overflow-y: scroll !important;
 }
 
 .modalUp{
@@ -12,6 +14,7 @@
 }
 
 .modalDown{
+  padding-top: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;

@@ -4,6 +4,7 @@ import HeaderBottom from "@components/Header/parts/HeaderBottom/HeaderBottom";
 import {useEffect, useState} from "react";
 import HeaderTopMobile
   from "@components/Header/parts/HeaderTopMobile/HeaderTopMobile";
+import Search from "@components/UI/Search/Search";
 
 function Header() {
 
