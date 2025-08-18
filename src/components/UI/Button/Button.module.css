@@ -8,7 +8,7 @@
   padding-inline: clamp(1rem, 3.02vw, 2.125rem);
 }
 
-.colorAccent{
+.accent{
   background-color: var(--color-red-accent);
 }
 
@@ -20,7 +20,7 @@
   .Button:hover{
     background-color: var(--color-red-accent);
   }
-  .colorAccent:hover{
+  .accent:hover{
     background-color: var(--color-accent);
   }
 }
@@ -29,5 +29,13 @@
   .Button:active{
     background-color: var(--color-red-accent);
   }
+  .accent:active{
+    background-color: var(--color-accent);
+  }
+}
+
+.Button:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 

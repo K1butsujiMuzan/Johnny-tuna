@@ -1,4 +1,10 @@
 .headerBottom{
   display: flex;
   justify-content: space-between;
+  background-color: var(--color-text-white);
+  align-items: center;
+}
+
+.headerBottomButtons{
+  padding-left: 2rem;
 }

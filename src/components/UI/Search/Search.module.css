@@ -26,6 +26,7 @@
 .clearButton{
   padding-inline: clamp(0.5rem, 1.24vw, 0.875rem);
   border: none;
+  background-color: transparent;
 }
 
 .clearIcon{

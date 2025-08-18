@@ -37,7 +37,7 @@ function Search() {
             <path d="M0.773926 1L12.9898 14.0946" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
           </svg>
         </button>
-        <Button isSubmit isColorAccent>Найти</Button>
+        <Button isSubmit isAccent>Найти</Button>
       </div>
     </form>
   )

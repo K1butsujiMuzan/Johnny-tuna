@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <Header></Header>
+      <main></main>
 
       <Routes>
         <Route path={"/"} element={<Main/>}></Route>

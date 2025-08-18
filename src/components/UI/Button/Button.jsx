@@ -1,13 +1,14 @@
 import styles from "./Button.module.css"
 
-function Button({children, isSubmit, isColorAccent}) {
+function Button({children, isSubmit, isAccent, isDisabled}) {
   return(
     <button
       className={`
         ${styles.Button}
-        ${isColorAccent ? styles.colorAccent : ""}
+        ${isAccent ? styles.accent : ""}
       `}
       type={isSubmit ? "submit" : "button"}
+      disabled={isDisabled}
     >
       {children}
     </button>

@@ -1,0 +1,68 @@
+.basketButton{
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5rem;
+  border: none;
+  padding-inline: 1.0625rem;
+  padding-block: 0.6875rem;
+  background-color: transparent;
+}
+
+.basket{
+  display: flex;
+  position: relative;
+}
+
+.basketIcon{
+  stroke: var(--color-text-dark);
+  fill: transparent;
+}
+
+.quantity{
+  position: absolute;
+  left: 20px;
+  top: 0;
+  height: 18px;
+  width: 25px;
+  font-size: 0.8125rem;
+  line-height: 1;
+  background-color: var(--color-red-accent);
+  color: var(--color-text-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.375rem;
+  border: 1px solid var(--color-text-white);
+}
+
+.basketBalance{
+  font-size: 0.875rem;
+  line-height: 1;
+  color: var(--color-text-dark);
+}
+
+@media (hover: hover) {
+  .basketButton:hover .basketIcon{
+    stroke: var(--color-accent);
+  }
+  .basketButton:hover .basketBalance{
+    color: var(--color-accent);
+  }
+  .basketButton:hover .quantity{
+    background-color: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .basketButton:active .basketIcon{
+    stroke: var(--color-accent);
+  }
+  .basketButton:active .basketBalance{
+    color: var(--color-accent);
+  }
+  .basketButton:active .quantity{
+    background-color: var(--color-accent);
+  }
+}
