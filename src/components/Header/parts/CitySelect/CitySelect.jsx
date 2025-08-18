@@ -1,13 +1,28 @@
 import arrow from "@assets/icons/Header/Arrow.svg"
 import styles from "./CitySelect.module.css"
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 
 function CitySelect({isMobile}) {
+  const [isOpen, setIsOpen] = useState(false)
+  const [selectedCity, setSelectedCity] = useState(localStorage.getItem("City") || "Калининград")
+  const cityBlock = useRef(null)
+
   useEffect(() => {
     if (!localStorage.getItem("City")) {
       localStorage.setItem("City", "Калининград")
     }
   }, []);
+
+  useEffect(() => {
+    const closeCity = (event) => {
+      if(isOpen && cityBlock.current && !cityBlock.current.contains(event.target)) {
+        setIsOpen(false)
+      }
+    }
+
+    window.addEventListener("click", closeCity)
+    return () => window.removeEventListener("click", closeCity)
+  }, [isOpen])
 
   const cityEnter = useCallback((event) => {
     if (event.key === "Enter") {
@@ -21,9 +36,6 @@ function CitySelect({isMobile}) {
     localStorage.setItem("City", city.label)
   }, [])
 
-  const [isOpen, setIsOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState(localStorage.getItem("City") || "Калининград")
-
   const cities = [
     {value: "kaliningrad", label: "Калининград"},
     {value: "krasnodar", label: "Краснодар"},
@@ -32,7 +44,7 @@ function CitySelect({isMobile}) {
   ]
 
   return (
-    <div className={styles.wrapper}>
+    <div className={styles.wrapper} ref={cityBlock}>
       <div
         aria-expanded={isOpen}
         role={"combobox"}

@@ -85,7 +85,11 @@ function HeaderTopMobile() {
         </div>
       </div>
       {isOpen && <HeaderModal/>}
-      {isSearchOpen && !isOpen && <Search/>}
+      {isSearchOpen && !isOpen && (
+        <div className={"container"}>
+          <Search/>
+        </div>
+      )}
     </div>
   )
 }
