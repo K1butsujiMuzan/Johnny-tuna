@@ -27,7 +27,10 @@ function HeaderTop() {
           </ul>
         </nav>
       </div>
-      <Phone/>
+      <div className={styles.headerPhone}>
+        <Phone/>
+        <p className={styles.headerPhoneText}>Прием заказов с 9:00 до 23:00</p>
+      </div>
     </div>
   )
 }

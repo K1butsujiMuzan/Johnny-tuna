@@ -26,6 +26,7 @@
 
 .headerTopList{
   margin-inline: 1.875rem;
+  row-gap: 0.5rem;
 }
 
 .headerBorder{
@@ -46,4 +47,17 @@
 
 .headerTopIcon path{
   stroke: var(--color-text-light);
+}
+
+.headerPhone{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  row-gap: 0.25rem;
+}
+
+.headerPhoneText{
+  font-size: clamp(0.75rem, 0.83vw ,1rem);
+  font-weight: 500;
+  line-height: 1;
 }

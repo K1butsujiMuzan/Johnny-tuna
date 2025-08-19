@@ -1,13 +1,14 @@
 import styles from './NavLinks.module.css'
 import {Link} from "react-router";
 
-function NavLinks({to, children, isMobile}) {
+function NavLinks({to, children, isMobile, isBlack}) {
   return(
-    <li className={`${styles.headerTopItem} ${isMobile ? styles.headerTopItemMobile : ""}`}>
+    <li className={styles.Item}>
       <Link
         className={`
-          ${styles.headerTopLink}  
-          ${isMobile ? styles.headerTopLinkMobile : ""}
+          ${styles.TopLink}  
+          ${isMobile ? styles.TopLinkMobile : ""}
+          ${isBlack ? styles.isBlack : ""}
         `}
         to={to}
       >

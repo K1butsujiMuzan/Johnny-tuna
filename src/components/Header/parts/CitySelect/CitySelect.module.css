@@ -47,6 +47,7 @@
   background-color: var(--color-text-white);
   padding: 0 0.5rem 0.5rem 0.5rem;
   border-radius: 0 0 10px 10px;
+  z-index: 300;
 }
 
 .selectOption{

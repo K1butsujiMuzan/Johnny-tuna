@@ -1,0 +1,78 @@
+.footerTopInner{
+  display: flex;
+  justify-content: space-between;
+}
+
+.innerLeft{
+
+}
+
+.innerMiddle{
+  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  row-gap: 1.75rem;
+}
+
+.innerRight{
+
+}
+
+.footerLinks{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5.5rem;
+  row-gap: 1.875rem;
+}
+
+.navigationText{
+  font-size: clamp(1rem, 1.7777vw,1.25rem);
+  line-height: 1;
+  color: var(--color-text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.timePhoneContainer{
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.75rem;
+  align-items: center;
+}
+
+.middleText{
+  font-size: clamp(0.75rem, 0.83vw ,1rem);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.timeOfWork{
+  font-size: clamp(1.125rem, 1.25vw ,1.5rem);
+  line-height: 1;
+}
+
+.vkIcon{
+  width: 32px;
+  height: 32px;
+}
+
+.vkIcon path{
+  stroke: transparent;
+  fill: var(--color-accent);
+}
+
+@media (hover: hover) {
+  .vkLink:hover .vkIcon path{
+    fill: var(--color-red-accent);
+  }
+}
+
+@media (hover: none) {
+  .vkLink:active .vkIcon path{
+    fill: var(--color-red-accent);
+  }
+}
+
+.vkLink:active .vkIcon{
+
+}
