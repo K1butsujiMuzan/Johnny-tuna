@@ -2,9 +2,7 @@ import styles from "./Header.module.css"
 import HeaderTop from "@components/Header/parts/HeaderTop/HeaderTop";
 import HeaderBottom from "@components/Header/parts/HeaderBottom/HeaderBottom";
 import {useEffect, useState} from "react";
-import HeaderTopMobile
-  from "@components/Header/parts/HeaderTopMobile/HeaderTopMobile";
-import Search from "@components/UI/Search/Search";
+import HeaderTopMobile from "@components/Header/parts/HeaderTopMobile/HeaderTopMobile";
 
 function Header() {
 
@@ -12,17 +10,26 @@ function Header() {
 
   useEffect(() => {
     const checkScreen = () => setIsMobile(window.innerWidth <= 1125)
+
     checkScreen()
     window.addEventListener("resize", checkScreen)
-    return () => window.removeEventListener("resize", checkScreen)
+
+    return () => {
+      window.removeEventListener("resize", checkScreen)
+    }
   }, []);
 
   return(
-    <header className={styles.header}>
-      {!isMobile && <HeaderTop />}
-      {!isMobile && <HeaderBottom/>}
-      {isMobile && <HeaderTopMobile/>}
-    </header>
+    <>
+      <header className={styles.header}>
+        {!isMobile && <HeaderTop />}
+
+        {isMobile && <HeaderTopMobile/>}
+      </header>
+      <div className={styles.headerBottom}>
+        {!isMobile && <HeaderBottom/>}
+      </div>
+    </>
   )
 }
 

@@ -21,14 +21,14 @@ function BasketButton() {
           className={styles.quantity}
           aria-label={"Количество товаров"}
         >
-          5
+          0
         </span>
       </div>
       <span
         className={styles.basketBalance}
         aria-label={"Стоимость"}
       >
-        1 089₽
+        0₽
       </span>
     </button>
   )

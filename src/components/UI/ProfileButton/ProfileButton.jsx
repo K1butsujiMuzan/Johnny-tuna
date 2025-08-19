@@ -20,7 +20,7 @@ function ProfileButton() {
           className={styles.pointsText}
           aria-label={"Баллы"}
         >
-          174
+          0
         </span>
         <svg
           aria-hidden={true}
