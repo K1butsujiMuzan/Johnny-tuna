@@ -1,14 +1,5 @@
-.basketButton{
-  white-space: nowrap;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  row-gap: 0.5rem;
-  border: none;
-  height: 4.375rem;
-  width: 5rem;
-  background-color: transparent;
+.basketLink{
+
 }
 
 .basket{
@@ -45,25 +36,25 @@
 }
 
 @media (hover: hover) {
-  .basketButton:hover .basketIcon{
+  .basketLink:hover .basketIcon{
     stroke: var(--color-accent);
   }
-  .basketButton:hover .basketBalance{
+  .basketLink:hover .basketBalance{
     color: var(--color-accent);
   }
-  .basketButton:hover .quantity{
+  .basketLink:hover .quantity{
     background-color: var(--color-accent);
   }
 }
 
 @media (hover: none) {
-  .basketButton:active .basketIcon{
+  .basketLink:active .basketIcon{
     stroke: var(--color-accent);
   }
-  .basketButton:active .basketBalance{
+  .basketLink:active .basketBalance{
     color: var(--color-accent);
   }
-  .basketButton:active .quantity{
+  .basketLink:active .quantity{
     background-color: var(--color-accent);
   }
 }

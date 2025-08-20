@@ -1,7 +1,7 @@
 import GooglePlay from "@assets/images/Header/GooglePlay.png";
 import AppStore from "@assets/images/Header/AppStore.png";
 
-function Soc1als() {
+function Socials() {
   const socialsLinks = [
     {
       link: "https://play.google.com/store/apps/details?id=com.dts.freefiremax&pli=1",
@@ -31,4 +31,4 @@ function Soc1als() {
   )
 }
 
-export default Soc1als
+export default Socials

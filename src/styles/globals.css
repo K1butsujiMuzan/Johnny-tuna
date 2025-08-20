@@ -45,20 +45,19 @@ a{
 }
 
 h1{
-  font-size: clamp(0.75rem, 2.08vw, 2.5rem);
-
+  font-size: clamp(0.75rem, 3.33vw, 2.5rem);
 }
 
 h2{
-  font-size: clamp(1rem, 1.66vw, 2rem);
+  font-size: clamp(1.25rem, 2.66vw, 2rem);
 }
 
 h3{
-  font-size: clamp(1.25rem, 1.04vw, 1rem);
+  font-size: clamp(1rem, 1.6666vw, 1.25rem);
 }
 
 h4{
-  font-size: clamp(1.125rem, 0.9375vw, 0.875rem);
+  font-size: clamp(0.875rem, 1.5vw, 1.125rem);
 }
 
 @media (hover: hover) {
@@ -68,9 +67,9 @@ h4{
 }
 
 main{
-  height: 3000px;
+  flex: 1;
+  min-height: 100dvh;
 }
-
 
 .container{
   width: 100%;
@@ -78,3 +77,15 @@ main{
   padding-inline: var(--padding-x);
 }
 
+.headerIconLink{
+  white-space: nowrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  row-gap: 0.5rem;
+  border: none;
+  height: 4.375rem;
+  width: 5rem;
+  background-color: transparent;
+}

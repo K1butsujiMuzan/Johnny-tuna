@@ -9,8 +9,10 @@
   line-height: 1rem;
 }
 
-.TopLinkMobile{
-  font-size: 1.125rem;
+@media (max-width: 75rem) {
+  .TopLink{
+    font-size: 1.125rem;
+  }
 }
 
 .isBlack{
@@ -19,8 +21,9 @@
 
 
 @media (hover: none) {
-  .TopLinkMobile:active{
+  .TopLink:active{
     transform: scale(0.98);
+    color: var(--color-text-dark);
   }
   .isBlack:active{
     color: var(--color-text-light);

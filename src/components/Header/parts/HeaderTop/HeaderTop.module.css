@@ -17,7 +17,7 @@
   column-gap: 1.875rem;
 }
 
-@media (max-width: 81rem) {
+@media (max-width: 84.5rem) {
   .headerTopList{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -57,7 +57,7 @@
 }
 
 .headerPhoneText{
-  font-size: clamp(0.75rem, 0.83vw ,1rem);
+  font-size: 1rem;
   font-weight: 500;
   line-height: 1;
 }

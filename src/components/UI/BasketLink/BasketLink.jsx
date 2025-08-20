@@ -1,11 +1,13 @@
-import styles from "./BasketButton.module.css"
+import styles from "./BasketLink.module.css"
+import {Link} from "react-router";
 
-function BasketButton() {
+function BasketLink() {
   return(
-    <button
-      className={styles.basketButton}
+    <Link
+      className={`${styles.basketLink} headerIconLink`}
       aria-label={"Корзина"}
       type={"button"}
+      to={"/basket"}
     >
       <div className={styles.basket}>
         <svg
@@ -30,8 +32,8 @@ function BasketButton() {
       >
         0₽
       </span>
-    </button>
+    </Link>
   )
 }
 
-export default BasketButton
+export default BasketLink

@@ -3,8 +3,16 @@
   height: auto;
 }
 
+.footerLogo{
+  width: 19.5rem;
+  height: auto;
+}
+
 @media (max-width: 48rem) {
   .headerLogo{
     width: max(14.625rem, 57.55vw);
+  }
+  .footerLogo{
+
   }
 }

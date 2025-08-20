@@ -2,7 +2,7 @@ import styles from "./HeaderModal.module.css"
 import CitySelect from "@components/Header/parts/CitySelect/CitySelect";
 import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
-import Soc1als from "@components/UI/Soc1als/Soc1als";
+import Socials from "@components/UI/Soc1als/Socials";
 
 function HeaderModal() {
   return (
@@ -17,11 +17,11 @@ function HeaderModal() {
         </div>
         <nav>
           <ul className={styles.modalUpLinks}>
-            <NavLinks isMobile to={"/login"} isBlack>Войти (Профиль)</NavLinks>
-            <NavLinks isMobile to={"/stocks"} isBlack>Акции</NavLinks>
-            <NavLinks isMobile to={"/about"} isBlack>О нас</NavLinks>
-            <NavLinks isMobile to={"/delivery"} isBlack>Доставка</NavLinks>
-            <NavLinks isMobile to={"/contacts"} isBlack>Контакты</NavLinks>
+            <NavLinks to={"/login"} isBlack>Войти (Профиль)</NavLinks>
+            <NavLinks to={"/stocks"} isBlack>Акции</NavLinks>
+            <NavLinks to={"/about"} isBlack>О нас</NavLinks>
+            <NavLinks to={"/delivery"} isBlack>Доставка</NavLinks>
+            <NavLinks to={"/contacts"} isBlack>Контакты</NavLinks>
           </ul>
         </nav>
       </div>
@@ -36,7 +36,7 @@ function HeaderModal() {
           </div>
         </div>
         <div className={styles.modalDownSoc1als}>
-          <Soc1als/>
+          <Socials/>
         </div>
       </div>
     </div>

@@ -75,7 +75,7 @@
 
 .headerButtons{
   display: flex;
-  column-gap: clamp(1rem, 2.84vw, 2rem);
+  column-gap: clamp(1rem, 2.6666vw, 2rem);
 }
 
 .searchButton{

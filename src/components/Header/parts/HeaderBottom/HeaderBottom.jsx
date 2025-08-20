@@ -1,15 +1,15 @@
 import styles from "./HeaderBottom.module.css";
 import Search from "@components/UI/Search/Search";
-import BasketButton from "@components/UI/BasketButton/BasketButton";
-import ProfileButton from "@components/UI/ProfileButton/ProfileButton";
+import BasketLink from "@components/UI/BasketLink/BasketLink";
+import ProfileLink from "@components/UI/ProfileLink/ProfileLink";
 
 function HeaderBottom() {
   return(
     <div className={`${styles.headerBottom} container`}>
       <Search/>
       <div className={styles.headerBottomButtons}>
-        <BasketButton/>
-        <ProfileButton/>
+        <BasketLink/>
+        <ProfileLink/>
       </div>
     </div>
   )

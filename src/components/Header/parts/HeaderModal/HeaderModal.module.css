@@ -70,7 +70,7 @@
 }
 
 .headerPhoneText{
-  font-size: clamp(0.75rem, 0.83vw ,1rem);
+  font-size: clamp(0.75rem, 1.33vw ,1rem);
   font-weight: 500;
   line-height: 1;
 }

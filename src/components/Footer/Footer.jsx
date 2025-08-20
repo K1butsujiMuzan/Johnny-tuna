@@ -4,7 +4,10 @@ import FooterTop from "@components/Footer/parts/FooterTop/FooterTop";
 function Footer() {
   return(
     <footer className={styles.footer}>
-      <FooterTop/>
+      <div className={styles.footerTop}>
+        <FooterTop/>
+      </div>
+      <p className={`${styles.footerBottom} container`}>2023 © «Джонни Тунец» - Новая волна вкуса</p>
     </footer>
   )
 }

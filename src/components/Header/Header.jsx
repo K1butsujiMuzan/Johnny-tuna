@@ -9,7 +9,7 @@ function Header() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    const checkScreen = () => setIsMobile(window.innerWidth <= 1125)
+    const checkScreen = () => setIsMobile(window.innerWidth <= 1200)
 
     checkScreen()
     window.addEventListener("resize", checkScreen)
@@ -26,9 +26,12 @@ function Header() {
 
         {isMobile && <HeaderTopMobile/>}
       </header>
-      <div className={styles.headerBottom}>
-        {!isMobile && <HeaderBottom/>}
-      </div>
+      {!isMobile && (
+        <div className={styles.headerBottom}>
+          <HeaderBottom/>
+        </div>
+      )}
+
     </>
   )
 }

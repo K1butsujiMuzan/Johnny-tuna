@@ -1,6 +1,8 @@
 import styles from "./FooterTop.module.css"
 import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
+import Logo from "@components/UI/Logo/Logo";
+import Socials from "@components/UI/Soc1als/Socials";
 
 function FooterTop() {
   return(
@@ -10,10 +12,10 @@ function FooterTop() {
         <nav>
           <ul className={styles.footerLinks}>
             <NavLinks to={"/stocks"} isBlack>Акции</NavLinks>
-            <NavLinks to={"/about"} isBlack>О нас</NavLinks>
-            <NavLinks to={"/delivery"} isBlack>Доставка</NavLinks>
             <NavLinks to={"/contacts"} isBlack>Контакты</NavLinks>
+            <NavLinks to={"/about"} isBlack>О нас</NavLinks>
             <NavLinks to={"/information"} isBlack>Правовая информация</NavLinks>
+            <NavLinks to={"/delivery"} isBlack>Доставка</NavLinks>
           </ul>
         </nav>
       </div>
@@ -42,6 +44,14 @@ function FooterTop() {
         </div>
       </div>
       <div className={styles.innerRight}>
+        <Logo className={"footerLogo"}/>
+        <span>
+          <p className={styles.downloadText}>Любимые блюда в приложении!</p>
+          <p className={styles.downloadText}>Скачай сейчас!</p>
+        </span>
+        <div className={styles.socials}>
+          <Socials/>
+        </div>
 
       </div>
     </div>

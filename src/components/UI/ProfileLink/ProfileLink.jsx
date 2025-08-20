@@ -1,11 +1,12 @@
-import styles from "./ProfileButton.module.css"
+import {Link} from "react-router";
+import styles from "./ProfileLink.module.css"
 
-function ProfileButton() {
+function ProfileLink() {
   return(
-    <button
-      className={styles.profileButton}
+    <Link
+      className={`${styles.profileLink} headerIconLink`}
       aria-label={"Профиль"}
-      type={"button"}
+      to={"/login"}
     >
       <svg
         className={styles.profileIcon}
@@ -31,8 +32,8 @@ function ProfileButton() {
         </svg>
 
       </div>
-    </button>
+    </Link>
   )
 }
 
-export default ProfileButton
+export default ProfileLink
