@@ -1,0 +1,56 @@
+.mainForm{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  font-weight: 500;
+}
+
+.mainInput{
+  padding-block: 1rem;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  border: var(--gray-border);
+  outline: none;
+  caret-color: var(--color-accent);
+  color: var(--color-black);
+}
+
+.passwordInput{
+  border: none;
+}
+
+.mainInput::placeholder{
+  color: var(--color-text-light);
+}
+
+.passwordBlock{
+  border: var(--gray-border);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.passwordButton{
+  padding-inline: 1rem;
+  border: none;
+  background-color: transparent;
+}
+
+.passwordIcon{
+
+}
+
+@media (hover: hover) {
+  .passwordButton:hover .passwordIcon path{
+    fill: #35ADE1;
+  }
+}
+
+@media (hover: none) {
+  .passwordButton:active .passwordIcon path{
+    fill: #35ADE1;
+  }
+}
+

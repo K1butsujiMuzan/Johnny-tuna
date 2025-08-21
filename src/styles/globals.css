@@ -21,7 +21,6 @@ svg * {
 
 a:focus-visible,
 button:focus-visible,
-input:focus-visible,
 textarea:focus-visible,
 select:focus-visible{
   outline: 1px solid var(--color-black);

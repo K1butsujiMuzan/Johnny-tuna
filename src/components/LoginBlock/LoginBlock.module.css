@@ -1,0 +1,63 @@
+.loginBody{
+  background: linear-gradient(90deg, #ffffff,#adecff);
+}
+
+.loginBody main{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginBlock{
+  width: 37.5rem;
+  height: 50rem;
+  background-color: var(--color-text-white);
+  box-shadow: var(--main-shadow);
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.changeBlock{
+  height: 5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.changeButton{
+  border: none;
+  background-color: var(--color-gray-light);
+  transition: all 0.5s;
+  text-transform: uppercase;
+  color: var(--color-black);
+  font-size: clamp(1.5rem, 2.66vw, 2rem);
+}
+
+.activeButton{
+  background-color: var(--color-accent);
+  box-shadow: var(--main-shadow);
+  color: var(--color-text-white);
+}
+
+.loginInner{
+  justify-content: flex-start;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.loginInnerUp{
+  width: 100%;
+}
+
+.mainLink{
+  font-size: clamp(0.75rem, 1.33vw, 1rem);
+  color: var(--color-text-light);
+}
+
+.logo{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}

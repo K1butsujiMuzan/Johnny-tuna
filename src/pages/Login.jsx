@@ -1,4 +1,5 @@
 import useHead from "@/hooks/useHead";
+import LoginBlock from "@components/LoginBlock/LoginBlock"
 
 function Login() {
   useHead({
@@ -8,7 +9,9 @@ function Login() {
   })
   return(
     <>
-      <h1>Логин</h1>
+      <main>
+        <LoginBlock/>
+      </main>
     </>
   )
 }
