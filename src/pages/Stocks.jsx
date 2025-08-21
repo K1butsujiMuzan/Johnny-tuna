@@ -1,4 +1,11 @@
+import useHead from "@/hooks/useHead";
+
 function Stocks() {
+  useHead({
+    title: "Джонни Тунец | Акции",
+    description: "Специальные акции и скидки на продукцию нашего заведения",
+    keywords: "акции, промокоды, скидки, купоны, специальные предложения, роллы, пицца"
+  })
   return(
     <>
       <h1>Акции</h1>
