@@ -1,8 +1,8 @@
 import styles from "./HeaderTopMobile.module.css"
 import Logo from "@components/UI/Logo/Logo";
-import {useEffect, useState} from "react";
 import HeaderModal from "@components/Header/parts/HeaderModal/HeaderModal";
 import Search from "@components/UI/Search/Search";
+import {useEffect, useState} from "react";
 
 function HeaderTopMobile() {
   const [isOpen, setIsOpen] = useState(false)

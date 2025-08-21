@@ -1,9 +1,7 @@
-import Button from "@components/UI/Button/Button";
-
 function Main() {
   return(
     <>
-
+      <h1>Главная</h1>
     </>
   )
 }
