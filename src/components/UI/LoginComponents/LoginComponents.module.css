@@ -1,7 +1,7 @@
 .mainInput{
-  padding-block: 1rem;
+  padding-block: clamp(0.5rem, 2.08vw,1rem);
   padding-left: 0.5rem;
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 3.125vw, 1.5rem);
   line-height: 1;
   border: var(--gray-border);
   outline: none;
@@ -37,14 +37,19 @@
 
 .submitButton{
   width: clamp(9.5rem, 41.01vw, 19.6875rem);
-  height: 4.25rem;
+  height: clamp(3rem, 8.97vw,4.25rem);
   border: none;
   background-color: var(--color-accent);
   color: var(--color-text-white);
   font-size: clamp(1.5rem, 4.16vw, 2rem);
 }
 
-.submitButton:active{
+.submitButton:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submitButton:active:enabled{
   scale: 0.98;
 }
 
@@ -62,8 +67,13 @@
   opacity: 0;
 }
 
+.checkboxInput:focus-visible + .checkboxSquare{
+  outline: 1px solid var(--color-black);
+}
+
 .checkboxSquare{
   width: 1.75rem;
+  min-width: 1rem;
   aspect-ratio: 1;
   background-color: transparent;
   border: 1px solid var(--color-black);
@@ -78,7 +88,7 @@
 
 .checkboxText{
   color: var(--color-text-light);
-  font-size: 1rem;
+  font-size: clamp(0.75rem, 2.08vw, 1rem);
   line-height: 1.125rem;
 }
 
@@ -107,3 +117,17 @@
     color: var(--color-text-dark);
   }
 }
+
+/*
+
+        <CheckBox
+          text={"Я ознакомлен(а) с политикой конфиденциальности и даю согласие "}
+          link={"на обработку своих персональных данных"}
+          checked={formData.agree}
+          onChange={handleChange}
+          name={"agree"}
+          value={"agreement"}
+        />
+
+
+ */

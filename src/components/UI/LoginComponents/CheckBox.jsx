@@ -21,7 +21,9 @@ function CheckBox
         name={name}
         value={value}
       />
-      <span className={styles.checkboxSquare}>
+      <span
+        className={styles.checkboxSquare}
+      >
         {checked && (
           <svg
             className={styles.checkboxIcon}

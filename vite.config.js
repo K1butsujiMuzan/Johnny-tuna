@@ -15,7 +15,7 @@ export default defineConfig({
   },
   server: {
     allowedHosts: [
-      'ttmyb9zxtel6.share.zrok.io',
+      'lg26yce8uta5.share.zrok.io',
     ]
   },
 })
