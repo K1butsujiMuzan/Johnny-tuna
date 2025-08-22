@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 100vh;
 }
 
 .loginBlock{
@@ -15,6 +16,15 @@
   box-shadow: var(--main-shadow);
   display: grid;
   grid-template-rows: auto 1fr;
+  opacity: 0;
+  transform: translateY(-5rem);
+  transition: transform 0.5s, opacity 1s;
+  will-change: transform, opacity;
+}
+
+.visible{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .changeBlock{
@@ -29,7 +39,7 @@
   transition: all 0.5s;
   text-transform: uppercase;
   color: var(--color-black);
-  font-size: clamp(1.5rem, 2.66vw, 2rem);
+  font-size: 2rem;
 }
 
 .activeButton{
@@ -51,13 +61,32 @@
   width: 100%;
 }
 
-.mainLink{
-  font-size: clamp(0.75rem, 1.33vw, 1rem);
-  color: var(--color-text-light);
-}
-
 .logo{
   display: flex;
   justify-content: center;
   margin-bottom: 2rem;
+}
+
+.mainLink{
+  font-size: 1rem;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 48rem) {
+  .loginBlock{
+    width: 100%;
+    height: 100%;
+  }
+  .loginBody{
+    background: var(--color-text-white);
+  }
+  .changeButton{
+    font-size: clamp(1rem, 3.125vw, 1.5rem);
+  }
+}
+
+@media (hover: none) {
+  .mainLink:active{
+    color: var(--color-text-dark);
+  }
 }

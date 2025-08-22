@@ -6,25 +6,35 @@ import SignIn from "@components/LoginBlock/parts/SignIn/SignIn";
 
 function LoginBlock() {
   const [isOpen, setIsOpen] = useState("login")
+  const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     document.body.classList.add(styles.loginBody)
+    const timer = setTimeout(() => {
+      setIsVisible(true)
+    }, 50)
 
-    return () => document.body.classList.remove(styles.loginBody)
+    return () => {
+      document.body.classList.remove(styles.loginBody)
+      clearTimeout(timer)
+    }
+
   }, [])
 
   return(
-    <div className={styles.loginBlock}>
+    <div className={`${styles.loginBlock} ${isVisible ? styles.visible : ""}`}>
       <div className={styles.changeBlock}>
         <button
           className={`${styles.changeButton} ${isOpen === "registration" ? styles.activeButton : ""}`}
           onClick={() => setIsOpen("registration")}
+          aria-pressed={isOpen === "registration"}
         >
           регистрация
         </button>
         <button
           className={`${styles.changeButton} ${isOpen === "login" ? styles.activeButton : ""}`}
           onClick={() => setIsOpen("login")}
+          aria-pressed={isOpen === "login"}
         >
           вход
         </button>

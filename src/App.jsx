@@ -8,6 +8,7 @@ import Information from "@/pages/Information";
 import About from "@/pages/About";
 import MainLayout from "@/layouts/MainLayout";
 import Basket from "@/pages/Basket";
+import Recover from "@/pages/Recover";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/basket"} element={<Basket/>}></Route>
         </Route>
         <Route path={"/login"} element={<Login/>} />
+        <Route path={"/recover"} element={<Recover/>}></Route>
       </Routes>
     </>
   )

@@ -1,0 +1,109 @@
+.mainInput{
+  padding-block: 1rem;
+  padding-left: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1;
+  border: var(--gray-border);
+  outline: none;
+  caret-color: var(--color-accent);
+  color: var(--color-black);
+  width: 100%;
+}
+
+.passwordInput{
+  border: none;
+}
+
+.mainInput::placeholder{
+  color: var(--color-text-light);
+}
+
+.passwordBlock{
+  border: var(--gray-border);
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}
+
+.passwordButton{
+  padding-inline: 1rem;
+  border: none;
+  background-color: transparent;
+}
+
+.passwordIcon{
+
+}
+
+.submitButton{
+  width: clamp(9.5rem, 41.01vw, 19.6875rem);
+  height: 4.25rem;
+  border: none;
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  font-size: clamp(1.5rem, 4.16vw, 2rem);
+}
+
+.submitButton:active{
+  scale: 0.98;
+}
+
+.checkboxContainer{
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  column-gap: 0.75rem;
+}
+
+.checkboxInput{
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.checkboxSquare{
+  width: 1.75rem;
+  aspect-ratio: 1;
+  background-color: transparent;
+  border: 1px solid var(--color-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkboxIcon{
+  fill: var(--color-black);
+}
+
+.checkboxText{
+  color: var(--color-text-light);
+  font-size: 1rem;
+  line-height: 1.125rem;
+}
+
+.checkboxLink{
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+@media (hover: hover) {
+  .passwordButton:hover .passwordIcon path{
+    fill: #35ADE1;
+  }
+  .submitButton:hover{
+    background-color: var(--color-red-accent);
+  }
+}
+
+@media (hover: none) {
+  .passwordButton:active .passwordIcon path{
+    fill: #35ADE1;
+  }
+  .submitButton:active{
+    background-color: var(--color-red-accent);
+  }
+  .checkboxLink:active{
+    color: var(--color-text-dark);
+  }
+}
