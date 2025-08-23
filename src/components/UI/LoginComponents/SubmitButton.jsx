@@ -3,11 +3,12 @@ import styles from "./LoginComponents.module.css"
 function SubmitButton({
   children,
   onClick,
-  disabled = false
+  disabled = false,
+  isLoading
 }) {
   return(
     <button
-      className={styles.submitButton}
+      className={`${styles.submitButton} ${isLoading ? styles.isLoading : ""}`}
       onClick={onClick}
       type={"submit"}
       disabled={disabled}

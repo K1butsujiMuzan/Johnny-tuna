@@ -10,11 +10,12 @@ const PasswordInput = forwardRef(({
   onChange,
   required = false,
   disabled = false,
+  isRed
 }, ref) => {
   const [isHidden, setIsHidden] = useState(true)
 
   return(
-    <span className={styles.passwordBlock}>
+    <span className={`${styles.passwordBlock} ${isRed ? styles.isRed : ""}`}>
         <input
           ref={ref}
           className={`${styles.mainInput} ${styles.passwordInput}`}

@@ -10,11 +10,12 @@ const LoginInput = forwardRef(({
   value,
   onChange,
   required = false,
-  disabled = false
+  disabled = false,
+  isRed
 }, ref) => {
   return(
     <input
-      className={styles.mainInput}
+      className={`${styles.mainInput} ${isRed ? styles.isRed : ""}`}
       type={type}
       minLength={minLength}
       maxLength={maxLength}

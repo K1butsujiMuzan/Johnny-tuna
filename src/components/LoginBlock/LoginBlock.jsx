@@ -3,6 +3,7 @@ import {useEffect, useState} from "react";
 import Logo from "@components/UI/Logo/Logo";
 import {Link} from "react-router";
 import SignIn from "@components/LoginBlock/parts/SignIn/SignIn";
+import SignUp from "@components/LoginBlock/parts/SignUp/SignUp";
 
 function LoginBlock() {
   const [isOpen, setIsOpen] = useState("login")
@@ -47,6 +48,7 @@ function LoginBlock() {
           <Link className={styles.mainLink} to={"/"}>На главную</Link>
         </div>
         {isOpen === "login" && <SignIn/>}
+        {isOpen === "registration" && <SignUp/>}
       </div>
     </div>
   )

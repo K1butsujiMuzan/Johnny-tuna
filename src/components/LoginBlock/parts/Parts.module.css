@@ -38,7 +38,7 @@
 
 .error{
   font-size: 0.75rem;
-  color: #ff0000;
+  color: var(--color-red);
 }
 
 @media (hover: none) {

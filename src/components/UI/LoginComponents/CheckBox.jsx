@@ -4,7 +4,6 @@ function CheckBox
 ({
   text,
   link,
-  required = false,
   onChange,
   checked,
   name,
@@ -15,7 +14,6 @@ function CheckBox
       <input
         className={styles.checkboxInput}
         type={"checkbox"}
-        required={required}
         onChange={onChange}
         checked={checked}
         name={name}

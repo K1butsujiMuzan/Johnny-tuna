@@ -11,18 +11,28 @@ function SignIn() {
   const errorPassword = useRef(null)
 
   const [isLoading, setIsLoading] = useState(false)
-  const [errors, setErrors] = useState("")
+  const [errors, setErrors] = useState({
+    loginError: "",
+    passwordError: ""
+  })
   const [formData, setFormData] = useState({
     login: "",
     password: ""
   })
+
+  const clearErrors = useCallback(() => {
+    setErrors({
+      loginError: "",
+      passwordError: ""
+    })
+  }, [])
 
   const navigate = useNavigate()
 
   const submitData = async (event) => {
     event.preventDefault()
     setIsLoading(true)
-    setErrors("")
+    clearErrors()
 
     try{
       const response = await fetch("http://localhost:8080/api/v1/auth/login", {
@@ -43,13 +53,22 @@ function SignIn() {
 
       if(!response.ok || data.error) {
         if(data.error === "wrong password") {
-          setErrors("Неверный пароль")
+          setErrors({
+            loginError: "",
+            passwordError: "Неверный пароль"
+          })
           errorPassword.current.focus()
         } else if (data.error === "user not found") {
-          setErrors("Пользователь не найден")
+          setErrors({
+            loginError: "Пользователь не найден",
+            passwordError: ""
+          })
           errorLogin.current.focus()
         } else {
-          setErrors("Ошибка соединения с сервером, повторите попытку позже")
+          setErrors({
+            loginError: "Ошибка соединения с сервером, повторите попытку позже",
+            passwordError: ""
+          })
         }
         return
       }
@@ -61,17 +80,20 @@ function SignIn() {
 
     } catch (error) {
       console.error("Ошибка сети", error)
-      setErrors("Сервер не доступен, повторите попытку позже")
+      setErrors({
+        loginError: "Ошибка соединения с сервером, повторите попытку позже",
+        passwordError: ""
+      })
     } finally {
       setIsLoading(false)
     }
   }
 
   const handleChange = ((event) => {
-    if(errors) {
-      setErrors("")
+    if(errors.passwordError || errors.loginError) {
+     clearErrors()
     }
-    const {name, value, type, checked} = event.target
+    const {name, value} = event.target
     setFormData(prevState => ({
       ...prevState,
       [name]: value
@@ -87,24 +109,21 @@ function SignIn() {
     >
       <div className={styles.mainFormUp}>
         <div className={styles.errorBlock}>
-          {errors !== "Неверный пароль" && (
-            <p className={styles.error}>{errors}</p>
-          )}
+          <p className={styles.error}>{errors.loginError}</p>
           <LoginInput
             type={"text"}
             minLength={3}
-            maxLength={50}
+            maxLength={100}
             placeholder={"Логин или почта"}
             name={"login"}
             value={formData.login}
             onChange={handleChange}
             ref={errorLogin}
+            isRed={errors.loginError}
           />
         </div>
         <div className={styles.errorBlock}>
-          {errors === "Неверный пароль" && (
-            <p className={styles.error}>{errors}</p>
-          )}
+          <p className={styles.error}>{errors.passwordError}</p>
           <PasswordInput
             minLength={8}
             maxLength={20}
@@ -113,6 +132,7 @@ function SignIn() {
             value={formData.password}
             onChange={handleChange}
             ref={errorPassword}
+            isRed={errors.passwordError}
           />
         </div>
         <Link
@@ -127,8 +147,9 @@ function SignIn() {
       >
         <SubmitButton
           disabled={(formData.password.length < 8) || (formData.login.length < 3)}
+          isLoading={isLoading}
         >
-          Войти
+          {isLoading ? "Загрузка..." : "Войти"}
         </SubmitButton>
       </div>
     </form>
