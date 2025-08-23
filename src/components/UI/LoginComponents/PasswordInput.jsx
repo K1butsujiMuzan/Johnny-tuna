@@ -1,22 +1,22 @@
 import styles from "./LoginComponents.module.css"
-import {useState} from "react";
+import {useState, forwardRef} from "react";
 
-function PasswordInput
-({
+const PasswordInput = forwardRef(({
   minLength,
-   maxLength,
-   placeholder,
-   name,
-   value,
-   onChange,
-   required = false,
+  maxLength,
+  placeholder,
+  name,
+  value,
+  onChange,
+  required = false,
   disabled = false,
-}) {
+}, ref) => {
   const [isHidden, setIsHidden] = useState(true)
 
   return(
     <span className={styles.passwordBlock}>
         <input
+          ref={ref}
           className={`${styles.mainInput} ${styles.passwordInput}`}
           type={isHidden ? "password" : "text"}
           minLength={minLength}
@@ -57,6 +57,6 @@ function PasswordInput
           </button>
       </span>
   )
-}
+})
 
 export default PasswordInput

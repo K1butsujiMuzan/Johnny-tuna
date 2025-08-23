@@ -18,6 +18,18 @@
   color: var(--color-text-light);
 }
 
+.mainInput:-webkit-autofill,
+.mainInput:-webkit-autofill:focus,
+.mainInput:-webkit-autofill:hover{
+  -webkit-text-fill-color: var(--color-black);
+}
+
+.mainInput:autofill,
+.mainInput:autofill:focus,
+.mainInput:hover{
+  font-size: clamp(1rem, 3.125vw, 1.5rem);
+}
+
 .passwordBlock{
   border: var(--gray-border);
   width: 100%;

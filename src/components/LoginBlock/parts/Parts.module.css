@@ -29,6 +29,18 @@
   color: var(--color-text-light);
 }
 
+.errorBlock{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.error{
+  font-size: 0.75rem;
+  color: #ff0000;
+}
+
 @media (hover: none) {
   .linkToRecover:active{
     color: var(--color-text-dark);

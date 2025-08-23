@@ -1,5 +1,5 @@
 import styles from "../Parts.module.css"
-import {useCallback, useState} from "react";
+import {useCallback, useRef, useState} from "react";
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import PasswordInput from "@components/UI/LoginComponents/PasswordInput";
 import {Link, useNavigate} from "react-router-dom";
@@ -7,6 +7,9 @@ import SubmitButton from "@components/UI/LoginComponents/SubmitButton";
 import {setCookie} from "@/scripts/setCookie"
 
 function SignIn() {
+  const errorLogin = useRef(null)
+  const errorPassword = useRef(null)
+
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState("")
   const [formData, setFormData] = useState({
@@ -30,68 +33,88 @@ function SignIn() {
         })
       })
 
-      if(!response.ok) {
-        throw new Error(`Ошибка: ${response.status}`)
+      let data = {}
+
+      try{
+        data = await response.json()
+      } catch {
+        data = {}
       }
 
-      const data = await response.json()
-
-      if(data.error === "wrong password") {
-        setErrors("Неверный пароль")
+      if(!response.ok || data.error) {
+        if(data.error === "wrong password") {
+          setErrors("Неверный пароль")
+          errorPassword.current.focus()
+        } else if (data.error === "user not found") {
+          setErrors("Пользователь не найден")
+          errorLogin.current.focus()
+        } else {
+          setErrors("Ошибка соединения с сервером, повторите попытку позже")
+        }
         return
       }
 
-      if(data.error === "user not found") {
-        setErrors("Пользователь не найден")
-        return
-      }
-
-      if(data.result && !data.error) {
+      if(data.result) {
         setCookie("auth", data.result, 30)
         navigate("/", {replace: true})
       }
 
     } catch (error) {
-      console.error(error)
-      setErrors("Ошибка соединения с сервером, повторите попытку позже")
-      throw error
+      console.error("Ошибка сети", error)
+      setErrors("Сервер не доступен, повторите попытку позже")
     } finally {
       setIsLoading(false)
     }
   }
 
-  const handleChange = useCallback((event) => {
+  const handleChange = ((event) => {
+    if(errors) {
+      setErrors("")
+    }
     const {name, value, type, checked} = event.target
     setFormData(prevState => ({
       ...prevState,
       [name]: value
     }))
-  }, [])
+  })
 
   return(
     <form
       onSubmit={submitData}
       className={styles.mainForm}
       noValidate
+      autoComplete={"on"}
     >
       <div className={styles.mainFormUp}>
-        <LoginInput
-          type={"text"}
-          minLength={3}
-          maxLength={50}
-          placeholder={"Логин или почта"}
-          name={"login"}
-          value={formData.login}
-          onChange={handleChange}
-        />
-        <PasswordInput
-          minLength={8}
-          maxLength={20}
-          placeholder={"Пароль"}
-          name={"password"}
-          value={formData.password}
-          onChange={handleChange}
-        />
+        <div className={styles.errorBlock}>
+          {errors !== "Неверный пароль" && (
+            <p className={styles.error}>{errors}</p>
+          )}
+          <LoginInput
+            type={"text"}
+            minLength={3}
+            maxLength={50}
+            placeholder={"Логин или почта"}
+            name={"login"}
+            value={formData.login}
+            onChange={handleChange}
+            ref={errorLogin}
+          />
+        </div>
+        <div className={styles.errorBlock}>
+          {errors === "Неверный пароль" && (
+            <p className={styles.error}>{errors}</p>
+          )}
+          <PasswordInput
+            minLength={8}
+            maxLength={20}
+            placeholder={"Пароль"}
+            name={"password"}
+            value={formData.password}
+            onChange={handleChange}
+            ref={errorPassword}
+          />
+        </div>
         <Link
           className={styles.linkToRecover}
           to={"/recover"}
