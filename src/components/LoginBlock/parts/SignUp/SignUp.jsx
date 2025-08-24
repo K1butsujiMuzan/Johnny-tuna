@@ -1,6 +1,6 @@
 import styles from "../Parts.module.css"
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import PasswordInput from "@components/UI/LoginComponents/PasswordInput";
 import SubmitButton from "@components/UI/LoginComponents/SubmitButton";
 import CheckBox from "@components/UI/LoginComponents/CheckBox";
@@ -9,14 +9,19 @@ import {setCookie} from "@/scripts/setCookie";
 import {useNavigate} from "react-router-dom";
 
 function SignUp() {
-  const [serverError, setServerError] = useState("")
-  const [errorsWrite, setErrorsWrite] = useState({
+  const loginInput = useRef(null)
+  const emailInput = useRef(null)
+  const passwordInput = useRef(null)
+  const passwordRepeatInput = useRef(null)
+
+  const [isLoading, setIsLoading] = useState(false)
+  const [errorsState, setErrorsState] = useState({
     loginError: "",
     emailError: "",
     passwordError: "",
-    passwordRepeatError: ""
+    passwordRepeatError: "",
+    serverError: ""
   })
-  const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     login: "",
     email: "",
@@ -35,19 +40,33 @@ function SignUp() {
       formData.login,
       formData.email,
       formData.password,
-      formData.passwordRepeat
+      formData.passwordRepeat,
     )
 
-    setErrorsWrite(validationErrors)
-    console.log(errorsWrite)
+    setErrorsState(validationErrors)
 
     if(Object.values(validationErrors).some(error => error !== "")) {
       setIsLoading(false)
-      return
+
+      if(validationErrors.loginError) {
+        loginInput.current.focus()
+        return
+      } else if(validationErrors.emailError) {
+        emailInput.current.focus()
+        return
+      } else if(validationErrors.passwordError) {
+        passwordInput.current.focus()
+        return
+      } else if(validationErrors.passwordRepeatError) {
+        passwordRepeatInput.current.focus()
+        return
+      } else {
+        return
+      }
     }
 
     try{
-      const response = await fetch("http://localhost:8080/api/v1/auth/register", {
+      const response = await fetch("./api/v1/auth/register", {
         method: "POST",
         body: JSON.stringify({
           email: formData.email,
@@ -65,35 +84,46 @@ function SignUp() {
 
       if(!response.ok || data.error) {
         if(data.error === "user already exist") {
-          setServerError("У данной почты уже зарегистрирован аккаунт")
+          setErrorsState(prevState => ({
+            ...prevState,
+            serverError: "У данной почты уже зарегистрирован аккаунт"
+          }))
         } else {
-          setServerError("Ошибка соединения с сервером, повторите попытку позже")
+          setErrorsState(prevState => ({
+            ...prevState,
+            serverError: "Ошибка соединения с сервером, повторите попытку позже"
+          }))
         }
         return
       }
 
-      if(data.result !== null) {
+      if(data.result) {
         setCookie("auth", data.result, 30)
         navigate("/", {replace: true})
       }
 
     } catch(error) {
       console.log("Ошибка сети: ", error)
-      setServerError("Ошибка на стороне сервера, повторите попытку позже")
+      setErrorsState(prevState => ({
+        ...prevState,
+        serverError: "Ошибка на стороне сервера, повторите попытку позже"
+      }))
     } finally {
       setIsLoading(false)
     }
   }
 
   const handleChange = ((event) => {
-    if(serverError) {
-      setServerError("")
-    }
     const {name, value, checked, type} = event.target
 
     setFormData(prevState => ({
       ...prevState,
       [name]: type === "checkbox" ? checked : value
+    }))
+
+    setErrorsState(prevState => ({
+      ...prevState,
+      [`${name}Error`]: ""
     }))
   })
 
@@ -106,7 +136,7 @@ function SignUp() {
     >
       <div className={styles.mainFormUp}>
         <div className={styles.errorBlock}>
-          <p className={styles.error}>{errorsWrite.loginError || serverError}</p>
+          <p className={styles.error}>{errorsState.loginError || errorsState.serverError}</p>
           <LoginInput
             type={"text"}
             minLength={3}
@@ -115,10 +145,11 @@ function SignUp() {
             name={"login"}
             value={formData.login}
             onChange={handleChange}
+            ref={loginInput}
           />
         </div>
         <div className={styles.errorBlock}>
-          <p className={styles.error}>{errorsWrite.emailError}</p>
+          <p className={styles.error}>{errorsState.emailError}</p>
           <LoginInput
             type={"email"}
             minLength={10}
@@ -127,10 +158,11 @@ function SignUp() {
             name={"email"}
             value={formData.email}
             onChange={handleChange}
+            ref={emailInput}
           />
         </div>
         <div className={styles.errorBlock}>
-          <p className={styles.error}>{errorsWrite.passwordError}</p>
+          <p className={styles.error}>{errorsState.passwordError}</p>
           <PasswordInput
             minLength={8}
             maxLength={20}
@@ -138,10 +170,11 @@ function SignUp() {
             name={"password"}
             value={formData.password}
             onChange={handleChange}
+            ref={passwordInput}
           />
         </div>
         <div className={styles.errorBlock}>
-          <p className={styles.error}>{errorsWrite.passwordRepeatError}</p>
+          <p className={styles.error}>{errorsState.passwordRepeatError}</p>
           <PasswordInput
             minLength={8}
             maxLength={20}
@@ -149,6 +182,7 @@ function SignUp() {
             name={"passwordRepeat"}
             value={formData.passwordRepeat}
             onChange={handleChange}
+            ref={passwordRepeatInput}
           />
         </div>
       </div>

@@ -5,7 +5,8 @@ export const checkRegistration = (login, email, password, passwordRepeat) => {
     loginError: "",
     emailError: "",
     passwordError: "",
-    passwordRepeatError: ""
+    passwordRepeatError: "",
+    serverError: ""
   }
 
   const checkPassword = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\s]).+$/.test(password)
