@@ -10,7 +10,7 @@
 
 .loginBlock{
   width: 37.5rem;
-  height: 50rem;
+  min-height: 50rem;
   background-color: var(--color-text-white);
   box-shadow: var(--main-shadow);
   display: grid;
@@ -76,6 +76,7 @@
     width: 100%;
     height: 100%;
     box-shadow: none;
+    min-height: 0;
   }
 
   .loginBody{

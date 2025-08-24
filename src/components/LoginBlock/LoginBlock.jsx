@@ -27,7 +27,9 @@ function LoginBlock() {
       <div className={styles.changeBlock}>
         <button
           className={`${styles.changeButton} ${isOpen === "registration" ? styles.activeButton : ""}`}
-          onClick={() => setIsOpen("registration")}
+          onClick={() => {
+            setIsOpen("registration")
+          }}
           aria-pressed={isOpen === "registration"}
         >
           регистрация

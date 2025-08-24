@@ -81,7 +81,7 @@ function SignIn() {
     } catch (error) {
       console.error("Ошибка сети", error)
       setErrors({
-        loginError: "Ошибка соединения с сервером, повторите попытку позже",
+        loginError: "Ошибка на стороне сервера, повторите попытку позже",
         passwordError: ""
       })
     } finally {
