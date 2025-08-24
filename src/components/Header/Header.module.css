@@ -7,6 +7,18 @@
   align-items: center;
 }
 
+.headerBottom{
+  padding-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-text-white);
+  z-index: 200;
+  border-bottom: var(--gray-border);
+}
+
 @media (max-width: 75rem) {
   .header{
     padding-block: 0.75rem;
@@ -19,13 +31,3 @@
   user-select: none;
 }
 
-.headerBottom{
-  padding-bottom: 0.5rem;
-  position: sticky;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background-color: var(--color-text-white);
-  z-index: 200;
-}

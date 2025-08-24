@@ -1,4 +1,5 @@
 import useHead from "@/hooks/useHead";
+import MainContainer from "@components/MainContainer/MainContainer";
 
 function Main() {
   useHead({
@@ -7,9 +8,7 @@ function Main() {
     keywords: "пицца, роллы, доставка еды, кафе, еда на дом"
   })
   return(
-    <>
-      <h1>Главная</h1>
-    </>
+    <MainContainer/>
   )
 }
 

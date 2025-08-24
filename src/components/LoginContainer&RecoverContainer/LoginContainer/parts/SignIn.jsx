@@ -1,10 +1,12 @@
-import styles from "../Parts.module.css"
+import styles from "./Parts.module.css"
 import {useCallback, useRef, useState} from "react";
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import PasswordInput from "@components/UI/LoginComponents/PasswordInput";
 import {Link, useNavigate} from "react-router-dom";
 import SubmitButton from "@components/UI/LoginComponents/SubmitButton";
 import {setCookie} from "@/scripts/setCookie"
+import {responsesTypes} from "@/constants/responsesTypes";
+import {errorsTypes} from "@/constants/errorsTypes";
 
 function SignIn() {
   const errorLogin = useRef(null)
@@ -52,21 +54,21 @@ function SignIn() {
       }
 
       if(!response.ok || data.error) {
-        if(data.error === "wrong password") {
+        if(data.error === responsesTypes.wrongPassword) {
           setErrors({
             loginError: "",
-            passwordError: "Неверный пароль"
+            passwordError: errorsTypes.wrongPassword
           })
           errorPassword.current.focus()
-        } else if (data.error === "user not found") {
+        } else if (data.error === responsesTypes.userNotFound) {
           setErrors({
-            loginError: "Пользователь не найден",
+            loginError: errorsTypes.userNotFound,
             passwordError: ""
           })
           errorLogin.current.focus()
         } else {
           setErrors({
-            loginError: "Ошибка соединения с сервером, повторите попытку позже",
+            loginError: errorsTypes.serverConnect,
             passwordError: ""
           })
         }
@@ -79,9 +81,9 @@ function SignIn() {
       }
 
     } catch (error) {
-      console.error("Ошибка сети", error)
+      console.error("Ошибка сети: ", error)
       setErrors({
-        loginError: "Ошибка на стороне сервера, повторите попытку позже",
+        loginError: errorsTypes.serverError,
         passwordError: ""
       })
     } finally {
@@ -136,7 +138,7 @@ function SignIn() {
           />
         </div>
         <Link
-          className={styles.linkToRecover}
+          className={styles.linkForm}
           to={"/recover"}
         >
           Не помню пароль
@@ -148,6 +150,7 @@ function SignIn() {
         <SubmitButton
           disabled={(formData.password.length < 8) || (formData.login.length < 3)}
           isLoading={isLoading}
+          type={"submit"}
         >
           {isLoading ? "Загрузка..." : "Войти"}
         </SubmitButton>

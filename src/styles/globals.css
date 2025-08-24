@@ -2,7 +2,7 @@
 body{
   font-family: var(--font-main);
   font-weight: 600;
-  background-color: #FF7255;
+  background-color: var(--color-text-white);
 }
 
 *{
@@ -68,6 +68,9 @@ h4{
 main{
   flex: 1;
   min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .container{

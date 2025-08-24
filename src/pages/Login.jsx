@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import LoginBlock from "@components/LoginBlock/LoginBlock"
+import LoginContainer from "@components/LoginContainer&RecoverContainer/LoginContainer/LoginContainer"
 
 function Login() {
   useHead({
@@ -8,11 +8,9 @@ function Login() {
     keywords: "вход, регистрация, авторизация"
   })
   return(
-    <>
-      <main>
-        <LoginBlock/>
-      </main>
-    </>
+    <main>
+      <LoginContainer/>
+    </main>
   )
 }
 

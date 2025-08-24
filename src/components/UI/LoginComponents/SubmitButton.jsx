@@ -4,13 +4,14 @@ function SubmitButton({
   children,
   onClick,
   disabled = false,
-  isLoading
+  isLoading,
+  type
 }) {
   return(
     <button
       className={`${styles.submitButton} ${isLoading ? styles.isLoading : ""}`}
       onClick={onClick}
-      type={"submit"}
+      type={type}
       disabled={disabled}
     >
       {children}

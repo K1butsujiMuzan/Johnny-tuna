@@ -1,12 +1,13 @@
-import styles from "../Parts.module.css"
+import styles from "./Parts.module.css"
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import {useRef, useState} from "react";
 import PasswordInput from "@components/UI/LoginComponents/PasswordInput";
 import SubmitButton from "@components/UI/LoginComponents/SubmitButton";
 import CheckBox from "@components/UI/LoginComponents/CheckBox";
-import {checkRegistration} from "@/scripts/checkRegistration";
-import {setCookie} from "@/scripts/setCookie";
-import {useNavigate} from "react-router-dom";
+import {checkRegistration} from "@/scripts/Login/checkRegistration";
+import {errorsTypes} from "@/constants/errorsTypes";
+import {responsesTypes} from "@/constants/responsesTypes";
+import {Link} from "react-router-dom";
 
 function SignUp() {
   const loginInput = useRef(null)
@@ -14,6 +15,7 @@ function SignUp() {
   const passwordInput = useRef(null)
   const passwordRepeatInput = useRef(null)
 
+  const [showConfirmation, setShowConfirmation] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [errorsState, setErrorsState] = useState({
     loginError: "",
@@ -29,8 +31,6 @@ function SignUp() {
     passwordRepeat: "",
     agreement: false
   })
-
-  const navigate = useNavigate()
 
   const submitData = async (event) =>{
     event.preventDefault()
@@ -66,7 +66,7 @@ function SignUp() {
     }
 
     try{
-      const response = await fetch("./api/v1/auth/register", {
+      const response = await fetch("http://localhost:8080/api/v1/auth/register", {
         method: "POST",
         body: JSON.stringify({
           email: formData.email,
@@ -83,30 +83,29 @@ function SignUp() {
       }
 
       if(!response.ok || data.error) {
-        if(data.error === "user already exist") {
+        if(data.error === responsesTypes.userAlreadyExist) {
           setErrorsState(prevState => ({
             ...prevState,
-            serverError: "У данной почты уже зарегистрирован аккаунт"
+            serverError: errorsTypes.alreadyExist
           }))
         } else {
           setErrorsState(prevState => ({
             ...prevState,
-            serverError: "Ошибка соединения с сервером, повторите попытку позже"
+            serverError: errorsTypes.serverConnect
           }))
         }
         return
       }
 
       if(data.result) {
-        setCookie("auth", data.result, 30)
-        navigate("/", {replace: true})
+        setShowConfirmation(true)
       }
 
     } catch(error) {
       console.log("Ошибка сети: ", error)
       setErrorsState(prevState => ({
         ...prevState,
-        serverError: "Ошибка на стороне сервера, повторите попытку позже"
+        serverError: errorsTypes.serverError
       }))
     } finally {
       setIsLoading(false)
@@ -121,11 +120,45 @@ function SignUp() {
       [name]: type === "checkbox" ? checked : value
     }))
 
-    setErrorsState(prevState => ({
-      ...prevState,
-      [`${name}Error`]: ""
-    }))
+    if(type !== "checkbox") {
+      setErrorsState(prevState => ({
+        ...prevState,
+        [`${name}Error`]: ""
+      }))
+    }
   })
+
+  const backToForm = () => {
+    setShowConfirmation(false)
+  }
+
+  if(showConfirmation) {
+    return (
+      <>
+        <div className={styles.confirmation}>
+          <span
+            className={styles.linkForm}
+            onClick={backToForm}
+          >
+            Назад
+          </span>
+          <div className={styles.confirmationDown}>
+            <p className={styles.confirmationText}>
+              Мы отправили письмо на <span className={styles.accent}>{formData.email}!</span> Перейдите по ссылке в письме для подтверждения аккаунта.
+            </p>
+            <SubmitButton>
+              <Link
+                to={"/"}
+                className={styles.linkToMain}
+              >
+                На главную
+              </Link>
+            </SubmitButton>
+          </div>
+        </div>
+      </>
+    )
+  }
 
   return(
     <form
@@ -146,6 +179,7 @@ function SignUp() {
             value={formData.login}
             onChange={handleChange}
             ref={loginInput}
+            isRed={errorsState.loginError}
           />
         </div>
         <div className={styles.errorBlock}>
@@ -159,6 +193,7 @@ function SignUp() {
             value={formData.email}
             onChange={handleChange}
             ref={emailInput}
+            isRed={errorsState.emailError}
           />
         </div>
         <div className={styles.errorBlock}>
@@ -171,6 +206,7 @@ function SignUp() {
             value={formData.password}
             onChange={handleChange}
             ref={passwordInput}
+            isRed={errorsState.passwordError}
           />
         </div>
         <div className={styles.errorBlock}>
@@ -183,6 +219,7 @@ function SignUp() {
             value={formData.passwordRepeat}
             onChange={handleChange}
             ref={passwordRepeatInput}
+            isRed={errorsState.passwordRepeatError}
           />
         </div>
       </div>
@@ -198,6 +235,7 @@ function SignUp() {
         <SubmitButton
           isLoading={isLoading}
           disabled={!formData.agreement}
+          type={"submit"}
         >
           {isLoading ? "Загрузка...": "Отправить"}
         </SubmitButton>

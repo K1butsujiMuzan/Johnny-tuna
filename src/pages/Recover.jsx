@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import RecoverBlock from "@components/RecoverBlock/RecoverBlock";
+import RecoverContainer from "@components/LoginContainer&RecoverContainer/RecoverContainer/RecoverContainer";
 
 function Recover() {
   useHead({
@@ -9,7 +9,7 @@ function Recover() {
   })
   return(
     <main>
-      <RecoverBlock/>
+      <RecoverContainer/>
     </main>
   )
 }

@@ -138,17 +138,3 @@
     color: var(--color-text-dark);
   }
 }
-
-/*
-
-        <CheckBox
-          text={"Я ознакомлен(а) с политикой конфиденциальности и даю согласие "}
-          link={"на обработку своих персональных данных"}
-          checked={formData.agree}
-          onChange={handleChange}
-          name={"agree"}
-          value={"agreement"}
-        />
-
-
- */

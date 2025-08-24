@@ -1,0 +1,96 @@
+.mainForm{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  font-weight: 500;
+  justify-content: space-between;
+  height: 100%;
+  margin-top: 2rem;
+}
+
+.mainFormUp{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  align-items: flex-start;
+}
+
+.mainFormDown{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  width: 100%;
+  align-items: center;
+}
+
+.errorBlock{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.error{
+  font-size: 0.75rem;
+  color: var(--color-red);
+}
+
+.linkForm{
+  font-size: 1rem;
+  color: var(--color-text-light);
+  cursor: pointer;
+}
+
+.confirmation{
+  margin-top: 0.5rem;
+  display: grid;
+  width: 100%;
+  font-weight: 500;
+  height: 100%;
+  grid-template-rows: auto 1fr;
+  row-gap: 3rem;
+}
+
+.accent{
+  color: var(--color-text-dark);
+}
+
+.confirmationDown{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.confirmationText{
+  font-size: clamp(1.5rem, 4.16vw, 2rem);
+}
+
+.linkToMain{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (hover: hover) {
+  .linkForm:hover{
+    color: var(--color-text-dark);
+  }
+  .linkToMain:hover{
+    color: var(--color-text-white);
+  }
+}
+
+@media (hover: none) {
+  .linkForm:active{
+    color: var(--color-text-dark);
+  }
+  .linkToMain:active{
+    color: var(--color-text-white);
+  }
+}

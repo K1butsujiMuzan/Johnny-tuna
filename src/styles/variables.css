@@ -9,6 +9,8 @@
   --color-gray-light: #d9d9d9;
   --color-red: #ff0000;
 
+  --main-border-radius: 0.75rem;
+
   --font-main: 'Inter', sans-serif;
 
   --main-transition: 0.2s;

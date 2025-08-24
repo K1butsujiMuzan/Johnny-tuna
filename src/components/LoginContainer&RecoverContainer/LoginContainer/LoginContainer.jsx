@@ -1,25 +1,21 @@
-import styles from "./LoginBlock.module.css"
+import styles from "../LoginAndRecoverContainers.module.css"
 import {useEffect, useState} from "react";
 import Logo from "@components/UI/Logo/Logo";
-import {Link} from "react-router";
-import SignIn from "@components/LoginBlock/parts/SignIn/SignIn";
-import SignUp from "@components/LoginBlock/parts/SignUp/SignUp";
+import {Link} from "react-router-dom";
+import SignIn from "@components/LoginContainer&RecoverContainer/LoginContainer/parts/SignIn";
+import SignUp from "@components/LoginContainer&RecoverContainer/LoginContainer/parts/SignUp";
+import useVisible from "@/hooks/useVisible";
 
-function LoginBlock() {
+function LoginContainer() {
   const [isOpen, setIsOpen] = useState("login")
-  const [isVisible, setIsVisible] = useState(false)
+
+  const isVisible = useVisible(50)
 
   useEffect(() => {
     document.body.classList.add(styles.loginBody)
-    const timer = setTimeout(() => {
-      setIsVisible(true)
-    }, 50)
-
     return () => {
       document.body.classList.remove(styles.loginBody)
-      clearTimeout(timer)
     }
-
   }, [])
 
   return(
@@ -56,4 +52,4 @@ function LoginBlock() {
   )
 }
 
-export default LoginBlock
+export default LoginContainer
