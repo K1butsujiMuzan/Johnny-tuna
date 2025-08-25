@@ -5,8 +5,8 @@
 }
 
 .sliderImage{
-  box-sizing: border-box;
   width: 100%;
+  box-sizing: border-box;
   max-width: calc(var(--container-width) + var(--padding-x) + var(--padding-x));
   user-select: none;
   border-radius: var(--main-border-radius);
@@ -28,6 +28,25 @@
   stroke: var(--color-accent);
 }
 
+.sliderCircles{
+  padding-top: clamp(0.5rem, 1vw, 0.75rem);
+  display: flex;
+  justify-content: center;
+  gap: clamp(0.5rem, 0.83vw, 0.625rem);
+}
+
+.sliderCircle{
+  width: clamp(0.5rem, 1vw, 0.75rem);
+  aspect-ratio: 1;
+  background-color: rgba(0, 0, 0, 0.15);
+  border: none;
+  border-radius: 50%;
+}
+
+.sliderCircleActive{
+  background-color: var(--color-accent);
+}
+
 @media (hover: hover) {
   .sliderArrowButtonLeft:hover > .sliderArrow path,
   .sliderArrowButtonRight:hover > .sliderArrow path{
@@ -41,12 +60,20 @@
   }
 }
 
+@media (hover: none) {
+  .sliderArrowButtonLeft:active > .sliderArrow path,
+  .sliderArrowButtonRight:active > .sliderArrow path{
+    stroke: var(--color-red-accent);
+  }
+}
+
 @media (max-width: 75rem) {
   .sliderArrowButton{
     display: none;
   }
   .sliderImage{
     width: 100dvw;
+    border-radius: 0;
   }
 }
 
