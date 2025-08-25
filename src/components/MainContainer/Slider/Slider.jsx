@@ -1,14 +1,39 @@
 import styles from "./Slider.module.css"
-import slide1 from "@/assets/images/Slider/SliderImage1.png"
-import slide2 from "@/assets/images/Slider/SliderImage2.png"
-import slide3 from "@/assets/images/Slider/SliderImage3.png"
+import slide1_png from "@/assets/images/Slider/SliderImage1.png"
+import slide1_webp from "@/assets/images/Slider/SliderImage1.webp"
+import slide1_avif from "@/assets/images/Slider/SliderImage1.avif"
+import slide2_png from "@/assets/images/Slider/SliderImage2.png"
+import slide2_webp from "@/assets/images/Slider/SliderImage2.webp"
+import slide2_avif from "@/assets/images/Slider/SliderImage2.avif"
+import slide3_png from "@/assets/images/Slider/SliderImage3.png"
+import slide3_webp from "@/assets/images/Slider/SliderImage3.webp"
+import slide3_avif from "@/assets/images/Slider/SliderImage3.avif"
+
 import {useEffect, useState} from "react";
 
 function Slider() {
   const images = [
-    slide1,
-    slide2,
-    slide3
+    {
+      sources: [
+        {srcSet: slide1_avif, type: "image/avif"},
+        {srcSet: slide1_webp, type: "image/webp"},
+      ],
+      src: slide1_png
+    },
+    {
+      sources: [
+        {srcSet: slide2_avif, type: "image/avif"},
+        {srcSet: slide2_webp, type: "image/webp"},
+      ],
+      src: slide2_png
+    },
+    {
+      sources: [
+        {srcSet: slide3_avif, type: "image/avif"},
+        {srcSet: slide3_webp, type: "image/webp"},
+      ],
+      src: slide3_png
+    }
   ]
 
   const alts = [
@@ -33,13 +58,12 @@ function Slider() {
 
   useEffect(() => {
     const changeImage = setInterval(() => {
-      moveForward()
+      setCurrentImage(prevImage => (
+        prevImage === images.length - 1 ? 0 : prevImage + 1
+      ))
     }, 5000)
 
     return () => clearInterval(changeImage)
-  }, [moveForward]);
-
-  useEffect(() => {
   }, [currentImage]);
 
   return(
@@ -47,7 +71,7 @@ function Slider() {
       <div
         className={styles.sliderInner}
         role={"region"}
-        aria-label={"Слайдер с акциями пиццерии"}
+        aria-label={`Слайдер с акциями пиццерии. Текущий слайд - ${currentImage + 1} из ${images.length}: ${alts[currentImage]}`}
         aria-roledescription={"carousel"}
       >
         <button
@@ -65,13 +89,22 @@ function Slider() {
           </svg>
         </button>
 
-        <img
-          className={styles.sliderImage}
-          src={images[currentImage]}
-          alt={alts[currentImage]}
-          height={400}
-          width={1480}
-        />
+        <picture>
+          {images[currentImage].sources.map((source, index) => (
+            <source
+              key={index}
+              srcSet={source.srcSet}
+              type={source.type}
+            />
+          ))}
+          <img
+            className={styles.sliderImage}
+            src={images[currentImage].src}
+            alt={alts[currentImage]}
+            height={400}
+            width={1480}
+          />
+        </picture>
 
         <button
           className={`${styles.sliderArrowButton} ${styles.sliderArrowButtonRight}`}
