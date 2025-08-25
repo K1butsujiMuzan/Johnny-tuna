@@ -4,12 +4,10 @@ import Logo from "@components/UI/Logo/Logo";
 import {Link} from "react-router-dom";
 import SignIn from "@components/LoginContainer&RecoverContainer/LoginContainer/parts/SignIn";
 import SignUp from "@components/LoginContainer&RecoverContainer/LoginContainer/parts/SignUp";
-import useVisible from "@/hooks/useVisible";
+import {motion} from "framer-motion";
 
 function LoginContainer() {
   const [isOpen, setIsOpen] = useState("login")
-
-  const isVisible = useVisible(50)
 
   useEffect(() => {
     document.body.classList.add(styles.loginBody)
@@ -19,7 +17,12 @@ function LoginContainer() {
   }, [])
 
   return(
-    <div className={`${styles.loginBlock} ${isVisible ? styles.visible : ""}`}>
+    <motion.div
+      className={styles.loginBlock}
+      initial={{opacity: 0, translateY: -30}}
+      animate={{opacity: 1, translateY: 0}}
+      transition={{duration: 1}}
+    >
       <div className={styles.changeBlock}>
         <button
           className={`${styles.changeButton} ${isOpen === "registration" ? styles.activeButton : ""}`}
@@ -48,7 +51,7 @@ function LoginContainer() {
         {isOpen === "login" && <SignIn/>}
         {isOpen === "registration" && <SignUp/>}
       </div>
-    </div>
+    </motion.div>
   )
 }
 

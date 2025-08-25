@@ -15,15 +15,6 @@
   box-shadow: var(--main-shadow);
   display: grid;
   grid-template-rows: auto 1fr;
-  opacity: 0;
-  transform: translateY(-5rem);
-  transition: transform 0.5s, opacity 1s;
-  will-change: transform, opacity;
-}
-
-.visible{
-  opacity: 1;
-  transform: translateY(0);
 }
 
 .changeBlock{

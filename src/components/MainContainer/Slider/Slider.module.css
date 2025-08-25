@@ -10,6 +10,7 @@
   max-width: calc(var(--container-width) + var(--padding-x) + var(--padding-x));
   user-select: none;
   border-radius: var(--main-border-radius);
+  transition: var(--main-transition);
 }
 
 .sliderArrowButton{
