@@ -1,16 +1,33 @@
 import styles from "./Slider.module.css"
 import {useEffect, useRef, useState} from "react";
 import {images} from "@/constants/sliderImages";
-import {motion} from "framer-motion"
+import {AnimatePresence, motion} from "framer-motion";
 
 function Slider() {
   const [currentImage, setCurrentImage] = useState(0)
+  const [direction, setDirection] = useState(1)
+
+  const sliderVariables = {
+    enter: (direction) => ({
+      x: direction > 0 ? 50 : -50,
+      opacity: 0
+    }),
+    center: {
+      opacity: 1,
+      x: 0
+    },
+    exit: (direction) => ({
+      x: direction > 0 ? -50 : 50,
+      opacity: 0
+    })
+  }
 
   const intervalRef = useRef(null)
 
   const startSlideInterval = () => {
     clearSlideInterval()
     intervalRef.current = setInterval(() => {
+      setDirection(1)
       setCurrentImage(prevImage => (
         prevImage === images.length - 1 ? 0 : prevImage + 1
       ))
@@ -28,6 +45,7 @@ function Slider() {
     setCurrentImage(prevImage => (
       prevImage === images.length - 1 ? 0 : prevImage + 1
     ))
+    setDirection(1)
     startSlideInterval()
   }
 
@@ -35,6 +53,7 @@ function Slider() {
     setCurrentImage(prevState => (
       prevState === 0 ? images.length - 1 : prevState - 1
     ))
+    setDirection(-1)
     startSlideInterval()
   }
 
@@ -67,28 +86,35 @@ function Slider() {
           </svg>
         </button>
 
-        <picture>
-          {images[currentImage].sources.map((source, index) => (
-            <source
-              key={index}
-              srcSet={source.srcSet}
-              type={source.type}
-            />
-          ))}
-          <motion.img
-            className={styles.sliderImage}
-            src={images[currentImage].src}
-            alt={images[currentImage].alt}
-            height={400}
-            width={1480}
-            loading={currentImage === 0 ? "eager" : "lazy"}
-            initial={{opacity: 0}}
-            animate={{
-              opacity: 1,
-              transition: {duration: 0.3}
-          }}
-          />
-        </picture>
+        <div className={styles.containerForPicture}>
+          <AnimatePresence mode={"wait"}>
+            <motion.picture
+              custom={direction}
+              key={images[currentImage].src}
+              variants={sliderVariables}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{duration: 0.3}}
+            >
+              {images[currentImage].sources.map((source, index) => (
+                <source
+                  key={index}
+                  srcSet={source.srcSet}
+                  type={source.type}
+                />
+              ))}
+              <motion.img
+                loading={currentImage === 0 ? "eager" : "lazy"}
+                className={styles.sliderImage}
+                src={images[currentImage].src}
+                alt={images[currentImage].alt}
+                height={400}
+                width={1480}
+              />
+            </motion.picture>
+          </AnimatePresence>
+        </div>
 
         <button
           className={`${styles.sliderArrowButton} ${styles.sliderArrowButtonRight}`}

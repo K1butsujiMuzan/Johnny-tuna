@@ -1,16 +1,17 @@
 .sliderInner{
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+  display: flex;
   align-items: center;
 }
 
-.sliderImage{
+.containerForPicture{
   width: 100%;
   box-sizing: border-box;
   max-width: calc(var(--container-width) + var(--padding-x) + var(--padding-x));
+}
+
+.sliderImage{
   user-select: none;
   border-radius: var(--main-border-radius);
-  transition: var(--main-transition);
 }
 
 .sliderArrowButton{
@@ -25,7 +26,7 @@
 }
 
 .sliderArrow path{
-  fill: var(--color-text-white);
+  fill: transparent;
   stroke: var(--color-accent);
 }
 
@@ -72,8 +73,10 @@
   .sliderArrowButton{
     display: none;
   }
-  .sliderImage{
+  .containerForPicture{
     width: 100dvw;
+  }
+  .sliderImage{
     border-radius: 0;
   }
 }
