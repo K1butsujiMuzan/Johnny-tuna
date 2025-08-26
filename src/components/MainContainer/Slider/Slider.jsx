@@ -87,7 +87,7 @@ function Slider() {
         </button>
 
         <div className={styles.containerForPicture}>
-          <AnimatePresence mode={"wait"}>
+          <AnimatePresence mode={"wait"} custom={direction}>
             <motion.picture
               custom={direction}
               key={images[currentImage].src}
@@ -140,6 +140,7 @@ function Slider() {
             key={images[index].src}
             onClick={() => {
               setCurrentImage(index)
+              setDirection(1)
               startSlideInterval()
             }}
             className={`${styles.sliderCircle} ${index === currentImage ? styles.sliderCircleActive : ""}`}

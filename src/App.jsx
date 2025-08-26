@@ -9,6 +9,7 @@ import About from "@/pages/About";
 import MainLayout from "@/layouts/MainLayout";
 import Basket from "@/pages/Basket";
 import Recover from "@/pages/Recover";
+import Verification from "@/pages/Verification";
 
 function App() {
   return (
@@ -23,7 +24,7 @@ function App() {
           <Route path={"/information"} element={<Information/>}></Route>
           <Route path={"/basket"} element={<Basket/>}></Route>
         </Route>
-
+        <Route path={"/verify/token/:token"} element={<Verification/>}></Route>
         <Route path={"/login"} element={<Login/>} />
         <Route path={"/recover"} element={<Recover/>}></Route>
       </Routes>

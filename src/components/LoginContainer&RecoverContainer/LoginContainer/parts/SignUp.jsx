@@ -97,7 +97,7 @@ function SignUp() {
         return
       }
 
-      if(data.result) {
+      if(!data.error) {
         setShowConfirmation(true)
       }
 
@@ -136,12 +136,14 @@ function SignUp() {
     return (
       <>
         <div className={styles.confirmation}>
-          <span
-            className={styles.linkForm}
-            onClick={backToForm}
-          >
+          <div className={styles.linkContainer}>
+            <span
+              className={styles.linkForm}
+              onClick={backToForm}
+            >
             Назад
           </span>
+          </div>
           <div className={styles.confirmationDown}>
             <p className={styles.confirmationText}>
               Мы отправили письмо на <span className={styles.accent}>{formData.email}!</span> Перейдите по ссылке в письме для подтверждения аккаунта.
