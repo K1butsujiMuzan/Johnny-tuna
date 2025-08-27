@@ -1,16 +1,15 @@
 import useHead from "@/hooks/useHead";
+import AboutUsContainer from "@components/AboutUsContainer/AboutUsContainer";
 
-function About() {
+function AboutUs() {
   useHead({
     title: "Джонни Тунец | О нас",
     description: "Информация о нашем заведении, условиях оформления заказов и времени времени работы",
     keywords: "информация, время работы, условия, история, информация о заказах"
   })
   return(
-    <>
-      <h1>О нас</h1>
-    </>
+    <AboutUsContainer/>
   )
 }
 
-export default About
+export default AboutUs

@@ -1,6 +1,7 @@
 import arrow from "@assets/icons/Header/Arrow.svg"
 import styles from "./CitySelect.module.css"
 import {useCallback, useEffect, useRef, useState} from "react";
+import {AnimatePresence, motion} from "framer-motion";
 
 function CitySelect({isMobile}) {
   const [isOpen, setIsOpen] = useState(false)
@@ -43,6 +44,26 @@ function CitySelect({isMobile}) {
     {value: "saint-petersburg", label: "Санкт-Петербург"},
   ]
 
+  const cityContainerVariants = {
+    enter: {
+      opacity: 0,
+      y: -10
+    },
+    center: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        staggerChildren: 0.08,
+        duration: 0.2
+      }
+    }
+  }
+
+  const cityVariants = {
+    enter: {opacity: 0},
+    center: {opacity: 1}
+  }
+
   return (
     <div className={styles.wrapper} ref={cityBlock}>
       <div
@@ -68,32 +89,36 @@ function CitySelect({isMobile}) {
         )}
 
       </div>
-      {isOpen && (
-        <div
-          role={"list"}
-          className={`
+        {isOpen && (
+          <motion.div
+            role={"list"}
+            className={`
             ${styles.selectList} 
             ${isMobile ? styles.selectListMobile : ""}
           `}
-        >
-          {cities.map((city) => (
-            <div
-              role={"option"}
-              key={city.value}
-              className={styles.selectOption}
-              onClick={() => citySelectEnter(city)}
-              onKeyDown={(event) => {
-                if (event.key === "Enter") {
-                  citySelectEnter(city)
-                }
-              }}
-              tabIndex={0}
-            >
-              {city.label}
-            </div>
-          ))}
-        </div>
-      )}
+            variants={cityContainerVariants}
+            initial={"enter"}
+            animate={"center"}
+          >
+            {cities.map((city) => (
+              <motion.div
+                role={"option"}
+                key={city.value}
+                className={styles.selectOption}
+                onClick={() => citySelectEnter(city)}
+                variants={cityVariants}
+                onKeyDown={(event) => {
+                  if (event.key === "Enter") {
+                    citySelectEnter(city)
+                  }
+                }}
+                tabIndex={0}
+              >
+                {city.label}
+              </motion.div>
+            ))}
+          </motion.div>
+        )}
     </div>
   )
 }

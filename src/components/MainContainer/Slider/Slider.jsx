@@ -68,7 +68,7 @@ function Slider() {
       <div
         className={styles.sliderInner}
         role={"region"}
-        aria-label={`Слайдер с акциями пиццерии. Текущий слайд - ${currentImage + 1} из ${images.length}: ${images[currentImage].alt}`}
+        aria-label={"Слайдер с акциями пиццерии."}
         aria-roledescription={"carousel"}
       >
         <button
@@ -140,7 +140,7 @@ function Slider() {
             key={images[index].src}
             onClick={() => {
               setCurrentImage(index)
-              setDirection(1)
+              setDirection((currentImage > index ? -1 : 1))
               startSlideInterval()
             }}
             className={`${styles.sliderCircle} ${index === currentImage ? styles.sliderCircleActive : ""}`}
