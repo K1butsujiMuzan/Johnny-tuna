@@ -1,3 +1,55 @@
 .AboutUsInner{
   padding-top: clamp(0.75rem, 2vw, 1.5rem);
+  display: flex;
+  flex-direction: column;
+  row-gap: 2rem;
+  line-height: 1.2;
+}
+
+.textCard{
+  width: 100%;
+  box-shadow: var(--main-shadow);
+  border-radius: var(--main-border-radius);
+  display: flex;
+  flex-direction: column;
+  row-gap: 1rem;
+  align-items: flex-start;
+  padding-block: clamp(0.75rem, 1.5vw,1.125rem);
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
+}
+
+.AboutTitle{
+  line-height: 1;
+}
+
+.AboutParagraph{
+  font-size: clamp(0.875rem, 2vw, 1.5rem);
+}
+
+.AboutParagraphBlack{
+  color: var(--color-text-dark);
+}
+
+.AboutGallery{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.AboutGalleryCards{
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 5rem;
+}
+
+.AboutGalleryImages{
+  display: grid;
+  row-gap: 3.375rem;
+  justify-content: flex-end;
+}
+
+.galleryRow{
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+  column-gap: 1.25rem;
 }

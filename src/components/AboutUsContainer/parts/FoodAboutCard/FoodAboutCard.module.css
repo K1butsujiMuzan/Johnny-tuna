@@ -1,0 +1,25 @@
+.card{
+  display: flex;
+  flex-direction: column;
+  width: 18.75rem;
+  height: 12.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--main-border-radius);
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(#FFCD1A, #FF40B2) border-box;
+  border: 1px solid transparent;
+  padding: 0.75rem;
+}
+
+.cardText{
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  text-align: center;
+}
+
+.cardImage{
+
+}
