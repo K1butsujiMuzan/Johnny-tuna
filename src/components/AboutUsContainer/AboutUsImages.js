@@ -5,6 +5,10 @@ import salad from "@/assets/images/AboutUs/Cards/Salad.svg"
 import iceCream from "@/assets/images/AboutUs/Cards/IceCream.svg"
 import cola from "@/assets/images/AboutUs/Cards/Cola.svg"
 
+import fork from "@/assets/images/AboutUs/WhyBlock/Fork.svg"
+import check from "@/assets/images/AboutUs/WhyBlock/CheckBadge.svg"
+import heart from "@/assets/images/AboutUs/WhyBlock/Heart.svg"
+
 import rollsImage_png from "@/assets/images/AboutUs/Galery/1.png"
 import rollsImage_webp from "@/assets/images/AboutUs/Galery/1.webp"
 import rollsImage_avif from "@/assets/images/AboutUs/Galery/1.avif"
@@ -24,7 +28,7 @@ import sushiImage_png from "@/assets/images/AboutUs/Galery/6.png"
 import sushiImage_webp from "@/assets/images/AboutUs/Galery/6.webp"
 import sushiImage_avif from "@/assets/images/AboutUs/Galery/6.avif"
 
-export const cards = [
+export const foodCards = [
   {
     text: "Роллы и суши из лучших ингредиентов",
     image: sushi,
@@ -51,6 +55,21 @@ export const cards = [
   }
 ]
 
+export const whyCards = [
+  {
+    text: "Разнообразное меню для любого повода",
+    image: fork,
+  },
+  {
+    text: "Честные порции и доступные цены",
+    image: check,
+  },
+  {
+    text: "Уютная атмосфера кафе для различных встреч",
+    image: heart,
+  }
+]
+
 export const images = [
   [
     {
@@ -58,14 +77,18 @@ export const images = [
         {srcSet: rollsImage_avif, type: "image/avif"},
         {srcSet: rollsImage_webp, type: "image/webp"}
       ],
-      png: rollsImage_png
+      png: rollsImage_png,
+      width: 329,
+      height: 247,
     },
     {
       sources: [
         {srcSet: drinkImage_avif, type: "image/avif"},
         {srcSet: drinkImage_webp, type: "image/webp"}
       ],
-      png: drinkImage_png
+      png: drinkImage_png,
+      width: 165,
+      height: 247,
     }
   ],
   [
@@ -74,14 +97,18 @@ export const images = [
         {srcSet: pizzaImage_avif, type: "image/avif"},
         {srcSet: pizzaImage_webp, type: "image/webp"}
       ],
-      png: pizzaImage_png
+      png: pizzaImage_png,
+      width: 285,
+      height: 157,
     },
     {
       sources: [
         {srcSet: noodlesImage_avif, type: "image/avif"},
         {srcSet: noodlesImage_webp, type: "image/webp"}
       ],
-      png: noodlesImage_png
+      png: noodlesImage_png,
+      width: 235,
+      height: 157,
     }
   ],
   [
@@ -90,14 +117,18 @@ export const images = [
         {srcSet: dessertImage_avif, type: "image/avif"},
         {srcSet: dessertImage_webp, type: "image/webp"}
       ],
-      png: dessertImage_png
+      png: dessertImage_png,
+      width: 165,
+      height: 248,
     },
     {
       sources: [
         {srcSet: sushiImage_avif, type: "image/avif"},
         {srcSet: sushiImage_webp, type: "image/webp"}
       ],
-      png: sushiImage_png
+      png: sushiImage_png,
+      width: 331,
+      height: 248,
     }
   ]
 ]

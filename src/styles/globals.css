@@ -1,6 +1,6 @@
 @import './variables.css';
 body{
-  font-family: var(--font-main);
+  font-family: var(--main-font);
   font-weight: 600;
   background-color: var(--color-text-white);
 }

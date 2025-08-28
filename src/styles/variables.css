@@ -10,15 +10,13 @@
   --color-red: #ff0000;
 
   --main-border-radius: 0.75rem;
-
-  --font-main: 'Inter', sans-serif;
-
+  --main-font: 'Inter', sans-serif;
   --main-transition: 0.2s;
+  --main-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  --gray-border: 2px solid var(--color-gray-light);
 
   --container-width: 92.5rem;
   --padding-x: 1rem;
-
-  --gray-border: 2px solid var(--color-gray-light);
-
-  --main-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  --container-padding-top: clamp(0.75rem, 2vw, 1.5rem);
+  --container-padding-bottom: clamp(3.125rem, 8.33vw, 6.25rem);
 }
