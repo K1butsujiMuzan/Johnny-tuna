@@ -1,12 +1,14 @@
 import "./Logo.css"
 import logo from "@assets/icons/Logo.svg";
 import {Link} from "react-router";
+import {scrollTop} from "@/scripts/toTop";
 
 function Logo({className}) {
   return(
     <Link
       to={"/"}
       aria-label={"На главную"}
+      onClick={scrollTop}
     >
       <img
         className={className}

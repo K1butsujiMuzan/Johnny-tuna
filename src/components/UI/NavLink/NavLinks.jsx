@@ -1,7 +1,12 @@
 import styles from './NavLinks.module.css'
 import {Link} from "react-router-dom";
+import {scrollTop} from "@/scripts/toTop";
 
-function NavLinks({to, children, isBlack}) {
+function NavLinks({
+  to,
+  children,
+  isBlack
+}) {
   return(
     <li className={styles.Item}>
       <Link
@@ -10,6 +15,7 @@ function NavLinks({to, children, isBlack}) {
           ${isBlack ? styles.isBlack : ""}
         `}
         to={to}
+        onClick={scrollTop}
       >
         {children}
       </Link>

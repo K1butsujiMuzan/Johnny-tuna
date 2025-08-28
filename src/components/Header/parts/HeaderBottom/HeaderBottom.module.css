@@ -1,4 +1,17 @@
 .headerBottom{
+  padding-bottom: 0.5rem;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-text-white);
+  z-index: 200;
+  border-bottom: var(--gray-border);
+  min-height: 5rem;
+}
+
+.headerBottomInner{
   display: flex;
   justify-content: space-between;
   background-color: var(--color-text-white);
@@ -9,4 +22,10 @@
   column-gap: 0.5rem;
   padding-left: 2rem;
   display: flex;
+}
+
+@media (max-width: 75rem) {
+  .headerBottom{
+    display: none;
+  }
 }

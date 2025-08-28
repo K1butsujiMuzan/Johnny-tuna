@@ -8,16 +8,14 @@
   z-index: 200;
 }
 
-.headerBottom{
-  padding-bottom: 0.5rem;
-  position: sticky;
-  top: 0;
-  width: 100%;
+.headerDeskTop{
   display: flex;
   justify-content: center;
-  background-color: var(--color-text-white);
-  z-index: 200;
-  border-bottom: var(--gray-border);
+  width: 100%;
+}
+
+.headerMobile{
+  display: none;
 }
 
 @media (max-width: 75rem) {
@@ -26,6 +24,16 @@
     row-gap: 1.375rem;
     position: sticky;
     top: 0;
+  }
+
+  .headerDeskTop{
+    display: none;
+  }
+
+  .headerMobile{
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 }
 
