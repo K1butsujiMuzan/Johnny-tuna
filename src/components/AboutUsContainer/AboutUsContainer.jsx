@@ -11,7 +11,7 @@ function AboutUsContainer() {
   }
 
   return(
-    <div className={`${styles.AboutUsInner} container`}>
+    <div className={`${styles.aboutUsContainer} container`}>
       <motion.div
         className={styles.textCard}
         variants={textVariants}
@@ -20,8 +20,8 @@ function AboutUsContainer() {
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 1}}
       >
-        <h1 className={styles.AboutTitle}>О нас — «Джонни Тунец»</h1>
-        <p className={styles.AboutParagraph}>Добро пожаловать в «Джонни Тунец» — кафе, где встречаются вкус, уют и дружеская атмосфера.</p>
+        <h1 className={styles.aboutTitle}>О нас — «Джонни Тунец»</h1>
+        <p className={styles.aboutParagraph}>Добро пожаловать в «Джонни Тунец» — кафе, где встречаются вкус, уют и дружеская атмосфера.</p>
       </motion.div>
       <motion.div
         className={styles.textCard}
@@ -31,10 +31,10 @@ function AboutUsContainer() {
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 1, delay: 0.3}}
       >
-        <p className={`${styles.AboutParagraph} ${styles.AboutParagraphBlack}`}>Мы верим, что еда должна приносить радость, поэтому собрали в одном меню любимые блюда для любого настроения:</p>
+        <p className={`${styles.aboutParagraph} ${styles.aboutParagraphBlack}`}>Мы верим, что еда должна приносить радость, поэтому собрали в одном меню любимые блюда для любого настроения:</p>
       </motion.div>
-      <div className={styles.AboutGallery}>
-        <ul className={styles.AboutGalleryCards}>
+      <div className={styles.aboutGallery}>
+        <ul className={styles.aboutGalleryCards}>
           {foodCards.map((card, _) => (
             <AboutCard
               key={card.image}
@@ -44,7 +44,7 @@ function AboutUsContainer() {
           ))}
         </ul>
         <div
-          className={styles.AboutGalleryImages}
+          className={styles.aboutGalleryImages}
           aria-hidden={true}
         >
           {images.map((row, indexRow) => (
@@ -86,8 +86,8 @@ function AboutUsContainer() {
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 1}}
       >
-        <h2 className={styles.AboutSmallTitle}>Почему выбирают нас?</h2>
-        <p className={styles.AboutParagraph}>Мы делаем всё, чтобы каждый гость чувствовал себя комфортно и наслаждался вкусом в каждой детали.</p>
+        <h2 className={styles.aboutSmallTitle}>Почему выбирают нас?</h2>
+        <p className={styles.aboutParagraph}>Мы делаем всё, чтобы каждый гость чувствовал себя комфортно и наслаждался вкусом в каждой детали.</p>
       </motion.div>
       <ul className={styles.whyCards}>
         {whyCards.map((card, _) => (

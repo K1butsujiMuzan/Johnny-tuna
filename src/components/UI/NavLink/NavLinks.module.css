@@ -1,16 +1,16 @@
-.TopLink{
+.topLink{
   color: var(--color-text-light);
   font-weight: 500;
   font-size: 1rem;
 }
 
-.Item{
+.item{
   list-style: none;
   line-height: 1rem;
 }
 
 @media (max-width: 75rem) {
-  .TopLink{
+  .topLink{
     font-size: 1.125rem;
   }
 }
@@ -21,7 +21,7 @@
 
 
 @media (hover: none) {
-  .TopLink:active{
+  .topLink:active{
     transform: scale(0.98);
     color: var(--color-text-dark);
   }

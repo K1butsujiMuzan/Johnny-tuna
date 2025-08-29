@@ -2,7 +2,7 @@ import styles from "./HeaderModal.module.css"
 import CitySelect from "@components/Header/parts/CitySelect/CitySelect";
 import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
-import Socials from "@components/UI/Soc1als/Socials";
+import Socials from "@components/UI/Socials/Socials";
 
 function HeaderModal() {
   return (
@@ -35,7 +35,7 @@ function HeaderModal() {
             <p className={styles.headerPhoneText}>Прием заказов с 9:00 до 23:00</p>
           </div>
         </div>
-        <div className={styles.modalDownSoc1als}>
+        <div className={styles.modalDownSocials}>
           <Socials/>
         </div>
       </div>

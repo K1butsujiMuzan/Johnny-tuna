@@ -1,4 +1,4 @@
-.Button{
+.button{
   font-size: 0.875rem;
   border-radius: 6.25rem;
   background-color: var(--color-accent);
@@ -12,12 +12,12 @@
   background-color: var(--color-red-accent);
 }
 
-.Button:active{
+.button:active{
   scale: 0.98;
 }
 
 @media (hover: hover) {
-  .Button:hover{
+  .button:hover{
     background-color: var(--color-red-accent);
   }
   .accent:hover{
@@ -26,7 +26,7 @@
 }
 
 @media (hover: none) {
-  .Button:active{
+  .button:active{
     background-color: var(--color-red-accent);
   }
   .accent:active{
@@ -34,7 +34,7 @@
   }
 }
 
-.Button:disabled{
+.button:disabled{
   opacity: 0.5;
   cursor: not-allowed;
 }

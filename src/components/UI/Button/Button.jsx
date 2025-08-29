@@ -4,7 +4,7 @@ function Button({children, isSubmit, isAccent, isDisabled}) {
   return(
     <button
       className={`
-        ${styles.Button}
+        ${styles.button}
         ${isAccent ? styles.accent : ""}
       `}
       type={isSubmit ? "submit" : "button"}

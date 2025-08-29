@@ -8,10 +8,10 @@ function NavLinks({
   isBlack
 }) {
   return(
-    <li className={styles.Item}>
+    <li className={styles.item}>
       <Link
         className={`
-          ${styles.TopLink}
+          ${styles.topLink}
           ${isBlack ? styles.isBlack : ""}
         `}
         to={to}

@@ -1,4 +1,5 @@
 import useHead from "@/hooks/useHead";
+import ContactsContainer from "@components/ContactsContainer/ContactsContainer";
 
 function Contacts() {
   useHead({
@@ -8,7 +9,7 @@ function Contacts() {
   })
   return(
     <>
-      <h1>Контакты</h1>
+      <ContactsContainer/>
     </>
   )
 }

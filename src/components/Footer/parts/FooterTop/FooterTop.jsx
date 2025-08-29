@@ -2,7 +2,7 @@ import styles from "./FooterTop.module.css"
 import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
 import Logo from "@components/UI/Logo/Logo";
-import Socials from "@components/UI/Soc1als/Socials";
+import Socials from "@components/UI/Socials/Socials";
 
 function FooterTop() {
   return(
@@ -30,7 +30,6 @@ function FooterTop() {
             <time dateTime={"09:00"}>с 9:00 </time><time dateTime={"23:00"}>до 23:00</time>
           </span>
           <a
-            className={styles.vkLink}
             href={"https://desktop.telegram.org/?setln=ru"}
             target={"_blank"}
           >

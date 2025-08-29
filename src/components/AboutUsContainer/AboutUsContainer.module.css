@@ -1,4 +1,4 @@
-.AboutUsInner{
+.aboutUsContainer{
   padding-top: var(--container-padding-top);
   padding-bottom: var(--container-padding-bottom);
   display: flex;
@@ -20,32 +20,32 @@
   transition: background-color var(--main-transition), translate 1s;
 }
 
-.AboutTitle,
-.AboutSmallTitle{
+.aboutTitle,
+.aboutSmallTitle{
   line-height: 1;
 }
 
-.AboutParagraph{
+.aboutParagraph{
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-.AboutParagraphBlack{
+.aboutParagraphBlack{
   color: var(--color-text-dark);
 }
 
-.AboutGallery{
+.aboutGallery{
   display: flex;
   justify-content: space-between;
 }
 
-.AboutGalleryCards{
+.aboutGalleryCards{
   display: grid;
   grid-template-columns: auto auto;
   gap: 5rem;
   max-width: 46.25rem;
 }
 
-.AboutGalleryImages{
+.aboutGalleryImages{
   display: flex;
   flex-direction: column;
   gap: 3.375rem;
@@ -67,13 +67,13 @@
 }
 
 @media (max-width: 81.25rem) {
-  .AboutGallery{
+  .aboutGallery{
     row-gap: 2rem;
     flex-direction: column;
     align-items: center;
   }
-  .AboutGalleryCards,
-  .AboutGalleryImages{
+  .aboutGalleryCards,
+  .aboutGalleryImages{
     gap: 1.5rem;
   }
 }
@@ -86,7 +86,7 @@
 }
 
 @media (max-width: 43.75rem) {
-  .AboutGalleryCards{
+  .aboutGalleryCards{
     grid-template-columns: auto;
   }
 }
