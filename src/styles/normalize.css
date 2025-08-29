@@ -73,6 +73,7 @@ button {
 /* Основные html-стили */
 html {
   height: 100%;
+  overflow-anchor: none;
 }
 
 /* Плавная прокрутка */

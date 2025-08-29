@@ -5,13 +5,11 @@ import ProfileLink from "@components/UI/ProfileLink/ProfileLink";
 
 function HeaderBottom() {
   return(
-    <div className={styles.headerBottom}>
-      <div className={`${styles.headerBottomInner} container`}>
-        <Search/>
-        <div className={styles.headerBottomButtons}>
-          <BasketLink/>
-          <ProfileLink/>
-        </div>
+    <div className={`${styles.headerBottomInner} container`}>
+      <Search/>
+      <div className={styles.headerBottomButtons}>
+        <BasketLink/>
+        <ProfileLink/>
       </div>
     </div>
   )

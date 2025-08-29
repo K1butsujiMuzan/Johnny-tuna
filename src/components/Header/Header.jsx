@@ -14,7 +14,9 @@ function Header() {
           <HeaderTopMobile/>
         </div>
       </header>
-      <HeaderBottom/>
+      <div className={styles.headerBottom}>
+        <HeaderBottom/>
+      </div>
     </>
   )
 }
