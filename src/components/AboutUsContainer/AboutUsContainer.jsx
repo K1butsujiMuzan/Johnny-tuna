@@ -2,29 +2,24 @@ import styles from "./AboutUsContainer.module.css"
 import AboutCard from "@components/AboutUsContainer/parts/AboutCard/AboutCard";
 import {foodCards, images, whyCards} from "@components/AboutUsContainer/AboutUsImages";
 import {motion} from "framer-motion";
+import {textVariants} from "@/constants/variantsAnimation";
 
 function AboutUsContainer() {
-  const textVariants = {
-    enter: {opacity: 0, x: -30},
-    center: {opacity: 1, x: 0},
-    view: {once: true, amount: 0.3}
-  }
-
   return(
     <div className={`${styles.aboutUsContainer} container`}>
       <motion.div
-        className={styles.textCard}
+        className={"textCard"}
         variants={textVariants}
         initial={"enter"}
         whileInView={"center"}
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 1}}
       >
-        <h1 className={styles.aboutTitle}>О нас — «Джонни Тунец»</h1>
+        <h1 className={"pageTitle"}>О нас — «Джонни Тунец»</h1>
         <p className={styles.aboutParagraph}>Добро пожаловать в «Джонни Тунец» — кафе, где встречаются вкус, уют и дружеская атмосфера.</p>
       </motion.div>
       <motion.div
-        className={styles.textCard}
+        className={"textCard"}
         variants={textVariants}
         initial={"enter"}
         whileInView={"center"}
@@ -79,14 +74,14 @@ function AboutUsContainer() {
         </div>
       </div>
       <motion.div
-        className={styles.textCard}
+        className={"textCard"}
         variants={textVariants}
         initial={"enter"}
         whileInView={"center"}
         viewport={{once: true, amount: 0.3}}
         transition={{duration: 1}}
       >
-        <h2 className={styles.aboutSmallTitle}>Почему выбирают нас?</h2>
+        <h2 className={"pageTitle"}>Почему выбирают нас?</h2>
         <p className={styles.aboutParagraph}>Мы делаем всё, чтобы каждый гость чувствовал себя комфортно и наслаждался вкусом в каждой детали.</p>
       </motion.div>
       <ul className={styles.whyCards}>

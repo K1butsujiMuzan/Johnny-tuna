@@ -1,13 +1,12 @@
 @import './variables.css';
 body{
-  font-family: var(--main-font);
+  font-family: var(--main-font), sans-serif;
   font-weight: 600;
   background-color: var(--color-text-white);
 }
 
 *{
   -webkit-tap-highlight-color: transparent;
-  -moz-tap-highlight-color: transparent;
 }
 
 a,
@@ -60,12 +59,6 @@ h4{
   font-size: clamp(0.875rem, 1.5vw, 1.125rem);
 }
 
-@media (hover: hover) {
-  a:hover{
-    color: var(--color-text-dark);
-  }
-}
-
 main{
   flex: 1;
   min-height: 100dvh;
@@ -91,4 +84,38 @@ main{
   height: 4.375rem;
   width: 5rem;
   background-color: transparent;
+}
+
+.pageTitle{
+  line-height: 1;
+}
+
+.textCard{
+  width: 100%;
+  box-shadow: var(--main-shadow);
+  border-radius: var(--main-border-radius);
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(0.5rem, 1.33vw, 1rem);
+  align-items: flex-start;
+  padding-block: clamp(0.75rem, 1.5vw,1.125rem);
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
+  transition: background-color var(--main-transition), translate 1s;
+}
+
+.gradientBorder{
+  background:
+    linear-gradient(white, white) padding-box,
+    linear-gradient(#FFCD1A, #FF40B2) border-box;
+  border: 1px solid transparent;
+}
+
+@media (hover: hover) {
+  a:hover{
+    color: var(--color-text-dark);
+  }
+  .textCard:hover{
+    background-color: rgba(215, 215, 215, 0.41);
+    translate: 10px;
+  }
 }

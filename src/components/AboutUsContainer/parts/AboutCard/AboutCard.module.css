@@ -6,10 +6,6 @@
   align-items: center;
   justify-content: space-between;
   border-radius: var(--main-border-radius);
-  background:
-    linear-gradient(white, white) padding-box,
-    linear-gradient(#FFCD1A, #FF40B2) border-box;
-  border: 1px solid transparent;
   padding: 0.75rem;
   transition: translate 1s;
 }
