@@ -1,4 +1,6 @@
 import useHead from "@/hooks/useHead";
+import InformationContainer
+  from "@components/InformationContainer/InformationContainer";
 
 function Information() {
   useHead({
@@ -8,7 +10,7 @@ function Information() {
   })
   return(
     <>
-      <h1>Информация</h1>
+      <InformationContainer/>
     </>
   )
 }

@@ -4,7 +4,7 @@ import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
 import Socials from "@components/UI/Socials/Socials";
 
-function HeaderModal() {
+function HeaderModal({isOpen, setIsOpen}) {
   return (
     <div className={styles.headerModalInner}>
       <div className={styles.modalUp}>
@@ -18,10 +18,10 @@ function HeaderModal() {
         <nav>
           <ul className={styles.modalUpLinks}>
             <NavLinks to={"/login"} isBlack>Войти (Профиль)</NavLinks>
-            <NavLinks to={"/stocks"} isBlack>Акции</NavLinks>
-            <NavLinks to={"/about"} isBlack>О нас</NavLinks>
-            <NavLinks to={"/delivery"} isBlack>Доставка</NavLinks>
-            <NavLinks to={"/contacts"} isBlack>Контакты</NavLinks>
+            <NavLinks setIsOpen={setIsOpen} to={"/stocks"} isBlack>Акции</NavLinks>
+            <NavLinks setIsOpen={setIsOpen} to={"/about"} isBlack>О нас</NavLinks>
+            <NavLinks setIsOpen={setIsOpen} to={"/delivery"} isBlack>Доставка</NavLinks>
+            <NavLinks setIsOpen={setIsOpen} to={"/contacts"} isBlack>Контакты</NavLinks>
           </ul>
         </nav>
       </div>

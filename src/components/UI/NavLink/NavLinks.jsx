@@ -5,7 +5,8 @@ import {scrollTop} from "@/scripts/toTop";
 function NavLinks({
   to,
   children,
-  isBlack
+  isBlack,
+  setIsOpen
 }) {
   return(
     <li className={styles.item}>
@@ -15,7 +16,12 @@ function NavLinks({
           ${isBlack ? styles.isBlack : ""}
         `}
         to={to}
-        onClick={scrollTop}
+        onClick={() => {
+          scrollTop()
+          if(setIsOpen){
+            setIsOpen(false)
+          }
+        }}
       >
         {children}
       </Link>

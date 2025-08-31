@@ -84,7 +84,7 @@ function HeaderTopMobile() {
           </button>
         </div>
       </div>
-      {isOpen && <HeaderModal/>}
+      {isOpen && <HeaderModal isOpen={isOpen} setIsOpen={setIsOpen}/>}
       {isSearchOpen && !isOpen && (
         <div className={"container"}>
           <Search/>
