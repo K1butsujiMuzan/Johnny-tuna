@@ -1,0 +1,25 @@
+.linkContainer{
+  color: var(--color-text-dark);
+  display: flex;
+  gap: 0.25rem;
+  font-size: clamp(0.75rem, 1.33vw, 1rem);
+}
+
+.linkMain{
+  color: var(--color-text-light);
+}
+
+@media (hover: hover) {
+  .linkCurrent:hover{
+    color: var(--color-text-light);
+  }
+}
+
+@media (hover: none) {
+  .linkMain:active{
+    color: var(--color-text-dark);
+  }
+  .linkCurrent:active{
+    color: var(--color-text-light);
+  }
+}

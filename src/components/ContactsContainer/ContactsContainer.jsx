@@ -4,10 +4,12 @@ import {motion} from "framer-motion";
 import TextBlock from "@components/UI/TextBlock/TextBlock";
 import ContactsForm from "@components/ContactsContainer/ContactsForm/ContactsForm";
 import {fromRight} from "@/constants/variantsAnimation";
+import PageLink from "@components/UI/PageLink/PageLink";
 
 function ContactsContainer() {
   return(
     <section className={`${styles.contactsContainer} container`}>
+      <PageLink to={"/contacts"} text={"Контакты"}/>
       <TextBlock>
         <h1 className={"pageTitle"}>Контакты — «Джонни Тунец»</h1>
       </TextBlock>

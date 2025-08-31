@@ -4,10 +4,12 @@ import {foodCards, images, whyCards} from "@components/AboutUsContainer/AboutUsI
 import {motion} from "framer-motion";
 import {fromRight} from "@/constants/variantsAnimation";
 import TextBlock from "@components/UI/TextBlock/TextBlock";
+import PageLink from "@components/UI/PageLink/PageLink";
 
 function AboutUsContainer() {
   return(
     <section className={`${styles.aboutUsContainer} container`}>
+      <PageLink to={"/about"} text={"О нас"}/>
       <TextBlock>
         <h1 className={"pageTitle"}>О нас — «Джонни Тунец»</h1>
         <p className={styles.aboutParagraph}>Добро пожаловать в «Джонни Тунец» — кафе, где встречаются вкус, уют и дружеская атмосфера.</p>
