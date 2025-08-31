@@ -2,8 +2,8 @@ import styles from "./Parts.module.css"
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import {useRef, useState} from "react";
 import PasswordInput from "@components/UI/LoginComponents/PasswordInput";
-import SubmitButton from "@components/UI/LoginComponents/SubmitButton";
-import CheckBox from "@components/UI/LoginComponents/CheckBox";
+import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButton";
+import CheckBox from "@components/UI/LoginComponents/CheckBox/CheckBox";
 import {checkRegistration} from "@/scripts/Login/checkRegistration";
 import {errorsTypes} from "@/constants/errorsTypes";
 import {responsesTypes} from "@/constants/responsesTypes";

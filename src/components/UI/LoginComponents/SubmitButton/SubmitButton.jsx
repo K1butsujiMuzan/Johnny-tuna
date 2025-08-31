@@ -1,4 +1,4 @@
-import styles from "./LoginComponents.module.css"
+import styles from "./SubmitButton.module.css"
 
 function SubmitButton({
   children,

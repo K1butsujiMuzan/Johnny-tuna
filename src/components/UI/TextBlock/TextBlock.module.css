@@ -1,0 +1,19 @@
+.textCard{
+  width: 100%;
+  box-shadow: var(--main-shadow);
+  border-radius: var(--main-border-radius);
+  display: flex;
+  flex-direction: column;
+  row-gap: clamp(0.5rem, 1.33vw, 1rem);
+  align-items: flex-start;
+  padding-block: clamp(0.75rem, 1.5vw,1.125rem);
+  padding-inline: clamp(1rem, 2vw, 1.5rem);
+  transition: background-color var(--main-transition), translate 1s;
+}
+
+@media (hover: hover) {
+  .textCard:hover{
+    background-color: rgba(215, 215, 215, 0.41);
+    translate: 10px;
+  }
+}

@@ -5,6 +5,7 @@ import {Link} from "react-router-dom";
 import SignIn from "@components/LoginContainer&RecoverContainer/LoginContainer/parts/SignIn";
 import SignUp from "@components/LoginContainer&RecoverContainer/LoginContainer/parts/SignUp";
 import {motion} from "framer-motion";
+import {loginFromTop} from "@/constants/variantsAnimation";
 
 function LoginContainer() {
   const [isOpen, setIsOpen] = useState("login")
@@ -19,8 +20,9 @@ function LoginContainer() {
   return(
     <motion.div
       className={styles.loginBlock}
-      initial={{opacity: 0, translateY: -30}}
-      animate={{opacity: 1, translateY: 0}}
+      variants={loginFromTop}
+      initial={"enter"}
+      animate={"center"}
       transition={{duration: 1}}
     >
       <div className={styles.changeBlock}>

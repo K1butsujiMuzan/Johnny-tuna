@@ -1,5 +1,6 @@
 import styles from "./AboutCard.module.css"
 import {motion} from "framer-motion";
+import {cardsFormBottom} from "@/constants/variantsAnimation";
 
 function AboutCard({
   text,
@@ -8,9 +9,9 @@ function AboutCard({
   return(
     <motion.li
       className={`${styles.card} gradientBorder`}
-      initial={{opacity: 0, y: 30}}
-      whileInView={{opacity: 1, y: 0}}
-      viewport={{once: true, amount: 0.3}}
+      variants={cardsFormBottom}
+      initial={"enter"}
+      animate={"center"}
       transition={{duration: 1}}
     >
       <p className={styles.cardText}>{text}</p>

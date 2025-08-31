@@ -1,0 +1,33 @@
+.submitButton{
+  width: clamp(9.5rem, 41.01vw, 19.6875rem);
+  height: clamp(3rem, 8.97vw,4.25rem);
+  border: none;
+  background-color: var(--color-accent);
+  color: var(--color-text-white);
+  font-size: clamp(1.5rem, 4.16vw, 2rem);
+}
+
+.submitButton:disabled{
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.submitButton:active:enabled{
+  scale: 0.98;
+}
+
+.isLoading{
+  opacity: 0.5;
+}
+
+@media (hover: hover) {
+  .submitButton:hover{
+    background-color: var(--color-red-accent);
+  }
+}
+
+@media (hover: none) {
+  .submitButton:active{
+    background-color: var(--color-red-accent);
+  }
+}

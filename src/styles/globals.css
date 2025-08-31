@@ -20,7 +20,6 @@ svg * {
 
 a:focus-visible,
 button:focus-visible,
-textarea:focus-visible,
 select:focus-visible{
   outline: 1px solid var(--color-black);
 }
@@ -29,6 +28,7 @@ h1,
 h2,
 h3,
 h4,
+legend,
 a{
   color: var(--color-text-dark);
 }
@@ -90,19 +90,6 @@ main{
   line-height: 1;
 }
 
-.textCard{
-  width: 100%;
-  box-shadow: var(--main-shadow);
-  border-radius: var(--main-border-radius);
-  display: flex;
-  flex-direction: column;
-  row-gap: clamp(0.5rem, 1.33vw, 1rem);
-  align-items: flex-start;
-  padding-block: clamp(0.75rem, 1.5vw,1.125rem);
-  padding-inline: clamp(1rem, 2vw, 1.5rem);
-  transition: background-color var(--main-transition), translate 1s;
-}
-
 .gradientBorder{
   background:
     linear-gradient(white, white) padding-box,
@@ -113,9 +100,5 @@ main{
 @media (hover: hover) {
   a:hover{
     color: var(--color-text-dark);
-  }
-  .textCard:hover{
-    background-color: rgba(215, 215, 215, 0.41);
-    translate: 10px;
   }
 }

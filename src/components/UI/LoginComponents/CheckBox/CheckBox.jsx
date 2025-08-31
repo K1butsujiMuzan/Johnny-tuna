@@ -1,4 +1,4 @@
-import styles from "./LoginComponents.module.css"
+import styles from "./CheckBox.module.css"
 
 function CheckBox
 ({

@@ -3,7 +3,7 @@ import {useCallback, useRef, useState} from "react";
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import PasswordInput from "@components/UI/LoginComponents/PasswordInput";
 import {Link, useNavigate} from "react-router-dom";
-import SubmitButton from "@components/UI/LoginComponents/SubmitButton";
+import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButton";
 import {setCookie} from "@/scripts/setCookie"
 import {responsesTypes} from "@/constants/responsesTypes";
 import {errorsTypes} from "@/constants/errorsTypes";
