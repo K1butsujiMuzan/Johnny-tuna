@@ -19,6 +19,7 @@
   width: 100%;
   justify-content: space-between;
   max-width: calc(50% - 1rem);
+  gap: 1rem;
 }
 
 .formReason{
@@ -28,9 +29,16 @@
 }
 
 .radioList{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.formRadios{
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  row-gap: clamp(0.5rem, 1.5vw, 1.125rem);
+  grid-template-columns: auto auto;
+  row-gap: 1.25rem;
 }
 
 .radioItem{
@@ -41,7 +49,6 @@
 .formLegend{
   line-height: 1;
   font-size: clamp(1.25rem, 2.66vw, 2rem);
-  margin-bottom: 4.5rem;;
 }
 
 .formTextArea{
@@ -73,10 +80,11 @@
 }
 
 @media (max-width: 75rem) {
-  .radioList{
+  .formRadios{
     display: flex;
     flex-direction: column;
   }
+
   .formLegend{
     margin-bottom: max(2rem, 3.75vw);
   }

@@ -149,36 +149,37 @@ function ContactsForm() {
         <div className={styles.formReason}>
           <fieldset className={styles.radioList}>
             <legend className={styles.formLegend}>У вас есть вопросы или предложения? Напишите нам!</legend>
-            {radioNames.map((radio, _) => (
-              <div
-                key={radio.value}
-                className={styles.radioItem}
-              >
-                <Radio
-                  value={radio.value}
-                  name={"reason"}
-                  label={radio.label}
-                  onChange={handleChange}
-                  checked={radio.value === formData.reason}
-                />
-              </div>
-            ))}
+            <div className={styles.formRadios}>
+              {radioNames.map((radio, _) => (
+                <div
+                  key={radio.value}
+                  className={styles.radioItem}
+                >
+                  <Radio
+                    value={radio.value}
+                    name={"reason"}
+                    label={radio.label}
+                    onChange={handleChange}
+                    checked={radio.value === formData.reason}
+                  />
+                </div>
+              ))}
+            </div>
           </fieldset>
         </div>
       </div>
       <div className={styles.errorBlock}>
         <p className={styles.error}>{errors.messageError}</p>
-
+        <textarea
+          className={styles.formTextArea}
+          name={"message"}
+          value={formData.message}
+          onChange={handleChange}
+          placeholder={"Обращение"}
+          minLength={30}
+          maxLength={500}
+        />
       </div>
-      <textarea
-        className={styles.formTextArea}
-        name={"message"}
-        value={formData.message}
-        onChange={handleChange}
-        placeholder={"Обращение"}
-        minLength={30}
-        maxLength={500}
-      />
       <SubmitButton
         type={"submit"}
       >

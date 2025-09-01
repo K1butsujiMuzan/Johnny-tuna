@@ -29,4 +29,5 @@
 
 .radioInput:focus-visible + .radioCircle{
   outline: 1px solid var(--color-black);
+  outline-offset: 1px;
 }

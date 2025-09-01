@@ -1,5 +1,10 @@
+import {createPortal} from "react-dom";
+
 function MailSend() {
-  return(createPortal)
+  return createPortal(
+    <></>,
+    document.querySelector("#mail-send")
+  )
 }
 
 export default MailSend
