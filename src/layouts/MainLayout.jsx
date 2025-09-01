@@ -1,15 +1,18 @@
 import Header from "@components/Header/Header";
 import Footer from "@components/Footer/Footer";
 import {Outlet} from "react-router-dom";
+import {IsBurgerOpen} from "@/contexts/IsBurgerOpen";
 
-function MainLayout({children}) {
+function MainLayout() {
   return(
     <>
-      <Header/>
-      <main>
-        <Outlet/>
-      </main>
-      <Footer/>
+      <IsBurgerOpen>
+        <Header/>
+        <main>
+          <Outlet/>
+        </main>
+        <Footer/>
+      </IsBurgerOpen>
     </>
   )
 }

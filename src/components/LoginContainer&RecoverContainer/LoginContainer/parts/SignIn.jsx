@@ -115,7 +115,7 @@ function SignIn() {
           <LoginInput
             type={"text"}
             minLength={3}
-            maxLength={100}
+            maxLength={50}
             placeholder={"Логин или почта"}
             name={"login"}
             value={formData.login}

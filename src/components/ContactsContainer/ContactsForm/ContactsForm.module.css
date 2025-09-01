@@ -60,6 +60,18 @@
   color: var(--color-text-light);
 }
 
+.errorBlock{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.error{
+  font-size: 0.75rem;
+  color: var(--color-red);
+}
+
 @media (max-width: 75rem) {
   .radioList{
     display: flex;

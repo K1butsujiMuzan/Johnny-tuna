@@ -14,13 +14,13 @@ export const checkRegistration = (login, email, password, passwordRepeat) => {
   const checkPassword = /^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\s]).+$/.test(password)
 
   if(login.length < 3) {
-    errors.loginError = errorsTypes.loginLength
+    errors.loginError = errorsTypes.length("логина", 3)
   }
 
   if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
     errors.emailError = errorsTypes.emailInvalidFormat
   } else if (email.length < 10) {
-    errors.emailError = errorsTypes.emailLength
+    errors.emailError = errorsTypes.length("почты", 10)
   }
 
   if(password.length < 8) {

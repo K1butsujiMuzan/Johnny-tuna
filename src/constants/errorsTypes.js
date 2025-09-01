@@ -1,6 +1,5 @@
 export const errorsTypes = {
-  loginLength: "Длина логина должна быть не менее 3 символов",
-  emailLength: "Длина почты не может быть менее 10 символов",
+  length: (text, length) => `Длина ${text} должна быть не менее ${length} символов`,
   passwordLength: "Минимальная длина пароля - 8 символов",
 
   emailInvalidFormat: "Некорректный формат email",
@@ -9,6 +8,7 @@ export const errorsTypes = {
 
   alreadyExist: "У данной почты уже зарегистрирован аккаунт",
 
+  emailNotFound: (email) => `Почта ${email} не существует`,
   serverConnect: "Ошибка соединения с сервером, повторите попытку позже",
   serverError: "Ошибка на стороне сервера, повторите попытку позже",
 

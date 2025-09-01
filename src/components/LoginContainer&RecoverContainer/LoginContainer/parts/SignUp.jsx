@@ -75,12 +75,7 @@ function SignUp() {
         })
       })
 
-      let data = {}
-      try {
-        data = await response.json()
-      } catch {
-
-      }
+      const data = await response.json()
 
       if(!response.ok || data.error) {
         if(data.error === responsesTypes.userAlreadyExist) {
@@ -189,7 +184,7 @@ function SignUp() {
           <LoginInput
             type={"email"}
             minLength={10}
-            maxLength={40}
+            maxLength={50}
             placeholder={"Почта"}
             name={"email"}
             value={formData.email}
