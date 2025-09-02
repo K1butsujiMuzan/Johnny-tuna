@@ -1,7 +1,7 @@
 import arrow from "@assets/icons/Header/Arrow.svg"
 import styles from "./CitySelect.module.css"
 import {useCallback, useEffect, useRef, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import {motion} from "framer-motion";
 
 function CitySelect({isMobile}) {
   const [isOpen, setIsOpen] = useState(false)

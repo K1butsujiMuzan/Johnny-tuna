@@ -5,17 +5,38 @@ import Logo from "@components/UI/Logo/Logo";
 import Socials from "@components/UI/Socials/Socials";
 
 function FooterTop() {
+  const links = [
+    {
+      to: "/stocks",
+      text: "Акции"
+    },
+    {
+      to: "/contacts",
+      text: "Контакты"
+    },
+    {
+      to: "/about",
+      text: "О нас"
+    },
+    {
+      to: "/information",
+      text: "Правовая информация"
+    },
+    {
+      to: "/delivery",
+      text: "Доставка"
+    }
+  ]
+
   return(
     <div className={`${styles.footerTopInner} container`}>
       <div className={styles.innerLeft}>
         <p className={styles.navigationText}>Навигация</p>
         <nav>
           <ul className={styles.footerLinks}>
-            <NavLinks to={"/stocks"} isBlack>Акции</NavLinks>
-            <NavLinks to={"/contacts"} isBlack>Контакты</NavLinks>
-            <NavLinks to={"/about"} isBlack>О нас</NavLinks>
-            <NavLinks to={"/information"} isBlack>Правовая информация</NavLinks>
-            <NavLinks to={"/delivery"} isBlack>Доставка</NavLinks>
+            {links.map((link, index) => (
+              <NavLinks to={link.to} key={index}>{link.text}</NavLinks>
+            ))}
           </ul>
         </nav>
       </div>

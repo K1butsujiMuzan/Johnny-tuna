@@ -5,6 +5,29 @@ import Phone from "@components/UI/Phone/Phone";
 import Socials from "@components/UI/Socials/Socials";
 
 function HeaderModal() {
+  const links = [
+    {
+      to: "/login",
+      text: "Войти (Профиль)"
+    },
+    {
+      to: "/stocks",
+      text: "Акции"
+    },
+    {
+      to: "/about",
+      text: "О нас"
+    },
+    {
+      to: "/delivery",
+      text: "Доставка"
+    },
+    {
+      to: "/contacts",
+      text: "Контакты"
+    },
+  ]
+
   return (
     <div className={styles.headerModalInner}>
       <div className={styles.modalUp}>
@@ -17,11 +40,9 @@ function HeaderModal() {
         </div>
         <nav>
           <ul className={styles.modalUpLinks}>
-            <NavLinks to={"/login"} isBlack>Войти (Профиль)</NavLinks>
-            <NavLinks to={"/stocks"} isBlack>Акции</NavLinks>
-            <NavLinks to={"/about"} isBlack>О нас</NavLinks>
-            <NavLinks to={"/delivery"} isBlack>Доставка</NavLinks>
-            <NavLinks to={"/contacts"} isBlack>Контакты</NavLinks>
+            {links.map((link, index) => (
+              <NavLinks to={link.to} key={index}>{link.text}</NavLinks>
+            ))}
           </ul>
         </nav>
       </div>

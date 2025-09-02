@@ -5,6 +5,24 @@ import NavLinks from "@components/UI/NavLink/NavLinks";
 import Phone from "@components/UI/Phone/Phone";
 
 function HeaderTop() {
+  const links = [
+    {
+      to: "/stocks",
+      text: "Акции"
+    },
+    {
+      to: "/about",
+      text: "О нас"
+    },
+    {
+      to: "/delivery",
+      text: "Доставка"
+    },
+    {
+      to: "/contacts",
+      text: "Контакты"
+    },
+  ]
   return(
     <div className={`${styles.headerTop} container`}>
       <div className={styles.headerTopLinks}>
@@ -20,10 +38,9 @@ function HeaderTop() {
         </div>
         <nav>
           <ul className={styles.headerTopList}>
-            <NavLinks to={"/stocks"}>Акции</NavLinks>
-            <NavLinks to={"/about"}>О нас</NavLinks>
-            <NavLinks to={"/delivery"}>Доставка</NavLinks>
-            <NavLinks to={"/contacts"}>Контакты</NavLinks>
+            {links.map((link, index) => (
+              <NavLinks to={link.to} key={index}>{link.text}</NavLinks>
+            ))}
           </ul>
         </nav>
       </div>
