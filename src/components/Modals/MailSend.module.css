@@ -1,0 +1,51 @@
+.modalInner{
+  position: fixed;
+  background: rgba(0, 0, 0, 0.41);
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContainer{
+  text-align: center;
+  background-color: var(--color-text-white);
+  position: relative;
+  box-shadow: var(--main-shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-inline: clamp(2rem, 6.66vw, 5rem);
+  padding-block: 2.5rem;
+}
+
+.modalText{
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  color: var(--color-text-dark);
+}
+
+.closeButton{
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.closeIcon path{
+  stroke: transparent;
+  fill: var(--color-text-dark);
+}
+
+@media (hover: hover) {
+  .closeButton:hover .closeIcon path{
+    fill: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .closeButton:active .closeIcon path{
+    fill: var(--color-accent);
+  }
+}

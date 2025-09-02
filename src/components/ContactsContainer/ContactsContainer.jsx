@@ -27,6 +27,7 @@ function ContactsContainer() {
           width="740"
           height="428"
           frameBorder="0"
+          title={"Местоположение на карте"}
         ></iframe>
         <ul className={styles.informationList}>
           {addressInformation.map((element, _) => (

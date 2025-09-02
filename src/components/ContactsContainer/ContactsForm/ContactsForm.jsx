@@ -2,12 +2,13 @@ import styles from "./ContactsForm.module.css"
 import Logo from "@components/UI/Logo/Logo";
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import {useState} from "react";
-import {motion} from "framer-motion";
+import {AnimatePresence, motion} from "framer-motion";
 import Radio from "@components/UI/LoginComponents/Radio/Radio";
 import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButton";
 import {textVariants} from "@/constants/variantsAnimation";
 import {checkContacts} from "@/scripts/Contacts/checkContacts";
 import {errorsTypes} from "@/constants/errorsTypes";
+import MailSend from "@components/Modals/MailSend";
 
 function ContactsForm() {
   const [isLoading, setIsLoading] = useState(false)
@@ -25,6 +26,7 @@ function ContactsForm() {
     messageError: "",
     serverError: ""
   })
+  const [isOpenModal, setIsOpenModal] = useState(false)
 
   const radioNames = [
     {
@@ -78,6 +80,9 @@ function ContactsForm() {
           serverError: errorsTypes.emailNotFound(formData.email)
         }))
       }
+      if(!data.error) {
+        setIsOpenModal(true)
+      }
     } catch(error) {
       console.log("Ошибка сети: ", error)
       setErrors(prevState => ({
@@ -97,95 +102,100 @@ function ContactsForm() {
     }))
   }
   return(
-    <motion.form
-      variants={textVariants}
-      initial={"enter"}
-      animate={"center"}
-      transition={{duration: 1}}
-      onSubmit={formSubmit}
-      noValidate
-      className={`${styles.formInner} gradientBorder`}
-    >
-      <Logo/>
-      <div className={styles.formInputs}>
-        <div className={styles.formText}>
-          <div className={styles.errorBlock}>
-            <p className={styles.error}>{errors.nameError}</p>
-            <LoginInput
-              type={"text"}
-              minLength={3}
-              maxLength={20}
-              placeholder={"Имя"}
-              name={"name"}
-              value={formData.name}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.errorBlock}>
-            <p className={styles.error}>{errors.emailError}</p>
-            <LoginInput
-              type={"email"}
-              minLength={10}
-              maxLength={50}
-              placeholder={"Почта"}
-              name={"email"}
-              value={formData.email}
-              onChange={handleChange}
-            />
-          </div>
-          <div className={styles.errorBlock}>
-            <p className={styles.error}>{errors.themeError}</p>
-            <LoginInput
-              type={"text"}
-              minLength={3}
-              maxLength={50}
-              placeholder={"Тема"}
-              name={"theme"}
-              value={formData.theme}
-              onChange={handleChange}
-            />
-          </div>
-        </div>
-        <div className={styles.formReason}>
-          <fieldset className={styles.radioList}>
-            <legend className={styles.formLegend}>У вас есть вопросы или предложения? Напишите нам!</legend>
-            <div className={styles.formRadios}>
-              {radioNames.map((radio, _) => (
-                <div
-                  key={radio.value}
-                  className={styles.radioItem}
-                >
-                  <Radio
-                    value={radio.value}
-                    name={"reason"}
-                    label={radio.label}
-                    onChange={handleChange}
-                    checked={radio.value === formData.reason}
-                  />
-                </div>
-              ))}
-            </div>
-          </fieldset>
-        </div>
-      </div>
-      <div className={styles.errorBlock}>
-        <p className={styles.error}>{errors.messageError}</p>
-        <textarea
-          className={styles.formTextArea}
-          name={"message"}
-          value={formData.message}
-          onChange={handleChange}
-          placeholder={"Обращение"}
-          minLength={30}
-          maxLength={500}
-        />
-      </div>
-      <SubmitButton
-        type={"submit"}
+    <>
+      <motion.form
+        variants={textVariants}
+        initial={"enter"}
+        animate={"center"}
+        transition={{duration: 1}}
+        onSubmit={formSubmit}
+        noValidate
+        className={`${styles.formInner} gradientBorder`}
       >
-        {isLoading ? "Отправка..." : "Отправить"}
-      </SubmitButton>
-    </motion.form>
+        <Logo/>
+        <div className={styles.formInputs}>
+          <div className={styles.formText}>
+            <div className={styles.errorBlock}>
+              <p className={styles.error}>{errors.nameError}</p>
+              <LoginInput
+                type={"text"}
+                minLength={3}
+                maxLength={20}
+                placeholder={"Имя"}
+                name={"name"}
+                value={formData.name}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.errorBlock}>
+              <p className={styles.error}>{errors.emailError}</p>
+              <LoginInput
+                type={"email"}
+                minLength={10}
+                maxLength={50}
+                placeholder={"Почта"}
+                name={"email"}
+                value={formData.email}
+                onChange={handleChange}
+              />
+            </div>
+            <div className={styles.errorBlock}>
+              <p className={styles.error}>{errors.themeError}</p>
+              <LoginInput
+                type={"text"}
+                minLength={3}
+                maxLength={50}
+                placeholder={"Тема"}
+                name={"theme"}
+                value={formData.theme}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
+          <div className={styles.formReason}>
+            <fieldset className={styles.radioList}>
+              <legend className={styles.formLegend}>У вас есть вопросы или предложения? Напишите нам!</legend>
+              <div className={styles.formRadios}>
+                {radioNames.map((radio, _) => (
+                  <div
+                    key={radio.value}
+                    className={styles.radioItem}
+                  >
+                    <Radio
+                      value={radio.value}
+                      name={"reason"}
+                      label={radio.label}
+                      onChange={handleChange}
+                      checked={radio.value === formData.reason}
+                    />
+                  </div>
+                ))}
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div className={styles.errorBlock}>
+          <p className={styles.error}>{errors.messageError ? errors.messageError : errors.serverError}</p>
+          <textarea
+            className={styles.formTextArea}
+            name={"message"}
+            value={formData.message}
+            onChange={handleChange}
+            placeholder={"Обращение"}
+            minLength={30}
+            maxLength={500}
+          />
+        </div>
+        <SubmitButton
+          type={"submit"}
+        >
+          {isLoading ? "Отправка..." : "Отправить"}
+        </SubmitButton>
+      </motion.form>
+      <AnimatePresence>
+        {isOpenModal && <MailSend email={formData.email} setIsOpenModal={setIsOpenModal} setFormData={setFormData}/>}
+      </AnimatePresence>
+    </>
   )
 }
 

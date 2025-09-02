@@ -23,7 +23,6 @@
 }
 
 .formReason{
-  border: 1px solid var(--color-text-light);
   padding-block: 1rem;
   padding-inline: 1.5rem;
 }
