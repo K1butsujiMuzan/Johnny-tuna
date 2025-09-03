@@ -66,6 +66,10 @@
   color: var(--color-text-light);
 }
 
+.isRed{
+  border: 2px solid var(--color-red);
+}
+
 .errorBlock{
   width: 100%;
   display: flex;

@@ -1,7 +1,7 @@
 import styles from "./ContactsForm.module.css"
 import Logo from "@components/UI/Logo/Logo";
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
-import {useState} from "react";
+import {useRef, useState} from "react";
 import {AnimatePresence, motion} from "framer-motion";
 import Radio from "@components/UI/LoginComponents/Radio/Radio";
 import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButton";
@@ -11,6 +11,11 @@ import {errorsTypes} from "@/constants/errorsTypes";
 import MailSend from "@components/Modals/MailSend";
 
 function ContactsForm() {
+  const nameRef = useRef(null)
+  const emailRef = useRef(null)
+  const themeRef = useRef(null)
+  const messageRef = useRef(null)
+
   const [isLoading, setIsLoading] = useState(false)
   const [formData, setFormData] = useState({
     name: "",
@@ -59,7 +64,21 @@ function ContactsForm() {
     setErrors(validationErrors)
     if(Object.values(validationErrors).some(error => error !== "")) {
       setIsLoading(false)
-      return
+      if(validationErrors.nameError) {
+        nameRef.current.focus()
+        return
+      } else if(validationErrors.emailError){
+        emailRef.current.focus()
+        return
+      } else if(validationErrors.themeError) {
+        themeRef.current.focus()
+        return
+      } else if(validationErrors.messageError) {
+        messageRef.current.focus()
+        return
+      } else {
+        return
+      }
     }
 
     try{
@@ -96,6 +115,12 @@ function ContactsForm() {
 
   const handleChange = (event) => {
     const {name, value, type} = event.target
+    if(errors[`${name}Error`]) {
+      setErrors(prevState => ({
+        ...prevState,
+        [`${name}Error`]: ""
+      }))
+    }
     setFormData(prevState => ({
       ...prevState,
       [name]: type === "radio" ? +value : value
@@ -125,6 +150,8 @@ function ContactsForm() {
                 name={"name"}
                 value={formData.name}
                 onChange={handleChange}
+                ref={nameRef}
+                isRed={errors.nameError}
               />
             </div>
             <div className={styles.errorBlock}>
@@ -137,6 +164,8 @@ function ContactsForm() {
                 name={"email"}
                 value={formData.email}
                 onChange={handleChange}
+                ref={emailRef}
+                isRed={errors.emailError}
               />
             </div>
             <div className={styles.errorBlock}>
@@ -149,6 +178,8 @@ function ContactsForm() {
                 name={"theme"}
                 value={formData.theme}
                 onChange={handleChange}
+                ref={themeRef}
+                isRed={errors.themeError}
               />
             </div>
           </div>
@@ -177,13 +208,14 @@ function ContactsForm() {
         <div className={styles.errorBlock}>
           <p className={styles.error}>{errors.messageError ? errors.messageError : errors.serverError}</p>
           <textarea
-            className={styles.formTextArea}
+            className={`${styles.formTextArea} ${errors.messageError ? styles.isRed : ""}`}
             name={"message"}
             value={formData.message}
             onChange={handleChange}
             placeholder={"Обращение"}
             minLength={30}
             maxLength={500}
+            ref={messageRef}
           />
         </div>
         <SubmitButton
