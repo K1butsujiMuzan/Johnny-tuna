@@ -96,8 +96,9 @@ function ContactsForm() {
       if(data.error) {
         setErrors(prevState => ({
           ...prevState,
-          serverError: errorsTypes.emailNotFound(formData.email)
+          emailError: errorsTypes.emailNotFound(formData.email)
         }))
+        emailRef.current.focus()
       }
       if(!data.error) {
         setIsOpenModal(true)
