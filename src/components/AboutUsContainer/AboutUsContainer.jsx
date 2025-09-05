@@ -8,7 +8,7 @@ import PageLink from "@components/UI/PageLink/PageLink";
 
 function AboutUsContainer() {
   return(
-    <section className={`${styles.aboutUsContainer} container`}>
+    <section className={"container pageContainer"}>
       <PageLink to={"/about"} text={"О нас"}/>
       <TextBlock>
         <h1 className={"pageTitle"}>О нас — «Джонни Тунец»</h1>

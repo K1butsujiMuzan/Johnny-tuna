@@ -1,4 +1,5 @@
 import useHead from "@/hooks/useHead";
+import StocksContainer from "@components/StocksContainer/StocksContainer";
 
 function Stocks() {
   useHead({
@@ -7,9 +8,7 @@ function Stocks() {
     keywords: "акции, промокоды, скидки, купоны, специальные предложения, роллы, пицца"
   })
   return(
-    <>
-      <h1>Акции</h1>
-    </>
+    <StocksContainer/>
   )
 }
 

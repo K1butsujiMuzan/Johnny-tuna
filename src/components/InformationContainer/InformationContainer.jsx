@@ -5,7 +5,7 @@ import {informationText} from "@components/InformationContainer/informationText"
 
 function InformationContainer() {
   return(
-    <section className={`${styles.informationContainer} container`}>
+    <section className={"container pageContainer"}>
       <PageLink to={"/information"} text={"Правовая информация"}/>
       <TextBlock>
         <h1 className={"pageTitle"}>Правовая информация - «Джонни Тунец»</h1>

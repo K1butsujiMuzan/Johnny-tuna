@@ -17,7 +17,6 @@
   display: flex;
   justify-content: center;
   background-color: var(--color-text-white);
-  z-index: 201;
   border-bottom: var(--gray-border);
   height: 5rem;
 }
