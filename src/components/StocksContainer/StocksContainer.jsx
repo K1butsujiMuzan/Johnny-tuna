@@ -10,9 +10,9 @@ function StocksContainer() {
       <TextBlock>
         <h1 className={"pageTitle"}>Акции — «Джонни Тунец»</h1>
       </TextBlock>
-      <div className={styles.cardsContainer}>
+      <ul className={styles.cardsContainer}>
         {cards.map((card, index) => (
-          <div
+          <li
             key={index}
             className={styles.stockCard}
           >
@@ -36,9 +36,9 @@ function StocksContainer() {
               <h2 className={styles.cardText}>{card.text}</h2>
             </div>
             <span className={styles.cardShow}>Подробнее</span>
-          </div>
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   )
 }
