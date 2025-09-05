@@ -5,7 +5,6 @@
   flex-direction: column;
   gap: 0.75rem;
   align-items: center;
-  z-index: 200;
   position: relative;
 }
 
@@ -19,6 +18,7 @@
   background-color: var(--color-text-white);
   border-bottom: var(--gray-border);
   height: 5rem;
+  z-index: 500;
 }
 
 .headerDeskTop{

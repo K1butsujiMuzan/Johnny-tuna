@@ -3,7 +3,6 @@
   justify-content: space-between;
   background-color: var(--color-text-white);
   align-items: center;
-  z-index: 201;
 }
 
 .headerBottomButtons{
