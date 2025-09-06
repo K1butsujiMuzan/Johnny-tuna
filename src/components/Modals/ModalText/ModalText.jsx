@@ -1,10 +1,10 @@
-import styles from "./MailSend.module.css"
+import styles from "./ModalText.module.css"
 import {createPortal} from "react-dom";
 import {useEffect, useRef} from "react";
 import {motion} from "framer-motion";
 import {loginFromTop} from "@/constants/variantsAnimation";
 
-function MailSend({email, setIsOpenModal, setFormData}) {
+function ModalText({text, setIsOpenModal, setFormData = null}) {
   const closeRef = useRef(null)
   useEffect(() => {
     closeRef.current.focus()
@@ -40,19 +40,21 @@ function MailSend({email, setIsOpenModal, setFormData}) {
         aria-modal={true}
         exit={"exit"}
       >
-        <p className={styles.modalText}>{`Письмо успешно отправлено! Ответ придёт на ${email}.`}</p>
+        <p className={styles.modalText}>{text}</p>
         <button
           ref={closeRef}
           aria-label={"Закрыть"}
           className={styles.closeButton}
           onClick={() => {
-            setFormData({
-              name: "",
-              email: "",
-              theme: "",
-              message: "",
-              reason: 0
-            })
+            if(setFormData) {
+              setFormData({
+                name: "",
+                email: "",
+                theme: "",
+                message: "",
+                reason: 0
+              })
+            }
             setIsOpenModal(false)
           }}
         >
@@ -70,4 +72,4 @@ function MailSend({email, setIsOpenModal, setFormData}) {
   )
 }
 
-export default MailSend
+export default ModalText

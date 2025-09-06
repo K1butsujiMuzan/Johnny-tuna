@@ -8,7 +8,7 @@ import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButt
 import {textVariants} from "@/constants/variantsAnimation";
 import {checkContacts} from "@/scripts/Contacts/checkContacts";
 import {errorsTypes} from "@/constants/errorsTypes";
-import MailSend from "@components/Modals/MailSend";
+import ModalText from "@components/Modals/ModalText/ModalText";
 
 function ContactsForm() {
   const nameRef = useRef(null)
@@ -226,7 +226,7 @@ function ContactsForm() {
         </SubmitButton>
       </motion.form>
       <AnimatePresence>
-        {isOpenModal && <MailSend email={formData.email} setIsOpenModal={setIsOpenModal} setFormData={setFormData}/>}
+        {isOpenModal && <ModalText text={`Письмо успешно отправлено! Ответ придёт на ${formData.email}.`} setIsOpenModal={setIsOpenModal} setFormData={setFormData}/>}
       </AnimatePresence>
     </>
   )

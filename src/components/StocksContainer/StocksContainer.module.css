@@ -47,3 +47,15 @@
     color: var(--color-accent);
   }
 }
+
+@media (max-width: 63.625rem) {
+  .cardsContainer{
+    justify-content: center;
+  }
+}
+
+@media (max-width: 42rem) {
+  .stockCard{
+    max-width: 90%;
+  }
+}
