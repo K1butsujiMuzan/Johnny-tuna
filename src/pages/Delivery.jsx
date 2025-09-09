@@ -1,4 +1,5 @@
 import useHead from "@/hooks/useHead";
+import DeliveryContainer from "@components/DeliveryContainer/DeliveryContainer";
 
 function Delivery() {
   useHead({
@@ -8,7 +9,7 @@ function Delivery() {
   })
   return(
     <>
-      <h1>Доставка</h1>
+      <DeliveryContainer/>
     </>
   )
 }
