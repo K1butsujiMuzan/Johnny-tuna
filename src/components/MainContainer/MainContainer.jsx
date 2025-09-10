@@ -1,5 +1,5 @@
 import styles from "./MainContainer.module.css"
-import Slider from "@components/MainContainer/Slider/Slider";
+import Slider from "@components/MainContainer/parts/Slider/Slider";
 
 function MainContainer() {
   return(

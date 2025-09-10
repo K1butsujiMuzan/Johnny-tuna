@@ -2,10 +2,9 @@ import styles from "./ContactsForm.module.css"
 import Logo from "@components/UI/Logo/Logo";
 import LoginInput from "@components/UI/LoginComponents/LoginInput";
 import {useRef, useState} from "react";
-import {AnimatePresence, motion} from "framer-motion";
+import {AnimatePresence} from "framer-motion";
 import Radio from "@components/UI/LoginComponents/Radio/Radio";
 import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButton";
-import {textVariants} from "@/constants/variantsAnimation";
 import {checkContacts} from "@/scripts/Contacts/checkContacts";
 import {errorsTypes} from "@/constants/errorsTypes";
 import ModalText from "@components/Modals/ModalText/ModalText";
@@ -129,11 +128,7 @@ function ContactsForm() {
   }
   return(
     <>
-      <motion.form
-        variants={textVariants}
-        initial={"enter"}
-        animate={"center"}
-        transition={{duration: 1}}
+      <form
         onSubmit={formSubmit}
         noValidate
         className={`${styles.formInner} gradientBorder`}
@@ -224,7 +219,7 @@ function ContactsForm() {
         >
           {isLoading ? "Отправка..." : "Отправить"}
         </SubmitButton>
-      </motion.form>
+      </form>
       <AnimatePresence>
         {isOpenModal && <ModalText text={`Письмо успешно отправлено! Ответ придёт на ${formData.email}.`} setIsOpenModal={setIsOpenModal} setFormData={setFormData}/>}
       </AnimatePresence>

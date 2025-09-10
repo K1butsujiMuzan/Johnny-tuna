@@ -2,7 +2,7 @@ import styles from "./StocksContainer.module.css"
 import PageLink from "@components/UI/PageLink/PageLink";
 import {cards, textModal} from "@components/StocksContainer/stocks";
 import TextBlock from "@components/UI/TextBlock/TextBlock";
-import {useRef, useState} from "react";
+import {useState} from "react";
 import ModalText from "@components/Modals/ModalText/ModalText";
 import {AnimatePresence} from "framer-motion";
 

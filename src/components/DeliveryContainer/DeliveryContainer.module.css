@@ -1,0 +1,89 @@
+.deliveryList{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.5rem, 3.125vw, 1.5rem);
+}
+
+.deliveryItem{
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.15);
+  align-items: center;
+  gap: 0.5rem;
+  padding: clamp(0.5rem, 3.125vw, 1.5rem);
+  border-radius: var(--main-border-radius);
+}
+
+.deliveryItemParagraph{
+  font-size: clamp(1rem, 1.66vw, 1.25rem);
+  font-weight: 400;
+  color: var(--color-text-dark);
+}
+
+.deliveryItemTitle{
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+}
+
+.advantagesCardsList{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(0.5rem, 3.125vw, 1.5rem);
+  text-align: left;
+}
+
+.advantagesCardsItem{
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.5rem;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.cardsParagraph{
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.cardsTitle{
+  font-size: clamp(1rem, 1.5vw, 1.125rem);
+}
+
+.deliveryInformation{
+  display: flex;
+  justify-content: space-between;
+}
+
+.deliveryInformationText{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.deliveryInformationList{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.deliveryInformationItem{
+  max-width: 22rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.deliveryMap{
+
+}
+
+@media (max-width: 48rem) {
+  .deliveryList{
+    grid-template-columns: 1fr 1fr;
+  }
+  .advantagesCardsList{
+    grid-template-columns: 1fr;
+  }
+}

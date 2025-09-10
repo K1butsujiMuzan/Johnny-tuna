@@ -56,6 +56,6 @@
 
 @media (max-width: 42rem) {
   .stockCard{
-    max-width: 90%;
+    max-width: 100%;
   }
 }

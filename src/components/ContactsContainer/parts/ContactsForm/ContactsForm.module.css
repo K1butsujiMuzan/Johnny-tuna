@@ -99,6 +99,10 @@
     gap: 1rem;
   }
 
+  .formReason{
+    padding-left: 0;
+  }
+
   .formText{
     max-width: 100%;
     gap: 0.5rem;

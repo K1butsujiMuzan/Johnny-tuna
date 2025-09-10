@@ -1,8 +1,6 @@
 import styles from "./AboutUsContainer.module.css"
 import AboutCard from "@components/AboutUsContainer/parts/AboutCard/AboutCard";
 import {foodCards, images, whyCards} from "@components/AboutUsContainer/AboutUsImages";
-import {motion} from "framer-motion";
-import {fromRight} from "@/constants/variantsAnimation";
 import TextBlock from "@components/UI/TextBlock/TextBlock";
 import PageLink from "@components/UI/PageLink/PageLink";
 
@@ -32,13 +30,9 @@ function AboutUsContainer() {
           aria-hidden={true}
         >
           {images.map((row, indexRow) => (
-            <motion.div
+            <div
               className={styles.galleryRow}
               key={indexRow}
-              variants={fromRight}
-              initial={"enter"}
-              animate={"center"}
-              transition={{duration: 1}}
             >
               {row.map((image, indexImage) => (
                 <picture key={`${indexRow}-${indexImage}`}>
@@ -58,7 +52,7 @@ function AboutUsContainer() {
                   />
                 </picture>
               ))}
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>

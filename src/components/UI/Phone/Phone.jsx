@@ -1,6 +1,6 @@
 import styles from "./Phone.module.css"
 
-function Phone({isMobile}) {
+function Phone() {
   return(
     <a
       href={"tel:89990009999"}

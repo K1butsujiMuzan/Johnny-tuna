@@ -1,10 +1,8 @@
 import styles from  "./ContactsContainer.module.css"
-import {addressInformation} from "@components/ContactsContainer/address";
-import {motion} from "framer-motion";
 import TextBlock from "@components/UI/TextBlock/TextBlock";
-import ContactsForm from "@components/ContactsContainer/ContactsForm/ContactsForm";
-import {fromRight} from "@/constants/variantsAnimation";
+import ContactsForm from "@components/ContactsContainer/parts/ContactsForm/ContactsForm";
 import PageLink from "@components/UI/PageLink/PageLink";
+import {addressInformation} from "@components/ContactsContainer/address";
 
 function ContactsContainer() {
   return(
@@ -13,12 +11,8 @@ function ContactsContainer() {
       <TextBlock>
         <h1 className={"pageTitle"}>Контакты — «Джонни Тунец»</h1>
       </TextBlock>
-      <motion.div
+      <div
         className={`${styles.contactsInformation} gradientBorder`}
-        variants={fromRight}
-        initial={"enter"}
-        animate={"center"}
-        transition={{duration: 1}}
       >
         <iframe
           aria-label={"Местоположение на карте"}
@@ -44,7 +38,7 @@ function ContactsContainer() {
             </li>
           ))}
         </ul>
-      </motion.div>
+      </div>
       <ContactsForm/>
     </section>
   )

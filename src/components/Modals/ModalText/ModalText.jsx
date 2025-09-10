@@ -68,7 +68,7 @@ function ModalText({text, setIsOpenModal, setFormData = null}) {
         </button>
       </motion.div>
     </div>,
-    document.querySelector("#mail-send")
+    document.querySelector("#modal-text")
   )
 }
 
