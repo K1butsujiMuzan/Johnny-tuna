@@ -1,6 +1,7 @@
 import styles from "./DeliveryContainer.module.css"
 import PageLink from "@components/UI/PageLink/PageLink";
 import TextBlock from "@components/UI/TextBlock/TextBlock";
+import {motion} from "framer-motion";
 import {
   advantages,
   advantagesCards, informationCards
@@ -15,17 +16,22 @@ function DeliveryContainer() {
       <TextBlock>
         <h1 className={"pageTitle"}>Доставка — «Джонни Тунец»</h1>
       </TextBlock>
-      <ul className={styles.deliveryList}>
+      <ul className={`${styles.deliveryValueList} ${styles.deliveryList}`}>
         {advantages.map((container, index) => (
-          <li key={index} className={styles.deliveryItem}>
-            <p className={styles.deliveryItemParagraph}>{container.paragraph}</p>
-            <h2 className={styles.deliveryItemTitle}>{container.title}</h2>
-          </li>
+          <motion.li
+            key={index}
+            transition={{duration: 0.5}}
+            whileHover={{y: -10}}
+            className={`${styles.deliveryValueItem} ${styles.deliveryItem}`}
+          >
+            <p className={styles.deliveryValueParagraph}>{container.paragraph}</p>
+            <h2 className={styles.deliveryValueTitle}>{container.title}</h2>
+          </motion.li>
         ))}
       </ul>
-      <ul className={styles.advantagesCardsList}>
+      <ul className={`${styles.advantagesCardsList} ${styles.deliveryList}`}>
         {advantagesCards.map((card, _) => (
-          <li key={card.icon} className={styles.advantagesCardsItem}>
+          <li key={card.icon} className={styles.deliveryItem}>
             <img
               height={40}
               width={40}
@@ -49,7 +55,7 @@ function DeliveryContainer() {
                 alt=""
                 aria-hidden={true}
               />
-              <div className={styles.deliveryInformationText}>
+              <div className={`${styles.deliveryInformationText} ${styles.deliveryItem}`}>
                 <h3 className={styles.cardsTitle}>{card.title}</h3>
                 <p className={styles.cardsParagraph}>{card.paragraph}</p>
               </div>
