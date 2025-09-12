@@ -47,6 +47,7 @@ function StocksContainer() {
                   setIsOpenModal(true)
                 }}
                 className={styles.cardShow}
+                tabIndex={0}
               >
                 Подробнее
               </span>
