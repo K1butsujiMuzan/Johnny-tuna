@@ -41,16 +41,15 @@ function StocksContainer() {
                 </picture>
                 <h2 className={styles.cardText}>{card.text}</h2>
               </div>
-              <span
+              <button
                 onClick={() => {
                   setTextIndex(index)
                   setIsOpenModal(true)
                 }}
                 className={styles.cardShow}
-                tabIndex={0}
               >
                 Подробнее
-              </span>
+              </button>
             </li>
           ))}
         </ul>
