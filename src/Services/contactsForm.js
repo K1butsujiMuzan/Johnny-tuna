@@ -3,6 +3,7 @@ import {api} from "@/Services/api";
 export const contactsForm = async(email, message, name, theme) => {
   const response = await fetch(api.contacts, {
     method: "POST",
+    headers: {"Content-Type": "application/json"},
     body: JSON.stringify({
       email: email,
       message: message,
@@ -10,7 +11,6 @@ export const contactsForm = async(email, message, name, theme) => {
       theme: theme
     })
   })
-  const data = await response.json()
 
-  return data
+  return await response.json()
 }
