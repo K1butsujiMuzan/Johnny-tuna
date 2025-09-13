@@ -1,14 +1,27 @@
 import styles from "./ModalText.module.css"
 import {createPortal} from "react-dom";
 import {motion} from "framer-motion";
-import {loginFromTop} from "@/constants/variantsAnimation";
+import {loginFromTop} from "@/constants/Data/variantsAnimation";
 import ReactFocusLock from "react-focus-lock";
 import {useEffect} from "react";
 
 function ModalText({text, setIsOpenModal, setFormData = null}) {
+  const clearFormData = () => {
+    if(setFormData) {
+      setFormData({
+        name: "",
+        email: "",
+        theme: "",
+        message: "",
+        reason: 0
+      })
+    }
+  }
+
   useEffect(() => {
     const checkKeyEsc = (event) => {
       if(event.key === "Escape") {
+        clearFormData()
         setIsOpenModal(false)
       }
     }
@@ -20,6 +33,7 @@ function ModalText({text, setIsOpenModal, setFormData = null}) {
 
   const checkClick = (event) => {
     if(event.target === event.currentTarget) {
+      clearFormData()
       setIsOpenModal(false)
     }
   }
@@ -42,15 +56,7 @@ function ModalText({text, setIsOpenModal, setFormData = null}) {
             aria-label={"Закрыть"}
             className={styles.closeButton}
             onClick={() => {
-              if(setFormData) {
-                setFormData({
-                  name: "",
-                  email: "",
-                  theme: "",
-                  message: "",
-                  reason: 0
-                })
-              }
+              clearFormData()
               setIsOpenModal(false)
             }}
           >

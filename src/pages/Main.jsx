@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import MainContainer from "@components/MainContainer/MainContainer";
+import MainContainer from "@components/Containers/MainContainer/MainContainer";
 
 function Main() {
   useHead({

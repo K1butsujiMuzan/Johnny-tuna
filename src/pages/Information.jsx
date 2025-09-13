@@ -1,6 +1,6 @@
 import useHead from "@/hooks/useHead";
 import InformationContainer
-  from "@components/InformationContainer/InformationContainer";
+  from "@components/Containers/InformationContainer/InformationContainer";
 
 function Information() {
   useHead({

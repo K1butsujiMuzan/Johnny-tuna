@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import RecoverContainer from "@components/LoginContainer&RecoverContainer/RecoverContainer/RecoverContainer";
+import RecoverContainer from "@components/Containers/LoginContainer&RecoverContainer/RecoverContainer/RecoverContainer";
 
 function Recover() {
   useHead({

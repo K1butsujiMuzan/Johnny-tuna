@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import DeliveryContainer from "@components/DeliveryContainer/DeliveryContainer";
+import DeliveryContainer from "@components/Containers/DeliveryContainer/DeliveryContainer";
 
 function Delivery() {
   useHead({

@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import ContactsContainer from "@components/ContactsContainer/ContactsContainer";
+import ContactsContainer from "@components/Containers/ContactsContainer/ContactsContainer";
 
 function Contacts() {
   useHead({

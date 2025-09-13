@@ -1,7 +1,7 @@
 import "./Logo.css"
-import logo from "@assets/icons/Logo.svg";
+import logo from "@assets/icons/MainIcons/Logo.svg";
 import {Link} from "react-router";
-import {scrollTop} from "@/scripts/toTop";
+import {scrollTop} from "@/scripts/Functions/toTop";
 
 function Logo({className}) {
   return(

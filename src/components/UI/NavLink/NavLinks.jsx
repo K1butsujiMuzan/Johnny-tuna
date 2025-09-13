@@ -1,6 +1,6 @@
 import styles from './NavLinks.module.css'
 import {Link} from "react-router-dom";
-import {scrollTop} from "@/scripts/toTop";
+import {scrollTop} from "@/scripts/Functions/toTop";
 import {useBurger} from "@/contexts/IsBurgerOpen";
 
 function NavLinks({

@@ -1,5 +1,5 @@
 import useHead from "@/hooks/useHead";
-import AboutUsContainer from "@components/AboutUsContainer/AboutUsContainer";
+import AboutUsContainer from "@components/Containers/AboutUsContainer/AboutUsContainer";
 
 function AboutUs() {
   useHead({
