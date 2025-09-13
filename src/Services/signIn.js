@@ -11,7 +11,7 @@ export const signIn = async(login, password) => {
       })
     })
 
-    let data = {}
+    let data
     try{
       data = await response.json()
     } catch(_){
