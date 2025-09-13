@@ -88,9 +88,7 @@ function HeaderTopMobile() {
       </div>
       {isBurgerOpen && (
         <ReactFocusLock
-          whiteList={node => {
-
-          }}
+          shards={[document.querySelector(`.${styles.headerTopMobile}`)]}
         >
           <HeaderModal/>
         </ReactFocusLock>
