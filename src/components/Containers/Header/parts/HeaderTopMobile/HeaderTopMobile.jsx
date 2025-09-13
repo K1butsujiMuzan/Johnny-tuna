@@ -4,6 +4,7 @@ import HeaderModal from "@components/Containers/Header/parts/HeaderModal/HeaderM
 import Search from "@components/UI/Search/Search";
 import {useEffect, useState} from "react";
 import {useBurger} from "@/contexts/IsBurgerOpen";
+import ReactFocusLock from "react-focus-lock";
 
 function HeaderTopMobile() {
   const {isBurgerOpen, setIsBurgerOpen} = useBurger()
@@ -85,7 +86,15 @@ function HeaderTopMobile() {
           </button>
         </div>
       </div>
-      {isBurgerOpen && <HeaderModal/>}
+      {isBurgerOpen && (
+        <ReactFocusLock
+          whiteList={node => {
+
+          }}
+        >
+          <HeaderModal/>
+        </ReactFocusLock>
+      )}
       {isSearchOpen && !isBurgerOpen && (
         <div className={"container"}>
           <Search/>

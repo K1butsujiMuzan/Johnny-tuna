@@ -82,7 +82,7 @@ function ContactsForm() {
     }
 
     try{
-      const data = contactsForm(
+      const data = await contactsForm(
         formData.email,
         formData.message,
         formData.name,

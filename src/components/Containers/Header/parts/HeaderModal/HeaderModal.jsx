@@ -27,7 +27,6 @@ function HeaderModal() {
       text: "Контакты"
     },
   ]
-
   return (
     <div className={styles.headerModalInner}>
       <div className={styles.modalUp}>
