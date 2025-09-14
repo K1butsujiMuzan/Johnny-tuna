@@ -8,7 +8,7 @@ import {checkRegistration} from "@/scripts/CheckData/checkRegistration";
 import {errorsTypes} from "@/constants/Request/errorsTypes";
 import {responsesTypes} from "@/constants/Request/responsesTypes";
 import {Link} from "react-router-dom";
-import {signUp} from "@/Services/signUp";
+import {signUp} from "@/services/signUp";
 
 function SignUp() {
   const loginInput = useRef(null)

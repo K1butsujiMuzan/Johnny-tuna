@@ -8,7 +8,7 @@ import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButt
 import {checkContacts} from "@/scripts/CheckData/checkContacts";
 import {errorsTypes} from "@/constants/Request/errorsTypes";
 import ModalText from "@components/Modals/ModalText/ModalText";
-import {contactsForm} from "@/Services/contactsForm";
+import {contactsForm} from "@/services/contactsForm";
 
 function ContactsForm() {
   const nameRef = useRef(null)

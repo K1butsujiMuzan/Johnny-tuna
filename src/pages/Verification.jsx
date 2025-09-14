@@ -1,6 +1,6 @@
 import {useParams} from "react-router-dom";
 import {useEffect} from "react";
-import {getToken} from "@/Services/verification";
+import {getToken} from "@/services/verification";
 import {setCookie} from "@/scripts/Functions/setCookie";
 
 function Verification() {

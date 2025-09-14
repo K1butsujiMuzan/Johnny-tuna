@@ -51,6 +51,7 @@
   align-items: center;
   justify-content: center;
   column-gap: 0.5rem;
+  margin-bottom: 0.25rem;
 }
 
 .locationIcon{

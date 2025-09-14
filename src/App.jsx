@@ -10,6 +10,7 @@ import MainLayout from "@/layouts/MainLayout";
 import Basket from "@/pages/Basket";
 import Recover from "@/pages/Recover";
 import Verification from "@/pages/Verification";
+import Profile from "@/pages/Profile";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/contacts"} element={<Contacts/>}></Route>
           <Route path={"/information"} element={<Information/>}></Route>
           <Route path={"/basket"} element={<Basket/>}></Route>
+          <Route path={"/profile"} element={<Profile/>}></Route>
         </Route>
         <Route path={"/verify/token/:token"} element={<Verification/>}></Route>
         <Route path={"/login"} element={<Login/>} />

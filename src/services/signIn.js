@@ -1,4 +1,4 @@
-import {api} from "@/Services/api";
+import {api} from "@/services/api";
 
 export const signIn = async(login, password) => {
   try{

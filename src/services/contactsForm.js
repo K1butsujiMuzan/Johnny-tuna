@@ -1,4 +1,4 @@
-import {api} from "@/Services/api";
+import {api} from "@/services/api";
 
 export const contactsForm = async(email, message, name, theme) => {
   const response = await fetch(api.contacts, {

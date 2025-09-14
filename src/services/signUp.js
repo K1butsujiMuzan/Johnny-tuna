@@ -1,4 +1,4 @@
-import {api} from "@/Services/api";
+import {api} from "@/services/api";
 
 export const signUp = async(email, login, password) => {
   const response = await fetch(api.signUp, {

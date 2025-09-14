@@ -1,5 +1,5 @@
 import {responsesTypes} from "@/constants/Request/responsesTypes";
-import {api} from "@/Services/api";
+import {api} from "@/services/api";
 
 export const getToken = async(token) => {
     const response = await fetch(api.verification(token), {

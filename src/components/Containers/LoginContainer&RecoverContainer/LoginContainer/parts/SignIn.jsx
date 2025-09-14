@@ -7,7 +7,7 @@ import SubmitButton from "@components/UI/LoginComponents/SubmitButton/SubmitButt
 import {setCookie} from "@/scripts/Functions/setCookie"
 import {responsesTypes} from "@/constants/Request/responsesTypes";
 import {errorsTypes} from "@/constants/Request/errorsTypes";
-import {signIn} from "@/Services/signIn";
+import {signIn} from "@/services/signIn";
 
 function SignIn() {
   const errorLogin = useRef(null)
