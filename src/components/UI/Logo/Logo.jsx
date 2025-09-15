@@ -2,19 +2,17 @@ import "./Logo.css"
 import logo from "@assets/icons/MainIcons/Logo.svg";
 import {Link} from "react-router";
 import {scrollTop} from "@/scripts/Functions/toTop";
-import {useBurger} from "@/contexts/IsBurgerOpen";
+import {useBurgerOpen} from "@/store/useBurgerOpen";
 
 function Logo({className}) {
-  const {setIsBurgerOpen, isBurgerOpen} = useBurger()
+  const {isOpen, closeBurger} = useBurgerOpen()
   return(
     <Link
       to={"/"}
       aria-label={"На главную"}
       onClick={() => {
         scrollTop()
-        if(isBurgerOpen) {
-          setIsBurgerOpen(false)
-        }
+        isOpen ? closeBurger() : undefined
       }}
     >
       <img

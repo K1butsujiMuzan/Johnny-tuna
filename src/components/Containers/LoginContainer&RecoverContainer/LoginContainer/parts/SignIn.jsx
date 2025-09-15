@@ -8,10 +8,12 @@ import {setCookie} from "@/scripts/Functions/setCookie"
 import {responsesTypes} from "@/constants/Request/responsesTypes";
 import {errorsTypes} from "@/constants/Request/errorsTypes";
 import {signIn} from "@/services/signIn";
+import {useProfileToken} from "@/store/useProfileToken";
 
 function SignIn() {
   const errorLogin = useRef(null)
   const errorPassword = useRef(null)
+  const {auth} = useProfileToken()
 
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({
@@ -63,6 +65,7 @@ function SignIn() {
 
       if(data.result) {
         setCookie("auth", data.result, 30)
+        auth()
         navigate("/", {replace: true})
       }
 

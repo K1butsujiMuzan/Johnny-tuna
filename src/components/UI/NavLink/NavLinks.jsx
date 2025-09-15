@@ -1,14 +1,14 @@
 import styles from './NavLinks.module.css'
 import {Link} from "react-router-dom";
 import {scrollTop} from "@/scripts/Functions/toTop";
-import {useBurger} from "@/contexts/IsBurgerOpen";
+import {useBurgerOpen} from "@/store/useBurgerOpen";
 
 function NavLinks({
   to,
   children,
   isBlack
 }) {
-  const {setIsBurgerOpen, isBurgerOpen} = useBurger()
+  const {isOpen, closeBurger} = useBurgerOpen()
   return(
     <li className={styles.item}>
       <Link
@@ -19,9 +19,7 @@ function NavLinks({
         to={to}
         onClick={() => {
           scrollTop()
-          if(isBurgerOpen === true) {
-            setIsBurgerOpen(false)
-          }
+          isOpen ? closeBurger() : undefined
         }}
       >
         {children}

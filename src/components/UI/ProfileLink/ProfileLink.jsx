@@ -1,32 +1,14 @@
 import {Link} from "react-router";
 import styles from "./ProfileLink.module.css"
-import {useEffect, useState} from "react";
-import {checkProfile} from "@/services/profile";
+import {useProfileToken} from "@/store/useProfileToken";
 
 function ProfileLink() {
-  const [isAuth, setIsAuth] = useState(false)
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    const checkAuth = async() => {
-      try {
-        const status = await checkProfile()
-        setIsAuth(status)
-      } catch(error) {
-        console.error(error)
-        setIsAuth(false)
-      } finally {
-        setIsLoading(false)
-      }
-    }
-    checkAuth()
-  }, []);
-
+  const {isVerify} = useProfileToken()
   return(
     <Link
       className={`${styles.profileLink} headerIconLink`}
       aria-label={"Профиль"}
-      to={isAuth ? "/profile" : "/login"}
+      to={`${isVerify ? "/profile" : "/login"}`}
     >
       <svg
         className={styles.profileIcon}
