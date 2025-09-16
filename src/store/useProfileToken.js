@@ -7,7 +7,7 @@ export const useProfileToken = create((set) => ({
     try {
       const status = await checkProfile()
       set({isVerify: status})
-      console.log(status)
+      return status
     } catch(error) {
       console.error(error)
     }

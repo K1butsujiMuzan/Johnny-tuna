@@ -11,8 +11,15 @@ import Basket from "@/pages/Basket";
 import Recover from "@/pages/Recover";
 import Verification from "@/pages/Verification";
 import Profile from "@/pages/Profile";
+import {useProfileToken} from "@/store/useProfileToken";
+import {useEffect} from "react";
 
 function App() {
+  const {auth} = useProfileToken()
+  useEffect(() => {
+    auth()
+  }, [auth]);
+
   return (
     <>
       <Routes>

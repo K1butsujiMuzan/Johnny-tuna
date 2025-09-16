@@ -22,12 +22,17 @@
   row-gap: 2rem;
 }
 
+.modalUpIcons{
+  padding-inline: 1rem;
+  height: 3.5rem;
+  border-block: var(--gray-border);
+  display: flex;
+  justify-content: space-between;
+}
+
 .modalUpLocation{
   display: flex;
   align-items: flex-start;
-  height: 3.5rem;
-  border-block: var(--gray-border);
-  padding-left: 1rem;
 }
 
 .modalUpLinks{

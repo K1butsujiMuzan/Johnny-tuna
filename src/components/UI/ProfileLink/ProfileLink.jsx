@@ -1,14 +1,27 @@
 import {Link} from "react-router";
 import styles from "./ProfileLink.module.css"
+import {useNavigate} from "react-router-dom";
 import {useProfileToken} from "@/store/useProfileToken";
+import {useBurgerOpen} from "@/store/useBurgerOpen";
 
 function ProfileLink() {
-  const {isVerify} = useProfileToken()
+  const navigate = useNavigate()
+  const {auth} = useProfileToken()
+  const {isOpen, closeBurger} = useBurgerOpen()
+
+  const handleClick = async (event) => {
+    event.preventDefault()
+    isOpen ? closeBurger() : undefined
+    const isVerify = await auth()
+    navigate(`${isVerify ? "/profile" : "/login"}`)
+  }
+
   return(
     <Link
       className={`${styles.profileLink} headerIconLink`}
       aria-label={"Профиль"}
-      to={`${isVerify ? "/profile" : "/login"}`}
+      to={"#"}
+      onClick={handleClick}
     >
       <svg
         className={styles.profileIcon}

@@ -39,7 +39,9 @@ function ModalText({text, setIsOpenModal, setFormData = null}) {
   }
 
   return createPortal(
-    <ReactFocusLock>
+    <ReactFocusLock
+      returnFocus={true}
+    >
       <div className={styles.modalInner} onClick={checkClick}>
         <motion.div
           variants={loginFromTop}

@@ -2,11 +2,12 @@ import styles from "./HeaderTopMobile.module.css"
 import Logo from "@components/UI/Logo/Logo";
 import HeaderModal from "@components/Containers/Header/parts/HeaderModal/HeaderModal";
 import Search from "@components/UI/Search/Search";
-import {useEffect, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import ReactFocusLock from "react-focus-lock";
 import {useBurgerOpen} from "@/store/useBurgerOpen";
 
 function HeaderTopMobile() {
+  const hederTopRef = useRef(null)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
   const {isOpen, closeBurger, toggleBurger} = useBurgerOpen()
 
@@ -24,7 +25,7 @@ function HeaderTopMobile() {
     }
 
     const closeModal = (event)=> {
-      if(isOpen && event.key === "Escape") {
+      if(event.key === "Escape") {
         closeBurger()
       }
     }
@@ -36,17 +37,23 @@ function HeaderTopMobile() {
     }
   }, [isOpen]);
 
+  const toggleSearch = useCallback(() => {
+    setIsSearchOpen(prevState => !prevState)
+  }, [])
+
   return(
     <div className={`
       ${isOpen ? styles.headerInnerOpen : styles.headerInner}
     `}
     >
-      <div className={`
-        ${styles.headerTopMobile}
-        container
-        ${isOpen ? styles.headerTopMobileOpen : ""}
-        ${isSearchOpen ? styles.headerTopMobileSearch : ""}
-      `}
+      <div className=
+        {`
+          ${styles.headerTopMobile}
+          container
+          ${isOpen ? styles.headerTopMobileOpen : ""}
+          ${isSearchOpen ? styles.headerTopMobileSearch : ""}
+        `}
+        ref={hederTopRef}
       >
         <Logo className={"headerLogo"}/>
         <div className={styles.headerButtons}>
@@ -55,7 +62,7 @@ function HeaderTopMobile() {
               className={styles.searchButton}
               aria-label={"Поиск"}
               aria-expanded={isSearchOpen}
-              onClick={() => setIsSearchOpen(prevState => !prevState)}
+              onClick={toggleSearch}
             >
               <svg
                 className={styles.searchIcon}
@@ -88,7 +95,8 @@ function HeaderTopMobile() {
       </div>
       {isOpen && (
         <ReactFocusLock
-          shards={[document.querySelector(`.${styles.headerTopMobile}`)]}
+          shards={[hederTopRef.current]}
+          returnFocus={true}
         >
           <HeaderModal/>
         </ReactFocusLock>
