@@ -1,0 +1,52 @@
+.profileData{
+
+}
+
+.profileDataUp{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profileSmallTitle{
+  font-size: clamp(1.25rem, 2.66vw, 2rem);
+}
+
+.profileDataUpBlock{
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.profileChangeButton{
+  background-color: transparent;
+  border: none;
+}
+
+.profileChangeIcon{
+  fill: none;
+}
+
+.profileExit{
+  border: none;
+  background-color: transparent;
+  font-weight: 500;
+}
+
+@media (hover: hover) {
+  .profileChangeButton:hover .profileChangeIcon path{
+    stroke: var(--color-accent);
+  }
+  .profileExit:hover{
+    color: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .profileChangeButton:active .profileChangeIcon path{
+    stroke: var(--color-accent);
+  }
+  .profileExit:active{
+    color: var(--color-accent);
+  }
+}

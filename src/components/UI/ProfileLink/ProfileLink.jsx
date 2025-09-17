@@ -6,7 +6,7 @@ import {useBurgerOpen} from "@/store/useBurgerOpen";
 
 function ProfileLink() {
   const navigate = useNavigate()
-  const {auth} = useProfileToken()
+  const {auth, profileData} = useProfileToken()
   const {isOpen, closeBurger} = useBurgerOpen()
 
   const handleClick = async (event) => {
@@ -36,7 +36,7 @@ function ProfileLink() {
           className={styles.pointsText}
           aria-label={"Баллы"}
         >
-          0
+          {profileData.Points.value}
         </span>
         <svg
           aria-hidden={true}

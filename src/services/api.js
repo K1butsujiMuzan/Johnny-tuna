@@ -3,5 +3,6 @@ export const api = {
   signIn: "http://localhost:8080/api/v1/auth/login",
   signUp: "http://localhost:8080/api/v1/auth/register",
   verification: (token) => `http://localhost:8080/api/v1/auth/verify?token=${token}`,
-  profile: "http://localhost:8080/api/v1/auth/verify/user"
+  checkProfile: "http://localhost:8080/api/v1/auth/verify/user",
+  getProfileData: "http://localhost:8080/api/v1/profile/info"
 }
