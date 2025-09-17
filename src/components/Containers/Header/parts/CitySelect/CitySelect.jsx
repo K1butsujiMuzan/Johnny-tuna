@@ -2,21 +2,19 @@ import arrow from "@assets/icons/Header/Arrow.svg"
 import styles from "./CitySelect.module.css"
 import {useCallback, useEffect, useRef, useState} from "react";
 import {motion} from "framer-motion";
+import {useCity} from "@/store/useCity";
+import {cityVariants, cityContainerVariants} from "@/constants/Data/variantsAnimation";
+import {cities} from "@/constants/Data/cities";
 
-function CitySelect({isMobile}) {
+function CitySelect({isMobile, noPadding = false}) {
+  const {cityValue, setCity} = useCity()
   const [isOpen, setIsOpen] = useState(false)
-  const [selectedCity, setSelectedCity] = useState(localStorage.getItem("City") || "Калининград")
   const cityBlock = useRef(null)
 
   useEffect(() => {
-    if (!localStorage.getItem("City")) {
-      localStorage.setItem("City", "Калининград")
-    }
-  }, []);
-
-  useEffect(() => {
+    if(!isOpen) return
     const closeCity = (event) => {
-      if(isOpen && cityBlock.current && !cityBlock.current.contains(event.target)) {
+      if(cityBlock.current && !cityBlock.current.contains(event.target)) {
         setIsOpen(false)
       }
     }
@@ -32,37 +30,9 @@ function CitySelect({isMobile}) {
   }, [])
 
   const citySelectEnter = useCallback((city) => {
-    setSelectedCity(city.label)
+    setCity(city.label)
     setIsOpen(false)
-    localStorage.setItem("City", city.label)
-  }, [])
-
-  const cities = [
-    {value: "kaliningrad", label: "Калининград"},
-    {value: "krasnodar", label: "Краснодар"},
-    {value: "moscow", label: "Москва"},
-    {value: "saint-petersburg", label: "Санкт-Петербург"},
-  ]
-
-  const cityContainerVariants = {
-    enter: {
-      opacity: 0,
-      y: -10
-    },
-    center: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        staggerChildren: 0.08,
-        duration: 0.2
-      }
-    }
-  }
-
-  const cityVariants = {
-    enter: {opacity: 0},
-    center: {opacity: 1}
-  }
+  }, [setCity])
 
   return (
     <div className={styles.wrapper} ref={cityBlock}>
@@ -75,7 +45,7 @@ function CitySelect({isMobile}) {
         aria-label={"Выбрать город"}
         onKeyDown={(event) => cityEnter(event)}
       >
-        <span className={styles.selectValue}>{selectedCity}</span>
+        <span className={`${styles.selectValue} ${noPadding ? styles.selectValueNoPadding : ""}`}>{cityValue}</span>
         {!isMobile && (
           <img
             className={`${styles.selectArrow} ${isOpen ? styles.selectArrowRotate : ""}`}
@@ -102,6 +72,8 @@ function CitySelect({isMobile}) {
           >
             {cities.map((city) => (
               <motion.div
+                initial={"enter"}
+                animate={"center"}
                 role={"option"}
                 key={city.value}
                 className={styles.selectOption}

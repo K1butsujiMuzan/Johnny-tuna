@@ -1,9 +1,11 @@
 import styles from "./ProfileData.module.css"
 import {useNavigate} from "react-router-dom";
 import {useProfileToken} from "@/store/useProfileToken";
+import CitySelect
+  from "@components/Containers/Header/parts/CitySelect/CitySelect";
 
 function ProfileData() {
-  const {exit} = useProfileToken()
+  const {exit, profileData} = useProfileToken()
   const navigate = useNavigate()
   const exitFromAccount = () => {
     exit()
@@ -36,9 +38,20 @@ function ProfileData() {
           выйти
         </button>
       </div>
-      <div>
-
-      </div>
+      <form className={styles.profileDataDown}>
+        <div className={styles.profileDataDownBlock}>
+          <h3>Почта</h3>
+          <span className={styles.profileSpan}>{profileData.email}</span>
+        </div>
+        <div className={styles.profileDataDownBlock}>
+          <h3>Логин</h3>
+          <span className={styles.profileSpan}>{profileData.login}</span>
+        </div>
+        <div className={styles.profileDataDownBlock}>
+          <h3>Город</h3>
+          <CitySelect noPadding/>
+        </div>
+      </form>
     </div>
   )
 }
