@@ -6,7 +6,7 @@ import {useCity} from "@/store/useCity";
 import {cityVariants, cityContainerVariants} from "@/constants/Data/variantsAnimation";
 import {cities} from "@/constants/Data/cities";
 
-function CitySelect({isMobile, noPadding = false}) {
+function CitySelect({isMobile}) {
   const {cityValue, setCity} = useCity()
   const [isOpen, setIsOpen] = useState(false)
   const cityBlock = useRef(null)
@@ -45,7 +45,7 @@ function CitySelect({isMobile, noPadding = false}) {
         aria-label={"Выбрать город"}
         onKeyDown={(event) => cityEnter(event)}
       >
-        <span className={`${styles.selectValue} ${noPadding ? styles.selectValueNoPadding : ""}`}>{cityValue}</span>
+        <span className={styles.selectValue}>{cityValue}</span>
         {!isMobile && (
           <img
             className={`${styles.selectArrow} ${isOpen ? styles.selectArrowRotate : ""}`}
@@ -72,8 +72,6 @@ function CitySelect({isMobile, noPadding = false}) {
           >
             {cities.map((city) => (
               <motion.div
-                initial={"enter"}
-                animate={"center"}
                 role={"option"}
                 key={city.value}
                 className={styles.selectOption}

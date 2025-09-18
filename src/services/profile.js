@@ -5,7 +5,7 @@ export const checkProfile = async(api) => {
   try{
     const token = getCookie("auth")
     const response = await fetch(api, {
-      headers: {"Authorization": `Bearer ${token}`}
+      headers: {"Authorization": `Bearer ${token}`},
     })
     if(!response) {
       throw new Error(errorsTypes.serverConnect)

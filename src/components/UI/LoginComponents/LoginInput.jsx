@@ -11,7 +11,8 @@ const LoginInput = forwardRef(({
   onChange,
   required = false,
   disabled = false,
-  isRed
+  isRed,
+  noAutoComplete
 }, ref) => {
   return(
     <input
@@ -26,6 +27,7 @@ const LoginInput = forwardRef(({
       required={required}
       disabled={disabled}
       ref={ref}
+      autoComplete={noAutoComplete ? "off" : "on"}
     />
   )
 })

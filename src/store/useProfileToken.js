@@ -4,12 +4,7 @@ import {api} from "@/services/api";
 
 export const useProfileToken = create((set, get) => ({
   isVerify: false,
-  profileData: {
-    Points: {value: 0},
-    email: "",
-    id: "",
-    login: ""
-  },
+  profileData: {Points: {value: 0}, email: "", id: "", login: ""},
   auth: async() => {
     try {
       const status = await checkProfile(api.checkProfile)

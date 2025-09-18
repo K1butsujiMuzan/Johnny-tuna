@@ -31,10 +31,6 @@
   transition: var(--main-transition);
 }
 
-.selectValueNoPadding{
-  padding-left: 0;
-}
-
 .selectList{
   z-index: 600;
   box-shadow:

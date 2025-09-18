@@ -226,8 +226,7 @@ function SignUp() {
           value={"согласен"}
         />
         <SubmitButton
-          isLoading={isLoading}
-          disabled={!formData.agreement}
+          disabled={!formData.agreement || isLoading}
           type={"submit"}
         >
           {isLoading ? "Загрузка...": "Отправить"}

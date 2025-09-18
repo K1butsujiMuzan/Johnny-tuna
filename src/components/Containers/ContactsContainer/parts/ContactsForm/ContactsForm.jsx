@@ -173,6 +173,7 @@ function ContactsForm() {
                 onChange={handleChange}
                 ref={themeRef}
                 isRed={errors.themeError}
+                noAutoComplete
               />
             </div>
           </div>
@@ -212,6 +213,7 @@ function ContactsForm() {
           />
         </div>
         <SubmitButton
+          disabled={isLoading}
           type={"submit"}
         >
           {isLoading ? "Отправка..." : "Отправить"}

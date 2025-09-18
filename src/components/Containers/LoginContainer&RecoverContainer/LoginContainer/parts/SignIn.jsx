@@ -137,8 +137,7 @@ function SignIn() {
         className={styles.mainFormDown}
       >
         <SubmitButton
-          disabled={(formData.password.length < 8) || (formData.login.length < 3)}
-          isLoading={isLoading}
+          disabled={(formData.password.length < 8) || (formData.login.length < 3) || isLoading}
           type={"submit"}
         >
           {isLoading ? "Загрузка..." : "Войти"}

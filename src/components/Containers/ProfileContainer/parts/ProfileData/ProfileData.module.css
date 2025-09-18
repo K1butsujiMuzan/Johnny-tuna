@@ -35,30 +35,64 @@
 .profileDataDown{
   display: flex;
   flex-direction: column;
+  align-items: center;
   border: var(--gray-border);
   padding: 1rem;
   gap: 2rem;
+  width: 24rem;
 }
 
 .profileDataDownBlock{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-
-.profileSpan{
-  font-size: clamp(1rem, 1.6666vw, 1.25rem);
+  width: 100%;
 }
 
 .profileInput{
-  font-size: clamp(1rem, 1.6666vw, 1.25rem);
-  border: none;
+  font-size: 1.125rem;
+  color: var(--color-text-dark);
+  background-color: var(--color-text-f5);
+  padding: 0.5rem;
+  border-radius: var(--main-border-radius);
+  border: var(--gray-border);
+  caret-color: var(--color-accent);
+}
+
+.profileInputError{
+  border: 2px solid var(--color-red);
+}
+
+.profileInput::placeholder{
+  color: var(--color-text-light);
+}
+
+.profileInput:disabled{
   cursor: text;
+}
+
+.profileInput:focus-visible{
+  outline: none;
+}
+
+.errorBlock{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.25rem;
+}
+
+.error{
+  font-size: 0.75rem;
+  color: var(--color-red);
 }
 
 @media (hover: hover) {
   .profileChangeButton:hover .profileChangeIcon path{
     stroke: var(--color-accent);
+  }
+  .profileChangeButton:hover .profileCloseIcon path{
+    fill: var(--color-accent);
   }
   .profileExit:hover{
     color: var(--color-accent);
@@ -68,6 +102,9 @@
 @media (hover: none) {
   .profileChangeButton:active .profileChangeIcon path{
     stroke: var(--color-accent);
+  }
+  .profileChangeButton:active .profileCloseIcon path{
+    fill: var(--color-accent);
   }
   .profileExit:active{
     color: var(--color-accent);

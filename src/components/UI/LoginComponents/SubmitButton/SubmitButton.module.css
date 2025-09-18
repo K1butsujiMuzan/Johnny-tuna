@@ -16,10 +16,6 @@
   scale: 0.98;
 }
 
-.isLoading{
-  opacity: 0.5;
-}
-
 @media (hover: hover) {
   .submitButton:hover{
     background-color: var(--color-red-accent);

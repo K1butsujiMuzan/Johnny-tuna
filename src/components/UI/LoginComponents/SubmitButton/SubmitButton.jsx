@@ -2,15 +2,12 @@ import styles from "./SubmitButton.module.css"
 
 function SubmitButton({
   children,
-  onClick,
   disabled = false,
-  isLoading,
   type
 }) {
   return(
     <button
-      className={`${styles.submitButton} ${isLoading ? styles.isLoading : ""}`}
-      onClick={onClick}
+      className={styles.submitButton}
       type={type}
       disabled={disabled}
     >
