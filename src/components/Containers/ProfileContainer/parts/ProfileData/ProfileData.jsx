@@ -125,22 +125,8 @@ function ProfileData() {
         className={styles.profileDataDown}
       >
         <div className={styles.profileDataDownBlock}>
-          <h3>Почта</h3>
-          <div className={styles.errorBlock}>
-            <p className={styles.error}>{errors.emailError}</p>
-            <input
-              className={`${styles.profileInput} ${errors.emailError ? styles.profileInputError : ""}`}
-              disabled={isDisabled}
-              value={newData.email}
-              name={"email"}
-              onChange={handleChange}
-              minLength={10}
-              maxLength={50}
-              placeholder={"Почта"}
-              type={"email"}
-              ref={emailRef}
-            />
-          </div>
+          <h3>Город</h3>
+          <CitySelect/>
         </div>
         <div className={styles.profileDataDownBlock}>
           <h3>Логин</h3>
@@ -161,8 +147,22 @@ function ProfileData() {
           </div>
         </div>
         <div className={styles.profileDataDownBlock}>
-          <h3>Город</h3>
-          <CitySelect/>
+          <h3>Почта</h3>
+          <div className={styles.errorBlock}>
+            <p className={styles.error}>{errors.emailError}</p>
+            <input
+              className={`${styles.profileInput} ${errors.emailError ? styles.profileInputError : ""}`}
+              disabled={isDisabled}
+              value={newData.email}
+              name={"email"}
+              onChange={handleChange}
+              minLength={10}
+              maxLength={50}
+              placeholder={"Почта"}
+              type={"email"}
+              ref={emailRef}
+            />
+          </div>
         </div>
         {!isDisabled && (
           <SubmitButton
