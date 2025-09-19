@@ -1,10 +1,12 @@
 import {useParams} from "react-router-dom";
-import {useEffect} from "react";
+import {useEffect, useState} from "react";
 import {getToken} from "@/services/verification";
 import {setCookie} from "@/scripts/Functions/setCookie";
 import {useProfileToken} from "@/store/useProfileToken";
+import Logo from "@components/UI/Logo/Logo";
 
 function Verification() {
+  const [isVerify, setIsVerify] = useState("Аккаунт не подтверждён :(")
   const {auth} = useProfileToken()
   const {token} = useParams()
   useEffect(() => {
@@ -13,9 +15,9 @@ function Verification() {
         const data = await getToken(token)
 
         if(data.result) {
-          console.log("Аккаунт подтверждён!")
+          setIsVerify("Аккаунт подтверждён!")
           setCookie("auth", data.result, 30)
-          auth()
+          await auth()
         }
       } catch (error) {
         console.error(error)
@@ -26,7 +28,10 @@ function Verification() {
   }, []);
 
   return(
-    <></>
+    <section className={"verifyPage"}>
+      <Logo/>
+      <h1>{isVerify}</h1>
+    </section>
   )
 }
 

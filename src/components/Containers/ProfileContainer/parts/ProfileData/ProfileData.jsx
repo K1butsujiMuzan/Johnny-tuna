@@ -7,6 +7,9 @@ import {useEffect, useRef, useState} from "react";
 import SubmitButton
   from "@components/UI/LoginComponents/SubmitButton/SubmitButton";
 import {checkNewProfileData} from "@/scripts/CheckData/checkNewProfileData";
+import {api} from "@/services/api";
+import {updateData} from "@/services/updateData";
+import {errorsTypes} from "@/constants/Request/errorsTypes";
 
 function ProfileData() {
   const {exit, profileData} = useProfileToken()
@@ -41,6 +44,12 @@ function ProfileData() {
 
   const toggleEdit = () => {
     setIsDisabled(prevState => !prevState)
+    if(errors.loginError || errors.emailError) {
+      setErrors({
+        emailError: "",
+        loginError: ""
+      })
+    }
     if(!isDisabled) {
       setNewData({
         email: profileData.email,
@@ -63,23 +72,44 @@ function ProfileData() {
     }))
   }
 
-  const submitData = (event) => {
+  const submitData = async (event) => {
     event.preventDefault()
     const validationErrors = checkNewProfileData(newData.email, newData.login)
     setErrors(validationErrors)
 
     if(Object.values(validationErrors).some(error => error !== "")) {
       setIsLoading(false)
-      if(validationErrors.emailError) {
-        return emailRef.current.focus()
-      } else if(validationErrors.loginError){
+      if(validationErrors.loginError) {
         return loginRef.current.focus()
+      } else if(validationErrors.emailError){
+        return emailRef.current.focus()
       } else {
         return
       }
     }
-
     setIsLoading(true)
+    try{
+      if(profileData.email !== newData.email) {
+        const error = await updateData(api.updateEmail, newData.email)
+        if(!error) {
+          setIsDisabled(true)
+        }
+      }
+      if(profileData.login !== newData.login) {
+        const error = await updateData(api.updateLogin, newData.login)
+        if(!error) {
+          setIsDisabled(true)
+        }
+      }
+    } catch (error) {
+      console.error(error)
+      setErrors(prevState => ({
+        ...prevState,
+        loginError: errorsTypes.serverConnect
+      }))
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return(
@@ -167,7 +197,7 @@ function ProfileData() {
         {!isDisabled && (
           <SubmitButton
             type={"submit"}
-            disabled={isLoading}
+            disabled={isLoading || (profileData.email === newData.email && profileData.login === newData.login)}
           >
             {isLoading ? "Сохранение..." : "Сохранить"}
           </SubmitButton>

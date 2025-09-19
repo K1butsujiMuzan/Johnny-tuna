@@ -9,8 +9,10 @@ import {errorsTypes} from "@/constants/Request/errorsTypes";
 import {responsesTypes} from "@/constants/Request/responsesTypes";
 import {Link} from "react-router-dom";
 import {signUp} from "@/services/signUp";
+import {useProfileToken} from "@/store/useProfileToken";
 
 function SignUp() {
+  const {auth} = useProfileToken()
   const loginInput = useRef(null)
   const emailInput = useRef(null)
   const passwordInput = useRef(null)
@@ -143,6 +145,9 @@ function SignUp() {
               <Link
                 to={"/"}
                 className={styles.linkToMain}
+                onClick={async () => {
+                  await auth()
+                }}
               >
                 На главную
               </Link>

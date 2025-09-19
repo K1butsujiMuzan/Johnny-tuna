@@ -4,5 +4,7 @@ export const api = {
   signUp: "http://localhost:8080/api/v1/auth/register",
   verification: (token) => `http://localhost:8080/api/v1/auth/verify?token=${token}`,
   checkProfile: "http://localhost:8080/api/v1/auth/verify/user",
-  getProfileData: "http://localhost:8080/api/v1/profile/info"
+  getProfileData: "http://localhost:8080/api/v1/profile/info",
+  updateEmail: "http://localhost:8080/api/v1/profile/update/email",
+  updateLogin: "http://localhost:8080/api/v1/profile/update/login"
 }

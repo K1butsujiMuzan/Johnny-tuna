@@ -11,7 +11,9 @@ export const useProfileToken = create((set, get) => ({
       set({isVerify: status === "ok"})
       if(status === "ok") {
         const data = await get().getData()
-        set({profileData: data})
+        if(!data.error) {
+          set({profileData: data})
+        }
       } else{
         set({profileData: {Points: {value: 0}, email: "", id: "", login: ""}})
       }
