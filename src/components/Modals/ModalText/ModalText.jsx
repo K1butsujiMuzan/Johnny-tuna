@@ -28,7 +28,7 @@ function ModalText({text, setIsOpenModal, setFormData = null}) {
 
     window.addEventListener("keydown", checkKeyEsc)
 
-    return () => document.removeEventListener("keydown", checkKeyEsc)
+    return () => window.removeEventListener("keydown", checkKeyEsc)
   }, []);
 
   const checkClick = (event) => {

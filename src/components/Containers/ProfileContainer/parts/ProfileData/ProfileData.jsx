@@ -10,10 +10,13 @@ import {checkNewProfileData} from "@/scripts/CheckData/checkNewProfileData";
 import {api} from "@/services/api";
 import {updateData} from "@/services/updateData";
 import {errorsTypes} from "@/constants/Request/errorsTypes";
+import {AnimatePresence} from "framer-motion";
+import ModalText from "@components/Modals/ModalText/ModalText";
 
 function ProfileData() {
   const {exit, profileData} = useProfileToken()
 
+  const [isOpenModal, setIsOpenModal] = useState(false)
   const [isDisabled, setIsDisabled] = useState(true)
   const [newData, setNewData] = useState({
     email: "",
@@ -93,12 +96,14 @@ function ProfileData() {
         const error = await updateData(api.updateEmail, newData.email)
         if(!error) {
           setIsDisabled(true)
+          setIsOpenModal(true)
         }
       }
       if(profileData.login !== newData.login) {
         const error = await updateData(api.updateLogin, newData.login)
         if(!error) {
           setIsDisabled(true)
+          setIsOpenModal(true)
         }
       }
     } catch (error) {
@@ -113,8 +118,9 @@ function ProfileData() {
   }
 
   return(
-    <div className={styles.profileData}>
-      <div className={styles.profileDataUp}>
+    <>
+      <div className={styles.profileData}>
+        <div className={styles.profileDataUp}>
         <span className={styles.profileDataUpBlock}>
           <h2 className={styles.profileSmallTitle}>Данные аккаунта</h2>
           <button
@@ -141,69 +147,75 @@ function ProfileData() {
             )}
           </button>
         </span>
-        <button
-          type={"button"}
-          className={styles.profileExit}
-          onClick={exitFromAccount}
-        >
-          выйти
-        </button>
-      </div>
-      <form
-        onSubmit={submitData}
-        noValidate
-        className={styles.profileDataDown}
-      >
-        <div className={styles.profileDataDownBlock}>
-          <h3>Город</h3>
-          <CitySelect/>
-        </div>
-        <div className={styles.profileDataDownBlock}>
-          <h3>Логин</h3>
-          <div className={styles.errorBlock}>
-            <p className={styles.error}>{errors.loginError}</p>
-            <input
-              className={`${styles.profileInput} ${errors.loginError ? styles.profileInputError : ""}`}
-              value={newData.login}
-              disabled={isDisabled}
-              name={"login"}
-              onChange={handleChange}
-              type={"text"}
-              minLength={3}
-              maxLength={20}
-              placeholder={"Логин"}
-              ref={loginRef}
-            />
-          </div>
-        </div>
-        <div className={styles.profileDataDownBlock}>
-          <h3>Почта</h3>
-          <div className={styles.errorBlock}>
-            <p className={styles.error}>{errors.emailError}</p>
-            <input
-              className={`${styles.profileInput} ${errors.emailError ? styles.profileInputError : ""}`}
-              disabled={isDisabled}
-              value={newData.email}
-              name={"email"}
-              onChange={handleChange}
-              minLength={10}
-              maxLength={50}
-              placeholder={"Почта"}
-              type={"email"}
-              ref={emailRef}
-            />
-          </div>
-        </div>
-        {!isDisabled && (
-          <SubmitButton
-            type={"submit"}
-            disabled={isLoading || (profileData.email === newData.email && profileData.login === newData.login)}
+          <button
+            type={"button"}
+            className={styles.profileExit}
+            onClick={exitFromAccount}
           >
-            {isLoading ? "Сохранение..." : "Сохранить"}
-          </SubmitButton>
+            выйти
+          </button>
+        </div>
+        <form
+          onSubmit={submitData}
+          noValidate
+          className={styles.profileDataDown}
+        >
+          <div className={styles.profileDataDownBlock}>
+            <h3>Город</h3>
+            <CitySelect/>
+          </div>
+          <div className={styles.profileDataDownBlock}>
+            <h3>Логин</h3>
+            <div className={styles.errorBlock}>
+              <p className={styles.error}>{errors.loginError}</p>
+              <input
+                className={`${styles.profileInput} ${errors.loginError ? styles.profileInputError : ""}`}
+                value={newData.login}
+                disabled={isDisabled}
+                name={"login"}
+                onChange={handleChange}
+                type={"text"}
+                minLength={3}
+                maxLength={20}
+                placeholder={"Логин"}
+                ref={loginRef}
+              />
+            </div>
+          </div>
+          <div className={styles.profileDataDownBlock}>
+            <h3>Почта</h3>
+            <div className={styles.errorBlock}>
+              <p className={styles.error}>{errors.emailError}</p>
+              <input
+                className={`${styles.profileInput} ${errors.emailError ? styles.profileInputError : ""}`}
+                disabled={isDisabled}
+                value={newData.email}
+                name={"email"}
+                onChange={handleChange}
+                minLength={10}
+                maxLength={50}
+                placeholder={"Почта"}
+                type={"email"}
+                ref={emailRef}
+              />
+            </div>
+          </div>
+          {!isDisabled && (
+            <SubmitButton
+              type={"submit"}
+              disabled={isLoading || (profileData.email === newData.email && profileData.login === newData.login)}
+            >
+              {isLoading ? "Сохранение..." : "Сохранить"}
+            </SubmitButton>
+          )}
+        </form>
+      </div>
+      <AnimatePresence>
+        {isOpenModal && (
+          <ModalText setIsOpenModal={setIsOpenModal} text={"Данные сохранены!"}/>
         )}
-      </form>
-    </div>
+      </AnimatePresence>
+    </>
   )
 }
 
