@@ -1,47 +1,47 @@
-.points{
+.points {
   display: flex;
   align-items: center;
 }
 
-.profileIcon{
+.profileIcon {
   stroke: var(--color-text-dark);
   fill: transparent;
 }
 
-.pointsText{
+.pointsText {
   font-size: 0.875rem;
   line-height: 1;
   color: var(--color-text-dark);
 }
 
-.pointsIcon{
+.pointsIcon {
   fill: var(--color-red-accent);
 }
 
 @media (hover: hover) {
-  .profileLink:hover .profileIcon{
+  .profileLink:hover .profileIcon {
     stroke: var(--color-accent);
   }
 
-  .profileLink:hover .pointsText{
+  .profileLink:hover .pointsText {
     color: var(--color-accent);
   }
 
-  .profileLink:hover .pointsIcon{
+  .profileLink:hover .pointsIcon {
     fill: var(--color-accent);
   }
 }
 
 @media (hover: none) {
-  .profileLink:active .profileIcon{
+  .profileLink:active .profileIcon {
     stroke: var(--color-accent);
   }
 
-  .profileLink:active .pointsText{
+  .profileLink:active .pointsText {
     color: var(--color-accent);
   }
 
-  .profileLink:active .pointsIcon{
+  .profileLink:active .pointsIcon {
     fill: var(--color-accent);
   }
 }

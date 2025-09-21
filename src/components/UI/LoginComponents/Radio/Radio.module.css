@@ -1,23 +1,23 @@
-.radioContainer{
+.radioContainer {
   display: flex;
   column-gap: 0.75rem;
   justify-content: flex-start;
   align-items: center;
 }
 
-.radioInput{
+.radioInput {
   position: absolute;
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-.radioText{
+.radioText {
   font-size: clamp(1rem, 1.66vw, 1.25rem);
   color: var(--color-text-dark);
 }
 
-.radioCircle{
+.radioCircle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -27,7 +27,7 @@
   border-radius: 50%;
 }
 
-.radioInput:focus-visible + .radioCircle{
+.radioInput:focus-visible + .radioCircle {
   outline: 1px solid var(--color-black);
   outline-offset: 1px;
 }

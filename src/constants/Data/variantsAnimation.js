@@ -1,40 +1,40 @@
 export const textVariants = {
-  enter: {opacity: 0, x: -30},
-  center: {opacity: 1, x: 0}
+  enter: { opacity: 0, x: -30 },
+  center: { opacity: 1, x: 0 },
 }
 
 export const cardsFormBottom = {
-  enter: {opacity: 0, y: 30},
-  center: {opacity: 1, y: 0}
+  enter: { opacity: 0, y: 30 },
+  center: { opacity: 1, y: 0 },
 }
 
 export const fromRight = {
-  enter: {opacity: 0, x: 30},
-  center: {opacity: 1, x: 0}
+  enter: { opacity: 0, x: 30 },
+  center: { opacity: 1, x: 0 },
 }
 
 export const loginFromTop = {
-  enter: {opacity: 0, translateY: -30},
-  center: {opacity: 1, translateY: 0},
-  exit: {opacity: 0, translateY: -30}
+  enter: { opacity: 0, translateY: -30 },
+  center: { opacity: 1, translateY: 0 },
+  exit: { opacity: 0, translateY: -30 },
 }
 
 export const cityContainerVariants = {
   enter: {
     opacity: 0,
-    y: -10
+    y: -10,
   },
   center: {
     opacity: 1,
     y: 0,
     transition: {
       staggerChildren: 0.08,
-      duration: 0.2
-    }
-  }
+      duration: 0.2,
+    },
+  },
 }
 
 export const cityVariants = {
-  enter: {opacity: 0},
-  center: {opacity: 1}
+  enter: { opacity: 0 },
+  center: { opacity: 1 },
 }

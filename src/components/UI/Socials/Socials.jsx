@@ -1,30 +1,30 @@
-import GooglePlay from "@assets/images/Header/GooglePlay.png";
-import AppStore from "@assets/images/Header/AppStore.png";
+import GooglePlay from '@assets/images/Header/GooglePlay.png'
+import AppStore from '@assets/images/Header/AppStore.png'
 
 function Socials() {
   const socialsLinks = [
     {
-      link: "https://play.google.com/store/apps/details?id=com.dts.freefiremax&pli=1",
+      link: 'https://play.google.com/store/apps/details?id=com.dts.freefiremax&pli=1',
       src: GooglePlay,
-      alt: "Google Play"
+      alt: 'Google Play',
     },
     {
-      link: "https://apps.apple.com/us/app/apple-store/id375380948?l=ru",
+      link: 'https://apps.apple.com/us/app/apple-store/id375380948?l=ru',
       src: AppStore,
-      alt: "App Store"
-    }
+      alt: 'App Store',
+    },
   ]
 
-  return(
+  return (
     <>
-      {socialsLinks.map(({link, src, alt}, index) => (
-        <a key={index} href={link} target={"_blank"} rel={"noopener noreferrer"}>
-          <img
-            width={140}
-            height={40}
-            src={src}
-            alt={alt}
-          />
+      {socialsLinks.map(({ link, src, alt }, index) => (
+        <a
+          key={index}
+          href={link}
+          target={'_blank'}
+          rel={'noopener noreferrer'}
+        >
+          <img width={140} height={40} src={src} alt={alt} />
         </a>
       ))}
     </>

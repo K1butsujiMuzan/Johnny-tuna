@@ -1,4 +1,4 @@
-.mainForm{
+.mainForm {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -9,7 +9,7 @@
   margin-top: 2rem;
 }
 
-.mainFormUp{
+.mainFormUp {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -17,7 +17,7 @@
   align-items: flex-start;
 }
 
-.mainFormDown{
+.mainFormDown {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
@@ -25,31 +25,31 @@
   align-items: center;
 }
 
-.errorBlock{
+.errorBlock {
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 0.25rem;
 }
 
-.error{
+.error {
   font-size: 0.75rem;
   color: var(--color-red);
 }
 
-.linkContainer{
+.linkContainer {
   display: flex;
   justify-content: flex-start;
 }
 
-.linkForm{
+.linkForm {
   font-size: 1rem;
   color: var(--color-text-light);
   cursor: pointer;
   font-weight: 600;
 }
 
-.confirmation{
+.confirmation {
   margin-top: 0.5rem;
   display: grid;
   width: 100%;
@@ -59,11 +59,11 @@
   row-gap: 3rem;
 }
 
-.accent{
+.accent {
   color: var(--color-text-dark);
 }
 
-.confirmationDown{
+.confirmationDown {
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -71,11 +71,11 @@
   align-items: center;
 }
 
-.confirmationText{
+.confirmationText {
   font-size: clamp(1.5rem, 4.16vw, 2rem);
 }
 
-.linkToMain{
+.linkToMain {
   height: 100%;
   width: 100%;
   display: flex;
@@ -84,21 +84,21 @@
 }
 
 @media (hover: hover) {
-  .linkForm:hover{
+  .linkForm:hover {
     color: var(--color-text-dark);
   }
 
-  .linkToMain:hover{
+  .linkToMain:hover {
     color: var(--color-text-white);
   }
 }
 
 @media (hover: none) {
-  .linkForm:active{
+  .linkForm:active {
     color: var(--color-text-dark);
   }
 
-  .linkToMain:active{
+  .linkToMain:active {
     color: var(--color-text-white);
   }
 }

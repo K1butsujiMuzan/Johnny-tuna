@@ -1,19 +1,10 @@
-import styles from "./AboutCard.module.css"
+import styles from './AboutCard.module.css'
 
-function AboutCard({
-  text,
-  image
-}) {
-  return(
-    <li
-      className={`${styles.card} gradientBorder`}
-    >
+function AboutCard({ text, image }) {
+  return (
+    <li className={`${styles.card} gradientBorder`}>
       <p className={styles.cardText}>{text}</p>
-      <img
-        src={image}
-        aria-hidden={true}
-        alt={""}
-      />
+      <img src={image} aria-hidden={true} alt={''} />
     </li>
   )
 }

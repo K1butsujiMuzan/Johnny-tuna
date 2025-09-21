@@ -1,12 +1,12 @@
-import useHead from "@/hooks/useHead";
+import useHead from '@/hooks/useHead'
 
 function Basket() {
   useHead({
-    title: "Джонни Тунец | Корзина",
-    description: "Корзина с выбранными товарами",
-    keywords: "корзина, заказ, выбранные товары"
+    title: 'Джонни Тунец | Корзина',
+    description: 'Корзина с выбранными товарами',
+    keywords: 'корзина, заказ, выбранные товары',
   })
-  return(
+  return (
     <>
       <h1>Корзина</h1>
     </>

@@ -1,19 +1,19 @@
-.headerLogo{
+.headerLogo {
   width: 27.625rem;
   height: auto;
 }
 
-.footerLogo{
+.footerLogo {
   width: 19.5rem;
   height: auto;
 }
 
 @media (max-width: 48rem) {
-  .headerLogo{
+  .headerLogo {
     width: max(14.625rem, 57.55vw);
   }
 
-  .footerLogo{
+  .footerLogo {
     width: max(14.625rem, 40.625vw);
   }
 }

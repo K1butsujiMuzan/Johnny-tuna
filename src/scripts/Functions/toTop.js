@@ -1,5 +1,5 @@
-"use strict"
+'use strict'
 
 export const scrollTop = () => {
-  window.scrollTo({top: 0, behavior: "instant"})
+  window.scrollTo({ top: 0, behavior: 'instant' })
 }

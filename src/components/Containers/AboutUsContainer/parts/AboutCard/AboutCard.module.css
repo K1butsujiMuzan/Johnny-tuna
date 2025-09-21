@@ -1,4 +1,4 @@
-.card{
+.card {
   display: flex;
   flex-direction: column;
   width: 18.75rem;
@@ -10,7 +10,7 @@
   transition: translate 1s;
 }
 
-.cardText{
+.cardText {
   font-size: clamp(1rem, 2.57vw, 1.125rem);
   text-transform: uppercase;
   color: var(--color-text-dark);
@@ -18,7 +18,7 @@
 }
 
 @media (hover: hover) {
-  .card:hover{
+  .card:hover {
     translate: 0 -10px;
   }
 }

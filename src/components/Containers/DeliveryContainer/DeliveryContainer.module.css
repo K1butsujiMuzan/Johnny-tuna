@@ -1,71 +1,71 @@
-.deliveryList{
+.deliveryList {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: clamp(0.5rem, 3.125vw, 1.5rem);
 }
 
-.deliveryItem{
+.deliveryItem {
   display: flex;
   flex-direction: column;
   row-gap: 0.5rem;
 }
 
-.deliveryValueList{
+.deliveryValueList {
   text-align: center;
 }
 
-.deliveryValueItem{
+.deliveryValueItem {
   box-shadow: 0 0 13px 1px rgb(0 0 0 / 15%);
   align-items: center;
   padding: clamp(0.5rem, 3.125vw, 1.5rem);
   border-radius: var(--main-border-radius);
 }
 
-.deliveryValueParagraph{
+.deliveryValueParagraph {
   font-size: clamp(1rem, 1.66vw, 1.25rem);
   font-weight: 400;
   color: var(--color-text-dark);
 }
 
-.deliveryValueTitle{
+.deliveryValueTitle {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 
-.cardsParagraph{
+.cardsParagraph {
   font-weight: 500;
   font-size: 1rem;
   line-height: 1.5;
 }
 
-.cardsTitle{
+.cardsTitle {
   font-size: 1.125rem;
 }
 
-.deliveryInformation{
+.deliveryInformation {
   display: flex;
   justify-content: space-between;
   gap: 2rem;
 }
 
-.deliveryInformationList{
+.deliveryInformationList {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 1rem;
 }
 
-.deliveryInformationItem{
+.deliveryInformationItem {
   max-width: 22rem;
   display: flex;
   align-items: flex-start;
   gap: 0.75rem;
 }
 
-.deliveryInformationText{
+.deliveryInformationText {
   align-items: flex-start;
 }
 
-.deliveryMap{
+.deliveryMap {
   max-width: 53.25rem;
   width: 100%;
   height: auto;
@@ -73,22 +73,22 @@
 }
 
 @media (max-width: 75rem) {
-  .deliveryInformation{
+  .deliveryInformation {
     flex-direction: column-reverse;
   }
 
   .deliveryMap,
-  .deliveryInformationItem{
+  .deliveryInformationItem {
     max-width: none;
   }
 }
 
 @media (max-width: 48rem) {
-  .deliveryValueList{
+  .deliveryValueList {
     grid-template-columns: 1fr 1fr;
   }
 
-  .advantagesCardsList{
+  .advantagesCardsList {
     grid-template-columns: 1fr;
   }
 }

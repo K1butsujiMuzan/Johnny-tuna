@@ -102,14 +102,19 @@ label,
 select,
 summary,
 a,
-[role="button"] {
+[role='button'] {
   cursor: pointer;
   touch-action: manipulation;
 }
 
 /* SVG и иконки */
-[fill] { fill: currentcolor }
-[stroke] { stroke: currentcolor }
+[fill] {
+  fill: currentcolor;
+}
+
+[stroke] {
+  stroke: currentcolor;
+}
 
 svg * {
   transition-property: fill, stroke;

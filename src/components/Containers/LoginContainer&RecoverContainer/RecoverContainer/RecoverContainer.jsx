@@ -1,11 +1,7 @@
-import "./RecoverContainer.module.css"
+import './RecoverContainer.module.css'
 
 function RecoverContainer() {
-  return(
-    <>
-
-    </>
-  )
+  return <></>
 }
 
 export default RecoverContainer

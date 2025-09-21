@@ -1,21 +1,18 @@
-import PageLink from "@components/UI/PageLink/PageLink";
-import styles from "./InformationContainer.module.css"
-import TextBlock from "@components/UI/TextBlock/TextBlock";
-import {informationText} from "@/constants/Data/informationText";
+import PageLink from '@components/UI/PageLink/PageLink'
+import styles from './InformationContainer.module.css'
+import TextBlock from '@components/UI/TextBlock/TextBlock'
+import { informationText } from '@/constants/Data/informationText'
 
 function InformationContainer() {
-  return(
-    <section className={"container pageContainer"}>
-      <PageLink to={"/information"} text={"Правовая информация"}/>
+  return (
+    <section className={'container pageContainer'}>
+      <PageLink to={'/information'} text={'Правовая информация'} />
       <TextBlock>
-        <h1 className={"pageTitle"}>Правовая информация - «Джонни Тунец»</h1>
+        <h1 className={'pageTitle'}>Правовая информация - «Джонни Тунец»</h1>
       </TextBlock>
       <div className={styles.textBlock}>
         {informationText.map((text, index) => (
-          <p
-            key={index}
-            className={styles.text}
-          >
+          <p key={index} className={styles.text}>
             {text}
           </p>
         ))}

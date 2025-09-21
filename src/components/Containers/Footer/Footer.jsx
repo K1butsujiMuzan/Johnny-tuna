@@ -1,13 +1,15 @@
-import styles from "./Footer.module.css"
-import FooterTop from "@components/Containers/Footer/parts/FooterTop/FooterTop";
+import styles from './Footer.module.css'
+import FooterTop from '@components/Containers/Footer/parts/FooterTop/FooterTop'
 
 function Footer() {
-  return(
+  return (
     <footer className={styles.footer}>
       <div className={styles.footerTop}>
-        <FooterTop/>
+        <FooterTop />
       </div>
-      <p className={`${styles.footerBottom} container`}>2023 © «Джонни Тунец» - Новая волна вкуса</p>
+      <p className={`${styles.footerBottom} container`}>
+        2023 © «Джонни Тунец» - Новая волна вкуса
+      </p>
     </footer>
   )
 }

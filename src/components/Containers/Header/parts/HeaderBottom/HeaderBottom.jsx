@@ -1,15 +1,15 @@
-import styles from "./HeaderBottom.module.css";
-import Search from "@components/UI/Search/Search";
-import BasketLink from "@components/UI/BasketLink/BasketLink";
-import ProfileLink from "@components/UI/ProfileLink/ProfileLink";
+import styles from './HeaderBottom.module.css'
+import Search from '@components/UI/Search/Search'
+import BasketLink from '@components/UI/BasketLink/BasketLink'
+import ProfileLink from '@components/UI/ProfileLink/ProfileLink'
 
 function HeaderBottom() {
-  return(
+  return (
     <div className={`${styles.headerBottomInner} container`}>
-      <Search/>
+      <Search />
       <div className={styles.headerBottomButtons}>
-        <BasketLink/>
-        <ProfileLink/>
+        <BasketLink />
+        <ProfileLink />
       </div>
     </div>
   )

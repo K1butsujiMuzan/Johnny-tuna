@@ -1,16 +1,8 @@
-import styles from "./SubmitButton.module.css"
+import styles from './SubmitButton.module.css'
 
-function SubmitButton({
-  children,
-  disabled = false,
-  type
-}) {
-  return(
-    <button
-      className={styles.submitButton}
-      type={type}
-      disabled={disabled}
-    >
+function SubmitButton({ children, disabled = false, type }) {
+  return (
+    <button className={styles.submitButton} type={type} disabled={disabled}>
       {children}
     </button>
   )

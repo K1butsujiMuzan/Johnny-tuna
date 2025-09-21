@@ -1,10 +1,10 @@
-.textBlock{
+.textBlock {
   display: flex;
   flex-direction: column;
   gap: 1rem;
 }
 
-.text{
+.text {
   font-size: clamp(0.75rem, 1.66vw, 1.25rem);
   color: var(--color-text-dark);
 }

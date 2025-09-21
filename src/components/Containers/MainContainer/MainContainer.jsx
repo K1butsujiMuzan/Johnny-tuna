@@ -1,15 +1,13 @@
-import styles from "./MainContainer.module.css"
-import Slider from "@components/Containers/MainContainer/parts/Slider/Slider";
+import styles from './MainContainer.module.css'
+import Slider from '@components/Containers/MainContainer/parts/Slider/Slider'
 
 function MainContainer() {
-  return(
+  return (
     <div className={styles.mainContainer}>
       <div>
-        <Slider/>
+        <Slider />
       </div>
-      <div className={"container"}>
-
-      </div>
+      <div className={'container'}></div>
     </div>
   )
 }

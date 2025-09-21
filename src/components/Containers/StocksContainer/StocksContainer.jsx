@@ -1,27 +1,24 @@
-import styles from "./StocksContainer.module.css"
-import PageLink from "@components/UI/PageLink/PageLink";
-import {cards, textModal} from "@/constants/Data/stocks";
-import TextBlock from "@components/UI/TextBlock/TextBlock";
-import {useState} from "react";
-import ModalText from "@components/Modals/ModalText/ModalText";
-import {AnimatePresence} from "framer-motion";
+import styles from './StocksContainer.module.css'
+import PageLink from '@components/UI/PageLink/PageLink'
+import { cards, textModal } from '@/constants/Data/stocks'
+import TextBlock from '@components/UI/TextBlock/TextBlock'
+import { useState } from 'react'
+import ModalText from '@components/Modals/ModalText/ModalText'
+import { AnimatePresence } from 'framer-motion'
 
 function StocksContainer() {
   const [isOpenModal, setIsOpenModal] = useState(false)
   let [textIndex, setTextIndex] = useState(0)
-  return(
+  return (
     <>
-      <section className={"container pageContainer"}>
-        <PageLink to={"/stocks"} text={"Акции"}/>
+      <section className={'container pageContainer'}>
+        <PageLink to={'/stocks'} text={'Акции'} />
         <TextBlock>
-          <h1 className={"pageTitle"}>Акции — «Джонни Тунец»</h1>
+          <h1 className={'pageTitle'}>Акции — «Джонни Тунец»</h1>
         </TextBlock>
         <ul className={styles.cardsContainer}>
           {cards.map((card, index) => (
-            <li
-              key={index}
-              className={styles.stockCard}
-            >
+            <li key={index} className={styles.stockCard}>
               <div className={styles.stockCardUp}>
                 <picture>
                   {card.source.map((source, _) => (
@@ -56,7 +53,10 @@ function StocksContainer() {
       </section>
       <AnimatePresence>
         {isOpenModal && (
-          <ModalText setIsOpenModal={setIsOpenModal} text={textModal[textIndex]}/>
+          <ModalText
+            setIsOpenModal={setIsOpenModal}
+            text={textModal[textIndex]}
+          />
         )}
       </AnimatePresence>
     </>

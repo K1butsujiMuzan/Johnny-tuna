@@ -1,4 +1,4 @@
-.phoneContainer{
+.phoneContainer {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -8,25 +8,25 @@
   row-gap: 0.25rem;
 }
 
-.phoneContainerMobile{
+.phoneContainerMobile {
   text-align: left;
   align-items: flex-start;
 }
 
-.phoneContainerLink{
+.phoneContainerLink {
   white-space: nowrap;
-  font-size: clamp(1.125rem, 2vw ,1.5rem);
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
   line-height: 1;
 }
 
 @media (hover: hover) {
-  .phoneContainerLink:hover{
+  .phoneContainerLink:hover {
     color: var(--color-accent);
   }
 }
 
 @media (hover: none) {
-  .phoneContainerLink:active{
+  .phoneContainerLink:active {
     color: var(--color-accent);
     transform: scale(0.98);
   }

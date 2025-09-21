@@ -1,4 +1,4 @@
-.modalInner{
+.modalInner {
   position: fixed;
   background: rgb(0 0 0 / 41%);
   inset: 0;
@@ -8,7 +8,7 @@
   justify-content: center;
 }
 
-.modalContainer{
+.modalContainer {
   text-align: center;
   background-color: var(--color-text-white);
   position: relative;
@@ -21,12 +21,12 @@
   max-width: 90%;
 }
 
-.modalText{
+.modalText {
   font-size: clamp(1rem, 2vw, 1.5rem);
   color: var(--color-text-dark);
 }
 
-.closeButton{
+.closeButton {
   position: absolute;
   top: 0;
   right: 0;
@@ -34,19 +34,19 @@
   background-color: transparent;
 }
 
-.closeIcon path{
+.closeIcon path {
   stroke: transparent;
   fill: var(--color-text-dark);
 }
 
 @media (hover: hover) {
-  .closeButton:hover .closeIcon path{
+  .closeButton:hover .closeIcon path {
     fill: var(--color-accent);
   }
 }
 
 @media (hover: none) {
-  .closeButton:active .closeIcon path{
+  .closeButton:active .closeIcon path {
     fill: var(--color-accent);
   }
 }

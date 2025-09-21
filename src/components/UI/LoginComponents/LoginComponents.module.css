@@ -1,5 +1,5 @@
-.mainInput{
-  padding-block: clamp(0.5rem, 2.08vw,1rem);
+.mainInput {
+  padding-block: clamp(0.5rem, 2.08vw, 1rem);
   padding-left: 0.5rem;
   font-size: clamp(1rem, 3.125vw, 1.5rem);
   line-height: 1;
@@ -11,51 +11,51 @@
   background-color: var(--color-text-white);
 }
 
-.passwordInput{
+.passwordInput {
   border: none;
 }
 
-.mainInput::placeholder{
+.mainInput::placeholder {
   color: var(--color-text-light);
 }
 
 .mainInput:-webkit-autofill,
 .mainInput:-webkit-autofill:focus,
-.mainInput:-webkit-autofill:hover{
+.mainInput:-webkit-autofill:hover {
   -webkit-text-fill-color: var(--color-black);
 }
 
 .mainInput:autofill,
 .mainInput:autofill:focus,
-.mainInput:hover{
+.mainInput:hover {
   font-size: clamp(1rem, 3.125vw, 1.5rem);
 }
 
-.passwordBlock{
+.passwordBlock {
   border: var(--gray-border);
   width: 100%;
   display: grid;
   grid-template-columns: 1fr auto;
 }
 
-.passwordButton{
+.passwordButton {
   padding-inline: 1rem;
   border: none;
   background-color: transparent;
 }
 
-.isRed{
+.isRed {
   border: 2px solid var(--color-red);
 }
 
 @media (hover: hover) {
-  .passwordButton:hover .passwordIcon path{
-    fill: #35ADE1;
+  .passwordButton:hover .passwordIcon path {
+    fill: #35ade1;
   }
 }
 
 @media (hover: none) {
-  .passwordButton:active .passwordIcon path{
-    fill: #35ADE1;
+  .passwordButton:active .passwordIcon path {
+    fill: #35ade1;
   }
 }

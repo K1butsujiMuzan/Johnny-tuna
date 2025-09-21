@@ -1,4 +1,4 @@
-.footer{
+.footer {
   background-color: var(--color-text-white);
   display: flex;
   justify-content: center;
@@ -6,7 +6,7 @@
   flex-direction: column;
 }
 
-.footerTop{
+.footerTop {
   border-block: var(--gray-border);
   width: 100%;
   display: flex;
@@ -14,7 +14,7 @@
   justify-content: center;
 }
 
-.footerBottom{
+.footerBottom {
   text-align: center;
   font-weight: 500;
   font-size: clamp(0.75rem, 1.33vw, 1rem);

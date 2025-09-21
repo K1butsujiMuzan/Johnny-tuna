@@ -1,32 +1,28 @@
-import {useEffect} from "react";
+import { useEffect } from 'react'
 
 function useHead(headData) {
   useEffect(() => {
-    const {
-      title,
-      description,
-      keywords
-    } = headData
+    const { title, description, keywords } = headData
 
-    if(title) {
+    if (title) {
       document.title = title
     }
 
-    if(description) {
-      setMeta("description", description)
+    if (description) {
+      setMeta('description', description)
     }
 
-    if(keywords) {
-      setMeta("keywords", keywords)
+    if (keywords) {
+      setMeta('keywords', keywords)
     }
 
     function setMeta(name, content) {
       let metaTag = document.querySelector(`meta[name=${name}]`)
 
-      if(metaTag) {
+      if (metaTag) {
         metaTag.setAttribute('content', content)
       } else {
-        metaTag = document.createElement("meta")
+        metaTag = document.createElement('meta')
         metaTag.name = name
         metaTag.content = content
         document.head.appendChild(metaTag)
@@ -36,4 +32,4 @@ function useHead(headData) {
     return () => {}
   }, [headData])
 }
- export default useHead
+export default useHead

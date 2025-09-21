@@ -1,21 +1,21 @@
-import styles from "./Header.module.css"
-import HeaderTop from "@components/Containers/Header/parts/HeaderTop/HeaderTop";
-import HeaderBottom from "@components/Containers/Header/parts/HeaderBottom/HeaderBottom";
-import HeaderTopMobile from "@components/Containers/Header/parts/HeaderTopMobile/HeaderTopMobile";
+import styles from './Header.module.css'
+import HeaderTop from '@components/Containers/Header/parts/HeaderTop/HeaderTop'
+import HeaderBottom from '@components/Containers/Header/parts/HeaderBottom/HeaderBottom'
+import HeaderTopMobile from '@components/Containers/Header/parts/HeaderTopMobile/HeaderTopMobile'
 
 function Header() {
-  return(
+  return (
     <>
       <header className={styles.header}>
         <div className={styles.headerDeskTop}>
           <HeaderTop />
         </div>
         <div className={styles.headerMobile}>
-          <HeaderTopMobile/>
+          <HeaderTopMobile />
         </div>
       </header>
       <div className={styles.headerBottom}>
-        <HeaderBottom/>
+        <HeaderBottom />
       </div>
     </>
   )

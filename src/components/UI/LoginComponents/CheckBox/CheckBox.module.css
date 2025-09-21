@@ -1,18 +1,18 @@
-.checkboxContainer{
+.checkboxContainer {
   display: flex;
   align-items: flex-start;
   justify-content: center;
   column-gap: 0.75rem;
 }
 
-.checkboxInput{
+.checkboxInput {
   position: absolute;
   width: 0;
   height: 0;
   opacity: 0;
 }
 
-.checkboxSquare{
+.checkboxSquare {
   width: 1.75rem;
   min-width: 1rem;
   aspect-ratio: 1;
@@ -23,27 +23,27 @@
   justify-content: center;
 }
 
-.checkboxInput:focus-visible + .checkboxSquare{
+.checkboxInput:focus-visible + .checkboxSquare {
   outline: 1px solid var(--color-black);
 }
 
-.checkboxIcon{
+.checkboxIcon {
   fill: var(--color-black);
 }
 
-.checkboxText{
+.checkboxText {
   color: var(--color-text-light);
   font-size: clamp(0.75rem, 2.08vw, 1rem);
   line-height: 1.125rem;
 }
 
-.checkboxLink{
+.checkboxLink {
   color: var(--color-accent);
   text-decoration: underline;
 }
 
 @media (hover: none) {
-  .checkboxLink:active{
+  .checkboxLink:active {
     color: var(--color-text-dark);
   }
 }

@@ -1,4 +1,4 @@
-.searchForm{
+.searchForm {
   display: grid;
   grid-template-columns: 1fr auto auto;
   max-width: 77rem;
@@ -9,13 +9,13 @@
   align-items: center;
 }
 
-.searchButtons{
+.searchButtons {
   display: flex;
   column-gap: clamp(0.5rem, 1.1666vw, 0.875rem);
   align-items: center;
 }
 
-.searchInput{
+.searchInput {
   font-weight: 500;
   border: none;
   outline: none;
@@ -24,28 +24,28 @@
   caret-color: var(--color-accent);
 }
 
-.searchInput:focus-visible{
+.searchInput:focus-visible {
   outline: none;
 }
 
-.clearButton{
+.clearButton {
   border: none;
   background-color: transparent;
 }
 
-.clearIcon{
+.clearIcon {
   cursor: pointer;
   stroke: var(--color-text-light);
 }
 
 @media (hover: hover) {
-  .clearButton:hover .clearIcon{
+  .clearButton:hover .clearIcon {
     stroke: var(--color-black);
   }
 }
 
 @media (hover: none) {
-  .clearButton:active .clearIcon{
+  .clearButton:active .clearIcon {
     stroke: var(--color-black);
   }
 }

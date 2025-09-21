@@ -1,16 +1,16 @@
-import {api} from "@/services/api";
+import { api } from '@/services/api'
 
-export const signUp = async(email, login, password) => {
+export const signUp = async (email, login, password) => {
   const response = await fetch(api.signUp, {
-    method: "POST",
-    headers: {"Content-Type": "application/json"},
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
       email: email,
       login: login,
-      password: password
-    })
+      password: password,
+    }),
   })
   const data = await response.json()
 
-  return {ok: response.ok, data}
+  return { ok: response.ok, data }
 }

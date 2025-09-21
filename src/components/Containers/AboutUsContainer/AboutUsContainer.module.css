@@ -1,38 +1,38 @@
-.aboutParagraph{
+.aboutParagraph {
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-.aboutParagraphBlack{
+.aboutParagraphBlack {
   color: var(--color-text-dark);
 }
 
-.aboutGallery{
+.aboutGallery {
   display: flex;
   justify-content: space-between;
 }
 
-.aboutGalleryCards{
+.aboutGalleryCards {
   display: grid;
   grid-template-columns: auto auto;
   gap: 5rem;
   max-width: 46.25rem;
 }
 
-.aboutGalleryImages{
+.aboutGalleryImages {
   display: flex;
   flex-direction: column;
   gap: 3.375rem;
   justify-content: flex-end;
 }
 
-.galleryRow{
+.galleryRow {
   width: 100%;
   justify-content: space-between;
   display: flex;
   column-gap: 1.25rem;
 }
 
-.whyCards{
+.whyCards {
   display: flex;
   justify-content: center;
   gap: 5rem;
@@ -40,27 +40,27 @@
 }
 
 @media (max-width: 81.25rem) {
-  .aboutGallery{
+  .aboutGallery {
     row-gap: 2rem;
     flex-direction: column;
     align-items: center;
   }
 
   .aboutGalleryCards,
-  .aboutGalleryImages{
+  .aboutGalleryImages {
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 75rem) {
-  .whyCards{
+  .whyCards {
     flex-direction: column;
     gap: 1.5rem;
   }
 }
 
 @media (max-width: 43.75rem) {
-  .aboutGalleryCards{
+  .aboutGalleryCards {
     grid-template-columns: auto;
   }
 }

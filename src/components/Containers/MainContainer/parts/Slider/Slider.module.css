@@ -1,44 +1,44 @@
-.sliderInner{
+.sliderInner {
   display: flex;
   align-items: center;
 }
 
-.containerForPicture{
+.containerForPicture {
   width: 100%;
   box-sizing: border-box;
   max-width: calc(var(--container-width) + var(--padding-x) + var(--padding-x));
   overflow-x: hidden;
 }
 
-.sliderImage{
+.sliderImage {
   user-select: none;
   border-radius: var(--main-border-radius);
 }
 
-.sliderArrowButton{
+.sliderArrowButton {
   padding: 0.75rem;
   background-color: transparent;
   border: none;
   z-index: 100;
 }
 
-.sliderArrow{
+.sliderArrow {
   transition: var(--main-transition);
 }
 
-.sliderArrow path{
+.sliderArrow path {
   fill: transparent;
   stroke: var(--color-accent);
 }
 
-.sliderCircles{
+.sliderCircles {
   padding-top: clamp(0.5rem, 1vw, 0.75rem);
   display: flex;
   justify-content: center;
   gap: clamp(0.5rem, 0.83vw, 0.625rem);
 }
 
-.sliderCircle{
+.sliderCircle {
   width: clamp(0.5rem, 1vw, 0.75rem);
   aspect-ratio: 1;
   background-color: rgb(0 0 0 / 15%);
@@ -46,43 +46,42 @@
   border-radius: 50%;
 }
 
-.sliderCircleActive{
+.sliderCircleActive {
   background-color: var(--color-accent);
 }
 
 @media (hover: hover) {
   .sliderArrowButtonLeft:hover > .sliderArrow path,
-  .sliderArrowButtonRight:hover > .sliderArrow path{
+  .sliderArrowButtonRight:hover > .sliderArrow path {
     stroke: var(--color-red-accent);
   }
 
-  .sliderArrowButtonLeft:hover > .sliderArrow{
+  .sliderArrowButtonLeft:hover > .sliderArrow {
     translate: -5px;
   }
 
-  .sliderArrowButtonRight:hover > .sliderArrow{
+  .sliderArrowButtonRight:hover > .sliderArrow {
     translate: 5px;
   }
 }
 
 @media (hover: none) {
   .sliderArrowButtonLeft:active > .sliderArrow path,
-  .sliderArrowButtonRight:active > .sliderArrow path{
+  .sliderArrowButtonRight:active > .sliderArrow path {
     stroke: var(--color-red-accent);
   }
 }
 
 @media (max-width: 75rem) {
-  .sliderArrowButton{
+  .sliderArrowButton {
     display: none;
   }
 
-  .containerForPicture{
+  .containerForPicture {
     width: 100dvw;
   }
 
-  .sliderImage{
+  .sliderImage {
     border-radius: 0;
   }
 }
-

@@ -1,14 +1,14 @@
-import {responsesTypes} from "@/constants/Request/responsesTypes";
-import {api} from "@/services/api";
+import { responsesTypes } from '@/constants/Request/responsesTypes'
+import { api } from '@/services/api'
 
-export const getToken = async(token) => {
-    const response = await fetch(api.verification(token), {
-      method: "GET",
-      headers: {"Content-Type": "application/json"},
-    })
-    const data = await response.json()
-    if(data.error === responsesTypes.wrongToken) {
-      throw new Error("Неверный токен")
-    }
-    return data
+export const getToken = async token => {
+  const response = await fetch(api.verification(token), {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' },
+  })
+  const data = await response.json()
+  if (data.error === responsesTypes.wrongToken) {
+    throw new Error('Неверный токен')
+  }
+  return data
 }

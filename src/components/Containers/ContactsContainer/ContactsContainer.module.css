@@ -1,9 +1,9 @@
-.contactsInformation{
+.contactsInformation {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 
-.informationList{
+.informationList {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,33 +11,33 @@
   padding: 1.5rem;
 }
 
-.informationItem{
+.informationItem {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-.informationText{
+.informationText {
   font-size: clamp(1.25rem, 2vw, 1.5rem);
 }
 
-.contactsMap{
+.contactsMap {
   width: 100%;
 }
 
 @media (max-width: 75rem) {
-  .contactsInformation{
+  .contactsInformation {
     grid-template-columns: 1fr;
     border: none;
     background: var(--color-text-white);
   }
 
-  .informationList{
+  .informationList {
     padding-inline: 0;
     padding-bottom: 0;
   }
 
-  .contactsMap{
+  .contactsMap {
     height: clamp(16.5rem, 35.66vw, 26.75rem);
   }
 }

@@ -1,38 +1,38 @@
-.profileData{
+.profileData {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
 }
 
-.profileDataUp{
+.profileDataUp {
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.profileSmallTitle{
+.profileSmallTitle {
   font-size: clamp(1.25rem, 2.66vw, 2rem);
 }
 
-.profileDataUpBlock{
+.profileDataUpBlock {
   display: flex;
   gap: 0.5rem;
   align-items: flex-start;
 }
 
 .profileChangeButton,
-.profileExit{
+.profileExit {
   background-color: transparent;
   border: none;
 }
 
-.profileChangeIcon{
+.profileChangeIcon {
   fill: none;
 }
 
-.profileDataDown{
+.profileDataDown {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,14 +42,14 @@
   width: 24rem;
 }
 
-.profileDataDownBlock{
+.profileDataDownBlock {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   width: 100%;
 }
 
-.profileInput{
+.profileInput {
   font-size: 1.125rem;
   color: var(--color-text-dark);
   background-color: var(--color-text-f5);
@@ -59,58 +59,58 @@
   caret-color: var(--color-accent);
 }
 
-.profileInputError{
+.profileInputError {
   border: 2px solid var(--color-red);
 }
 
-.profileInput::placeholder{
+.profileInput::placeholder {
   color: var(--color-text-light);
 }
 
-.profileInput:disabled{
+.profileInput:disabled {
   cursor: text;
 }
 
-.profileInput:focus-visible{
+.profileInput:focus-visible {
   outline: none;
 }
 
-.errorBlock{
+.errorBlock {
   width: 100%;
   display: flex;
   flex-direction: column;
   row-gap: 0.25rem;
 }
 
-.error{
+.error {
   font-size: 0.75rem;
   color: var(--color-red);
 }
 
 @media (hover: hover) {
-  .profileChangeButton:hover .profileChangeIcon path{
+  .profileChangeButton:hover .profileChangeIcon path {
     stroke: var(--color-accent);
   }
 
-  .profileChangeButton:hover .profileCloseIcon path{
+  .profileChangeButton:hover .profileCloseIcon path {
     fill: var(--color-accent);
   }
 
-  .profileExit:hover{
+  .profileExit:hover {
     color: var(--color-accent);
   }
 }
 
 @media (hover: none) {
-  .profileChangeButton:active .profileChangeIcon path{
+  .profileChangeButton:active .profileChangeIcon path {
     stroke: var(--color-accent);
   }
 
-  .profileChangeButton:active .profileCloseIcon path{
+  .profileChangeButton:active .profileCloseIcon path {
     fill: var(--color-accent);
   }
 
-  .profileExit:active{
+  .profileExit:active {
     color: var(--color-accent);
   }
 }

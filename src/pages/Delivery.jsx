@@ -1,15 +1,15 @@
-import useHead from "@/hooks/useHead";
-import DeliveryContainer from "@components/Containers/DeliveryContainer/DeliveryContainer";
+import useHead from '@/hooks/useHead'
+import DeliveryContainer from '@components/Containers/DeliveryContainer/DeliveryContainer'
 
 function Delivery() {
   useHead({
-    title: "Джонни Тунец | Доставка",
-    description: "Оформление заказа и доставки на дом",
-    keywords: "заказ, оплата, доставка"
+    title: 'Джонни Тунец | Доставка',
+    description: 'Оформление заказа и доставки на дом',
+    keywords: 'заказ, оплата, доставка',
   })
-  return(
+  return (
     <>
-      <DeliveryContainer/>
+      <DeliveryContainer />
     </>
   )
 }

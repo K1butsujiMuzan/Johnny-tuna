@@ -1,4 +1,4 @@
-.headerModalInner{
+.headerModalInner {
   width: 100%;
   display: flex;
   height: 100%;
@@ -8,13 +8,13 @@
   overflow-y: scroll !important;
 }
 
-.modalUp{
+.modalUp {
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
 }
 
-.modalDown{
+.modalDown {
   padding-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@
   row-gap: 2rem;
 }
 
-.modalUpIcons{
+.modalUpIcons {
   padding-inline: 1rem;
   height: 3.5rem;
   border-block: var(--gray-border);
@@ -30,19 +30,19 @@
   justify-content: space-between;
 }
 
-.modalUpLocation{
+.modalUpLocation {
   display: flex;
   align-items: flex-start;
 }
 
-.modalUpLinks{
+.modalUpLinks {
   padding-left: 2.875rem;
   display: flex;
   flex-direction: column;
   row-gap: 2rem;
 }
 
-.modalDownPhone{
+.modalDownPhone {
   display: flex;
   align-items: flex-start;
   column-gap: 0.5rem;
@@ -51,7 +51,7 @@
   padding-left: 1.1875rem;
 }
 
-.modalDownSocials{
+.modalDownSocials {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -59,25 +59,25 @@
   margin-bottom: 0.25rem;
 }
 
-.locationIcon{
+.locationIcon {
   padding-top: 0.4218rem;
   fill: transparent;
   stroke: var(--color-accent);
 }
 
-.phoneIcon{
+.phoneIcon {
   padding-top: 3px;
   fill: var(--color-accent);
 }
 
-.headerPhone{
+.headerPhone {
   display: flex;
   flex-direction: column;
   row-gap: 0.25rem;
 }
 
-.headerPhoneText{
-  font-size: clamp(0.75rem, 1.33vw ,1rem);
+.headerPhoneText {
+  font-size: clamp(0.75rem, 1.33vw, 1rem);
   font-weight: 500;
   line-height: 1;
 }

@@ -1,28 +1,31 @@
-import styles from "./DeliveryContainer.module.css"
-import PageLink from "@components/UI/PageLink/PageLink";
-import TextBlock from "@components/UI/TextBlock/TextBlock";
-import {motion} from "framer-motion";
+import styles from './DeliveryContainer.module.css'
+import PageLink from '@components/UI/PageLink/PageLink'
+import TextBlock from '@components/UI/TextBlock/TextBlock'
+import { motion } from 'framer-motion'
 import {
   advantages,
-  advantagesCards, informationCards
-} from "@/constants/Data/delivery";
+  advantagesCards,
+  informationCards,
+} from '@/constants/Data/delivery'
 
 function DeliveryContainer() {
-  return(
-    <section className={"container pageContainer"}>
-      <PageLink to={"/delivery"} text={"Доставка"}/>
+  return (
+    <section className={'container pageContainer'}>
+      <PageLink to={'/delivery'} text={'Доставка'} />
       <TextBlock>
-        <h1 className={"pageTitle"}>Доставка — «Джонни Тунец»</h1>
+        <h1 className={'pageTitle'}>Доставка — «Джонни Тунец»</h1>
       </TextBlock>
       <ul className={`${styles.deliveryValueList} ${styles.deliveryList}`}>
         {advantages.map((container, index) => (
           <motion.li
             key={index}
-            transition={{duration: 0.5}}
-            whileHover={{y: -10}}
+            transition={{ duration: 0.5 }}
+            whileHover={{ y: -10 }}
             className={`${styles.deliveryValueItem} ${styles.deliveryItem}`}
           >
-            <p className={styles.deliveryValueParagraph}>{container.paragraph}</p>
+            <p className={styles.deliveryValueParagraph}>
+              {container.paragraph}
+            </p>
             <h2 className={styles.deliveryValueTitle}>{container.title}</h2>
           </motion.li>
         ))}
@@ -53,7 +56,9 @@ function DeliveryContainer() {
                 alt=""
                 aria-hidden={true}
               />
-              <div className={`${styles.deliveryInformationText} ${styles.deliveryItem}`}>
+              <div
+                className={`${styles.deliveryInformationText} ${styles.deliveryItem}`}
+              >
                 <h3 className={styles.cardsTitle}>{card.title}</h3>
                 <p className={styles.cardsParagraph}>{card.paragraph}</p>
               </div>
@@ -61,8 +66,8 @@ function DeliveryContainer() {
           ))}
         </ul>
         <iframe
-          aria-label={"Зона доставки"}
-          title={"Зона доставки"}
+          aria-label={'Зона доставки'}
+          title={'Зона доставки'}
           src="https://yandex.ru/map-widget/v1/?um=constructor%3A8a49835c9272cc62f3b6da0dc5732cead9228bcb56b4b489d759a97c07980212&amp;source=constructor"
           width="852"
           height="600"

@@ -1,38 +1,37 @@
-.topLink{
+.topLink {
   color: var(--color-text-light);
   font-weight: 500;
   font-size: 1rem;
 }
 
-.item{
+.item {
   list-style: none;
   line-height: 1rem;
 }
 
 @media (max-width: 75rem) {
-  .topLink{
+  .topLink {
     font-size: 1.125rem;
   }
 }
 
-.isBlack{
+.isBlack {
   color: var(--color-text-dark);
 }
 
-
 @media (hover: none) {
-  .topLink:active{
+  .topLink:active {
     transform: scale(0.98);
     color: var(--color-text-dark);
   }
 
-  .isBlack:active{
+  .isBlack:active {
     color: var(--color-text-light);
   }
 }
 
 @media (hover: hover) {
-  .isBlack:hover{
+  .isBlack:hover {
     color: var(--color-text-light);
   }
 }

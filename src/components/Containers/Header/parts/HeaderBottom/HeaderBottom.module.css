@@ -1,11 +1,11 @@
-.headerBottomInner{
+.headerBottomInner {
   display: flex;
   justify-content: space-between;
   background-color: var(--color-text-white);
   align-items: center;
 }
 
-.headerBottomButtons{
+.headerBottomButtons {
   column-gap: 0.5rem;
   padding-left: 2rem;
   display: flex;
