@@ -12,10 +12,6 @@
   opacity: 0;
 }
 
-.checkboxInput:focus-visible + .checkboxSquare{
-  outline: 1px solid var(--color-black);
-}
-
 .checkboxSquare{
   width: 1.75rem;
   min-width: 1rem;
@@ -25,6 +21,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.checkboxInput:focus-visible + .checkboxSquare{
+  outline: 1px solid var(--color-black);
 }
 
 .checkboxIcon{

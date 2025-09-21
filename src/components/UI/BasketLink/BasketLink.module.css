@@ -1,7 +1,3 @@
-.basketLink{
-
-}
-
 .basket{
   display: flex;
   position: relative;
@@ -39,9 +35,11 @@
   .basketLink:hover .basketIcon{
     stroke: var(--color-accent);
   }
+
   .basketLink:hover .basketBalance{
     color: var(--color-accent);
   }
+
   .basketLink:hover .quantity{
     background-color: var(--color-accent);
   }
@@ -51,9 +49,11 @@
   .basketLink:active .basketIcon{
     stroke: var(--color-accent);
   }
+
   .basketLink:active .basketBalance{
     color: var(--color-accent);
   }
+
   .basketLink:active .quantity{
     background-color: var(--color-accent);
   }

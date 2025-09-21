@@ -10,7 +10,6 @@ function AboutCard({
     >
       <p className={styles.cardText}>{text}</p>
       <img
-        className={styles.cardImage}
         src={image}
         aria-hidden={true}
         alt={""}

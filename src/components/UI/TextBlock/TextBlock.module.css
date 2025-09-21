@@ -13,7 +13,7 @@
 
 @media (hover: hover) {
   .textCard:hover{
-    background-color: rgba(215, 215, 215, 0.41);
+    background-color: rgb(215 215 215 / 41%);
     translate: 10px;
   }
 }

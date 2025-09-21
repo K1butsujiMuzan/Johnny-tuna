@@ -44,10 +44,6 @@
   background-color: transparent;
 }
 
-.passwordIcon{
-
-}
-
 .isRed{
   border: 2px solid var(--color-red);
 }

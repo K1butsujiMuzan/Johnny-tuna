@@ -20,10 +20,7 @@ function HeaderTopMobile() {
   }, [isOpen]);
 
   useEffect(() => {
-    if(!isOpen) {
-      return
-    }
-
+    if(!isOpen) {return}
     const closeModal = (event)=> {
       if(event.key === "Escape") {
         closeBurger()

@@ -19,6 +19,7 @@
   .linkMain:active{
     color: var(--color-text-dark);
   }
+
   .linkCurrent:active{
     color: var(--color-text-light);
   }

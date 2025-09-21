@@ -12,13 +12,14 @@ function CitySelect({isMobile}) {
   const cityBlock = useRef(null)
 
   useEffect(() => {
-    if(!isOpen) return
+    if(!isOpen) {
+      return
+    }
     const closeCity = (event) => {
       if(cityBlock.current && !cityBlock.current.contains(event.target)) {
         setIsOpen(false)
       }
     }
-
     window.addEventListener("click", closeCity)
     return () => window.removeEventListener("click", closeCity)
   }, [isOpen])
@@ -62,10 +63,7 @@ function CitySelect({isMobile}) {
         {isOpen && (
           <motion.div
             role={"list"}
-            className={`
-            ${styles.selectList} 
-            ${isMobile ? styles.selectListMobile : ""}
-          `}
+            className={styles.selectList}
             variants={cityContainerVariants}
             initial={"enter"}
             animate={"center"}

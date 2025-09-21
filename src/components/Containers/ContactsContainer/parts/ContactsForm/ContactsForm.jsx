@@ -76,9 +76,8 @@ function ContactsForm() {
       } else if(validationErrors.messageError) {
         messageRef.current.focus()
         return
-      } else {
-        return
       }
+      return
     }
 
     try{

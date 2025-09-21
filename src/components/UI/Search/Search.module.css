@@ -11,7 +11,7 @@
 
 .searchButtons{
   display: flex;
-  column-gap: clamp(0.5rem, 1.16666vw, 0.875rem);
+  column-gap: clamp(0.5rem, 1.1666vw, 0.875rem);
   align-items: center;
 }
 

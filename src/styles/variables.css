@@ -2,19 +2,17 @@
   --color-accent: #35ADE1;
   --color-red-accent: #FF7255;
   --color-text-dark: #242424;
-  --color-text-light: #999999;
-  --color-text-white: #FFFFFF;
+  --color-text-light: #999;
+  --color-text-white: #FFF;
   --color-text-f5: #F5F5F5;
-  --color-black: #000000;
+  --color-black: #000;
   --color-gray-light: #d9d9d9;
-  --color-red: #ff0000;
-
+  --color-red: #f00;
   --main-border-radius: 0.75rem;
   --main-font: 'Inter';
   --main-transition: 0.2s;
-  --main-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  --main-shadow: 0 4px 4px 0 rgb(0 0 0 / 25%);
   --gray-border: 2px solid var(--color-gray-light);
-
   --container-width: 92.5rem;
   --padding-x: 1rem;
   --container-padding-top: clamp(0.75rem, 2vw, 1.5rem);

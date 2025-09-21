@@ -43,11 +43,12 @@ body,
 /* Стили для параграфов */
 p {
   --paragraph-margin: 1.5em;
+
   margin-block: 0;
 }
 
 /* Отступы между параграфами */
-p:where(:not([class]):not(:last-child)) {
+p:where(:not([class], :last-child)) {
   margin-bottom: var(--paragraph-margin);
 }
 
@@ -88,7 +89,7 @@ html {
 body {
   min-height: 100%;
   line-height: 1.5;
-  text-rendering: optimizeSpeed;
+  text-rendering: optimizespeed;
 }
 
 /* Интерактивные элементы */
@@ -107,8 +108,8 @@ a,
 }
 
 /* SVG и иконки */
-[fill] { fill: currentColor }
-[stroke] { stroke: currentColor }
+[fill] { fill: currentcolor }
+[stroke] { stroke: currentcolor }
 
 svg * {
   transition-property: fill, stroke;

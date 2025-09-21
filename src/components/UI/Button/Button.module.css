@@ -20,6 +20,7 @@
   .button:hover{
     background-color: var(--color-red-accent);
   }
+
   .accent:hover{
     background-color: var(--color-accent);
   }
@@ -29,6 +30,7 @@
   .button:active{
     background-color: var(--color-red-accent);
   }
+
   .accent:active{
     background-color: var(--color-accent);
   }

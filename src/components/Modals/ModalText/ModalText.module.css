@@ -1,6 +1,6 @@
 .modalInner{
   position: fixed;
-  background: rgba(0, 0, 0, 0.41);
+  background: rgb(0 0 0 / 41%);
   inset: 0;
   z-index: 500;
   display: flex;

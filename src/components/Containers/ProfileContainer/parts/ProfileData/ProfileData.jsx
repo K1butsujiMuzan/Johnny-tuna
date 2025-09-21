@@ -14,7 +14,7 @@ import {AnimatePresence} from "framer-motion";
 import ModalText from "@components/Modals/ModalText/ModalText";
 
 function ProfileData() {
-  const {exit, profileData} = useProfileToken()
+  const {exit, profileData, auth} = useProfileToken()
 
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isDisabled, setIsDisabled] = useState(true)
@@ -86,25 +86,26 @@ function ProfileData() {
         return loginRef.current.focus()
       } else if(validationErrors.emailError){
         return emailRef.current.focus()
-      } else {
-        return
       }
+      return
     }
     setIsLoading(true)
     try{
+      let hasChanges = false
+
       if(profileData.email !== newData.email) {
         const error = await updateData(api.updateEmail, newData.email)
-        if(!error) {
-          setIsDisabled(true)
-          setIsOpenModal(true)
-        }
+        if(!error) { hasChanges = true }
       }
       if(profileData.login !== newData.login) {
         const error = await updateData(api.updateLogin, newData.login)
-        if(!error) {
-          setIsDisabled(true)
-          setIsOpenModal(true)
-        }
+        if(!error) { hasChanges = true }
+      }
+
+      if(hasChanges) {
+        await auth()
+        setIsDisabled(true)
+        setIsOpenModal(true)
       }
     } catch (error) {
       console.error(error)

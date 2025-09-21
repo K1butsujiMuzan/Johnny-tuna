@@ -91,9 +91,11 @@
   .profileChangeButton:hover .profileChangeIcon path{
     stroke: var(--color-accent);
   }
+
   .profileChangeButton:hover .profileCloseIcon path{
     fill: var(--color-accent);
   }
+
   .profileExit:hover{
     color: var(--color-accent);
   }
@@ -103,9 +105,11 @@
   .profileChangeButton:active .profileChangeIcon path{
     stroke: var(--color-accent);
   }
+
   .profileChangeButton:active .profileCloseIcon path{
     fill: var(--color-accent);
   }
+
   .profileExit:active{
     color: var(--color-accent);
   }

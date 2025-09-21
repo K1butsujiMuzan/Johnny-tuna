@@ -15,7 +15,7 @@
 }
 
 .deliveryValueItem{
-  box-shadow: 0 0 13px 1px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0 13px 1px rgb(0 0 0 / 15%);
   align-items: center;
   padding: clamp(0.5rem, 3.125vw, 1.5rem);
   border-radius: var(--main-border-radius);
@@ -69,13 +69,14 @@
   max-width: 53.25rem;
   width: 100%;
   height: auto;
-  aspect-ratio: 1 / 0.70422;
+  aspect-ratio: 1 / 0.7042;
 }
 
 @media (max-width: 75rem) {
   .deliveryInformation{
     flex-direction: column-reverse;
   }
+
   .deliveryMap,
   .deliveryInformationItem{
     max-width: none;
@@ -86,6 +87,7 @@
   .deliveryValueList{
     grid-template-columns: 1fr 1fr;
   }
+
   .advantagesCardsList{
     grid-template-columns: 1fr;
   }

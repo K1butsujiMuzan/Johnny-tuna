@@ -41,7 +41,7 @@
 .sliderCircle{
   width: clamp(0.5rem, 1vw, 0.75rem);
   aspect-ratio: 1;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgb(0 0 0 / 15%);
   border: none;
   border-radius: 50%;
 }
@@ -55,9 +55,11 @@
   .sliderArrowButtonRight:hover > .sliderArrow path{
     stroke: var(--color-red-accent);
   }
+
   .sliderArrowButtonLeft:hover > .sliderArrow{
     translate: -5px;
   }
+
   .sliderArrowButtonRight:hover > .sliderArrow{
     translate: 5px;
   }
@@ -74,9 +76,11 @@
   .sliderArrowButton{
     display: none;
   }
+
   .containerForPicture{
     width: 100dvw;
   }
+
   .sliderImage{
     border-radius: 0;
   }

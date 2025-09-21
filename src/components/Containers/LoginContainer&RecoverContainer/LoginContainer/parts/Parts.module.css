@@ -87,6 +87,7 @@
   .linkForm:hover{
     color: var(--color-text-dark);
   }
+
   .linkToMain:hover{
     color: var(--color-text-white);
   }
@@ -96,6 +97,7 @@
   .linkForm:active{
     color: var(--color-text-dark);
   }
+
   .linkToMain:active{
     color: var(--color-text-white);
   }

@@ -1,7 +1,3 @@
-.profileLink{
-
-}
-
 .points{
   display: flex;
   align-items: center;
@@ -26,9 +22,11 @@
   .profileLink:hover .profileIcon{
     stroke: var(--color-accent);
   }
+
   .profileLink:hover .pointsText{
     color: var(--color-accent);
   }
+
   .profileLink:hover .pointsIcon{
     fill: var(--color-accent);
   }
@@ -38,9 +36,11 @@
   .profileLink:active .profileIcon{
     stroke: var(--color-accent);
   }
+
   .profileLink:active .pointsText{
     color: var(--color-accent);
   }
+
   .profileLink:active .pointsIcon{
     fill: var(--color-accent);
   }

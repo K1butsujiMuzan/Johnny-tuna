@@ -17,10 +17,6 @@
   text-align: center;
 }
 
-.cardImage{
-
-}
-
 @media (hover: hover) {
   .card:hover{
     translate: 0 -10px;

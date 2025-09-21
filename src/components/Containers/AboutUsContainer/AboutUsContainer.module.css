@@ -45,6 +45,7 @@
     flex-direction: column;
     align-items: center;
   }
+
   .aboutGalleryCards,
   .aboutGalleryImages{
     gap: 1.5rem;

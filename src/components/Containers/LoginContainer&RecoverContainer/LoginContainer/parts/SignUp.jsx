@@ -63,9 +63,8 @@ function SignUp() {
       } else if(validationErrors.passwordRepeatError) {
         passwordRepeatInput.current.focus()
         return
-      } else {
-        return
       }
+      return
     }
 
     try{

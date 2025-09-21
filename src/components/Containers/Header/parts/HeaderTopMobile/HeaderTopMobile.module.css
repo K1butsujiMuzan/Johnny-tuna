@@ -27,7 +27,7 @@
 }
 
 .burgerButton{
-  height: clamp(1.5rem, 4.67578125vw, 2.244375rem);
+  height: clamp(1.5rem, 4.6757vw, 2.2443rem);
   aspect-ratio: 1;
   background-color: transparent;
   border: none;
@@ -79,7 +79,7 @@
 }
 
 .searchButton{
-  width: clamp(1.5rem, 4.67578125vw, 2.244375rem);
+  width: clamp(1.5rem, 4.6757vw, 2.2443rem);
   aspect-ratio: 1;
   border: none;
   background-color: transparent;
@@ -103,6 +103,7 @@
   .burgerButton:active .burgerSpan{
     background-color: var(--color-accent);
   }
+
   .searchButton:active .searchIcon{
     stroke: var(--color-accent);
   }
@@ -112,6 +113,7 @@
   .burgerButton:hover .burgerSpan{
     background-color: var(--color-accent);
   }
+
   .searchButton:hover .searchIcon{
     stroke: var(--color-accent);
   }

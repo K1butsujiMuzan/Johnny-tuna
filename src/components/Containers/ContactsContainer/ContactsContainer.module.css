@@ -31,10 +31,12 @@
     border: none;
     background: var(--color-text-white);
   }
+
   .informationList{
     padding-inline: 0;
     padding-bottom: 0;
   }
+
   .contactsMap{
     height: clamp(16.5rem, 35.66vw, 26.75rem);
   }

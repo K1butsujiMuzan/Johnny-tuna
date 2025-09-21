@@ -34,8 +34,8 @@
 .selectList{
   z-index: 600;
   box-shadow:
-    5px 4px 5px 0 rgba(0, 0, 0, 0.4),
-    -4px 4px 5px 0 rgba(0, 0, 0, 0.1)
+    5px 4px 5px 0 rgb(0 0 0 / 40%),
+    -4px 4px 5px 0 rgb(0 0 0 / 10%)
 ;
   white-space: nowrap;
   position: absolute;
@@ -46,7 +46,7 @@
   width: 11rem;
   color: var(--color-text-light);
   background-color: var(--color-text-white);
-  padding: 0 0.5rem 0.5rem 0.5rem;
+  padding: 0 0.5rem 0.5rem;
   border-radius: 0 0 10px 10px;
 }
 
@@ -69,14 +69,11 @@
   color: var(--color-black);
 }
 
-.selectListMobile{
-
-}
-
 @media (hover: hover) {
   .selectOption:hover{
     color: var(--color-text-dark);
   }
+
   .selectTrigger:hover{
     color: var(--color-text-dark);
   }
@@ -87,6 +84,7 @@
     color: var(--color-text-dark);
     scale: 0.98;
   }
+
   .selectValue:active{
     color: var(--color-text-light);
   }
