@@ -8,7 +8,6 @@ import Information from '@/pages/Information'
 import AboutUs from '@/pages/AboutUs'
 import MainLayout from '@/layouts/MainLayout'
 import Basket from '@/pages/Basket'
-import Recover from '@/pages/Recover'
 import Verification from '@/pages/Verification'
 import Profile from '@/pages/Profile'
 import { useProfileToken } from '@/store/useProfileToken'
@@ -34,8 +33,7 @@ function App() {
           <Route path={'/profile'} element={<Profile />}></Route>
         </Route>
         <Route path={'/verify/token/:token'} element={<Verification />}></Route>
-        <Route path={'/login'} element={<Login />} />
-        <Route path={'/recover'} element={<Recover />}></Route>
+        <Route path={'/login'} element={<Login />} ></Route>
       </Routes>
     </>
   )

@@ -47,6 +47,9 @@
   color: var(--color-text-light);
   cursor: pointer;
   font-weight: 600;
+  line-height: 1;
+  background-color: transparent;
+  border: none;
 }
 
 .confirmation {
@@ -83,6 +86,25 @@
   justify-content: center;
 }
 
+.recoverTimer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  row-gap: 0.5rem;
+  color: var(--color-text-light);
+}
+
+.recoverButton{
+  color: var(--color-accent);
+  border: none;
+  background-color: transparent;
+}
+
+.recoverValue{
+  color: var(--color-text-dark);
+}
+
 @media (hover: hover) {
   .linkForm:hover {
     color: var(--color-text-dark);
@@ -90,6 +112,10 @@
 
   .linkToMain:hover {
     color: var(--color-text-white);
+  }
+
+  .recoverButton:hover{
+    color: var(--color-red-accent);
   }
 }
 
@@ -100,5 +126,9 @@
 
   .linkToMain:active {
     color: var(--color-text-white);
+  }
+
+  .recoverButton:active{
+    color: var(--color-red-accent);
   }
 }

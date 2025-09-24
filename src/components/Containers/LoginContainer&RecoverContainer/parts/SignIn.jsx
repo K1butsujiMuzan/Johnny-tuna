@@ -2,7 +2,7 @@ import styles from './Parts.module.css'
 import { useCallback, useRef, useState } from 'react'
 import LoginInput from '@components/UI/LoginComponents/LoginInput'
 import PasswordInput from '@components/UI/LoginComponents/PasswordInput'
-import { Link, useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import SubmitButton from '@components/UI/LoginComponents/SubmitButton/SubmitButton'
 import { setCookie } from '@/scripts/Functions/setCookie'
 import { responsesTypes } from '@/constants/Request/responsesTypes'
@@ -10,7 +10,7 @@ import { errorsTypes } from '@/constants/Request/errorsTypes'
 import { signIn } from '@/services/signIn'
 import { useProfileToken } from '@/store/useProfileToken'
 
-function SignIn() {
+function SignIn({setIsRecover}) {
   const errorLogin = useRef(null)
   const errorPassword = useRef(null)
   const { auth } = useProfileToken()
@@ -125,9 +125,12 @@ function SignIn() {
             isRed={errors.passwordError}
           />
         </div>
-        <Link className={styles.linkForm} to={'/recover'}>
+        <button
+          className={styles.linkForm}
+          onClick={() => setIsRecover(true)}
+        >
           Не помню пароль
-        </Link>
+        </button>
       </div>
       <div className={styles.mainFormDown}>
         <SubmitButton

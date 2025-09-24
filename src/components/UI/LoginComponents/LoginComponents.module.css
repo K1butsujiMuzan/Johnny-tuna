@@ -11,6 +11,11 @@
   background-color: var(--color-text-white);
 }
 
+.mainInput:disabled{
+  cursor: not-allowed;
+  background-color: var(--color-text-f5);
+}
+
 .passwordInput {
   border: none;
 }

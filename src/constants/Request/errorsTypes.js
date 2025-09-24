@@ -17,4 +17,6 @@ export const errorsTypes = {
 
   userNotFound: 'Пользователь не найден',
   wrongPassword: 'Неверный пароль',
+
+  wrongCode: "Неверный код"
 }
