@@ -1,5 +1,5 @@
 import styles from './TextBlock.module.css'
-import { textVariants } from '@/constants/Data/variantsAnimation'
+import { textVariants } from '@/constants/variantsAnimation'
 import { motion } from 'framer-motion'
 
 function TextBlock({ children }) {

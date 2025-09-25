@@ -95,13 +95,13 @@
   color: var(--color-text-light);
 }
 
-.recoverButton{
+.recoverButton {
   color: var(--color-accent);
   border: none;
   background-color: transparent;
 }
 
-.recoverValue{
+.recoverValue {
   color: var(--color-text-dark);
 }
 
@@ -114,7 +114,7 @@
     color: var(--color-text-white);
   }
 
-  .recoverButton:hover{
+  .recoverButton:hover {
     color: var(--color-red-accent);
   }
 }
@@ -128,7 +128,7 @@
     color: var(--color-text-white);
   }
 
-  .recoverButton:active{
+  .recoverButton:active {
     color: var(--color-red-accent);
   }
 }

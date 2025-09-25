@@ -8,5 +8,6 @@ export const api = {
   updateEmail: "http://localhost:8080/api/v1/profile/update/email",
   updateLogin: "http://localhost:8080/api/v1/profile/update/login",
   recoverEmail: "http://localhost:8080/api/v1/auth/password/reset/req",
-  recoverCode: "http://localhost:8080/api/v1/auth/password/reset/verify"
+  recoverCode: "http://localhost:8080/api/v1/auth/password/reset/verify",
+  recoverPassword: "http://localhost:8080/api/v1/auth/password/reset"
 }

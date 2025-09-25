@@ -1,5 +1,5 @@
 import { getCookie } from '@/scripts/Functions/getCookie'
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { errorTypes } from '@/constants/errorTypes'
 
 export const checkProfile = async api => {
   try {
@@ -8,7 +8,7 @@ export const checkProfile = async api => {
       headers: { Authorization: `Bearer ${token}` },
     })
     if (!response) {
-      throw new Error(errorsTypes.serverConnect)
+      throw new Error(errorTypes.serverConnect)
     }
     const data = await response.json()
     return data.result

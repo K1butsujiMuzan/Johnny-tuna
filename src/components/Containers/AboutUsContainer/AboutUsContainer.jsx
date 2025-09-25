@@ -1,6 +1,6 @@
 import styles from './AboutUsContainer.module.css'
 import AboutCard from '@components/Containers/AboutUsContainer/parts/AboutCard/AboutCard'
-import { foodCards, images, whyCards } from '@/constants/Data/AboutUsImages'
+import { aboutGallery, aboutWhyCards, aboutFoodCards } from '@/constants/images'
 import TextBlock from '@components/UI/TextBlock/TextBlock'
 import PageLink from '@components/UI/PageLink/PageLink'
 
@@ -23,12 +23,12 @@ function AboutUsContainer() {
       </TextBlock>
       <div className={styles.aboutGallery}>
         <ul className={styles.aboutGalleryCards}>
-          {foodCards.map((card, _) => (
+          {aboutFoodCards.map((card, _) => (
             <AboutCard key={card.image} text={card.text} image={card.image} />
           ))}
         </ul>
         <div className={styles.aboutGalleryImages} aria-hidden={true}>
-          {images.map((row, indexRow) => (
+          {aboutGallery.map((row, indexRow) => (
             <div className={styles.galleryRow} key={indexRow}>
               {row.map((image, indexImage) => (
                 <picture key={`${indexRow}-${indexImage}`}>
@@ -60,7 +60,7 @@ function AboutUsContainer() {
         </p>
       </TextBlock>
       <ul className={styles.whyCards}>
-        {whyCards.map((card, _) => (
+        {aboutWhyCards.map((card, _) => (
           <AboutCard key={card.image} text={card.text} image={card.image} />
         ))}
       </ul>

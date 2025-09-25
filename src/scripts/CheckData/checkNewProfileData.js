@@ -1,6 +1,6 @@
 'use strict'
 
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { errorTypes } from '@/constants/errorTypes'
 
 export const checkNewProfileData = (email, login) => {
   const errors = {
@@ -9,13 +9,13 @@ export const checkNewProfileData = (email, login) => {
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.emailError = errorsTypes.emailInvalidFormat
+    errors.emailError = errorTypes.emailInvalidFormat
   } else if (email.length < 10) {
-    errors.emailError = errorsTypes.length('почты', 10)
+    errors.emailError = errorTypes.length('почты', 10)
   }
 
   if (login.length < 3) {
-    errors.loginError = errorsTypes.length('логина', 3)
+    errors.loginError = errorTypes.length('логина', 3)
   }
 
   return errors

@@ -1,4 +1,4 @@
-export const errorsTypes = {
+export const errorTypes = {
   length: (text, length) =>
     `Длина ${text} должна быть не менее ${length} символов`,
   passwordLength: 'Минимальная длина пароля - 8 символов',
@@ -18,5 +18,6 @@ export const errorsTypes = {
   userNotFound: 'Пользователь не найден',
   wrongPassword: 'Неверный пароль',
 
-  wrongCode: "Неверный код"
+  wrongCode: 'Неверный код',
+  somethingWentWrong: 'Что-то пошло не так',
 }

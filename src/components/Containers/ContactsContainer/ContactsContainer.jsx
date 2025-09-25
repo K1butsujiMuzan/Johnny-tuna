@@ -2,7 +2,7 @@ import styles from './ContactsContainer.module.css'
 import TextBlock from '@components/UI/TextBlock/TextBlock'
 import ContactsForm from '@components/Containers/ContactsContainer/parts/ContactsForm/ContactsForm'
 import PageLink from '@components/UI/PageLink/PageLink'
-import { addressInformation } from '@/constants/Data/address'
+import { addressInformation } from '@/constants/images'
 
 function ContactsContainer() {
   return (

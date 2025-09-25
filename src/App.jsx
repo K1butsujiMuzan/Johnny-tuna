@@ -33,7 +33,7 @@ function App() {
           <Route path={'/profile'} element={<Profile />}></Route>
         </Route>
         <Route path={'/verify/token/:token'} element={<Verification />}></Route>
-        <Route path={'/login'} element={<Login />} ></Route>
+        <Route path={'/login'} element={<Login />}></Route>
       </Routes>
     </>
   )

@@ -1,4 +1,4 @@
-import { responsesTypes } from '@/constants/Request/responsesTypes'
+import { responseTypes } from '@/constants/responseTypes'
 import { api } from '@/services/api'
 
 export const getToken = async token => {
@@ -7,7 +7,7 @@ export const getToken = async token => {
     headers: { 'Content-Type': 'application/json' },
   })
   const data = await response.json()
-  if (data.error === responsesTypes.wrongToken) {
+  if (data.error === responseTypes.wrongToken) {
     throw new Error('Неверный токен')
   }
   return data

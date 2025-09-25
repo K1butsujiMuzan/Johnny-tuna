@@ -7,7 +7,7 @@ import SubmitButton from '@components/UI/LoginComponents/SubmitButton/SubmitButt
 import { checkNewProfileData } from '@/scripts/CheckData/checkNewProfileData'
 import { api } from '@/services/api'
 import { updateData } from '@/services/updateData'
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { errorTypes } from '@/constants/errorTypes'
 import { AnimatePresence } from 'framer-motion'
 import ModalText from '@components/Modals/ModalText/ModalText'
 
@@ -113,7 +113,7 @@ function ProfileData() {
       console.error(error)
       setErrors(prevState => ({
         ...prevState,
-        loginError: errorsTypes.serverConnect,
+        loginError: errorTypes.serverConnect,
       }))
     } finally {
       setIsLoading(false)

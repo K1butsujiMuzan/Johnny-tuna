@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 import Radio from '@components/UI/LoginComponents/Radio/Radio'
 import SubmitButton from '@components/UI/LoginComponents/SubmitButton/SubmitButton'
 import { checkContacts } from '@/scripts/CheckData/checkContacts'
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { errorTypes } from '@/constants/errorTypes'
 import ModalText from '@components/Modals/ModalText/ModalText'
 import { contactsForm } from '@/services/contactsForm'
 
@@ -91,7 +91,7 @@ function ContactsForm() {
       if (data.error) {
         setErrors(prevState => ({
           ...prevState,
-          emailError: errorsTypes.emailNotFound(formData.email),
+          emailError: errorTypes.emailNotFound(formData.email),
         }))
         emailRef.current.focus()
       }
@@ -102,7 +102,7 @@ function ContactsForm() {
       console.log('Ошибка сети: ', error)
       setErrors(prevState => ({
         ...prevState,
-        serverError: errorsTypes.serverError,
+        serverError: errorTypes.serverError,
       }))
     } finally {
       setIsLoading(false)

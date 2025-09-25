@@ -6,8 +6,8 @@ import { useCity } from '@/store/useCity'
 import {
   cityVariants,
   cityContainerVariants,
-} from '@/constants/Data/variantsAnimation'
-import { cities } from '@/constants/Data/cities'
+} from '@/constants/variantsAnimation'
+import { cities } from '@/constants/text'
 
 function CitySelect({ isMobile }) {
   const { cityValue, setCity } = useCity()

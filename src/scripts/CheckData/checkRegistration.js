@@ -1,6 +1,6 @@
 'use strict'
 
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { errorTypes } from '@/constants/errorTypes'
 
 export const checkRegistration = (login, email, password, passwordRepeat) => {
   const errors = {
@@ -16,23 +16,23 @@ export const checkRegistration = (login, email, password, passwordRepeat) => {
   )
 
   if (login.length < 3) {
-    errors.loginError = errorsTypes.length('логина', 3)
+    errors.loginError = errorTypes.length('логина', 3)
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    errors.emailError = errorsTypes.emailInvalidFormat
+    errors.emailError = errorTypes.emailInvalidFormat
   } else if (email.length < 10) {
-    errors.emailError = errorsTypes.length('почты', 10)
+    errors.emailError = errorTypes.length('почты', 10)
   }
 
   if (password.length < 8) {
-    errors.passwordError = errorsTypes.passwordLength
+    errors.passwordError = errorTypes.passwordLength
   } else if (!checkPassword) {
-    errors.passwordError = errorsTypes.passwordSecure
+    errors.passwordError = errorTypes.passwordSecure
   }
 
   if (password !== passwordRepeat) {
-    errors.passwordRepeatError = errorsTypes.passwordRepeat
+    errors.passwordRepeatError = errorTypes.passwordRepeat
   }
 
   return errors

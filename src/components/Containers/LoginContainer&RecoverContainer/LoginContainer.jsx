@@ -5,9 +5,8 @@ import { Link } from 'react-router-dom'
 import SignIn from '@components/Containers/LoginContainer&RecoverContainer/parts/SignIn'
 import SignUp from '@components/Containers/LoginContainer&RecoverContainer/parts/SignUp'
 import { motion } from 'framer-motion'
-import { loginFromTop } from '@/constants/Data/variantsAnimation'
-import Recover
-  from '@components/Containers/LoginContainer&RecoverContainer/parts/Recover'
+import { loginFromTop } from '@/constants/variantsAnimation'
+import Recover from '@components/Containers/LoginContainer&RecoverContainer/parts/Recover'
 
 function LoginContainer() {
   const [isOpen, setIsOpen] = useState('login')
@@ -33,7 +32,7 @@ function LoginContainer() {
           className={`${styles.changeButton} ${isOpen === 'registration' ? styles.activeButton : ''}`}
           onClick={() => {
             setIsOpen('registration')
-            if(isRecover) setIsRecover(false)
+            if (isRecover) setIsRecover(false)
           }}
           aria-pressed={isOpen === 'registration'}
         >
@@ -52,22 +51,26 @@ function LoginContainer() {
           <span className={styles.logo}>
             <Logo />
           </span>
-          {!isRecover ?
+          {!isRecover ? (
             <Link className={styles.mainLink} to={'/'}>
               На главную
-            </Link> :
+            </Link>
+          ) : (
             <button
               className={`${styles.mainLink} ${styles.backLink}`}
               onClick={() => setIsRecover(false)}
-              type={"button"}
+              type={'button'}
             >
               Назад
             </button>
-          }
+          )}
         </div>
-        {isOpen === 'login' && (
-          !isRecover ? <SignIn setIsRecover={setIsRecover}/> : <Recover/>
-        )}
+        {isOpen === 'login' &&
+          (!isRecover ? (
+            <SignIn setIsRecover={setIsRecover} />
+          ) : (
+            <Recover setIsRecover={setIsRecover} />
+          ))}
         {isOpen === 'registration' && <SignUp />}
       </div>
     </motion.div>

@@ -2,11 +2,8 @@ import styles from './DeliveryContainer.module.css'
 import PageLink from '@components/UI/PageLink/PageLink'
 import TextBlock from '@components/UI/TextBlock/TextBlock'
 import { motion } from 'framer-motion'
-import {
-  advantages,
-  advantagesCards,
-  informationCards,
-} from '@/constants/Data/delivery'
+import { delivery } from '@/constants/text'
+import { deliveryCards, deliveryInformation } from '@/constants/images'
 
 function DeliveryContainer() {
   return (
@@ -16,7 +13,7 @@ function DeliveryContainer() {
         <h1 className={'pageTitle'}>Доставка — «Джонни Тунец»</h1>
       </TextBlock>
       <ul className={`${styles.deliveryValueList} ${styles.deliveryList}`}>
-        {advantages.map((container, index) => (
+        {delivery.map((container, index) => (
           <motion.li
             key={index}
             transition={{ duration: 0.5 }}
@@ -31,7 +28,7 @@ function DeliveryContainer() {
         ))}
       </ul>
       <ul className={`${styles.advantagesCardsList} ${styles.deliveryList}`}>
-        {advantagesCards.map((card, _) => (
+        {deliveryCards.map((card, _) => (
           <li key={card.icon} className={styles.deliveryItem}>
             <img
               height={40}
@@ -47,7 +44,7 @@ function DeliveryContainer() {
       </ul>
       <div className={styles.deliveryInformation}>
         <ul className={styles.deliveryInformationList}>
-          {informationCards.map((card, _) => (
+          {deliveryInformation.map((card, _) => (
             <li className={styles.deliveryInformationItem} key={card.icon}>
               <img
                 height={40}

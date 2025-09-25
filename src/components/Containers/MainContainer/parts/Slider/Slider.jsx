@@ -1,6 +1,6 @@
 import styles from './Slider.module.css'
 import { useEffect, useRef, useState } from 'react'
-import { images } from '@/constants/Data/sliderImages'
+import { sliderImages } from '@/constants/images'
 import { AnimatePresence, motion } from 'framer-motion'
 
 function Slider() {
@@ -29,7 +29,7 @@ function Slider() {
     intervalRef.current = setInterval(() => {
       setDirection(1)
       setCurrentImage(prevImage =>
-        prevImage === images.length - 1 ? 0 : prevImage + 1,
+        prevImage === sliderImages.length - 1 ? 0 : prevImage + 1,
       )
     }, 5000)
   }
@@ -43,7 +43,7 @@ function Slider() {
 
   const moveForward = () => {
     setCurrentImage(prevImage =>
-      prevImage === images.length - 1 ? 0 : prevImage + 1,
+      prevImage === sliderImages.length - 1 ? 0 : prevImage + 1,
     )
     setDirection(1)
     startSlideInterval()
@@ -51,7 +51,7 @@ function Slider() {
 
   const moveBack = () => {
     setCurrentImage(prevState =>
-      prevState === 0 ? images.length - 1 : prevState - 1,
+      prevState === 0 ? sliderImages.length - 1 : prevState - 1,
     )
     setDirection(-1)
     startSlideInterval()
@@ -100,21 +100,21 @@ function Slider() {
           <AnimatePresence mode={'wait'} custom={direction}>
             <motion.picture
               custom={direction}
-              key={images[currentImage].src}
+              key={sliderImages[currentImage].src}
               variants={sliderVariables}
               initial="enter"
               animate="center"
               exit="exit"
               transition={{ duration: 0.3 }}
             >
-              {images[currentImage].sources.map((source, index) => (
+              {sliderImages[currentImage].sources.map((source, index) => (
                 <source key={index} srcSet={source.srcSet} type={source.type} />
               ))}
               <motion.img
                 loading={currentImage === 0 ? 'eager' : 'lazy'}
                 className={styles.sliderImage}
-                src={images[currentImage].src}
-                alt={images[currentImage].alt}
+                src={sliderImages[currentImage].src}
+                alt={sliderImages[currentImage].alt}
                 height={400}
                 width={1480}
               />
@@ -147,12 +147,12 @@ function Slider() {
         </button>
       </div>
       <div className={styles.sliderCircles}>
-        {images.map((image, index) => (
+        {sliderImages.map((image, index) => (
           <button
             type={'button'}
-            aria-label={`Перейти к слайду: ${images[index].alt}`}
+            aria-label={`Перейти к слайду: ${sliderImages[index].alt}`}
             aria-current={index === currentImage ? true : undefined}
-            key={images[index].src}
+            key={sliderImages[index].src}
             onClick={() => {
               setCurrentImage(index)
               setDirection(currentImage > index ? -1 : 1)

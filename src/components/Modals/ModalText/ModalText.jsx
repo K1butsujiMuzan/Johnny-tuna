@@ -1,7 +1,7 @@
 import styles from './ModalText.module.css'
 import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
-import { loginFromTop } from '@/constants/Data/variantsAnimation'
+import { loginFromTop } from '@/constants/variantsAnimation'
 import ReactFocusLock from 'react-focus-lock'
 import { useEffect } from 'react'
 

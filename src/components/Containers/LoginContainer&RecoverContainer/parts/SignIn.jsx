@@ -5,12 +5,12 @@ import PasswordInput from '@components/UI/LoginComponents/PasswordInput'
 import { useNavigate } from 'react-router-dom'
 import SubmitButton from '@components/UI/LoginComponents/SubmitButton/SubmitButton'
 import { setCookie } from '@/scripts/Functions/setCookie'
-import { responsesTypes } from '@/constants/Request/responsesTypes'
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { responseTypes } from '@/constants/responseTypes'
+import { errorTypes } from '@/constants/errorTypes'
 import { signIn } from '@/services/signIn'
 import { useProfileToken } from '@/store/useProfileToken'
 
-function SignIn({setIsRecover}) {
+function SignIn({ setIsRecover }) {
   const errorLogin = useRef(null)
   const errorPassword = useRef(null)
   const { auth } = useProfileToken()
@@ -42,21 +42,21 @@ function SignIn({setIsRecover}) {
     try {
       const { ok, data } = await signIn(formData.login, formData.password)
       if (!ok || data.error) {
-        if (data.error === responsesTypes.wrongPassword) {
+        if (data.error === responseTypes.wrongPassword) {
           setErrors({
             loginError: '',
-            passwordError: errorsTypes.wrongPassword,
+            passwordError: errorTypes.wrongPassword,
           })
           errorPassword.current.focus()
-        } else if (data.error === responsesTypes.userNotFound) {
+        } else if (data.error === responseTypes.userNotFound) {
           setErrors({
-            loginError: errorsTypes.userNotFound,
+            loginError: errorTypes.userNotFound,
             passwordError: '',
           })
           errorLogin.current.focus()
         } else {
           setErrors({
-            loginError: errorsTypes.serverConnect,
+            loginError: errorTypes.serverConnect,
             passwordError: '',
           })
         }
@@ -71,7 +71,7 @@ function SignIn({setIsRecover}) {
     } catch (error) {
       console.error('Ошибка сети: ', error)
       setErrors({
-        loginError: errorsTypes.serverError,
+        loginError: errorTypes.serverError,
         passwordError: '',
       })
     } finally {
@@ -125,10 +125,7 @@ function SignIn({setIsRecover}) {
             isRed={errors.passwordError}
           />
         </div>
-        <button
-          className={styles.linkForm}
-          onClick={() => setIsRecover(true)}
-        >
+        <button className={styles.linkForm} onClick={() => setIsRecover(true)}>
           Не помню пароль
         </button>
       </div>

@@ -67,7 +67,7 @@
   color: var(--color-text-light);
 }
 
-.backLink{
+.backLink {
   line-height: 1;
   background-color: transparent;
   border: none;
@@ -90,14 +90,14 @@
 }
 
 @media (hover: hover) {
-  .backLink:hover{
+  .backLink:hover {
     color: var(--color-text-dark);
   }
 }
 
 @media (hover: none) {
   .mainLink:active,
-  .backLink:hover{
+  .backLink:hover {
     color: var(--color-text-dark);
   }
 }

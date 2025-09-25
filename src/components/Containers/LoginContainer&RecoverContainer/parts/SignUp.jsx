@@ -5,8 +5,8 @@ import PasswordInput from '@components/UI/LoginComponents/PasswordInput'
 import SubmitButton from '@components/UI/LoginComponents/SubmitButton/SubmitButton'
 import CheckBox from '@components/UI/LoginComponents/CheckBox/CheckBox'
 import { checkRegistration } from '@/scripts/CheckData/checkRegistration'
-import { errorsTypes } from '@/constants/Request/errorsTypes'
-import { responsesTypes } from '@/constants/Request/responsesTypes'
+import { errorTypes } from '@/constants/errorTypes'
+import { responseTypes } from '@/constants/responseTypes'
 import { Link } from 'react-router-dom'
 import { signUp } from '@/services/signUp'
 import { useProfileToken } from '@/store/useProfileToken'
@@ -75,15 +75,15 @@ function SignUp() {
       )
 
       if (!ok || data.error) {
-        if (data.error === responsesTypes.userAlreadyExist) {
+        if (data.error === responseTypes.userAlreadyExist) {
           setErrorsState(prevState => ({
             ...prevState,
-            serverError: errorsTypes.alreadyExist,
+            serverError: errorTypes.alreadyExist,
           }))
         } else {
           setErrorsState(prevState => ({
             ...prevState,
-            serverError: errorsTypes.emailIsNotFound,
+            serverError: errorTypes.emailIsNotFound,
           }))
         }
         return
@@ -96,7 +96,7 @@ function SignUp() {
       console.log('Ошибка сети: ', error)
       setErrorsState(prevState => ({
         ...prevState,
-        serverError: errorsTypes.serverError,
+        serverError: errorTypes.serverError,
       }))
     } finally {
       setIsLoading(false)

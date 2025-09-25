@@ -1,5 +1,5 @@
 import { getCookie } from '@/scripts/Functions/getCookie'
-import { errorsTypes } from '@/constants/Request/errorsTypes'
+import { errorTypes } from '@/constants/errorTypes'
 
 export const updateData = async (api, newValue) => {
   const token = getCookie('auth')
@@ -11,7 +11,7 @@ export const updateData = async (api, newValue) => {
     }),
   })
   if (!response) {
-    throw new Error(errorsTypes.serverConnect)
+    throw new Error(errorTypes.serverConnect)
   }
   const data = await response.json()
   return data.error
