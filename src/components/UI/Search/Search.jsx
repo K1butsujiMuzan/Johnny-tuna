@@ -18,6 +18,7 @@ function Search() {
         onChange={handleChange}
         value={searchValue}
         aria-label={'Поиск'}
+        autoComplete={'off'}
       />
       <div className={styles.searchButtons}>
         <button

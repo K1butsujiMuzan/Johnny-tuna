@@ -1,7 +1,7 @@
 import styles from './ProfileData.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useProfileToken } from '@/store/useProfileToken'
-import CitySelect from '@components/Containers/Header/parts/CitySelect/CitySelect'
+import CitySelect from '@components/UI/CitySelect/CitySelect'
 import { useEffect, useRef, useState } from 'react'
 import SubmitButton from '@components/UI/LoginComponents/SubmitButton/SubmitButton'
 import { checkNewProfileData } from '@/scripts/CheckData/checkNewProfileData'

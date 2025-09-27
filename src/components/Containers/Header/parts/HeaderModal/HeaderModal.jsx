@@ -1,5 +1,5 @@
 import styles from './HeaderModal.module.css'
-import CitySelect from '@components/Containers/Header/parts/CitySelect/CitySelect'
+import CitySelect from '@components/UI/CitySelect/CitySelect'
 import NavLinks from '@components/UI/NavLink/NavLinks'
 import Phone from '@components/UI/Phone/Phone'
 import Socials from '@components/UI/Socials/Socials'

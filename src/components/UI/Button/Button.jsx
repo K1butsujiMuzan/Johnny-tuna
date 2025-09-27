@@ -1,4 +1,5 @@
 import styles from './Button.module.css'
+import { memo } from 'react'
 
 function Button({ children, isSubmit, isAccent, isDisabled }) {
   return (
@@ -15,4 +16,4 @@ function Button({ children, isSubmit, isAccent, isDisabled }) {
   )
 }
 
-export default Button
+export default memo(Button)

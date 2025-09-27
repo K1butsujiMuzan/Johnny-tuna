@@ -2,11 +2,11 @@ import styles from './LoginContainer.module.css'
 import { useEffect, useState } from 'react'
 import Logo from '@components/UI/Logo/Logo'
 import { Link } from 'react-router-dom'
-import SignIn from '@components/Containers/LoginContainer&RecoverContainer/parts/SignIn'
-import SignUp from '@components/Containers/LoginContainer&RecoverContainer/parts/SignUp'
+import SignIn from '@components/Containers/LoginContainer/parts/SignIn'
+import SignUp from '@components/Containers/LoginContainer/parts/SignUp'
 import { motion } from 'framer-motion'
 import { loginFromTop } from '@/constants/variantsAnimation'
-import Recover from '@components/Containers/LoginContainer&RecoverContainer/parts/Recover'
+import Recover from '@components/Containers/LoginContainer/parts/Recover'
 
 function LoginContainer() {
   const [isOpen, setIsOpen] = useState('login')

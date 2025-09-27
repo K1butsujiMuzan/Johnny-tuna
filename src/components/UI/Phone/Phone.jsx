@@ -1,4 +1,5 @@
 import styles from './Phone.module.css'
+import { memo } from 'react'
 
 function Phone() {
   return (
@@ -8,4 +9,4 @@ function Phone() {
   )
 }
 
-export default Phone
+export default memo(Phone)

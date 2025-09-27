@@ -1,6 +1,6 @@
 import styles from './HeaderTop.module.css'
 import Logo from '@components/UI/Logo/Logo'
-import CitySelect from '@components/Containers/Header/parts/CitySelect/CitySelect'
+import CitySelect from '@components/UI/CitySelect/CitySelect'
 import NavLinks from '@components/UI/NavLink/NavLinks'
 import Phone from '@components/UI/Phone/Phone'
 
