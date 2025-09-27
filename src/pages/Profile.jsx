@@ -1,4 +1,4 @@
-import ProfileContainer from '@components/Containers/ProfileContainer/ProfileContainer'
+import ProfileContainer from '@components/features/ProfileContainer/ProfileContainer'
 import useHead from '@/hooks/useHead'
 
 function Profile() {

@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getToken } from '@/services/verification'
-import { setCookie } from '@/scripts/Functions/setCookie'
+import { setCookie } from '@/utils/functions/setCookie'
 import { useProfileToken } from '@/store/useProfileToken'
-import Logo from '@components/UI/Logo/Logo'
+import Logo from '@components/ui/Logo/Logo'
 
 function Verification() {
   const [isVerify, setIsVerify] = useState('Аккаунт не подтверждён :(')

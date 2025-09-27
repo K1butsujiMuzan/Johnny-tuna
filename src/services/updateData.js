@@ -1,4 +1,4 @@
-import { getCookie } from '@/scripts/Functions/getCookie'
+import { getCookie } from '@/utils/functions/getCookie'
 import { errorTypes } from '@/constants/errorTypes'
 
 export const updateData = async (api, newValue) => {

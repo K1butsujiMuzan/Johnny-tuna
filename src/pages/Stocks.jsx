@@ -1,5 +1,5 @@
 import useHead from '@/hooks/useHead'
-import StocksContainer from '@components/Containers/StocksContainer/StocksContainer'
+import StocksContainer from '@components/features/StocksContainer/StocksContainer'
 
 function Stocks() {
   useHead({

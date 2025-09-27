@@ -1,5 +1,5 @@
 import useHead from '@/hooks/useHead'
-import LoginContainer from '@components/Containers/LoginContainer/LoginContainer'
+import LoginContainer from '@components/features/LoginContainer/LoginContainer'
 
 function Login() {
   useHead({

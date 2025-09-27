@@ -1,5 +1,5 @@
 import useHead from '@/hooks/useHead'
-import InformationContainer from '@components/Containers/InformationContainer/InformationContainer'
+import InformationContainer from '@components/features/InformationContainer/InformationContainer'
 
 function Information() {
   useHead({
