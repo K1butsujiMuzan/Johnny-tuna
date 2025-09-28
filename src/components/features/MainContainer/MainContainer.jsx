@@ -4,9 +4,7 @@ import Slider from '@components/features/MainContainer/parts/Slider/Slider'
 function MainContainer() {
   return (
     <div className={styles.mainContainer}>
-      <div>
-        <Slider />
-      </div>
+      <Slider />
       <div className={'container'}></div>
     </div>
   )

@@ -79,7 +79,7 @@ function ModalText({ text, setIsOpenModal, setFormData = null }) {
         </motion.div>
       </div>
     </ReactFocusLock>,
-    document.querySelector('#modal-text'),
+    document.body,
   )
 }
 

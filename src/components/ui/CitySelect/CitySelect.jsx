@@ -2,15 +2,15 @@ import arrow from '@assets/icons/Header/Arrow.svg'
 import styles from './CitySelect.module.css'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { motion } from 'framer-motion'
-import { useCity } from '@/store/useCity'
 import {
   cityVariants,
   cityContainerVariants,
 } from '@/constants/variantsAnimation'
 import { cities } from '@/constants/text'
+import { setCity, useCity } from '@/store/useCity'
 
 function CitySelect({ isMobile }) {
-  const { cityValue, setCity } = useCity()
+  const cityValue = useCity()
   const [isOpen, setIsOpen] = useState(false)
   const cityBlock = useRef(null)
 

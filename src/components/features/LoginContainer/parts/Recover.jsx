@@ -271,7 +271,7 @@ function Recover({ setIsRecover }) {
       </div>
       <div className={styles.mainFormDown}>
         <SubmitButton disabled={isLoading}>
-          {contentVariant === 'email' ? 'Отправить код' : 'Отправить'}
+          {isLoading ? 'Отправка...' : contentVariant === 'email' ? 'Отправить код' : 'Отправить'}
         </SubmitButton>
       </div>
     </form>

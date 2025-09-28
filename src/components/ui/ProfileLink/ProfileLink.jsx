@@ -2,16 +2,17 @@ import { Link } from 'react-router'
 import styles from './ProfileLink.module.css'
 import { useNavigate } from 'react-router-dom'
 import { useProfileToken } from '@/store/useProfileToken'
-import { useBurgerOpen } from '@/store/useBurgerOpen'
+import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
 
 function ProfileLink() {
+  const isBurgerOpen = useIsBurgerOpen()
+
   const navigate = useNavigate()
   const { auth, profileData } = useProfileToken()
-  const { isOpen, closeBurger } = useBurgerOpen()
 
   const handleClick = async event => {
     event.preventDefault()
-    isOpen ? closeBurger() : undefined
+    isBurgerOpen ? closeBurger() : undefined
     const isVerify = await auth()
     navigate(`${isVerify ? '/profile' : '/login'}`)
   }

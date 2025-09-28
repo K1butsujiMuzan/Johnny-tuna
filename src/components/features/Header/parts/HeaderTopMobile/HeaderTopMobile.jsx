@@ -4,23 +4,28 @@ import HeaderModal from '@components/features/Header/parts/HeaderModal/HeaderMod
 import Search from '@components/ui/Search/Search'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import ReactFocusLock from 'react-focus-lock'
-import { useBurgerOpen } from '@/store/useBurgerOpen'
+import {
+  closeBurger,
+  toggleBurger,
+  useIsBurgerOpen
+} from '@/store/useBurgerOpen'
 
 function HeaderTopMobile() {
+  const isBurgerOpen = useIsBurgerOpen()
+
   const hederTopRef = useRef(null)
   const [isSearchOpen, setIsSearchOpen] = useState(false)
-  const { isOpen, closeBurger, toggleBurger } = useBurgerOpen()
 
   useEffect(() => {
-    document.body.classList.toggle(styles.noScroll, isOpen)
+    document.body.classList.toggle(styles.noScroll, isBurgerOpen)
 
     return () => {
       document.body.classList.remove(styles.noScroll)
     }
-  }, [isOpen])
+  }, [isBurgerOpen])
 
   useEffect(() => {
-    if (!isOpen) {
+    if (!isBurgerOpen) {
       return
     }
     const closeModal = event => {
@@ -34,7 +39,7 @@ function HeaderTopMobile() {
     return () => {
       window.removeEventListener('keydown', closeModal)
     }
-  }, [isOpen])
+  }, [isBurgerOpen])
 
   const toggleSearch = useCallback(() => {
     setIsSearchOpen(prevState => !prevState)
@@ -43,21 +48,21 @@ function HeaderTopMobile() {
   return (
     <div
       className={`
-      ${isOpen ? styles.headerInnerOpen : styles.headerInner}
+      ${isBurgerOpen ? styles.headerInnerOpen : styles.headerInner}
     `}
     >
       <div
         className={`
           ${styles.headerTopMobile}
           container
-          ${isOpen ? styles.headerTopMobileOpen : ''}
+          ${isBurgerOpen ? styles.headerTopMobileOpen : ''}
           ${isSearchOpen ? styles.headerTopMobileSearch : ''}
         `}
         ref={hederTopRef}
       >
         <Logo className={'headerLogo'} />
         <div className={styles.headerButtons}>
-          {!isOpen && (
+          {!isBurgerOpen && (
             <button
               className={styles.searchButton}
               aria-label={'Поиск'}
@@ -91,15 +96,15 @@ function HeaderTopMobile() {
           <button
             type={'button'}
             className={styles.burgerButton}
-            aria-label={isOpen ? 'Закрыть меню' : 'Открыть меню'}
-            aria-expanded={isOpen}
+            aria-label={isBurgerOpen ? 'Закрыть меню' : 'Открыть меню'}
+            aria-expanded={isBurgerOpen}
             onClick={toggleBurger}
           >
             {[...Array(3)].map((_, index) => (
               <span
                 key={index}
                 className={
-                  isOpen
+                  isBurgerOpen
                     ? `${styles.burgerSpan} ${styles.burgerSpanOpen}`
                     : styles.burgerSpan
                 }
@@ -108,12 +113,12 @@ function HeaderTopMobile() {
           </button>
         </div>
       </div>
-      {isOpen && (
+      {isBurgerOpen && (
         <ReactFocusLock shards={[hederTopRef.current]} returnFocus={true}>
           <HeaderModal />
         </ReactFocusLock>
       )}
-      {isSearchOpen && !isOpen && (
+      {isSearchOpen && !isBurgerOpen && (
         <div className={'container'}>
           <Search />
         </div>

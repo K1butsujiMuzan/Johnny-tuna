@@ -1,9 +1,12 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
-export const useCity = create(set => ({
-  cityValue: localStorage.getItem('City') || 'Калининград',
-  setCity: newCity => {
+const useCityStore = create(persist((set) => ({
+  cityValue: 'Калининград',
+  setCity: (newCity) => {
     set({ cityValue: newCity })
-    localStorage.setItem('City', newCity)
-  },
-}))
+  }
+}), {name: "City"}))
+
+export const useCity = () => useCityStore(state => state.cityValue)
+export const setCity = (newCity) => useCityStore.getState().setCity(newCity)

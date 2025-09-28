@@ -64,7 +64,7 @@ function Slider() {
   }, [])
 
   return (
-    <>
+    <section>
       <div
         className={styles.sliderInner}
         role={'region'}
@@ -162,7 +162,7 @@ function Slider() {
           ></button>
         ))}
       </div>
-    </>
+    </section>
   )
 }
 

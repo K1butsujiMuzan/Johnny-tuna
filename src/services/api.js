@@ -9,5 +9,6 @@ export const api = {
   updateLogin: "http://localhost:8080/api/v1/profile/update/login",
   recoverEmail: "http://localhost:8080/api/v1/auth/password/reset/req",
   recoverCode: "http://localhost:8080/api/v1/auth/password/reset/verify",
-  recoverPassword: "http://localhost:8080/api/v1/auth/password/reset"
+  recoverPassword: "http://localhost:8080/api/v1/auth/password/reset",
+  categories: "http://localhost:8080/api/v1/categories/get"
 }
