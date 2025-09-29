@@ -1,9 +1,9 @@
-import { getCookie } from '@/utils/functions/getCookie'
 import { errorTypes } from '@/constants/errorTypes'
+import Cookies from 'js-cookie'
 
 export const checkProfile = async api => {
   try {
-    const token = getCookie('auth')
+    const token = Cookies.get('auth')
     const response = await fetch(api, {
       headers: { Authorization: `Bearer ${token}` },
     })

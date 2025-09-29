@@ -1,23 +1,26 @@
 import { create } from 'zustand'
 import { checkProfile } from '@/services/profile'
 import { api } from '@/services/api'
+import Cookies from 'js-cookie'
 
-export const useProfileToken = create((set, get) => ({
+const useProfileTokenStore = create((set, get) => ({
   isVerify: false,
+  initialProfileData: { Points: { value: 0 }, email: '', id: '', login: '' },
   profileData: { Points: { value: 0 }, email: '', id: '', login: '' },
-  auth: async () => {
+  authProfile: async () => {
     try {
       const status = await checkProfile(api.checkProfile)
-      set({ isVerify: status === 'ok' })
+
       if (status === 'ok') {
         const data = await get().getData()
         if (!data.error) {
-          set({ profileData: data })
+          set({ isVerify: true, profileData: data })
         }
       } else {
-        set({
-          profileData: { Points: { value: 0 }, email: '', id: '', login: '' },
-        })
+        set(state => ({
+          isVerify: false,
+          profileData: state.initialProfileData,
+        }))
       }
       return status
     } catch (error) {
@@ -28,11 +31,11 @@ export const useProfileToken = create((set, get) => ({
     return await checkProfile(api.getProfileData)
   },
   exit: () => {
-    document.cookie =
-      'auth=; path=/; max-age=0; expires=Thu, 01 Jan 1970 00:00:00 GMT'
-    set({
-      isVerify: false,
-      profileData: { Points: { value: 0 }, email: '', id: '', login: '' },
-    })
+    Cookies.remove('auth')
   },
 }))
+
+export const useProfileData = () =>
+  useProfileTokenStore(state => state.profileData)
+export const authProfile = () => useProfileTokenStore.getState().authProfile()
+export const exit = () => useProfileTokenStore.getState().exit()

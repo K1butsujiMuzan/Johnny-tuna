@@ -3,11 +3,12 @@ import AboutCard from '@components/features/AboutUsContainer/parts/AboutCard/Abo
 import { aboutGallery, aboutWhyCards, aboutFoodCards } from '@/constants/images'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import PageLink from '@components/ui/PageLink/PageLink'
+import { linkPath } from '@/constants/linkPath'
 
 function AboutUsContainer() {
   return (
     <section className={'container pageContainer'}>
-      <PageLink to={'/about'} text={'О нас'} />
+      <PageLink to={linkPath.about} text={'О нас'} />
       <TextBlock>
         <h1 className={'pageTitle'}>О нас — «Джонни Тунец»</h1>
         <p className={styles.aboutParagraph}>

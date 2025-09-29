@@ -2,17 +2,14 @@ import styles from './Parts.module.css'
 import LoginInput from '@components/ui/LoginComponents/LoginInput'
 import { useEffect, useRef, useState } from 'react'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
-import {
-  checkCode,
-  checkEmail,
-  checkPassword,
-} from '@/utils/check/checkRecover'
 import { errorTypes } from '@/constants/errorTypes'
 import { checkEmailData } from '@/services/recover'
 import PasswordInput from '@components/ui/LoginComponents/PasswordInput'
 import { api } from '@/services/api'
+import { checkEmail, checkCode, checkPassword } from '@/utils/dataCheck'
 
 function Recover({ setIsRecover }) {
+  const initialErrors = { emailError: '', codeError: '', passwordError: '' }
   const timeRef = useRef(null)
   const emailRef = useRef(null)
   const codeRef = useRef(null)
@@ -26,11 +23,7 @@ function Recover({ setIsRecover }) {
   })
   const [contentVariant, setContentVariant] = useState('email')
   const [isLoading, setIsLoading] = useState(false)
-  const [errors, setErrors] = useState({
-    emailError: '',
-    codeError: '',
-    passwordError: '',
-  })
+  const [errors, setErrors] = useState(initialErrors)
 
   useEffect(() => {
     if (time <= 0 && timeRef.current) {
@@ -85,14 +78,16 @@ function Recover({ setIsRecover }) {
 
   const submitForm = async event => {
     event.preventDefault()
+    const checking = {
+      emailError: checkEmail(formData.email),
+      codeError: checkCode(formData.code),
+      passwordError: checkPassword(formData.password),
+    }
+    setErrors(checking)
+
     if (contentVariant === 'email') {
-      const error = checkEmail(formData.email)
-      if (error) {
+      if (checking.emailError) {
         emailRef.current.focus()
-        setErrors(prevState => ({
-          ...prevState,
-          emailError: error,
-        }))
       } else {
         try {
           setIsLoading(true)
@@ -104,6 +99,7 @@ function Recover({ setIsRecover }) {
             }))
             emailRef.current.focus()
           } else {
+            setErrors(initialErrors)
             setContentVariant('code')
             resetTimer()
           }
@@ -118,13 +114,8 @@ function Recover({ setIsRecover }) {
         }
       }
     } else if (contentVariant === 'code') {
-      const error = checkCode(formData.code)
-      if (error) {
+      if (checking.codeError) {
         codeRef.current.focus()
-        setErrors(prevState => ({
-          ...prevState,
-          codeError: error,
-        }))
       } else {
         try {
           setIsLoading(true)
@@ -138,6 +129,7 @@ function Recover({ setIsRecover }) {
             }))
             codeRef.current.focus()
           } else {
+            setErrors(initialErrors)
             setContentVariant('password')
             if (timeRef.current) {
               clearInterval(timeRef.current)
@@ -155,13 +147,8 @@ function Recover({ setIsRecover }) {
         }
       }
     } else if (contentVariant === 'password') {
-      const error = checkPassword(formData.password)
-      if (error) {
+      if (checking.passwordError) {
         passwordRef.current.focus()
-        setErrors(prevState => ({
-          ...prevState,
-          passwordError: error,
-        }))
       } else {
         try {
           setIsLoading(true)
@@ -177,6 +164,7 @@ function Recover({ setIsRecover }) {
             }))
             passwordRef.current.focus()
           } else {
+            setErrors(initialErrors)
             setIsRecover(false)
           }
         } catch (error) {
@@ -271,7 +259,11 @@ function Recover({ setIsRecover }) {
       </div>
       <div className={styles.mainFormDown}>
         <SubmitButton disabled={isLoading}>
-          {isLoading ? 'Отправка...' : contentVariant === 'email' ? 'Отправить код' : 'Отправить'}
+          {isLoading
+            ? 'Отправка...'
+            : contentVariant === 'email'
+              ? 'Отправить код'
+              : 'Отправить'}
         </SubmitButton>
       </div>
     </form>

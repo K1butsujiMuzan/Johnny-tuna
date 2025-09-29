@@ -7,7 +7,7 @@ import ReactFocusLock from 'react-focus-lock'
 import {
   closeBurger,
   toggleBurger,
-  useIsBurgerOpen
+  useIsBurgerOpen,
 } from '@/store/useBurgerOpen'
 
 function HeaderTopMobile() {

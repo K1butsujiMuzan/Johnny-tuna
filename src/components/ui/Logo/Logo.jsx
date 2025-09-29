@@ -1,19 +1,20 @@
 import './Logo.css'
 import logo from '@assets/icons/MainIcons/Logo.svg'
 import { Link } from 'react-router'
-import { scrollTop } from '@/utils/functions/toTop'
+import { scrollTop } from '@/utils/toTop'
 import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
+import { linkPath } from '@/constants/linkPath'
 
 function Logo({ className }) {
   const isBurgerOpen = useIsBurgerOpen()
 
   return (
     <Link
-      to={'/'}
+      to={linkPath.main}
       aria-label={'На главную'}
       onClick={() => {
         scrollTop()
-        isBurgerOpen ? closeBurger()  : undefined
+        isBurgerOpen ? closeBurger() : undefined
       }}
     >
       <img

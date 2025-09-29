@@ -5,10 +5,15 @@ import { useRef, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Radio from '@components/ui/LoginComponents/Radio/Radio'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
-import { checkContacts } from '@/utils/check/checkContacts'
 import { errorTypes } from '@/constants/errorTypes'
 import ModalText from '@components/modals/ModalText/ModalText'
 import { contactsForm } from '@/services/contactsForm'
+import {
+  checkEmail,
+  checkMessage,
+  checkName,
+  checkTheme,
+} from '@/utils/dataCheck'
 
 function ContactsForm() {
   const nameRef = useRef(null)
@@ -54,26 +59,25 @@ function ContactsForm() {
 
   const formSubmit = async event => {
     event.preventDefault()
-    setIsLoading(true)
-    const validationErrors = checkContacts(
-      formData.name,
-      formData.email,
-      formData.theme,
-      formData.message,
-    )
-    setErrors(validationErrors)
-    if (Object.values(validationErrors).some(error => error !== '')) {
-      setIsLoading(false)
-      if (validationErrors.nameError) {
+    const checking = {
+      nameError: checkName(formData.name),
+      emailError: checkEmail(formData.email),
+      themeError: checkTheme(formData.theme),
+      messageError: checkMessage(formData.message),
+      serverError: '',
+    }
+    setErrors(checking)
+    if (Object.values(checking).some(error => error !== '')) {
+      if (checking.nameError) {
         nameRef.current.focus()
         return
-      } else if (validationErrors.emailError) {
+      } else if (checking.emailError) {
         emailRef.current.focus()
         return
-      } else if (validationErrors.themeError) {
+      } else if (checking.themeError) {
         themeRef.current.focus()
         return
-      } else if (validationErrors.messageError) {
+      } else if (checking.messageError) {
         messageRef.current.focus()
         return
       }
@@ -81,6 +85,7 @@ function ContactsForm() {
     }
 
     try {
+      setIsLoading(true)
       const data = await contactsForm(
         formData.email,
         formData.message,

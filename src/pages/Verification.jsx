@@ -1,13 +1,12 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getToken } from '@/services/verification'
-import { setCookie } from '@/utils/functions/setCookie'
-import { useProfileToken } from '@/store/useProfileToken'
 import Logo from '@components/ui/Logo/Logo'
+import { authProfile } from '@/store/useProfileToken'
+import Cookies from 'js-cookie'
 
 function Verification() {
   const [isVerify, setIsVerify] = useState('Аккаунт не подтверждён :(')
-  const { auth } = useProfileToken()
   const { token } = useParams()
   useEffect(() => {
     const fetchData = async () => {
@@ -16,14 +15,18 @@ function Verification() {
 
         if (data.result) {
           setIsVerify('Аккаунт подтверждён!')
-          setCookie('auth', data.result, 30)
-          await auth()
+          Cookies.set('auth', data.result, {
+            expires: 30,
+            path: '/',
+            secure: true,
+            sameSite: 'strict',
+          })
+          await authProfile()
         }
       } catch (error) {
         console.error(error)
       }
     }
-
     fetchData()
   }, [])
 

@@ -4,16 +4,16 @@ import LoginInput from '@components/ui/LoginComponents/LoginInput'
 import PasswordInput from '@components/ui/LoginComponents/PasswordInput'
 import { useNavigate } from 'react-router-dom'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
-import { setCookie } from '@/utils/functions/setCookie'
 import { responseTypes } from '@/constants/responseTypes'
 import { errorTypes } from '@/constants/errorTypes'
 import { signIn } from '@/services/signIn'
-import { useProfileToken } from '@/store/useProfileToken'
+import { authProfile } from '@/store/useProfileToken'
+import { linkPath } from '@/constants/linkPath'
+import Cookies from 'js-cookie'
 
 function SignIn({ setIsRecover }) {
   const errorLogin = useRef(null)
   const errorPassword = useRef(null)
-  const { auth } = useProfileToken()
 
   const [isLoading, setIsLoading] = useState(false)
   const [errors, setErrors] = useState({
@@ -64,9 +64,14 @@ function SignIn({ setIsRecover }) {
       }
 
       if (data.result) {
-        setCookie('auth', data.result, 30)
-        auth()
-        navigate('/', { replace: true })
+        Cookies.set('auth', data.result, {
+          expires: 30,
+          path: '/',
+          secure: true,
+          sameSite: 'strict',
+        })
+        await authProfile()
+        navigate(linkPath.main, { replace: true })
       }
     } catch (error) {
       console.error('Ошибка сети: ', error)

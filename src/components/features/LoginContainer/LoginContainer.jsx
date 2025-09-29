@@ -7,6 +7,7 @@ import SignUp from '@components/features/LoginContainer/parts/SignUp'
 import { motion } from 'framer-motion'
 import { loginFromTop } from '@/constants/variantsAnimation'
 import Recover from '@components/features/LoginContainer/parts/Recover'
+import { linkPath } from '@/constants/linkPath'
 
 function LoginContainer() {
   const [isOpen, setIsOpen] = useState('login')
@@ -52,7 +53,7 @@ function LoginContainer() {
             <Logo />
           </span>
           {!isRecover ? (
-            <Link className={styles.mainLink} to={'/'}>
+            <Link className={styles.mainLink} to={linkPath.main}>
               На главную
             </Link>
           ) : (

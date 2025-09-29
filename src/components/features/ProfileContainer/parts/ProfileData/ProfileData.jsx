@@ -1,18 +1,19 @@
 import styles from './ProfileData.module.css'
 import { useNavigate } from 'react-router-dom'
-import { useProfileToken } from '@/store/useProfileToken'
 import CitySelect from '@components/ui/CitySelect/CitySelect'
 import { useEffect, useRef, useState } from 'react'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
-import { checkNewProfileData } from '@/utils/check/checkNewProfileData'
 import { api } from '@/services/api'
 import { updateData } from '@/services/updateData'
 import { errorTypes } from '@/constants/errorTypes'
 import { AnimatePresence } from 'framer-motion'
 import ModalText from '@components/modals/ModalText/ModalText'
+import { authProfile, exit, useProfileData } from '@/store/useProfileToken'
+import { linkPath } from '@/constants/linkPath'
+import { checkEmail, checkName } from '@/utils/dataCheck'
 
 function ProfileData() {
-  const { exit, profileData, auth } = useProfileToken()
+  const profileData = useProfileData()
 
   const [isOpenModal, setIsOpenModal] = useState(false)
   const [isDisabled, setIsDisabled] = useState(true)
@@ -38,9 +39,10 @@ function ProfileData() {
 
   const navigate = useNavigate()
 
-  const exitFromAccount = () => {
+  const exitFromAccount = async () => {
     exit()
-    navigate('/')
+    await authProfile()
+    navigate(linkPath.main)
   }
 
   const toggleEdit = () => {
@@ -75,14 +77,17 @@ function ProfileData() {
 
   const submitData = async event => {
     event.preventDefault()
-    const validationErrors = checkNewProfileData(newData.email, newData.login)
-    setErrors(validationErrors)
+    const checking = {
+      emailError: checkEmail(newData.email),
+      loginError: checkName(newData.login),
+    }
+    setErrors(checking)
 
-    if (Object.values(validationErrors).some(error => error !== '')) {
+    if (Object.values(checking).some(error => error !== '')) {
       setIsLoading(false)
-      if (validationErrors.loginError) {
+      if (checking.loginError) {
         return loginRef.current.focus()
-      } else if (validationErrors.emailError) {
+      } else if (checking.emailError) {
         return emailRef.current.focus()
       }
       return
@@ -105,7 +110,7 @@ function ProfileData() {
       }
 
       if (hasChanges) {
-        await auth()
+        await authProfile()
         setIsDisabled(true)
         setIsOpenModal(true)
       }

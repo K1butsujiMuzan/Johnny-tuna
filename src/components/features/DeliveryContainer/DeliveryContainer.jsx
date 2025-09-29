@@ -4,11 +4,12 @@ import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { motion } from 'framer-motion'
 import { delivery } from '@/constants/text'
 import { deliveryCards, deliveryInformation } from '@/constants/images'
+import { linkPath } from '@/constants/linkPath'
 
 function DeliveryContainer() {
   return (
     <section className={'container pageContainer'}>
-      <PageLink to={'/delivery'} text={'Доставка'} />
+      <PageLink to={linkPath.delivery} text={'Доставка'} />
       <TextBlock>
         <h1 className={'pageTitle'}>Доставка — «Джонни Тунец»</h1>
       </TextBlock>

@@ -6,6 +6,7 @@ import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { useState } from 'react'
 import ModalText from '@components/modals/ModalText/ModalText'
 import { AnimatePresence } from 'framer-motion'
+import { linkPath } from '@/constants/linkPath'
 
 function StocksContainer() {
   const [isOpenModal, setIsOpenModal] = useState(false)
@@ -13,7 +14,7 @@ function StocksContainer() {
   return (
     <>
       <section className={'container pageContainer'}>
-        <PageLink to={'/stocks'} text={'Акции'} />
+        <PageLink to={linkPath.stocks} text={'Акции'} />
         <TextBlock>
           <h1 className={'pageTitle'}>Акции — «Джонни Тунец»</h1>
         </TextBlock>

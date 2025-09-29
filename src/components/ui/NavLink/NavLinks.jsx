@@ -1,6 +1,6 @@
 import styles from './NavLinks.module.css'
 import { Link } from 'react-router-dom'
-import { scrollTop } from '@/utils/functions/toTop'
+import { scrollTop } from '@/utils/toTop'
 import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
 
 function NavLinks({ to, children, isBlack }) {

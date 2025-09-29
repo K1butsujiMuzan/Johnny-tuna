@@ -2,11 +2,12 @@ import PageLink from '@components/ui/PageLink/PageLink'
 import styles from './InformationContainer.module.css'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { information } from '@/constants/text'
+import { linkPath } from '@/constants/linkPath'
 
 function InformationContainer() {
   return (
     <section className={'container pageContainer'}>
-      <PageLink to={'/information'} text={'Правовая информация'} />
+      <PageLink to={linkPath.information} text={'Правовая информация'} />
       <TextBlock>
         <h1 className={'pageTitle'}>Правовая информация - «Джонни Тунец»</h1>
       </TextBlock>

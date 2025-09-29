@@ -1,27 +1,28 @@
 import { Link } from 'react-router'
 import styles from './ProfileLink.module.css'
 import { useNavigate } from 'react-router-dom'
-import { useProfileToken } from '@/store/useProfileToken'
 import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
+import { authProfile, useProfileData } from '@/store/useProfileToken'
+import { linkPath } from '@/constants/linkPath'
 
 function ProfileLink() {
-  const isBurgerOpen = useIsBurgerOpen()
+  const profileData = useProfileData()
 
+  const isBurgerOpen = useIsBurgerOpen()
   const navigate = useNavigate()
-  const { auth, profileData } = useProfileToken()
 
   const handleClick = async event => {
     event.preventDefault()
     isBurgerOpen ? closeBurger() : undefined
-    const isVerify = await auth()
-    navigate(`${isVerify ? '/profile' : '/login'}`)
+    const status = await authProfile()
+    navigate(status === 'ok' ? linkPath.profile : linkPath.login)
   }
 
   return (
     <Link
       className={`${styles.profileLink} headerIconLink`}
       aria-label={'Профиль'}
-      to={'#'}
+      to={'/'}
       onClick={handleClick}
     >
       <svg

@@ -1,5 +1,6 @@
 import styles from './BasketLink.module.css'
 import { Link } from 'react-router'
+import { linkPath } from '@/constants/linkPath'
 
 function BasketLink() {
   return (
@@ -7,7 +8,7 @@ function BasketLink() {
       className={`${styles.basketLink} headerIconLink`}
       aria-label={'Корзина'}
       type={'button'}
-      to={'/basket'}
+      to={linkPath.basket}
     >
       <div className={styles.basket}>
         <svg

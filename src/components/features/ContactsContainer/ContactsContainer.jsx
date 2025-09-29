@@ -3,11 +3,12 @@ import TextBlock from '@components/ui/TextBlock/TextBlock'
 import ContactsForm from '@components/features/ContactsContainer/parts/ContactsForm/ContactsForm'
 import PageLink from '@components/ui/PageLink/PageLink'
 import { addressInformation } from '@/constants/images'
+import { linkPath } from '@/constants/linkPath'
 
 function ContactsContainer() {
   return (
     <section className={'container pageContainer'}>
-      <PageLink to={'/contacts'} text={'Контакты'} />
+      <PageLink to={linkPath.contacts} text={'Контакты'} />
       <TextBlock>
         <h1 className={'pageTitle'}>Контакты — «Джонни Тунец»</h1>
       </TextBlock>

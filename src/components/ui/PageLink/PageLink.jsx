@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom'
 import styles from './PageLink.module.css'
+import { linkPath } from '@/constants/linkPath'
 
 function PageLink({ to, text }) {
   return (
     <nav className={styles.linkContainer}>
-      <Link className={styles.linkMain} to={'/'}>
+      <Link className={styles.linkMain} to={linkPath.main}>
         Главная
       </Link>
       <span>/</span>

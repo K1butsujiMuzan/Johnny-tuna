@@ -4,15 +4,20 @@ import { useRef, useState } from 'react'
 import PasswordInput from '@components/ui/LoginComponents/PasswordInput'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
 import CheckBox from '@components/ui/LoginComponents/CheckBox/CheckBox'
-import { checkRegistration } from '@/utils/check/checkRegistration'
 import { errorTypes } from '@/constants/errorTypes'
 import { responseTypes } from '@/constants/responseTypes'
 import { Link } from 'react-router-dom'
 import { signUp } from '@/services/signUp'
-import { useProfileToken } from '@/store/useProfileToken'
+import { authProfile } from '@/store/useProfileToken'
+import { linkPath } from '@/constants/linkPath'
+import {
+  checkEmail,
+  checkName,
+  checkPassword,
+  checkPasswordRepeat,
+} from '@/utils/dataCheck'
 
 function SignUp() {
-  const { auth } = useProfileToken()
   const loginInput = useRef(null)
   const emailInput = useRef(null)
   const passwordInput = useRef(null)
@@ -37,30 +42,31 @@ function SignUp() {
 
   const submitData = async event => {
     event.preventDefault()
-    setIsLoading(true)
 
-    const validationErrors = checkRegistration(
-      formData.login,
-      formData.email,
-      formData.password,
-      formData.passwordRepeat,
-    )
+    const checking = {
+      loginError: checkName(formData.login),
+      emailError: checkEmail(formData.email),
+      passwordError: checkPassword(formData.password),
+      passwordRepeatError: checkPasswordRepeat(
+        formData.password,
+        formData.passwordRepeat,
+      ),
+      serverError: '',
+    }
 
-    setErrorsState(validationErrors)
+    setErrorsState({ ...checking })
 
-    if (Object.values(validationErrors).some(error => error !== '')) {
-      setIsLoading(false)
-
-      if (validationErrors.loginError) {
+    if (Object.values(checking).some(error => error !== '')) {
+      if (checking.loginError) {
         loginInput.current.focus()
         return
-      } else if (validationErrors.emailError) {
+      } else if (checking.emailError) {
         emailInput.current.focus()
         return
-      } else if (validationErrors.passwordError) {
+      } else if (checking.passwordError) {
         passwordInput.current.focus()
         return
-      } else if (validationErrors.passwordRepeatError) {
+      } else if (checking.passwordRepeatError) {
         passwordRepeatInput.current.focus()
         return
       }
@@ -68,6 +74,7 @@ function SignUp() {
     }
 
     try {
+      setIsLoading(true)
       const { ok, data } = await signUp(
         formData.email,
         formData.login,
@@ -140,10 +147,10 @@ function SignUp() {
             </p>
             <SubmitButton>
               <Link
-                to={'/'}
+                to={linkPath.main}
                 className={styles.linkToMain}
                 onClick={async () => {
-                  await auth()
+                  await authProfile()
                 }}
               >
                 На главную
