@@ -1,4 +1,4 @@
-import styles from './FooterTop.module.css'
+import styles from './Footer.module.css'
 import NavLinks from '@components/ui/NavLink/NavLinks'
 import Phone from '@components/ui/Phone/Phone'
 import Logo from '@components/ui/Logo/Logo'

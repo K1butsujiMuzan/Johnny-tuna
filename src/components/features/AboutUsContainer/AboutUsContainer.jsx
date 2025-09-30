@@ -1,5 +1,5 @@
 import styles from './AboutUsContainer.module.css'
-import AboutCard from '@components/features/AboutUsContainer/parts/AboutCard/AboutCard'
+import AboutCard from '@components/features/AboutUsContainer/AboutCard'
 import { aboutGallery, aboutWhyCards, aboutFoodCards } from '@/constants/images'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import PageLink from '@components/ui/PageLink/PageLink'

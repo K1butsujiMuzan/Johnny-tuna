@@ -1,6 +1,6 @@
 import styles from './ContactsContainer.module.css'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
-import ContactsForm from '@components/features/ContactsContainer/parts/ContactsForm/ContactsForm'
+import ContactsForm from '@components/features/ContactsContainer/ContactsForm'
 import PageLink from '@components/ui/PageLink/PageLink'
 import { addressInformation } from '@/constants/images'
 import { linkPath } from '@/constants/linkPath'

@@ -1,5 +1,5 @@
 import styles from './Footer.module.css'
-import FooterTop from '@components/features/Footer/parts/FooterTop/FooterTop'
+import FooterTop from '@components/features/Footer/FooterTop'
 
 function Footer() {
   return (

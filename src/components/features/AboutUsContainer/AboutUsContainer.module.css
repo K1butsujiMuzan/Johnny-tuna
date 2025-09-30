@@ -39,6 +39,25 @@
   align-items: center;
 }
 
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 18.75rem;
+  height: 12.5rem;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: var(--main-border-radius);
+  padding: 0.75rem;
+  transition: translate 1s;
+}
+
+.cardText {
+  font-size: clamp(1rem, 2.57vw, 1.125rem);
+  text-transform: uppercase;
+  color: var(--color-text-dark);
+  text-align: center;
+}
+
 @media (max-width: 81.25rem) {
   .aboutGallery {
     row-gap: 2rem;
@@ -62,5 +81,11 @@
 @media (max-width: 43.75rem) {
   .aboutGalleryCards {
     grid-template-columns: auto;
+  }
+}
+
+@media (hover: hover) {
+  .card:hover {
+    translate: 0 -10px;
   }
 }

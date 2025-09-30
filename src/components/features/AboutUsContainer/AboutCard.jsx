@@ -1,4 +1,4 @@
-import styles from './AboutCard.module.css'
+import styles from './AboutUsContainer.module.css'
 
 function AboutCard({ text, image }) {
   return (
