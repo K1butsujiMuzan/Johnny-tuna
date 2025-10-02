@@ -1,4 +1,4 @@
-import { errorTypes } from '@/constants/errorTypes'
+import { errorTypes } from '@/constants/errorTypes.data'
 import Cookies from 'js-cookie'
 
 export const updateData = async (api, newValue) => {

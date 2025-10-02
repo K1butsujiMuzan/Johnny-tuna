@@ -3,7 +3,7 @@ import logo from '@assets/icons/MainIcons/Logo.svg'
 import { Link } from 'react-router'
 import { scrollTop } from '@/utils/toTop'
 import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
-import { linkPath } from '@/constants/linkPath'
+import { linkName, linkPath } from '@/constants/links.data'
 
 function Logo({ className }) {
   const isBurgerOpen = useIsBurgerOpen()
@@ -11,7 +11,7 @@ function Logo({ className }) {
   return (
     <Link
       to={linkPath.main}
-      aria-label={'На главную'}
+      aria-label={linkName.main}
       onClick={() => {
         scrollTop()
         isBurgerOpen ? closeBurger() : undefined

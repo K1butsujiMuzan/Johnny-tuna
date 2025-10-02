@@ -5,9 +5,9 @@ import { Link } from 'react-router-dom'
 import SignIn from '@components/features/LoginContainer/parts/SignIn'
 import SignUp from '@components/features/LoginContainer/parts/SignUp'
 import { motion } from 'framer-motion'
-import { loginFromTop } from '@/constants/variantsAnimation'
+import { loginFromTop } from '@/constants/variantsAnimation.data'
 import Recover from '@components/features/LoginContainer/parts/Recover'
-import { linkPath } from '@/constants/linkPath'
+import { linkName, linkPath } from '@/constants/links.data'
 
 function LoginContainer() {
   const [isOpen, setIsOpen] = useState('login')
@@ -54,7 +54,7 @@ function LoginContainer() {
           </span>
           {!isRecover ? (
             <Link className={styles.mainLink} to={linkPath.main}>
-              На главную
+              {linkName.main}
             </Link>
           ) : (
             <button

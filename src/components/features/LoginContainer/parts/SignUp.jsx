@@ -4,12 +4,12 @@ import { useRef, useState } from 'react'
 import PasswordInput from '@components/ui/LoginComponents/PasswordInput'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
 import CheckBox from '@components/ui/LoginComponents/CheckBox/CheckBox'
-import { errorTypes } from '@/constants/errorTypes'
-import { responseTypes } from '@/constants/responseTypes'
+import { errorTypes } from '@/constants/errorTypes.data'
+import { responseTypes } from '@/constants/responseTypes.data'
 import { Link } from 'react-router-dom'
 import { signUp } from '@/services/signUp'
 import { authProfile } from '@/store/useProfileToken'
-import { linkPath } from '@/constants/linkPath'
+import { linkName, linkPath } from '@/constants/links.data'
 import {
   checkEmail,
   checkName,
@@ -153,7 +153,7 @@ function SignUp() {
                   await authProfile()
                 }}
               >
-                На главную
+                {linkName.main}
               </Link>
             </SubmitButton>
           </div>

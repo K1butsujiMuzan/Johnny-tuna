@@ -1,22 +1,24 @@
 import { Routes, Route } from 'react-router-dom'
-import Main from './pages/Main'
-import Stocks from '@/pages/Stocks'
-import Delivery from '@/pages/Delivery'
-import Contacts from '@/pages/Contacts'
+import Main from './pages/Main/Main'
+import Stocks from '@/pages/Stocks/Stocks'
+import Delivery from '@/pages/Delivery/Delivery'
+import Contacts from '@/pages/Contacts/Contacts'
 import Login from '@/pages/Login'
-import Information from '@/pages/Information'
-import AboutUs from '@/pages/AboutUs'
+import Information from '@/pages/Information/Information'
+import AboutUs from '@/pages/AboutUs/AboutUs'
 import MainLayout from '@/layouts/MainLayout'
-import Basket from '@/pages/Basket'
-import Verification from '@/pages/Verification'
-import Profile from '@/pages/Profile'
+import Basket from '@/pages/Basket/Basket'
+import Verification from '@/pages/Verification/Verification'
+import Profile from '@/pages/Profile/Profile'
 import { useEffect } from 'react'
 import { authProfile } from '@/store/useProfileToken'
-import { linkPath } from '@/constants/linkPath'
+import { linkPath } from '@/constants/links.data'
+import { fetchCategories } from '@/store/useCategories'
 
 function App() {
   useEffect(() => {
     authProfile()
+    fetchCategories()
   }, [])
 
   return (

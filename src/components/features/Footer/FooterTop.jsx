@@ -3,29 +3,29 @@ import NavLinks from '@components/ui/NavLink/NavLinks'
 import Phone from '@components/ui/Phone/Phone'
 import Logo from '@components/ui/Logo/Logo'
 import Socials from '@components/ui/Socials/Socials'
-import { linkPath } from '@/constants/linkPath'
+import { linkName, linkPath } from '@/constants/links.data'
 
 function FooterTop() {
   const links = [
     {
       to: linkPath.stocks,
-      text: 'Акции',
+      text: linkName.stocks,
     },
     {
       to: linkPath.contacts,
-      text: 'Контакты',
+      text: linkName.contacts,
     },
     {
       to: linkPath.about,
-      text: 'О нас',
+      text: linkName.about,
     },
     {
       to: linkPath.information,
-      text: 'Правовая информация',
+      text: linkName.information,
     },
     {
       to: linkPath.delivery,
-      text: 'Доставка',
+      text: linkName.delivery,
     },
   ]
 

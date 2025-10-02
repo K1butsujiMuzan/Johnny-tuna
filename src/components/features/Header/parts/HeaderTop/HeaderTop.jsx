@@ -3,25 +3,25 @@ import Logo from '@components/ui/Logo/Logo'
 import CitySelect from '@components/ui/CitySelect/CitySelect'
 import NavLinks from '@components/ui/NavLink/NavLinks'
 import Phone from '@components/ui/Phone/Phone'
-import { linkPath } from '@/constants/linkPath'
+import { linkName, linkPath } from '@/constants/links.data'
 
 function HeaderTop() {
   const links = [
     {
       to: linkPath.stocks,
-      text: 'Акции',
+      text: linkName.stocks,
     },
     {
       to: linkPath.about,
-      text: 'О нас',
+      text: linkName.about,
     },
     {
       to: linkPath.delivery,
-      text: 'Доставка',
+      text: linkName.delivery,
     },
     {
       to: linkPath.contacts,
-      text: 'Контакты',
+      text: linkName.contacts,
     },
   ]
   return (

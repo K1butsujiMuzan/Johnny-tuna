@@ -1,4 +1,4 @@
-import { responseTypes } from '@/constants/responseTypes'
+import { responseTypes } from '@/constants/responseTypes.data'
 import { api } from '@/services/api'
 
 export const getToken = async token => {

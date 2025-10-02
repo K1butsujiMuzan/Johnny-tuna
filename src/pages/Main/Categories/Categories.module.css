@@ -1,0 +1,18 @@
+.categoriesContainer{
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  row-gap: 1rem;
+}
+
+.categoriesButtons{
+
+}
+
+.category{
+  padding-inline: clamp(0.875rem, 2vw,1.5rem);
+  padding-block: clamp(0.375rem, 1vw,0.75rem);
+  border-radius: var(--second-border-radius);
+  border: none;
+  color: var(--color-text-light);
+}

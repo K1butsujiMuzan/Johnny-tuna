@@ -1,12 +1,12 @@
 import styles from './BasketLink.module.css'
 import { Link } from 'react-router'
-import { linkPath } from '@/constants/linkPath'
+import { linkName, linkPath } from '@/constants/links.data'
 
 function BasketLink() {
   return (
     <Link
       className={`${styles.basketLink} headerIconLink`}
-      aria-label={'Корзина'}
+      aria-label={linkName.basket}
       type={'button'}
       to={linkPath.basket}
     >

@@ -1,4 +1,4 @@
-import { errorTypes } from '@/constants/errorTypes'
+import { errorTypes } from '@/constants/errorTypes.data'
 
 export const checkName = name => {
   if (name.length < 3) {

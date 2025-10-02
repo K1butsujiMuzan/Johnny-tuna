@@ -1,6 +1,6 @@
 .button {
   font-size: 0.875rem;
-  border-radius: 6.25rem;
+  border-radius: var(--second-border-radius);
   background-color: var(--color-accent);
   border: none;
   color: var(--color-text-white);

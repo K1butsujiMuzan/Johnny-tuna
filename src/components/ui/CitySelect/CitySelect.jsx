@@ -5,8 +5,8 @@ import { motion } from 'framer-motion'
 import {
   cityVariants,
   cityContainerVariants,
-} from '@/constants/variantsAnimation'
-import { cities } from '@/constants/text'
+} from '@/constants/variantsAnimation.data'
+import {cities} from '@components/ui/CitySelect/CitySelect.data'
 import { setCity, useCity } from '@/store/useCity'
 
 function CitySelect({ isMobile }) {

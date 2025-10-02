@@ -16,6 +16,7 @@
     "lint:fix": "npm run lint:js:fix ; npm run lint:css:fix ; npm run format"
   },
   "dependencies": {
+    "cloudinary": "^2.7.0",
     "framer-motion": "^12.23.12",
     "js-cookie": "^3.0.5",
     "react": "^19.1.1",
