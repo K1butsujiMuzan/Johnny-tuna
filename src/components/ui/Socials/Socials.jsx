@@ -1,20 +1,7 @@
-import GooglePlay from '@assets/images/Header/GooglePlay.png'
-import AppStore from '@assets/images/Header/AppStore.png'
+import { socialsLinks } from '@components/ui/Socials/Socials.data'
+
 
 function Socials() {
-  const socialsLinks = [
-    {
-      link: 'https://play.google.com/store/apps/details?id=com.dts.freefiremax&pli=1',
-      src: GooglePlay,
-      alt: 'Google Play',
-    },
-    {
-      link: 'https://apps.apple.com/us/app/apple-store/id375380948?l=ru',
-      src: AppStore,
-      alt: 'App Store',
-    },
-  ]
-
   return (
     <>
       {socialsLinks.map(({ link, src, alt }, index) => (

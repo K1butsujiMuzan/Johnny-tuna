@@ -4,27 +4,9 @@ import NavLinks from '@components/ui/NavLink/NavLinks'
 import Phone from '@components/ui/Phone/Phone'
 import Socials from '@components/ui/Socials/Socials'
 import ProfileLink from '@components/ui/ProfileLink/ProfileLink'
-import { linkName, linkPath } from '@/constants/links.data'
+import {headerLinks} from "@components/Header/Header.data";
 
 function HeaderModal() {
-  const links = [
-    {
-      to: linkPath.stocks,
-      text: linkName.stocks,
-    },
-    {
-      to: linkPath.about,
-      text: linkName.about,
-    },
-    {
-      to: linkPath.delivery,
-      text: linkName.delivery,
-    },
-    {
-      to: linkPath.contacts,
-      text: linkName.contacts,
-    },
-  ]
   return (
     <div className={styles.headerModalInner}>
       <div className={styles.modalUp}>
@@ -57,7 +39,7 @@ function HeaderModal() {
         </div>
         <nav>
           <ul className={styles.modalUpLinks}>
-            {links.map((link, index) => (
+            {headerLinks.map((link, index) => (
               <NavLinks to={link.to} key={index} isProfile={link?.isProfile}>
                 {link.text}
               </NavLinks>

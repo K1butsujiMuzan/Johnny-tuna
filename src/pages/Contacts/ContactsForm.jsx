@@ -1,12 +1,12 @@
 import styles from './Contacts.module.css'
 import Logo from '@components/ui/Logo/Logo'
-import LoginInput from '@components/ui/LoginComponents/LoginInput'
+import LoginInput from '@components/ui/LoginComponents/TextInputs/LoginInput'
 import { useRef, useState } from 'react'
 import { AnimatePresence } from 'framer-motion'
 import Radio from '@components/ui/LoginComponents/Radio/Radio'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
 import { errorTypes } from '@/constants/errorTypes.data'
-import ModalText from '@components/modals/ModalText/ModalText'
+import ModalText from '@components/ModalText/ModalText'
 import { contactsForm } from '@/services/contactsForm'
 import {
   checkEmail,

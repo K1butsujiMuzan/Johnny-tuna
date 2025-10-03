@@ -1,7 +1,7 @@
 import styles from './Header.module.css'
-import HeaderTop from '@components/features/Header/parts/HeaderTop/HeaderTop'
-import HeaderBottom from '@components/features/Header/parts/HeaderBottom/HeaderBottom'
-import HeaderTopMobile from '@components/features/Header/parts/HeaderTopMobile/HeaderTopMobile'
+import HeaderTop from '@components/Header/HeaderTop/HeaderTop'
+import HeaderBottom from '@components/Header/HeaderBottom/HeaderBottom'
+import HeaderTopMobile from '@components/Header/HeaderTopMobile/HeaderTopMobile'
 
 function Header() {
   return (

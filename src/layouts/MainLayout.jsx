@@ -1,5 +1,5 @@
-import Header from '@components/features/Header/Header'
-import Footer from '@components/features/Footer/Footer'
+import Header from '@components/Header/Header'
+import Footer from '@components/Footer/Footer'
 import { Outlet } from 'react-router-dom'
 
 function MainLayout() {

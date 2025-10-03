@@ -12,11 +12,10 @@ function Main() {
     keywords: 'пицца, роллы, доставка еды, кафе, еда на дом',
   })
   return (
-    <div className={styles.mainContainer}>
+    <div className={"pageContainer"}>
       <Slider />
-      <Categories/>
       <div className={'container'}>
-
+        <Categories/>
       </div>
     </div>
   )

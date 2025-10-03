@@ -1,6 +1,6 @@
 import styles from './HeaderTopMobile.module.css'
 import Logo from '@components/ui/Logo/Logo'
-import HeaderModal from '@components/features/Header/parts/HeaderModal/HeaderModal'
+import HeaderModal from '@components/Header/HeaderModal/HeaderModal'
 import Search from '@components/ui/Search/Search'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import ReactFocusLock from 'react-focus-lock'

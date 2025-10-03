@@ -5,7 +5,7 @@ import PageLink from '@components/ui/PageLink/PageLink'
 import { linkName, linkPath } from '@/constants/links.data'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { AnimatePresence } from 'framer-motion'
-import ModalText from '@components/modals/ModalText/ModalText'
+import ModalText from '@components/ModalText/ModalText'
 import {stocks, stocksCards} from '@/pages/Stocks/Stocks.data'
 
 function Stocks() {

@@ -1,10 +1,10 @@
 import styles from './Parts.module.css'
-import LoginInput from '@components/ui/LoginComponents/LoginInput'
+import LoginInput from '@components/ui/LoginComponents/TextInputs/LoginInput'
 import { useEffect, useRef, useState } from 'react'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
 import { errorTypes } from '@/constants/errorTypes.data'
 import { checkEmailData } from '@/services/recover'
-import PasswordInput from '@components/ui/LoginComponents/PasswordInput'
+import PasswordInput from '@components/ui/LoginComponents/TextInputs/PasswordInput'
 import { api } from '@/services/api'
 import { checkEmail, checkCode, checkPassword } from '@/utils/dataCheck'
 
