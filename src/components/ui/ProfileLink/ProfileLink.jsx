@@ -48,7 +48,7 @@ function ProfileLink() {
       </svg>
       <div className={styles.points}>
         <span className={styles.pointsText} aria-label={'Баллы'}>
-          {profileData.Points.value}
+          {profileData.points.value || 0}
         </span>
         <svg
           aria-hidden={true}
