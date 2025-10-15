@@ -1,15 +1,13 @@
 import { create } from 'zustand'
-import { getCategories } from '@/services/getCategories'
+import { categories } from '@/services/categories'
 
-const useCategoriesStore = create((set) => ({
+const useCategoriesStore = create(set => ({
   categories: [],
-  fetchCategories: async () => {
-    const data = await getCategories()
-    if(data) {
-      set({categories: data})
-    }
-  }
+  getCategories: async () => {
+    const data = await categories()
+    set({ categories: data })
+  },
 }))
 
 export const useCategories = () => useCategoriesStore(state => state.categories)
-export const fetchCategories = () => useCategoriesStore.getState().fetchCategories()
+export const getCategories = () => useCategoriesStore.getState().getCategories()

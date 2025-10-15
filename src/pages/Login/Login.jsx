@@ -57,9 +57,9 @@ function Login() {
         </div>
         <div className={styles.loginInner}>
           <div className={styles.loginInnerUp}>
-          <span className={styles.logo}>
-            <Logo />
-          </span>
+            <span className={styles.logo}>
+              <Logo />
+            </span>
             {!isRecover ? (
               <Link className={styles.mainLink} to={linkPath.main}>
                 {linkName.main}

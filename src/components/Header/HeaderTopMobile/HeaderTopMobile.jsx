@@ -103,11 +103,7 @@ function HeaderTopMobile() {
             {[...Array(3)].map((_, index) => (
               <span
                 key={index}
-                className={
-                  isBurgerOpen
-                    ? `${styles.burgerSpan} ${styles.burgerSpanOpen}`
-                    : styles.burgerSpan
-                }
+                className={`${styles.burgerSpan} ${isBurgerOpen ? styles.burgerSpanOpen : ''}`}
               ></span>
             ))}
           </button>

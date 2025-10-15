@@ -12,14 +12,14 @@ export const linkPath = {
 }
 
 export const linkName = {
-  main: "Главная",
-  stocks: "Акции",
-  about: "О нас",
-  delivery: "Доставка",
-  contacts: "Контакты",
-  information: "Правовая информация",
-  basket: "Корзина",
-  profile: "Профиль",
-  verify: "Подтверждение аккаунта",
-  login: "Авторизация"
+  main: 'Главная',
+  stocks: 'Акции',
+  about: 'О нас',
+  delivery: 'Доставка',
+  contacts: 'Контакты',
+  information: 'Правовая информация',
+  basket: 'Корзина',
+  profile: 'Профиль',
+  verify: 'Подтверждение аккаунта',
+  login: 'Авторизация',
 }

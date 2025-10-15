@@ -5,8 +5,20 @@ import Cookies from 'js-cookie'
 
 const useProfileTokenStore = create((set, get) => ({
   isVerify: false,
-  initialProfileData: { points: { value: 0 }, email: '', id: '', login: '', orders: null },
-  profileData: { points: { value: 0 }, email: '', id: '', login: '', orders: null },
+  initialProfileData: {
+    points: { value: 0 },
+    email: '',
+    id: '',
+    login: '',
+    orders: null,
+  },
+  profileData: {
+    points: { value: 0 },
+    email: '',
+    id: '',
+    login: '',
+    orders: null,
+  },
   authProfile: async () => {
     try {
       const status = await checkProfile(api.checkProfile)

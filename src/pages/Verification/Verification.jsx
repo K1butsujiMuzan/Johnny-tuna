@@ -1,4 +1,4 @@
-import styles from "./Verification.module.css"
+import styles from './Verification.module.css'
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { getToken } from '@/services/verification'
@@ -11,8 +11,7 @@ function Verification() {
   useHead({
     title: 'Джонни Тунец | Подтверждение аккаунта',
     description: 'Подтверждение аккаунта через почту',
-    keywords:
-      'аккаунт, подтверждение, почта',
+    keywords: 'аккаунт, подтверждение, почта',
   })
 
   const { token } = useParams()

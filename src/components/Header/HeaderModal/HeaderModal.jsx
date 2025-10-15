@@ -4,7 +4,7 @@ import NavLinks from '@components/ui/NavLink/NavLinks'
 import Phone from '@components/ui/Phone/Phone'
 import Socials from '@components/ui/Socials/Socials'
 import ProfileLink from '@components/ui/ProfileLink/ProfileLink'
-import {headerLinks} from "@components/Header/Header.data";
+import { headerLinks } from '@components/Header/Header.data'
 
 function HeaderModal() {
   return (

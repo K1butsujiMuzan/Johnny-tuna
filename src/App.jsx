@@ -13,12 +13,14 @@ import Profile from '@/pages/Profile/Profile'
 import { useEffect } from 'react'
 import { authProfile } from '@/store/useProfileToken'
 import { linkPath } from '@/constants/links.data'
-import { fetchCategories } from '@/store/useCategories'
+import { getCategories } from '@/store/useCategories'
+import { getProducts } from '@/store/useProducts'
 
 function App() {
   useEffect(() => {
     authProfile()
-    fetchCategories()
+    getCategories()
+    getProducts()
   }, [])
 
   return (

@@ -1,7 +1,11 @@
 import useHead from '@/hooks/useHead'
 import styles from './AboutUs.module.css'
 import AboutUsCard from '@/pages/AboutUs/AboutUsCard'
-import {aboutGallery, aboutFoodCards, aboutWhyCards} from '@/pages/AboutUs/AboutUs.data'
+import {
+  aboutGallery,
+  aboutFoodCards,
+  aboutWhyCards,
+} from '@/pages/AboutUs/AboutUs.data'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import PageLink from '@components/ui/PageLink/PageLink'
 import { linkName, linkPath } from '@/constants/links.data'

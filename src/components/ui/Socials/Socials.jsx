@@ -1,6 +1,5 @@
 import { socialsLinks } from '@components/ui/Socials/Socials.data'
 
-
 function Socials() {
   return (
     <>

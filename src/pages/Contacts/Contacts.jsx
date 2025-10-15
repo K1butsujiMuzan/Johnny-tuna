@@ -3,7 +3,7 @@ import styles from './Contacts.module.css'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import ContactsForm from '@/pages/Contacts/ContactsForm'
 import PageLink from '@components/ui/PageLink/PageLink'
-import {addressInformation} from '@/pages/Contacts/Contacts.data'
+import { addressInformation } from '@/pages/Contacts/Contacts.data'
 import { linkName, linkPath } from '@/constants/links.data'
 
 function Contacts() {

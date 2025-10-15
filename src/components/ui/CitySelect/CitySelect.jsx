@@ -6,7 +6,7 @@ import {
   cityVariants,
   cityContainerVariants,
 } from '@/constants/variantsAnimation.data'
-import {cities} from '@components/ui/CitySelect/CitySelect.data'
+import { cities } from '@components/ui/CitySelect/CitySelect.data'
 import { setCity, useCity } from '@/store/useCity'
 
 function CitySelect({ isMobile }) {

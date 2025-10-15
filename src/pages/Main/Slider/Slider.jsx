@@ -1,6 +1,6 @@
 import styles from './Slider.module.css'
 import { useEffect, useRef, useState } from 'react'
-import {sliderImages} from '@/pages/Main/Slider/Slider.data'
+import { sliderImages } from '@/pages/Main/Slider/Slider.data'
 import { AnimatePresence, motion } from 'framer-motion'
 
 function Slider() {

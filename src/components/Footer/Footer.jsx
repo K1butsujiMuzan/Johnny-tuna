@@ -3,7 +3,7 @@ import NavLinks from '@components/ui/NavLink/NavLinks'
 import Phone from '@components/ui/Phone/Phone'
 import Logo from '@components/ui/Logo/Logo'
 import Socials from '@components/ui/Socials/Socials'
-import {footerLinks} from '@components/Footer/Footer.data'
+import { footerLinks } from '@components/Footer/Footer.data'
 
 function Footer() {
   return (
@@ -30,10 +30,13 @@ function Footer() {
             <div className={styles.timePhoneContainer}>
               <p className={styles.middleText}>Доставка работает</p>
               <span className={styles.timeOfWork}>
-            <time dateTime={'09:00'}>с 9:00 </time>
-            <time dateTime={'23:00'}>до 23:00</time>
-          </span>
-              <a href={'https://desktop.telegram.org/?setln=ru'} target={'_blank'}>
+                <time dateTime={'09:00'}>с 9:00 </time>
+                <time dateTime={'23:00'}>до 23:00</time>
+              </span>
+              <a
+                href={'https://desktop.telegram.org/?setln=ru'}
+                target={'_blank'}
+              >
                 <svg
                   className={styles.vkIcon}
                   xmlns="http://www.w3.org/2000/svg"
@@ -52,9 +55,9 @@ function Footer() {
           <div className={styles.innerRight}>
             <Logo className={'footerLogo'} />
             <span>
-          <p className={styles.downloadText}>Любимые блюда в приложении!</p>
-          <p className={styles.downloadText}>Скачай сейчас!</p>
-        </span>
+              <p className={styles.downloadText}>Любимые блюда в приложении!</p>
+              <p className={styles.downloadText}>Скачай сейчас!</p>
+            </span>
             <div className={styles.socials}>
               <Socials />
             </div>

@@ -3,7 +3,11 @@ import styles from './Delivery.module.css'
 import PageLink from '@components/ui/PageLink/PageLink'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { motion } from 'framer-motion'
-import {delivery, deliveryCards, deliveryInformation} from '@/pages/Delivery/Delivery.data'
+import {
+  delivery,
+  deliveryCards,
+  deliveryInformation,
+} from '@/pages/Delivery/Delivery.data'
 import { linkName, linkPath } from '@/constants/links.data'
 
 function Delivery() {

@@ -2,7 +2,7 @@ import useHead from '@/hooks/useHead'
 import styles from './Information.module.css'
 import PageLink from '@components/ui/PageLink/PageLink'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
-import {information} from '@/pages/Information/Information.data'
+import { information } from '@/pages/Information/Information.data'
 import { linkName, linkPath } from '@/constants/links.data'
 
 function Information() {

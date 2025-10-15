@@ -10,5 +10,6 @@ export const api = {
   recoverEmail: "http://localhost:8080/api/v1/auth/password/reset/req",
   recoverCode: "http://localhost:8080/api/v1/auth/password/reset/verify",
   recoverPassword: "http://localhost:8080/api/v1/auth/password/reset",
-  categories: "http://localhost:8080/api/v1/categories/get"
+  categories: "http://localhost:8080/api/v1/categories/get",
+  products: "http://localhost:8080/api/v1/products/all"
 }

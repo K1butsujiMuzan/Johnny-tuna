@@ -1,8 +1,7 @@
 import useHead from '@/hooks/useHead'
 import styles from './Main.module.css'
 import Slider from '@/pages/Main/Slider/Slider'
-import Categories
-  from '@/pages/Main/Categories/Categories'
+import Categories from '@/pages/Main/Categories/Categories'
 
 function Main() {
   useHead({
@@ -12,10 +11,10 @@ function Main() {
     keywords: 'пицца, роллы, доставка еды, кафе, еда на дом',
   })
   return (
-    <div className={"pageContainer"}>
+    <div className={'pageContainer'}>
       <Slider />
       <div className={'container'}>
-        <Categories/>
+        <Categories />
       </div>
     </div>
   )
