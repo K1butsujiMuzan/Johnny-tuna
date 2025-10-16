@@ -1,6 +1,6 @@
 import arrow from '@assets/icons/Header/Arrow.svg'
 import styles from './CitySelect.module.css'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState, memo } from 'react'
 import { motion } from 'framer-motion'
 import {
   cityVariants,
@@ -96,4 +96,4 @@ function CitySelect({ isMobile }) {
   )
 }
 
-export default CitySelect
+export default memo(CitySelect)

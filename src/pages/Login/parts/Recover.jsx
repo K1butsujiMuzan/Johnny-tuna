@@ -5,7 +5,7 @@ import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButt
 import { errorTypes } from '@/constants/errorTypes.data'
 import { checkEmailData } from '@/services/recover'
 import PasswordInput from '@components/ui/LoginComponents/TextInputs/PasswordInput'
-import { api } from '@/services/api'
+import { postApi } from '@/services/api'
 import { checkEmail, checkCode, checkPassword } from '@/utils/dataCheck'
 
 function Recover({ setIsRecover }) {
@@ -65,7 +65,7 @@ function Recover({ setIsRecover }) {
 
   const getAnotherCode = async () => {
     try {
-      await checkEmailData(formData.email, api.recoverEmail)
+      await checkEmailData(formData.email, postApi.recoverEmail)
       resetTimer()
     } catch (error) {
       console.log('Ошибка сети: ', error)
@@ -91,7 +91,7 @@ function Recover({ setIsRecover }) {
       } else {
         try {
           setIsLoading(true)
-          const data = await checkEmailData(formData.email, api.recoverEmail)
+          const data = await checkEmailData(formData.email, postApi.recoverEmail)
           if (!data) {
             setErrors(prevState => ({
               ...prevState,
@@ -119,7 +119,7 @@ function Recover({ setIsRecover }) {
       } else {
         try {
           setIsLoading(true)
-          const data = await checkEmailData(formData.email, api.recoverCode, {
+          const data = await checkEmailData(formData.email, postApi.recoverCode, {
             otp_code: +formData.code,
           })
           if (!data) {
@@ -154,7 +154,7 @@ function Recover({ setIsRecover }) {
           setIsLoading(true)
           const data = await checkEmailData(
             formData.email,
-            api.recoverPassword,
+            postApi.recoverPassword,
             { password: formData.password },
           )
           if (!data) {

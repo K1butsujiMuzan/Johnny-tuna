@@ -1,8 +1,8 @@
-import { api } from '@/services/api'
+import { postApi } from '@/services/api'
 
 export const signIn = async (login, password) => {
   try {
-    const response = await fetch(api.signIn, {
+    const response = await fetch(postApi.signIn, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({

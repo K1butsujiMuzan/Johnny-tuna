@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 import { checkProfile } from '@/services/profile'
-import { api } from '@/services/api'
+import { getApi } from '@/services/api'
 import Cookies from 'js-cookie'
 
 const useProfileTokenStore = create((set, get) => ({
@@ -21,7 +21,7 @@ const useProfileTokenStore = create((set, get) => ({
   },
   authProfile: async () => {
     try {
-      const status = await checkProfile(api.checkProfile)
+      const status = await checkProfile(getApi.checkProfile)
 
       if (status === 'ok') {
         const data = await get().getData()
@@ -40,7 +40,7 @@ const useProfileTokenStore = create((set, get) => ({
     }
   },
   getData: async () => {
-    return await checkProfile(api.getProfileData)
+    return await checkProfile(getApi.getProfileData)
   },
   exit: () => {
     Cookies.remove('auth')

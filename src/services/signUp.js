@@ -1,7 +1,7 @@
-import { api } from '@/services/api'
+import { postApi } from '@/services/api'
 
 export const signUp = async (email, login, password) => {
-  const response = await fetch(api.signUp, {
+  const response = await fetch(postApi.signUp, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

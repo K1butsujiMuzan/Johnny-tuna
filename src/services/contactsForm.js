@@ -1,7 +1,7 @@
-import { api } from '@/services/api'
+import { postApi } from '@/services/api'
 
 export const contactsForm = async (email, message, name, theme) => {
-  const response = await fetch(api.contacts, {
+  const response = await fetch(postApi.contacts, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({

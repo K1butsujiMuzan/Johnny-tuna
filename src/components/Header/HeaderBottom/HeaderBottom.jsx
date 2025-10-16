@@ -2,6 +2,7 @@ import styles from './HeaderBottom.module.css'
 import Search from '@components/ui/Search/Search'
 import BasketLink from '@components/ui/BasketLink/BasketLink'
 import ProfileLink from '@components/ui/ProfileLink/ProfileLink'
+import { memo } from 'react'
 
 function HeaderBottom() {
   return (
@@ -15,4 +16,4 @@ function HeaderBottom() {
   )
 }
 
-export default HeaderBottom
+export default memo(HeaderBottom)

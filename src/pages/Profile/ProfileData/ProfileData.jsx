@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import CitySelect from '@components/ui/CitySelect/CitySelect'
 import { useEffect, useRef, useState } from 'react'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
-import { api } from '@/services/api'
+import { postApi } from '@/services/api'
 import { updateData } from '@/services/updateData'
 import { errorTypes } from '@/constants/errorTypes.data'
 import { AnimatePresence } from 'framer-motion'
@@ -97,13 +97,13 @@ function ProfileData() {
       let hasChanges = false
 
       if (profileData.email !== newData.email) {
-        const error = await updateData(api.updateEmail, newData.email)
+        const error = await updateData(postApi.updateEmail, newData.email)
         if (!error) {
           hasChanges = true
         }
       }
       if (profileData.login !== newData.login) {
-        const error = await updateData(api.updateLogin, newData.login)
+        const error = await updateData(postApi.updateLogin, newData.login)
         if (!error) {
           hasChanges = true
         }

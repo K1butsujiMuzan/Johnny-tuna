@@ -1,10 +1,11 @@
 import { create } from 'zustand'
-import { products } from '@/services/products'
+import { getCategoryData} from '@/services/categoryData'
+import { getApi } from '@/services/api'
 
 const useProductsStore = create(set => ({
   products: [],
   getProducts: async () => {
-    const data = await products()
+    const data = await getCategoryData(getApi.getProducts)
     set({ products: data })
   },
 }))

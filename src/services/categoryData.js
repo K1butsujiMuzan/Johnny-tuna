@@ -1,18 +1,21 @@
-import Cookies from 'js-cookie'
+import { errorTypes } from '@/constants/errorTypes.data'
 
-export const checkProfile = async api => {
+export const getCategoryData = async (api) => {
   try {
-    const token = Cookies.get('auth')
     const response = await fetch(api, {
-      method: "GET",
-      headers: { Authorization: `Bearer ${token}` },
+      method: 'GET',
+      headers: { 'Content-Type': 'application/json' },
     })
 
-    if (!response) {
+    if(!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }
 
     const data = await response.json()
+
+    if (data.error) {
+      throw new Error(data.error || errorTypes.somethingWentWrong)
+    }
     return data.result
   } catch (error) {
     console.error(`Ошибка загрузки данных: ${error}`)
