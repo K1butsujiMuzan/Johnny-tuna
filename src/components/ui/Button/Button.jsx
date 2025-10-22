@@ -1,7 +1,7 @@
 import styles from './Button.module.css'
 import { memo } from 'react'
 
-function Button({ children, isSubmit, isAccent, isDisabled }) {
+function Button({ children, isSubmit, isAccent, isDisabled, onButtonClick }) {
   return (
     <button
       className={`
@@ -10,6 +10,7 @@ function Button({ children, isSubmit, isAccent, isDisabled }) {
       `}
       type={isSubmit ? 'submit' : 'button'}
       disabled={isDisabled}
+      onClick={onButtonClick}
     >
       {children}
     </button>

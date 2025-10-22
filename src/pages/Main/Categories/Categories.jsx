@@ -2,7 +2,6 @@ import styles from './Categories.module.css'
 import { useCategories } from '@/store/useCategories'
 import { useProduct } from '@/store/useProducts'
 import Product from '@/pages/Main/Categories/Product'
-import { cloudinary } from '@/utils/cloudinary'
 import CategoryButtons from '@/pages/Main/Categories/CategoryButtons'
 import { useMemo, useState } from 'react'
 
@@ -26,7 +25,6 @@ function Categories() {
         return product["category_id"] === category.id
       })
     })
-    console.log(groupedCategories)
     return groupedCategories
   }, [products])
 
@@ -41,10 +39,7 @@ function Categories() {
             {productsToShow[category.id]?.map(product => (
               <Product
                 key={product.id}
-                name={product.name}
-                description={product.description}
-                image={cloudinary(product.image)}
-                price={product.price}
+                product={product}
               />
             ))}
           </div>

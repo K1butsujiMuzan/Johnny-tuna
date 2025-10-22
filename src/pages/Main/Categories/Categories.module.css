@@ -87,3 +87,12 @@
 .productPrice {
   font-size: clamp(1rem, 1.66vw, 1.25rem);
 }
+
+@media (max-width: 75rem) {
+  .categoryProducts {
+    row-gap: 1rem;
+  }
+  .categoryBlock{
+    gap: 1rem;
+  }
+}

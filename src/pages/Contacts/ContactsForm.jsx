@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion'
 import Radio from '@components/ui/LoginComponents/Radio/Radio'
 import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButton'
 import { errorTypes } from '@/constants/errorTypes.data'
-import ModalText from '@components/ModalText/ModalText'
+import ModalText from '@components/ui/ModalText/ModalText'
 import { contactsForm } from '@/services/contactsForm'
 import {
   checkEmail,

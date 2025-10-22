@@ -1,8 +1,19 @@
 import styles from './BasketLink.module.css'
 import { Link } from 'react-router'
 import { linkName, linkPath } from '@/constants/links.data'
+import { useTotalBasketPrice, useTotalBasketProducts } from '@/store/useBasket'
+import { useMemo } from 'react'
 
 function BasketLink() {
+  const basketProducts = useTotalBasketProducts()
+  const basketTotalPrice = useTotalBasketPrice()
+
+  const memoPrice = useMemo(() => {
+    return basketTotalPrice < 100000
+      ? basketTotalPrice
+      : `${Math.floor(basketTotalPrice / 1000)}К`
+  }, [basketTotalPrice])
+
   return (
     <Link
       className={`${styles.basketLink} headerIconLink`}
@@ -38,11 +49,11 @@ function BasketLink() {
           />
         </svg>
         <span className={styles.quantity} aria-label={'Количество товаров'}>
-          0
+          {basketProducts}
         </span>
       </div>
       <span className={styles.basketBalance} aria-label={'Стоимость'}>
-        0₽
+        {memoPrice} ₽
       </span>
     </Link>
   )

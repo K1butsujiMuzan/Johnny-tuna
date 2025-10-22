@@ -1,8 +1,19 @@
 import styles from './Categories.module.css'
 import Button from '@components/ui/Button/Button'
 import { useMemo } from 'react'
+import { addBasketProduct, useAllBasketProducts } from '@/store/useBasket'
+import { cloudinary } from '@/utils/cloudinary'
+import ProductToggleControls from '@components/ui/ProductToggleControls/ProductToggleControls'
 
-function Product({ name, description, image, price }) {
+function Product({ product }) {
+  const { id, name, image, price, description } = product
+  const allBasketProducts = useAllBasketProducts()
+
+  const productCount = useMemo(() => {
+    const product = allBasketProducts.find(product => product.id === id)
+    return product ? product.quantity : 0
+  }, [allBasketProducts])
+
   const convertedPrice = useMemo(() => {
     const firstPart = Math.floor(price / 1000)
     const lastPart = price % 1000
@@ -26,7 +37,7 @@ function Product({ name, description, image, price }) {
       <div className={styles.productUp}>
         <img
           className={styles.productImage}
-          src={image}
+          src={cloudinary(image)}
           alt={name}
           width="400"
           height="400"
@@ -37,7 +48,16 @@ function Product({ name, description, image, price }) {
       </div>
       <div className={styles.productDown}>
         <span className={styles.productPrice}>{convertedPrice}</span>
-        <Button>Выбрать</Button>
+        {productCount === 0 ? (
+          <Button onButtonClick={() => addBasketProduct(product)}>
+            Выбрать
+          </Button>
+        ) : (
+          <ProductToggleControls
+            productCount={productCount}
+            product={product}
+          />
+        )}
       </div>
     </article>
   )

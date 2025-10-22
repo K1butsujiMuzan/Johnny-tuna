@@ -28,3 +28,18 @@ export const cityVariants = {
   enter: { opacity: 0 },
   center: { opacity: 1 },
 }
+
+export const sliderVariables = {
+  enter: direction => ({
+    x: direction > 0 ? 50 : -50,
+    opacity: 0,
+  }),
+  center: {
+    opacity: 1,
+    x: 0,
+  },
+  exit: direction => ({
+    x: direction > 0 ? -50 : 50,
+    opacity: 0,
+  }),
+}

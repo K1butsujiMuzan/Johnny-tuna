@@ -2,25 +2,11 @@ import styles from './Slider.module.css'
 import { useEffect, useRef, useState } from 'react'
 import { sliderImages } from '@/pages/Main/Slider/Slider.data'
 import { AnimatePresence, motion } from 'framer-motion'
+import { sliderVariables } from '@/constants/variantsAnimation.data'
 
 function Slider() {
   const [currentImage, setCurrentImage] = useState(0)
   const [direction, setDirection] = useState(1)
-
-  const sliderVariables = {
-    enter: direction => ({
-      x: direction > 0 ? 50 : -50,
-      opacity: 0,
-    }),
-    center: {
-      opacity: 1,
-      x: 0,
-    },
-    exit: direction => ({
-      x: direction > 0 ? -50 : 50,
-      opacity: 0,
-    }),
-  }
 
   const intervalRef = useRef(null)
 
