@@ -6,6 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(3px);
 }
 
 .modalContainer {
@@ -18,7 +19,8 @@
   justify-content: center;
   padding-inline: clamp(2rem, 6.66vw, 5rem);
   padding-block: 2.5rem;
-  max-width: 90%;
+  width: 90%;
+  max-width: 62rem;
 }
 
 .modalText {

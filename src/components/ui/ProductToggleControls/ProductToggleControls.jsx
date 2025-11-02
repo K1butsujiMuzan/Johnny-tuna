@@ -1,30 +1,34 @@
 import styles from './ProductToggleControls.module.css'
 import { addBasketProduct, removeBasketProduct } from '@/store/useBasket'
+import { memo } from 'react'
+import ToggleControl from '@components/ui/ProductToggleControls/ToggleControl'
 
 function ProductToggleControls({ productCount, product }) {
   return (
     <div className={styles.controlsContainer}>
-      <button
-        className={styles.controlButton}
-        type="button"
-        aria-label={'убрать 1'}
-        onClick={() => removeBasketProduct(product)}
+      <ToggleControl
+        ariaLabel={'убрать 1'}
+        onClick={event => {
+          event.stopPropagation()
+          removeBasketProduct(product)
+        }}
       >
         -
-      </button>
+      </ToggleControl>
       <span className={styles.productCount} aria-label={'количество продуктов'}>
         {productCount}
       </span>
-      <button
-        className={styles.controlButton}
-        type="button"
-        aria-label={'добавить 1'}
-        onClick={() => addBasketProduct(product)}
+      <ToggleControl
+        ariaLabel={'добавить 1'}
+        onClick={event => {
+          event.stopPropagation()
+          addBasketProduct(product)
+        }}
       >
         +
-      </button>
+      </ToggleControl>
     </div>
   )
 }
 
-export default ProductToggleControls
+export default memo(ProductToggleControls)

@@ -9,6 +9,12 @@ export const loginFromTop = {
   exit: { opacity: 0, translateY: -30 },
 }
 
+export const loginFromDown = {
+  enter: { opacity: 0, translateY: 30 },
+  center: { opacity: 1, translateY: 0 },
+  exit: { opacity: 0, translateY: 30 },
+}
+
 export const cityContainerVariants = {
   enter: {
     opacity: 0,

@@ -1,0 +1,88 @@
+.modalInner {
+  position: fixed;
+  inset: 0;
+  background-color: rgb(0 0 0 / 41%);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(3px);
+}
+
+.modalContent {
+  position: relative;
+  display: flex;
+  width: 90%;
+  max-width: 62rem;
+  background-color: var(--color-text-white);
+  border-radius: var(--main-border-radius);
+}
+
+.modalImage {
+  object-fit: contain;
+  width: 60%;
+  border-bottom-left-radius: var(--main-border-radius);
+  border-top-left-radius: var(--main-border-radius);
+}
+
+.modalInformation {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  row-gap: 1rem;
+}
+
+.modalInformationUp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  row-gap: 1rem;
+}
+
+.modalInformationDown {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.modalTitle {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.modalStick {
+  display: none;
+}
+
+@media (max-width: 48rem) {
+  .modalInner {
+    align-items: flex-end;
+  }
+
+  .modalStick {
+    display: block;
+    width: 4rem;
+    height: 3px;
+    background-color: var(--color-text-dark);
+    position: absolute;
+    top: 10px;
+    left: calc(50% - 2rem);
+    opacity: 0.5;
+    border-radius: var(--main-border-radius);
+  }
+
+  .modalContent {
+    max-height: 100dvh;
+    flex-direction: column;
+    padding: 2rem 0.5rem 0.5rem;
+    width: 100%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    overflow-y: auto;
+  }
+
+  .modalImage {
+    border-radius: var(--main-border-radius);
+    width: 100%;
+  }
+}

@@ -38,10 +38,11 @@
 }
 
 .categoryProducts {
+  perspective: 1000px;
+  transform-style: preserve-3d;
   flex-wrap: wrap;
   display: flex;
-  column-gap: 0.75rem;
-  row-gap: 2rem;
+  gap: 2rem 0.75rem;
 }
 
 .categoryTitle {
@@ -50,12 +51,15 @@
 }
 
 .product {
+  cursor: pointer;
   padding: 0.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   gap: 2rem;
   max-width: 17.875rem;
+  transition: all 0.3s;
+  will-change: transform;
 }
 
 .productUp {
@@ -74,6 +78,7 @@
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: var(--main-border-radius);
+  transition: transform 0.3s;
 }
 
 .productTitle {
@@ -88,11 +93,19 @@
   font-size: clamp(1rem, 1.66vw, 1.25rem);
 }
 
+@media (hover: hover) {
+  .product:hover {
+    transform: translateZ(5px);
+    box-shadow: 0 2px 24px rgb(0 0 0 / 15%);
+  }
+}
+
 @media (max-width: 75rem) {
   .categoryProducts {
     row-gap: 1rem;
   }
-  .categoryBlock{
+
+  .categoryBlock {
     gap: 1rem;
   }
 }

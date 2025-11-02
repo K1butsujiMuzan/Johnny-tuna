@@ -1,0 +1,24 @@
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border: none;
+  background-color: transparent;
+}
+
+.closeIcon path {
+  stroke: transparent;
+  fill: var(--color-text-dark);
+}
+
+@media (hover: hover) {
+  .closeButton:hover .closeIcon path {
+    fill: var(--color-accent);
+  }
+}
+
+@media (hover: none) {
+  .closeButton:active .closeIcon path {
+    fill: var(--color-accent);
+  }
+}
