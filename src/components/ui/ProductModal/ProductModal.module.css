@@ -16,6 +16,7 @@
   max-width: 62rem;
   background-color: var(--color-text-white);
   border-radius: var(--main-border-radius);
+  touch-action: pan-y;
 }
 
 .modalImage {
@@ -50,25 +51,9 @@
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
-.modalStick {
-  display: none;
-}
-
 @media (max-width: 48rem) {
   .modalInner {
     align-items: flex-end;
-  }
-
-  .modalStick {
-    display: block;
-    width: 4rem;
-    height: 3px;
-    background-color: var(--color-text-dark);
-    position: absolute;
-    top: 10px;
-    left: calc(50% - 2rem);
-    opacity: 0.5;
-    border-radius: var(--main-border-radius);
   }
 
   .modalContent {

@@ -1,6 +1,6 @@
 import { postApi } from '@/services/api'
 
-export const contactsForm = async (email, message, name, theme) => {
+export const contactsForm = async (email, message, name, reason, theme) => {
   const response = await fetch(postApi.contacts, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -8,6 +8,7 @@ export const contactsForm = async (email, message, name, theme) => {
       email: email,
       message: message,
       name: name,
+      reason: reason,
       theme: theme,
     }),
   })

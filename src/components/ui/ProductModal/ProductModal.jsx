@@ -5,7 +5,7 @@ import Button from '@components/ui/Button/Button'
 import ProductToggleControls from '@components/ui/ProductToggleControls/ProductToggleControls'
 import useConvertPrice from '@/hooks/useConvertPrice'
 import ReactFocusLock from 'react-focus-lock'
-import { memo, useCallback, useEffect, useRef, useState } from 'react'
+import { memo, useCallback, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { loginFromDown, loginFromTop } from '@/constants/variantsAnimation.data'
 import CloseButton from '@components/ui/CloseButton/CloseButton'
@@ -18,15 +18,24 @@ function ProductModal({
   onButtonClick,
 }) {
   const { id, name, image, price, description } = product
-  const [dragPosition, setDragPosition] = useState({ y: 0 })
-  const isDragging = useRef(false)
+  const [isMobile, setIsMobile] = useState(
+    window.matchMedia('(max-width: 768px)').matches,
+  )
 
   const convertedPrice = useConvertPrice(price)
 
+  const checkDevice = useCallback(() => {
+    setIsMobile(window.matchMedia('(max-width: 768px)').matches)
+  }, [])
+
   useEffect(() => {
     document.body.style.overflow = 'hidden'
-    return () => (document.body.style.overflow = 'auto')
-  }, [])
+    window.addEventListener('resize', checkDevice)
+    return () => {
+      document.body.style.overflow = 'auto'
+      window.removeEventListener('resize', checkDevice)
+    }
+  }, [checkDevice])
 
   const closeInnerModal = useCallback(event => {
     if (event.target === event.currentTarget) {
@@ -43,8 +52,6 @@ function ProductModal({
       setIsProductOpen(false)
     }
   }, [])
-
-  const isMobile = window.matchMedia('(max-width: 768px)').matches
 
   return createPortal(
     <ReactFocusLock returnFocus={true}>
@@ -93,7 +100,6 @@ function ProductModal({
             </div>
           </div>
           <CloseButton onClick={closeModal} />
-          <span className={styles.modalStick}></span>
         </motion.div>
       </div>
     </ReactFocusLock>,

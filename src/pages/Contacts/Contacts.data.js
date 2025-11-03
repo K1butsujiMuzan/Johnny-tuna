@@ -21,3 +21,22 @@ export const addressInformation = [
     icon: watch,
   },
 ]
+
+export const radioNames = [
+  {
+    value: 0,
+    label: 'Отзыв или предложение',
+  },
+  {
+    value: 1,
+    label: 'Вопрос',
+  },
+  {
+    value: 2,
+    label: 'Проблема',
+  },
+  {
+    value: 3,
+    label: 'Бронирование',
+  },
+]

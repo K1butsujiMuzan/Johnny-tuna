@@ -8,6 +8,7 @@ import SubmitButton from '@components/ui/LoginComponents/SubmitButton/SubmitButt
 import { errorTypes } from '@/constants/errorTypes.data'
 import ModalText from '@components/ui/ModalText/ModalText'
 import { contactsForm } from '@/services/contactsForm'
+import { radioNames } from '@/pages/Contacts/Contacts.data'
 import {
   checkEmail,
   checkMessage,
@@ -37,25 +38,6 @@ function ContactsForm() {
     serverError: '',
   })
   const [isOpenModal, setIsOpenModal] = useState(false)
-
-  const radioNames = [
-    {
-      value: 0,
-      label: 'Отзыв или предложение',
-    },
-    {
-      value: 1,
-      label: 'Вопрос',
-    },
-    {
-      value: 2,
-      label: 'Проблема',
-    },
-    {
-      value: 3,
-      label: 'Бронирование',
-    },
-  ]
 
   const formSubmit = async event => {
     event.preventDefault()
@@ -90,6 +72,7 @@ function ContactsForm() {
         formData.email,
         formData.message,
         formData.name,
+        formData.reason,
         formData.theme,
       )
 
