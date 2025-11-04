@@ -1,6 +1,6 @@
 import styles from './Categories.module.css'
 import Button from '@components/ui/Button/Button'
-import { useCallback, useState } from 'react'
+import { memo, useCallback, useState } from 'react'
 import { addBasketProduct, useAllBasketProducts } from '@/store/useBasket'
 import { cloudinary } from '@/utils/cloudinary'
 import ProductToggleControls from '@components/ui/ProductToggleControls/ProductToggleControls'
@@ -24,10 +24,13 @@ function Product({ product }) {
     setIsProductOpen(true)
   }, [])
 
-  const selectClick = event => {
-    event.stopPropagation()
-    addBasketProduct(product)
-  }
+  const selectClick = useCallback(
+    event => {
+      event.stopPropagation()
+      addBasketProduct(product)
+    },
+    [product],
+  )
 
   return (
     <>
@@ -75,4 +78,4 @@ function Product({ product }) {
   )
 }
 
-export default Product
+export default memo(Product)

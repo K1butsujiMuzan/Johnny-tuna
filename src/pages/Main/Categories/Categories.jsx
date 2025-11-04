@@ -11,18 +11,18 @@ function Categories() {
   const [currentCategory, setCurrentCategory] = useState(0)
 
   const categoriesToShow = useMemo(() => {
-    if(currentCategory === 0) {
+    if (currentCategory === 0) {
       return categories
     }
-    return categories.filter((category) => category.id === currentCategory)
+    return categories.filter(category => category.id === currentCategory)
   }, [currentCategory, categories])
 
   const productsToShow = useMemo(() => {
     const groupedCategories = {}
 
-    categories.forEach((category) => {
-      groupedCategories[category.id] = products.filter((product) => {
-        return product["category_id"] === category.id
+    categories.forEach(category => {
+      groupedCategories[category.id] = products.filter(product => {
+        return product['category_id'] === category.id
       })
     })
     return groupedCategories
@@ -31,20 +31,21 @@ function Categories() {
   return (
     <section className={styles.categoriesContainer}>
       <h2>Категории</h2>
-      <CategoryButtons setCurrentCategory={setCurrentCategory} currentCategory={currentCategory}/>
-      {categoriesToShow && categoriesToShow.map(category => (
-        <div className={styles.categoryBlock} key={category.id}>
-          <h3 className={styles.categoryTitle}>{category.name}</h3>
-          <div className={styles.categoryProducts}>
-            {productsToShow[category.id]?.map(product => (
-              <Product
-                key={product.id}
-                product={product}
-              />
-            ))}
+      <CategoryButtons
+        setCurrentCategory={setCurrentCategory}
+        currentCategory={currentCategory}
+      />
+      {categoriesToShow &&
+        categoriesToShow.map(category => (
+          <div className={styles.categoryBlock} key={category.id}>
+            <h3 className={styles.categoryTitle}>{category.name}</h3>
+            <div className={styles.categoryProducts}>
+              {productsToShow[category.id]?.map(product => (
+                <Product key={product.id} product={product} />
+              ))}
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
     </section>
   )
 }

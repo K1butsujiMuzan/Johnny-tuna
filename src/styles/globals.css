@@ -6,8 +6,13 @@ body {
   background-color: var(--color-text-white);
 }
 
+#root.no-scroll {
+  overflow-y: hidden;
+}
+
 * {
   -webkit-tap-highlight-color: transparent;
+  scrollbar-color: var(--color-text-light) var(--color-text-white);
 }
 
 a,
@@ -63,7 +68,6 @@ h4 {
 
 main {
   flex: 1;
-  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;

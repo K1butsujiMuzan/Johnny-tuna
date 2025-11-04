@@ -28,15 +28,6 @@ function ProductModal({
     setIsMobile(window.matchMedia('(max-width: 768px)').matches)
   }, [])
 
-  useEffect(() => {
-    document.body.style.overflow = 'hidden'
-    window.addEventListener('resize', checkDevice)
-    return () => {
-      document.body.style.overflow = 'auto'
-      window.removeEventListener('resize', checkDevice)
-    }
-  }, [checkDevice])
-
   const closeInnerModal = useCallback(event => {
     if (event.target === event.currentTarget) {
       setIsProductOpen(false)
@@ -48,18 +39,26 @@ function ProductModal({
   }, [])
 
   const keyCloseInnerModal = useCallback(event => {
-    if (isProductOpen && event.key === 'Escape') {
+    if (event.key === 'Escape') {
       setIsProductOpen(false)
     }
   }, [])
 
+  useEffect(() => {
+    const root = document.getElementById('root')
+    window.addEventListener('keydown', keyCloseInnerModal)
+    root.classList.add('no-scroll')
+    window.addEventListener('resize', checkDevice)
+    return () => {
+      root.classList.remove('no-scroll')
+      window.removeEventListener('resize', checkDevice)
+      window.removeEventListener('keydown', keyCloseInnerModal)
+    }
+  }, [checkDevice])
+
   return createPortal(
     <ReactFocusLock returnFocus={true}>
-      <div
-        className={styles.modalInner}
-        onClick={closeInnerModal}
-        onKeyDown={keyCloseInnerModal}
-      >
+      <div className={styles.modalInner} onClick={closeInnerModal}>
         <motion.div
           role="dialog"
           aria-modal="true"
