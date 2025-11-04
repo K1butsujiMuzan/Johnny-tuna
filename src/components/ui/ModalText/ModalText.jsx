@@ -7,7 +7,7 @@ import { useCallback, useEffect } from 'react'
 import CloseButton from '@components/ui/CloseButton/CloseButton'
 
 function ModalText({ text, setIsOpenModal, setFormData = null }) {
-  const clearFormData = () => {
+  const clearFormData = useCallback(() => {
     if (setFormData) {
       setFormData({
         name: '',
@@ -16,13 +16,6 @@ function ModalText({ text, setIsOpenModal, setFormData = null }) {
         message: '',
         reason: 0,
       })
-    }
-  }
-
-  const checkKeyEsc = useCallback(event => {
-    if (event.key === 'Escape') {
-      clearFormData()
-      setIsOpenModal(false)
     }
   }, [])
 
@@ -40,6 +33,12 @@ function ModalText({ text, setIsOpenModal, setFormData = null }) {
   const closeModal = useCallback(() => {
     clearFormData()
     setIsOpenModal(false)
+  }, [])
+
+  const checkKeyEsc = useCallback(event => {
+    if (event.key === 'Escape') {
+      closeModal()
+    }
   }, [])
 
   const checkClick = useCallback(event => {

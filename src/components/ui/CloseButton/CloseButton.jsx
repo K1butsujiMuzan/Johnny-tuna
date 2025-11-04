@@ -1,4 +1,5 @@
 import styles from './CloseButton.module.css'
+import { memo } from 'react'
 
 function CloseButton({ onClick }) {
   return (
@@ -26,4 +27,4 @@ function CloseButton({ onClick }) {
   )
 }
 
-export default CloseButton
+export default memo(CloseButton)
