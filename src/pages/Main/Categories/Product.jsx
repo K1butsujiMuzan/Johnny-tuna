@@ -1,22 +1,20 @@
 import styles from './Categories.module.css'
 import Button from '@components/ui/Button/Button'
 import { memo, useCallback, useState } from 'react'
-import { addBasketProduct, useAllBasketProducts } from '@/store/useBasket'
+import { addBasketProduct, useProductQuantity } from '@/store/useBasket'
 import { cloudinary } from '@/utils/cloudinary'
 import ProductToggleControls from '@components/ui/ProductToggleControls/ProductToggleControls'
 import ProductModal from '@components/ui/ProductModal/ProductModal'
 import useConvertPrice from '@/hooks/useConvertPrice'
 import useConvertDescription from '@/hooks/useConvertDescription'
-import useProductCount from '@/hooks/useProductCount'
 import { AnimatePresence } from 'framer-motion'
 
 function Product({ product }) {
   const { id, name, image, price, description } = product
 
-  const allBasketProducts = useAllBasketProducts()
   const convertedPrice = useConvertPrice(price)
   const convertedDescription = useConvertDescription(description)
-  const productCount = useProductCount(allBasketProducts, id)
+  const productCount = useProductQuantity(id)
 
   const [isProductOpen, setIsProductOpen] = useState(false)
 

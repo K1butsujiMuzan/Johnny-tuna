@@ -79,3 +79,8 @@ export const addBasketProduct = product =>
   useBasketStore.getState().addBasketProduct(product)
 export const removeBasketProduct = product =>
   useBasketStore.getState().removeBasketProduct(product)
+export const useProductQuantity = id =>
+  useBasketStore(state => {
+    const product = state.allBasketProducts.find(item => item.id === id)
+    return product ? product.quantity : 0
+  })
