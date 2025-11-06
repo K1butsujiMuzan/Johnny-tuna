@@ -1,0 +1,18 @@
+.clearBasketButton {
+  border: none;
+  background-color: transparent;
+}
+
+.clearBasketButton svg {
+  fill: transparent;
+}
+
+@media (hover: hover) {
+  .clearBasketButton:hover {
+    color: var(--color-accent);
+  }
+}
+
+.clearBasketButton:active {
+  color: var(--color-accent);
+}

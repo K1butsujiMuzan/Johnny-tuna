@@ -38,8 +38,6 @@
 }
 
 .categoryProducts {
-  perspective: 1000px;
-  transform-style: preserve-3d;
   flex-wrap: wrap;
   display: flex;
   gap: 2rem 0.75rem;
@@ -95,8 +93,7 @@
 
 @media (hover: hover) {
   .product:hover {
-    transform: translateZ(5px);
-    box-shadow: 0 2px 24px rgb(0 0 0 / 15%);
+    transform: translateY(-3px);
   }
 }
 

@@ -8,6 +8,14 @@ const useBasketStore = create(
       totalBasketProducts: 0,
       totalBasketPrice: 0,
 
+      clearBasket: () => {
+        set({
+          allBasketProducts: [],
+          totalBasketProducts: 0,
+          totalBasketPrice: 0,
+        })
+      },
+
       addBasketProduct: ({ id, price }) => {
         set(state => {
           const currentObjectIndex = state.allBasketProducts.findIndex(
@@ -71,6 +79,7 @@ const useBasketStore = create(
 
 export const useTotalBasketProducts = () =>
   useBasketStore(state => state.totalBasketProducts)
+export const useClearBasket = () => useBasketStore.getState().clearBasket()
 export const useAllBasketProducts = () =>
   useBasketStore(state => state.allBasketProducts)
 export const useTotalBasketPrice = () =>
