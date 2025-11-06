@@ -1,0 +1,9 @@
+.loadingCircle {
+  width: 50%;
+  aspect-ratio: 1;
+}
+
+.loadingCircle circle {
+  stroke: var(--color-accent);
+  fill: transparent;
+}

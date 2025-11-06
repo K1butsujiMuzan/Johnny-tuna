@@ -1,4 +1,4 @@
-import { Routes, Route } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import Main from './pages/Main/Main'
 import Stocks from '@/pages/Stocks/Stocks'
 import Delivery from '@/pages/Delivery/Delivery'
