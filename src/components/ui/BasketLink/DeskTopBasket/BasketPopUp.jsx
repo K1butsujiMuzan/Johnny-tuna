@@ -1,7 +1,7 @@
 import styles from './BasketLink.module.css'
 import { useAllBasketProducts, useTotalBasketProducts } from '@/store/useBasket'
 import React, { Suspense } from 'react'
-import BasketPopUpLink from '@components/ui/BasketLink/BasketPopUpLink'
+import BasketPopUpLink from '@components/ui/BasketLink/DeskTopBasket/BasketPopUpLink'
 import LoadingCircle from '@components/ui/LoadingCircle/LoadingCircle'
 
 const LazyProduct = React.lazy(() => import('./BasketProduct'))

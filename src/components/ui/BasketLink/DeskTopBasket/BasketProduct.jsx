@@ -5,7 +5,7 @@ import { memo, useCallback, useEffect, useState } from 'react'
 import { removeBasketProduct } from '@/store/useBasket'
 import { getProduct } from '@/store/useProducts'
 import LoadingCircle from '@components/ui/LoadingCircle/LoadingCircle'
-import DeleteProductButton from '@components/ui/BasketLink/DeleteProductButton'
+import DeleteProductButton from '@components/ui/BasketLink/DeskTopBasket/DeleteProductButton'
 
 function BasketProduct({ id }) {
   const [content, setContent] = useState({

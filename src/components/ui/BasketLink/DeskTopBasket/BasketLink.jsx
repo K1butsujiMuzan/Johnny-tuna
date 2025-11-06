@@ -3,7 +3,7 @@ import { Link } from 'react-router'
 import { linkName, linkPath } from '@/constants/links.data'
 import { useTotalBasketPrice, useTotalBasketProducts } from '@/store/useBasket'
 import { useMemo } from 'react'
-import BasketPopUp from '@components/ui/BasketLink/BasketPopUp'
+import BasketPopUp from '@components/ui/BasketLink/DeskTopBasket/BasketPopUp'
 
 function BasketLink() {
   const basketProducts = useTotalBasketProducts()

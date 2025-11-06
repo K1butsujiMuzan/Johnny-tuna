@@ -1,0 +1,53 @@
+.basketLink {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  width: 4rem;
+  aspect-ratio: 1;
+  background-color: var(--color-red-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  z-index: 300;
+}
+
+.basketLinkIcon,
+.basketLinkIcon path {
+  stroke: var(--color-text-white);
+  fill: transparent;
+}
+
+.quantity {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 18px;
+  width: 25px;
+  font-size: 0.8125rem;
+  line-height: 1;
+  background-color: var(--color-text-white);
+  color: var(--color-red-accent);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1.375rem;
+}
+
+@media (hover: hover) {
+  .basketLink:hover {
+    background-color: var(--color-accent);
+  }
+
+  .basketLink:hover .quantity {
+    color: var(--color-accent);
+  }
+}
+
+.basketLink:active {
+  background-color: var(--color-accent);
+}
+
+.basketLink:active .quantity {
+  color: var(--color-accent);
+}

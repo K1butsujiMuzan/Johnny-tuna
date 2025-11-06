@@ -1,6 +1,6 @@
 import styles from './HeaderBottom.module.css'
 import Search from '@components/ui/Search/Search'
-import BasketLink from '@components/ui/BasketLink/BasketLink'
+import BasketLink from '@components/ui/BasketLink/DeskTopBasket/BasketLink'
 import ProfileLink from '@components/ui/ProfileLink/ProfileLink'
 import { memo } from 'react'
 

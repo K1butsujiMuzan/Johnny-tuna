@@ -96,10 +96,6 @@
   fill: transparent;
 }
 
-.noScroll {
-  overflow-y: hidden !important;
-}
-
 @media (hover: none) {
   .burgerButton:active .burgerSpan {
     background-color: var(--color-accent);

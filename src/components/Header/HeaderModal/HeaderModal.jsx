@@ -5,8 +5,18 @@ import Phone from '@components/ui/Phone/Phone'
 import Socials from '@components/ui/Socials/Socials'
 import ProfileLink from '@components/ui/ProfileLink/ProfileLink'
 import { headerLinks } from '@components/Header/Header.data'
+import { useEffect } from 'react'
 
 function HeaderModal() {
+  useEffect(() => {
+    const root = document.getElementById('root')
+    root.classList.add('no-scroll')
+
+    return () => {
+      root.classList.remove('no-scroll')
+    }
+  }, [])
+
   return (
     <div className={styles.headerModalInner}>
       <div className={styles.modalUp}>
