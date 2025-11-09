@@ -1,13 +1,13 @@
 import styles from './Categories.module.css'
 import { useCategories } from '@/store/useCategories'
-import { useProduct } from '@/store/useProducts'
-import Product from '@/pages/Main/Categories/Product'
-import CategoryButtons from '@/pages/Main/Categories/CategoryButtons'
-import { useMemo, useState } from 'react'
+import CategoryButtons from './CategoryButtons'
+import React, { Suspense, useMemo, useState } from 'react'
+import LoadingCircle from '@components/ui/LoadingCircle/LoadingCircle'
+
+const LazyCategoryBlock = React.lazy(() => import('./CategoryBlock'))
 
 function Categories() {
   const categories = useCategories()
-  const products = useProduct()
   const [currentCategory, setCurrentCategory] = useState(0)
 
   const categoriesToShow = useMemo(() => {
@@ -17,17 +17,6 @@ function Categories() {
     return categories.filter(category => category.id === currentCategory)
   }, [currentCategory, categories])
 
-  const productsToShow = useMemo(() => {
-    const groupedCategories = {}
-
-    categories.forEach(category => {
-      groupedCategories[category.id] = products.filter(product => {
-        return product['category_id'] === category.id
-      })
-    })
-    return groupedCategories
-  }, [products])
-
   return (
     <section className={styles.categoriesContainer}>
       <h2>Категории</h2>
@@ -35,17 +24,18 @@ function Categories() {
         setCurrentCategory={setCurrentCategory}
         currentCategory={currentCategory}
       />
-      {categoriesToShow &&
-        categoriesToShow.map(category => (
-          <div className={styles.categoryBlock} key={category.id}>
-            <h3 className={styles.categoryTitle}>{category.name}</h3>
-            <div className={styles.categoryProducts}>
-              {productsToShow[category.id]?.map(product => (
-                <Product key={product.id} product={product} />
-              ))}
-            </div>
+      <Suspense
+        fallback={
+          <div className={styles.productsLoading}>
+            <LoadingCircle width={'20rem'} />
           </div>
-        ))}
+        }
+      >
+        {categoriesToShow &&
+          categoriesToShow.map(category => (
+            <LazyCategoryBlock category={category} key={category.id} />
+          ))}
+      </Suspense>
     </section>
   )
 }

@@ -30,6 +30,12 @@
   color: var(--color-black);
 }
 
+.productsLoading {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 .categoryBlock {
   display: flex;
   flex-direction: column;
