@@ -30,12 +30,22 @@ function Product({ product }) {
     [product],
   )
 
+  const onKeyOpenModal = event => {
+    if (event.target !== event.currentTarget) return
+    if (event.key === 'Enter' || event.key === 'Space') {
+      event.stopPropagation()
+      event.preventDefault()
+      setIsProductOpen(true)
+    }
+  }
+
   return (
     <>
       <article
         className={styles.product}
         tabIndex={0}
         onClick={openProductModal}
+        onKeyDown={onKeyOpenModal}
       >
         <div className={styles.productUp}>
           <img
