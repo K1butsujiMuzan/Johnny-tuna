@@ -1,4 +1,4 @@
-const baseUrl = import.meta.env.VITE_API_URL || "http://localhost:8080/api/v1"
+const baseUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080/api/v1'
 
 export const postApi = {
   contacts: `${baseUrl}/appeal`,
@@ -12,9 +12,10 @@ export const postApi = {
 }
 
 export const getApi = {
-  verification: (token) => `${baseUrl}/auth/verify?token=${token}`,
+  verification: token => `${baseUrl}/auth/verify?token=${token}`,
   checkProfile: `${baseUrl}/auth/verify/user`,
   getProfileData: `${baseUrl}/profile/info`,
   getCategories: `${baseUrl}/categories/get`,
-  getProducts: `${baseUrl}/products/all`
+  getProducts: `${baseUrl}/products/all`,
+  getSearchProducts: `http://localhost:8080/api/v1/search/products`,
 }

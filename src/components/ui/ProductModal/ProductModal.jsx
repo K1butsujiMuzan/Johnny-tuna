@@ -11,7 +11,6 @@ import { loginFromDown, loginFromTop } from '@/constants/variantsAnimation.data'
 import CloseButton from '@components/ui/CloseButton/CloseButton'
 
 function ProductModal({
-  isProductOpen,
   setIsProductOpen,
   product,
   productCount,

@@ -1,59 +1,82 @@
 import styles from './Search.module.css'
-import Button from '@components/ui/Button/Button'
-import { useCallback, useState } from 'react'
+import {
+  lazy,
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
+import useDebounce from '@/hooks/useDebounce'
+import { getSearchProducts } from '@/services/getSearchProducts'
+import LoadingCircle from '@components/ui/LoadingCircle/LoadingCircle'
+import SearchInput from '@components/ui/Search/SearchInput'
+
+const LazySearchProductModal = lazy(
+  () => import('@components/ui/Search/SearchProductItem'),
+)
 
 function Search() {
   const [searchValue, setSearchValue] = useState('')
+  const [searchResult, setSearchResult] = useState([])
+
+  const debouncedSearchValue = useDebounce(searchValue, 500)
+  const shortSearchResult = useMemo(
+    () => searchResult.slice(0, 5),
+    [searchResult],
+  )
 
   const handleChange = useCallback(event => {
     setSearchValue(event.target.value)
   }, [])
 
+  useEffect(() => {
+    const fetchResult = async () => {
+      if (!debouncedSearchValue.trim()) {
+        setSearchResult([])
+        return
+      }
+      const result = await getSearchProducts(
+        debouncedSearchValue.toLowerCase().trim(),
+      )
+      setSearchResult(result)
+    }
+    fetchResult()
+  }, [debouncedSearchValue])
+
+  const clearSearch = useCallback(() => {
+    setSearchValue('')
+    setSearchResult([])
+  }, [])
+
   return (
-    <form method={'get'} className={styles.searchForm}>
-      <input
-        name={'Search'}
-        className={styles.searchInput}
-        placeholder={'Поиск...'}
-        onChange={handleChange}
+    <div className={styles.searchWrapper}>
+      <SearchInput
+        clearSearch={clearSearch}
         value={searchValue}
-        aria-label={'Поиск'}
-        autoComplete={'off'}
+        onChange={handleChange}
       />
-      <div className={styles.searchButtons}>
-        <button
-          type={'button'}
-          className={styles.clearButton}
-          onClick={() => setSearchValue('')}
-          aria-label={'Очистить'}
+      {searchResult.length > 0 && searchValue && (
+        <Suspense
+          fallback={
+            <ul
+              className={`${styles.searchProducts} ${styles.searchProductsLoading}`}
+            >
+              <LoadingCircle width={'5rem'} />
+            </ul>
+          }
         >
-          <svg
-            className={styles.clearIcon}
-            width="14"
-            height="15"
-            viewBox="0 0 14 15"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M12.9898 1L0.773926 14.0946"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-            <path
-              d="M0.773926 1L12.9898 14.0946"
-              strokeWidth="1.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </button>
-        <Button isSubmit isAccent>
-          Найти
-        </Button>
-      </div>
-    </form>
+          <ul className={styles.searchProducts}>
+            {shortSearchResult.map(product => (
+              <LazySearchProductModal
+                product={product}
+                key={product?.id ?? product}
+              />
+            ))}
+          </ul>
+        </Suspense>
+      )}
+    </div>
   )
 }
 

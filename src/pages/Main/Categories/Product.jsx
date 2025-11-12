@@ -32,7 +32,7 @@ function Product({ product }) {
 
   const onKeyOpenModal = event => {
     if (event.target !== event.currentTarget) return
-    if (event.key === 'Enter' || event.key === 'Space') {
+    if (event.key === 'Enter' || event.key === ' ') {
       event.stopPropagation()
       event.preventDefault()
       setIsProductOpen(true)
@@ -42,6 +42,7 @@ function Product({ product }) {
   return (
     <>
       <article
+        role={'button'}
         className={styles.product}
         tabIndex={0}
         onClick={openProductModal}

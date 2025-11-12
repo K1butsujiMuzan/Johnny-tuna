@@ -53,7 +53,9 @@ function BasketProduct({ id }) {
         <span>{content.name}</span>
       </div>
       <div className={styles.basketProductRight}>
-        <span>{content.isLoaded ? convertedPrice : ''}</span>
+        <span className={styles.basketProductPrice}>
+          {content.isLoaded ? convertedPrice : ''}
+        </span>
         <DeleteProductButton
           isLoaded={content.isLoaded}
           onClick={removeProduct}
