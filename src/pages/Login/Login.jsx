@@ -8,7 +8,7 @@ import SignUp from '@/pages/Login/parts/SignUp'
 import { motion } from 'framer-motion'
 import { loginFromTop } from '@/constants/variantsAnimation.data'
 import Recover from '@/pages/Login/parts/Recover'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function Login() {
   useHead({

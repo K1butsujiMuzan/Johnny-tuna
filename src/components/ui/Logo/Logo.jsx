@@ -3,7 +3,7 @@ import logo from '@assets/icons/MainIcons/Logo.svg'
 import { Link } from 'react-router'
 import { scrollTop } from '@/utils/toTop'
 import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function Logo({ className }) {
   const isBurgerOpen = useIsBurgerOpen()

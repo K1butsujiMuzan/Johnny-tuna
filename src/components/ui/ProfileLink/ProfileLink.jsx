@@ -3,7 +3,7 @@ import styles from './ProfileLink.module.css'
 import { useNavigate } from 'react-router-dom'
 import { closeBurger, useIsBurgerOpen } from '@/store/useBurgerOpen'
 import { authProfile, useProfileData } from '@/store/useProfileToken'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function ProfileLink() {
   const profileData = useProfileData()

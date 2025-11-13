@@ -1,4 +1,4 @@
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 import styles from './BasketLink.module.css'
 import { Link } from 'react-router'
 import { memo } from 'react'

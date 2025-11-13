@@ -8,7 +8,7 @@ import {
   deliveryCards,
   deliveryInformation,
 } from '@/pages/Delivery/Delivery.data'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function Delivery() {
   useHead({

@@ -12,9 +12,10 @@ import Verification from '@/pages/Verification/Verification'
 import Profile from '@/pages/Profile/Profile'
 import { useEffect } from 'react'
 import { authProfile } from '@/store/useProfileToken'
-import { linkPath } from '@/constants/links.data'
+import { linkPath } from '@/config/links.data'
 import { getCategories } from '@/store/useCategories'
 import { getProducts } from '@/store/useProducts'
+import Result from '@/pages/Result/Result'
 
 function App() {
   useEffect(() => {
@@ -27,17 +28,18 @@ function App() {
     <>
       <Routes>
         <Route path={linkPath.main} element={<MainLayout />}>
-          <Route index element={<Main />}></Route>
-          <Route path={linkPath.stocks} element={<Stocks />}></Route>
-          <Route path={linkPath.about} element={<AboutUs />}></Route>
-          <Route path={linkPath.delivery} element={<Delivery />}></Route>
-          <Route path={linkPath.contacts} element={<Contacts />}></Route>
-          <Route path={linkPath.information} element={<Information />}></Route>
-          <Route path={linkPath.basket} element={<Basket />}></Route>
-          <Route path={linkPath.profile} element={<Profile />}></Route>
+          <Route index element={<Main />} />
+          <Route path={linkPath.stocks} element={<Stocks />} />
+          <Route path={linkPath.about} element={<AboutUs />} />
+          <Route path={linkPath.delivery} element={<Delivery />} />
+          <Route path={linkPath.contacts} element={<Contacts />} />
+          <Route path={linkPath.information} element={<Information />} />
+          <Route path={linkPath.basket} element={<Basket />} />
+          <Route path={linkPath.profile} element={<Profile />} />
+          <Route path={linkPath.result} element={<Result />} />
         </Route>
-        <Route path={linkPath.verify} element={<Verification />}></Route>
-        <Route path={linkPath.login} element={<Login />}></Route>
+        <Route path={linkPath.verify} element={<Verification />} />
+        <Route path={linkPath.login} element={<Login />} />
       </Routes>
     </>
   )

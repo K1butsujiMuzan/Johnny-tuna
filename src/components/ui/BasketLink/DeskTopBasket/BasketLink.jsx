@@ -1,6 +1,6 @@
 import styles from './BasketLink.module.css'
 import { Link } from 'react-router'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 import { useTotalBasketPrice, useTotalBasketProducts } from '@/store/useBasket'
 import { useMemo } from 'react'
 import BasketPopUp from '@components/ui/BasketLink/DeskTopBasket/BasketPopUp'

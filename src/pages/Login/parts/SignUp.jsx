@@ -9,7 +9,7 @@ import { responseTypes } from '@/constants/responseTypes.data'
 import { Link } from 'react-router-dom'
 import { signUp } from '@/services/signUp'
 import { authProfile } from '@/store/useProfileToken'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 import {
   checkEmail,
   checkName,

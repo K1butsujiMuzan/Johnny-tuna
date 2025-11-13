@@ -9,7 +9,7 @@ import { errorTypes } from '@/constants/errorTypes.data'
 import { AnimatePresence } from 'framer-motion'
 import ModalText from '@components/ui/ModalText/ModalText'
 import { authProfile, exit, useProfileData } from '@/store/useProfileToken'
-import { linkPath } from '@/constants/links.data'
+import { linkPath } from '@/config/links.data'
 import { checkEmail, checkName } from '@/utils/dataCheck'
 
 function ProfileData() {

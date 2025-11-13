@@ -4,7 +4,7 @@ import TextBlock from '@components/ui/TextBlock/TextBlock'
 import ContactsForm from '@/pages/Contacts/ContactsForm'
 import PageLink from '@components/ui/PageLink/PageLink'
 import { addressInformation } from '@/pages/Contacts/Contacts.data'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function Contacts() {
   useHead({

@@ -1,4 +1,4 @@
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 export const footerLinks = [
   {

@@ -1,7 +1,7 @@
 import styles from './Categories.module.css'
-import Product from '@/pages/Main/Categories/Product'
 import { useMemo } from 'react'
 import { useProduct } from '@/store/useProducts'
+import ProductCard from '@components/ui/ProductCard/ProductCard'
 
 function CategoryBlock({ category }) {
   const products = useProduct()
@@ -17,7 +17,7 @@ function CategoryBlock({ category }) {
       <h3 className={styles.categoryTitle}>{category.name}</h3>
       <div className={styles.categoryProducts}>
         {productsToShow.map(product => (
-          <Product key={product.id} product={product} />
+          <ProductCard key={product.id} product={product} />
         ))}
       </div>
     </div>

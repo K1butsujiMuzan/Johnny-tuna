@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import styles from './PageLink.module.css'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function PageLink({ to, text }) {
   return (

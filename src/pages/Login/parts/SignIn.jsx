@@ -8,7 +8,7 @@ import { responseTypes } from '@/constants/responseTypes.data'
 import { errorTypes } from '@/constants/errorTypes.data'
 import { signIn } from '@/services/signIn'
 import { authProfile } from '@/store/useProfileToken'
-import { linkPath } from '@/constants/links.data'
+import { linkPath } from '@/config/links.data'
 import Cookies from 'js-cookie'
 
 function SignIn({ setIsRecover }) {

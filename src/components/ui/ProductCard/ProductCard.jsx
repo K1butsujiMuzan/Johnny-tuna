@@ -1,4 +1,4 @@
-import styles from './Categories.module.css'
+import styles from './ProductCard.module.css'
 import Button from '@components/ui/Button/Button'
 import { memo, useCallback, useState } from 'react'
 import { addBasketProduct, useProductQuantity } from '@/store/useBasket'
@@ -9,7 +9,7 @@ import useConvertPrice from '@/hooks/useConvertPrice'
 import useConvertDescription from '@/hooks/useConvertDescription'
 import { AnimatePresence } from 'framer-motion'
 
-function Product({ product }) {
+function ProductCard({ product }) {
   const { id, name, image, price, description } = product
 
   const convertedPrice = useConvertPrice(price)
@@ -87,4 +87,4 @@ function Product({ product }) {
   )
 }
 
-export default memo(Product)
+export default memo(ProductCard)

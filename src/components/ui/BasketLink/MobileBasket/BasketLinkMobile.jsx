@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import styles from './BasketLinkMobile.module.css'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 import { useTotalBasketProducts } from '@/store/useBasket'
 import { memo } from 'react'
 

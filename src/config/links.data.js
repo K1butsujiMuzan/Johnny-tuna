@@ -9,6 +9,7 @@ export const linkPath = {
   profile: '/profile',
   verify: '/verify/token/:token',
   login: '/login',
+  result: '/search',
 }
 
 export const linkName = {
@@ -22,4 +23,7 @@ export const linkName = {
   profile: 'Профиль',
   verify: 'Подтверждение аккаунта',
   login: 'Авторизация',
+  result: 'Поиск',
 }
+
+export const SEARCH_QUERY = 'search_query'

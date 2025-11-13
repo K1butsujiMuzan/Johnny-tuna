@@ -1,0 +1,12 @@
+.categoryProducts {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 2rem 0.75rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 75rem) {
+  .categoryProducts {
+    row-gap: 1rem;
+  }
+}

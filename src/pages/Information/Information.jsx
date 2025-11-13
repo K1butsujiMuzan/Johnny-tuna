@@ -3,7 +3,7 @@ import styles from './Information.module.css'
 import PageLink from '@components/ui/PageLink/PageLink'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { information } from '@/pages/Information/Information.data'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 
 function Information() {
   useHead({

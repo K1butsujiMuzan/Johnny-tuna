@@ -5,6 +5,7 @@ import {
   useCallback,
   useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react'
 import useDebounce from '@/hooks/useDebounce'
@@ -19,6 +20,7 @@ const LazySearchProductModal = lazy(
 function Search() {
   const [searchValue, setSearchValue] = useState('')
   const [searchResult, setSearchResult] = useState([])
+  const searchRef = useRef(null)
 
   const debouncedSearchValue = useDebounce(searchValue, 500)
   const shortSearchResult = useMemo(
@@ -49,8 +51,23 @@ function Search() {
     setSearchResult([])
   }, [])
 
+  useEffect(() => {
+    const onCloseSearchModal = event => {
+      if (
+        searchResult.length &&
+        searchRef.current &&
+        !searchRef.current.contains(event.target)
+      ) {
+        setSearchResult([])
+      }
+    }
+    window.addEventListener('click', onCloseSearchModal)
+
+    return () => window.removeEventListener('click', onCloseSearchModal)
+  }, [searchResult])
+
   return (
-    <div className={styles.searchWrapper}>
+    <div className={styles.searchWrapper} ref={searchRef}>
       <SearchInput
         clearSearch={clearSearch}
         value={searchValue}

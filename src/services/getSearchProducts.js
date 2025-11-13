@@ -15,5 +15,6 @@ export const getSearchProducts = async textSearch => {
     }
   } catch (error) {
     console.error('Ошибка сети: ', error)
+    return ['Что-то пошло не так']
   }
 }

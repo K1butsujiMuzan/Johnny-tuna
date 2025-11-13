@@ -1,7 +1,7 @@
 import useHead from '@/hooks/useHead'
 import styles from '@/pages/Stocks/Stocks.module.css'
 import PageLink from '@components/ui/PageLink/PageLink'
-import { linkName, linkPath } from '@/constants/links.data'
+import { linkName, linkPath } from '@/config/links.data'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
 import { stocksCards } from '@/pages/Stocks/Stocks.data'
 import StockCard from '@/pages/Stocks/StockCard'
