@@ -4,7 +4,7 @@ export const checkProfile = async api => {
   try {
     const token = Cookies.get('auth')
     const response = await fetch(api, {
-      method: "GET",
+      method: 'GET',
       headers: { Authorization: `Bearer ${token}` },
     })
 

@@ -1,12 +1,43 @@
-# React + Vite
+# 🐟 Джонни Тунец
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Добро пожаловать в проект **«Джонни Тунец»** — аккуратного, адаптивного и удобного веб-сайта, созданного с вниманием к деталям. Проект сочетает приятный дизайн, оптимизацию, доступность и современный стек технологий.
 
-Currently, two official plugins are available:
+## ✨ Особенности
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 Приятный и продуманный внешний вид
+- ⚡ Быстрая и оптимизированная работа
+- 📱 Полная адаптивность под любые устройства
+- ♿ Доступность для разных типов пользователей
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🧰 Стек технологий
+
+- ⚛️ React
+- 🗺️ React Router DOM
+- 🧠 Zustand
+- ✨ Framer Motion
+- 🍪 JS-Cookie
+- 📦 NPM / Vite
+- 🔍 ESLint, Stylelint, Prettier
+
+---
+
+## 🚀 Быстрый старт
+
+```bash
+git clone ссылка
+cd johnny-tuna
+npm install
+npm run dev
+npm run build
+npm run preview
+npm run lint       # проверка кода
+npm run lint:fix   # исправление кода
+npm run format     # форматирование
+```
+
+---
+
+## 💻 Автор - K1butsujiMuzan
+

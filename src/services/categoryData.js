@@ -1,13 +1,13 @@
 import { errorTypes } from '@/constants/errorTypes.data'
 
-export const getCategoryData = async (api) => {
+export const getCategoryData = async api => {
   try {
     const response = await fetch(api, {
       method: 'GET',
       headers: { 'Content-Type': 'application/json' },
     })
 
-    if(!response.ok) {
+    if (!response.ok) {
       throw new Error(`HTTP ${response.status}: ${response.statusText}`)
     }
 

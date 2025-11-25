@@ -91,7 +91,10 @@ function Recover({ setIsRecover }) {
       } else {
         try {
           setIsLoading(true)
-          const data = await checkEmailData(formData.email, postApi.recoverEmail)
+          const data = await checkEmailData(
+            formData.email,
+            postApi.recoverEmail,
+          )
           if (!data) {
             setErrors(prevState => ({
               ...prevState,
@@ -119,9 +122,13 @@ function Recover({ setIsRecover }) {
       } else {
         try {
           setIsLoading(true)
-          const data = await checkEmailData(formData.email, postApi.recoverCode, {
-            otp_code: +formData.code,
-          })
+          const data = await checkEmailData(
+            formData.email,
+            postApi.recoverCode,
+            {
+              otp_code: +formData.code,
+            },
+          )
           if (!data) {
             setErrors(prevState => ({
               ...prevState,

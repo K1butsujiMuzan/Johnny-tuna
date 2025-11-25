@@ -9,11 +9,12 @@ const useCategoriesStore = create(set => ({
     const data = await getCategoryData(getApi.getCategories)
     set({
       categories: data,
-      allCategories: [{id: 0, name: "Все"}, ...data]
+      allCategories: [{ id: 0, name: 'Все' }, ...data],
     })
-  }
+  },
 }))
 
 export const useCategories = () => useCategoriesStore(state => state.categories)
-export const useAllCategories = () => useCategoriesStore(state => state.allCategories)
+export const useAllCategories = () =>
+  useCategoriesStore(state => state.allCategories)
 export const getCategories = () => useCategoriesStore.getState().getCategories()
