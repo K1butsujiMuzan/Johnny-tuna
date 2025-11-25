@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import styles from './PageLink.module.css'
 import { linkName, linkPath } from '@/config/links.data'
+import { memo } from 'react'
 
 function PageLink({ to, text }) {
   return (
@@ -16,4 +17,4 @@ function PageLink({ to, text }) {
   )
 }
 
-export default PageLink
+export default memo(PageLink)

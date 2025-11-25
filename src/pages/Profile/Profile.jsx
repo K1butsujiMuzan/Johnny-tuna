@@ -1,6 +1,6 @@
 import useHead from '@/hooks/useHead'
 import TextBlock from '@components/ui/TextBlock/TextBlock'
-import ProfileData from '@/pages/Profile/ProfileData/ProfileData'
+import ProfileData from '@/pages/Profile/ProfileData'
 
 function Profile() {
   useHead({
