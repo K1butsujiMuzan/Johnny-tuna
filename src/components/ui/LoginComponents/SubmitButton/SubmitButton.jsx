@@ -1,4 +1,5 @@
 import styles from './SubmitButton.module.css'
+import { memo } from 'react'
 
 function SubmitButton({ children, disabled = false, type }) {
   return (
@@ -8,4 +9,4 @@ function SubmitButton({ children, disabled = false, type }) {
   )
 }
 
-export default SubmitButton
+export default memo(SubmitButton)
